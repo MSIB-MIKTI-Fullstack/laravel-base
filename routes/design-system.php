@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/layout', function () {
-    return view('design-system.index');
+Route::get('/admin', function () {
+    return view('design-system.admin');
+});
+
+Route::get('/customer', function () {
+    return view('design-system.customer');
 });
