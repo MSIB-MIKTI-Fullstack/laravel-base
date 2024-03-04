@@ -9,36 +9,34 @@
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
 
     <!-- Css -->
     <!-- Main Css -->
-    <link rel="stylesheet" href="{{ asset('assets/libs/icofont/icofont.min.css') }}?v={{ time() }}">
-    <link href="{{ asset('assets/libs/flatpickr/flatpickr.min.css') }}?v={{ time() }}" type="text/css"
+    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}?v={{ time() }}">
+    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}?v={{ time() }}" type="text/css"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.min.css') }}?v={{ time() }}">
-
+    <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}?v={{ time() }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
     class="bg-[#EEF0FC] dark:bg-gray-900">
 
     <!-- leftbar-tab-menu -->
-
-
     <div
         class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#06090f] to-100% dark:bg-[#06090f] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
         <div
             class=" text-center border-b bg-[#06090f] border-r h-[64px] flex justify-center items-center brand-logo dark:bg-[#06090f] dark:border-slate-700/40 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f] group-data-[sidebar=brand]:border-slate-700/40">
             <a href="index.html" class="logo">
                 <span>
-                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="logo-small"
+                    <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo-small"
                         class="logo-sm h-8 align-middle inline-block">
                 </span>
                 <span>
-                    <img src="assets/images/logo.png" alt="logo-large"
+                    <img src="{{ asset('design-system/assets/images/logo.png') }}" alt="logo-large"
                         class="logo-lg h-[28px] logo-light hidden dark:inline-block ms-1 group-data-[sidebar=dark]:inline-block group-data-[sidebar=brand]:inline-block">
-                    <img src="assets/images/logo.png" alt="logo-large"
+                    <img src="{{ asset('design-system/assets/images/logo.png') }}" alt="logo-large"
                         class="logo-lg h-[28px] logo-dark inline-block dark:hidden ms-1 group-data-[sidebar=dark]:hidden group-data-[sidebar=brand]:hidden">
                 </span>
             </a>
@@ -1131,7 +1129,7 @@
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <div class="flex">
                                         <img class="object-cover rounded-full h-8 w-8 shrink-0 me-3"
-                                            src="assets/images/users/avatar-3.png" alt="logo" />
+                                            src="design-system/assets/images/users/avatar-3.png" alt="logo" />
                                         <div class="flex-grow flex-1 ms-0.5 overflow-hidden">
                                             <p
                                                 class="text-sm font-medium text-gray-900 truncate
@@ -1171,7 +1169,7 @@
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <div class="flex">
                                         <img class="object-cover rounded-full h-8 w-8 shrink-0 me-3"
-                                            src="assets/images/users/avatar-9.png" alt="logo" />
+                                            src="design-system/assets/images/users/avatar-9.png" alt="logo" />
                                         <div class="flex-grow flex-1 ms-0.5 overflow-hidden">
                                             <p
                                                 class="text-sm font-medium  text-gray-900 truncate
@@ -1194,7 +1192,7 @@
                         class="dropdown-toggle flex items-center rounded-full text-sm
                     focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
                         id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
-                        <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-1.png" alt="user photo" />
+                        <img class="h-8 w-8 rounded-full" src="design-system/assets/images/users/avatar-1.png" alt="user photo" />
                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                             <span class="block font-medium text-slate-600 dark:text-gray-300">Maria Gibson</span>
                             <span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">Admin</span>
@@ -1404,7 +1402,7 @@
                                     class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
 
                                     <div class="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-3">
-                                        <img src="assets/images/widgets/wallet.png" alt=""
+                                        <img src="design-system/assets/images/widgets/wallet.png" alt=""
                                             class="w-full h-auto">
                                     </div>
                                     <div
@@ -1425,7 +1423,7 @@
                             <div class="flex-auto p-4">
                                 <div class="grid grid-cols-12 gap-4">
                                     <div class="col-span-12 sm:col-span-4">
-                                        <img src="assets/images/widgets/user.png" alt=""
+                                        <img src="design-system/assets/images/widgets/user.png" alt=""
                                             class="h-auto w-full">
                                     </div><!--end col-->
                                     <div class="col-span-12 sm:col-span-8 self-center">
@@ -1721,7 +1719,7 @@
                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
                                                         class="p-3 text-base font-medium whitespace-nowrap dark:text-white">
-                                                        <img src="assets/images/products/01.png" alt=""
+                                                        <img src="design-system/assets/images/products/01.png" alt=""
                                                             class="me-2 h-10 inline-block">Robotech Camera EDM
                                                         5D(White)
                                                     </td>
@@ -1751,7 +1749,7 @@
                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
                                                         class="p-3 text-base font-medium whitespace-nowrap dark:text-white">
-                                                        <img src="assets/images/products/03.png" alt=""
+                                                        <img src="design-system/assets/images/products/03.png" alt=""
                                                             class="me-2 h-10 inline-block">Robotech VR 5D (Black)
                                                     </td>
                                                     <td
@@ -1780,7 +1778,7 @@
                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
                                                         class="p-3 text-base font-medium whitespace-nowrap dark:text-white">
-                                                        <img src="assets/images/products/02.png" alt=""
+                                                        <img src="design-system/assets/images/products/02.png" alt=""
                                                             class="me-2 h-10 inline-block">Robotech Shoes Max-Zon
                                                     </td>
                                                     <td
@@ -1809,7 +1807,7 @@
                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
                                                         class="p-3 text-base font-medium whitespace-nowrap dark:text-white">
-                                                        <img src="assets/images/products/04.png" alt=""
+                                                        <img src="design-system/assets/images/products/04.png" alt=""
                                                             class="me-2 h-10 inline-block">Robotech Mask N99 [ISI]
                                                     </td>
                                                     <td
@@ -1837,7 +1835,7 @@
                                                 <tr class="bg-white  dark:bg-gray-900">
                                                     <td
                                                         class="p-3 text-base font-medium whitespace-nowrap dark:text-white">
-                                                        <img src="assets/images/products/01.png" alt=""
+                                                        <img src="design-system/assets/images/products/01.png" alt=""
                                                             class="me-2 h-10 inline-block">Robotech Camera EDM
                                                         5D(White)
                                                     </td>
@@ -1899,14 +1897,13 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-    <script src="assets/libs/lucide/umd/lucide.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-    <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script>
-
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/js/pages/analytics-index.init.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('design-system/assets/js/pages/analytics-index.init.js') }}"></script>
+    <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <!-- JAVASCRIPTS -->
 </body>
 

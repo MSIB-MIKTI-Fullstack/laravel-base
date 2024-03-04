@@ -1,4 +1,4 @@
-/* Template Name: 
+/* Template Name:
    File: Main Css File
 */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -20049,7 +20049,7 @@ body[data-sidebar-size="collapsed"] .main-sidebar {
 
 :is(.dark .dark\:bg-\[\#06090f\]) {
     --tw-bg-opacity: 1 !important;
-    background-color: rgb(96 61 195 / var(--tw-bg-opacity)) !important;
+    background-color: rgb(61 195 / var(--tw-bg-opacity)) !important;
 }
 
 :is(.dark .dark\:bg-blue-200) {
