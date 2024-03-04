@@ -324,7 +324,7 @@ try{
           offsetY: 5
       },
       labels: [ "Mobile", "Tablet", "Desktop"],
-      colors: ["#13939c", "#603dc3", "#fac639"],
+      colors: ["#13939c", "#06090f", "#fac639"],
      
       responsive: [{
           breakpoint: 600,
