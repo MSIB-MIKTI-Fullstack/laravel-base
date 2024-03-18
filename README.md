@@ -26,6 +26,9 @@ php artisan migrate
 ```
 7. Install npm dependency
 ```bash
+bun install
+```
+```bash
 npm install
 ```
 8. Jalankan Laravel
