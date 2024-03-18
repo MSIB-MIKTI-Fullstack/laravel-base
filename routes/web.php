@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CobaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,31 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/coba', function (){
+    $angka = 15;
+    echo $angka;
+});
+
+Route::get('/controller', [CobaController::class, 'coba']);
+Route::get('/cobaview', [CobaController::class, 'view']);
+
+Route::prefix('/user')->group(function () {
+    Route::get('/contoh', function (){
+        $angka = 100;
+        echo $angka;
+    });
+
+    Route::get('/teks', function (){
+        $teks = "Ini Teks";
+        echo $teks;
+    });
+});
+
+Route::get('/view', function () {
+    return view('coba');
+});
+
+
+
+
