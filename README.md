@@ -18,7 +18,7 @@ cp .env.example .env
 ```
 5. Jalankan perintah untuk melakukan generate key
 ```bash
-php artisan key generate
+php artisan key:generate
 ```
 6. Jalankan perintah untuk melakukan generate migration
 ```bash
