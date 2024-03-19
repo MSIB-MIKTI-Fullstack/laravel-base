@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+route::get('/coba', function () {
+    echo "belajar routing dengan laravel";
+});
+
+route::prefix('/halaman')->group(function () {
+    route::get('/home', [HomeController::class, 'index'])->name('halaman.home');
+    route::get('/dashboard', [HomeController::class, 'dashboard'])->name('halaman.dashboard');
 });
