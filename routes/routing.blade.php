@@ -13,12 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/view', function () {
-    return view('welcome');
-});
-
-// //127.0.0.1:8000/siswa ==>  <h1>SAYA SISWA</h1>
+//127.0.0.1:8000/siswa ==>  <h1>SAYA SISWA</h1>
 // Route::get('/siswa', function () {
 //     return "<h1>SAYA SISWA</h1>";
 // });
@@ -32,7 +27,3 @@ Route::get('/view', function () {
 // Route::get('/siswa/{id}/{nama}', function ($id, $nama) {
 //     return "<h1>SAYA SISWA dengan ID $id dan Nama $nama</h1>";
 // })-> where(['id' => '[0-9]+', 'nama' => '[A-Za-z]+']);
-
-Route::get('siswa',[SiswaController::class,'index']);
-
-Route::get('siswa/{id}',[SiswaController::class,'detail']);
