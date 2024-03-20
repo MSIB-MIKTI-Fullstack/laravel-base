@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Laravel</title>
+    <title>Halaman Home</title>
 </head>
 
 <body>
-    <h1>Ini Halaman Dashboard</h1>
-    {{ $name }} <br>
-    {{ $tglLahir }}
+    <h1>Ini Adalah Halaman Home</h1>
 </body>
 
 </html>

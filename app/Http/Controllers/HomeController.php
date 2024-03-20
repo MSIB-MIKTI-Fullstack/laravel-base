@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function testing()
     {
-        echo "ini testing";
+        return view('home');
     }
 }
