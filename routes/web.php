@@ -27,3 +27,7 @@ Route::get('/home', [HomeController::class, 'testing']);
 Route::get('/dashboard', function () {
     return view('dashboard', ['name' => 'Renaldi'], ['tglLahir' => date('d-m-Y')]);
 });
+
+Route::get('/aldi', function () {
+    return redirect('dashboard');
+});
