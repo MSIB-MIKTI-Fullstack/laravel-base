@@ -18,4 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/aldi', function () {
+    return "<h1>SAYA ALDI</h1>";
+});
+
 Route::get('/controller', [HomeController::class, 'testing']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
