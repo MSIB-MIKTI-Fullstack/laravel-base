@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +22,25 @@ Route::get('/coba', function () {
 
 Route::get('/contoh', function(){
     $c = 12;
-    echo $c;
+    echo $c; 
+    
 });
 
-Route::get('/user', [Homecontroller::class, 'index']);
+Route::get('/',[Homecontroller::class, 'index']); 
 
-Route::get('/',[Homecontroller::class, 'index'])->name('app.index'); 
+Route::get('/user/{$id}', [UserController::class, 'show']); // ('/URI namanya')
 
+
+Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
+Route::get('/todo/create', [TodoController::class, 'create'])->name('todo.create'); 
+Route::post('/todo', [TodoController::class, 'store'])->name('todo.store');
+Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit'); //{todo} parameters func yg ada di controller edit dan update
+Route::put('/todo/{todo}/update', [TodoController::class, 'update'])->name('todo.update');
+Route::delete('/todo/{todo}/destroy', [TodoController::class, 'destroy'])->name('todo.destroy');
+
+// Route::resources([
+//     'todo' => TodoController::class,
+// ]);
 
 //php artisan route:cache
 
