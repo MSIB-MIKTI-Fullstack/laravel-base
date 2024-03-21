@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomController;
+use App\Http\Controllers\UserResourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', [CustomController::class, 'showData']);
+Route::resources([
+    'users' => UserResourceController::class,
+]);
