@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +52,7 @@ Route::get('/beranda', [HomeController::class, 'testing']);
 Route::permanentRedirect('/controller', '/beranda');
 
 // Route::view('/beranda', 'beranda');
+
+Route::resources([
+    'users' => UsersController::class
+]);
