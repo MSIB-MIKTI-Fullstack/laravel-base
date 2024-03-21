@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -11,7 +13,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('user/user', compact('users'));
     }
 
     /**
@@ -19,7 +22,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+       return view('user/create');
     }
 
     /**
@@ -27,7 +30,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email_verified_at' => now(),
+            'password' => Hash::make($request->password),
+            'remember_token' => "12312312312312123123",
+        ]);
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -43,7 +54,8 @@ class UsersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $users= User::findorFail($id);
+        return view('user/edit', compact('users'));
     }
 
     /**
@@ -51,7 +63,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        User::where('id', $id)->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -59,6 +76,8 @@ class UsersController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $users = User::where('id', $id)->delete();
+        return redirect()->route('users.index');
+
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CobaController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,10 @@ Route::prefix('/user')->group(function () {
 Route::get('/view', function () {
     return view('coba');
 });
+
+Route::resources([
+    'users' => UsersController::class,
+]);
 
 
 
