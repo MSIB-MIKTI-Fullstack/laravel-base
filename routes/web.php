@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,7 @@ route::prefix('/halaman')->group(function () {
     route::get('/home', [HomeController::class, 'index'])->name('halaman.home');
     route::get('/dashboard', [HomeController::class, 'dashboard'])->name('halaman.dashboard');
 });
+
+route::resources([
+    'user' => UserController::class,
+]);
