@@ -14,10 +14,7 @@ class HomeController extends Controller
 
     public function coba()
     {
-        $mail = new MailService();
-        $mail->send();
-
-        $this->mail->send();
+        echo "Halaman coba";
     }
 
     public function testing(MailService $mail)
