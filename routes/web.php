@@ -33,4 +33,4 @@ Route::get('/aldi', function () {
     return redirect('dashboard');
 });
 
-Route::resource('user', UserController::class);
+Route::resource('users', UserController::class);
