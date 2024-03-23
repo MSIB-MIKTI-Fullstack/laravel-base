@@ -30,6 +30,11 @@ class UserResourceController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
         User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -72,7 +77,7 @@ class UserResourceController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->back();
+        return redirect()->route('users.index');
     }
 
     /**
