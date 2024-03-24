@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\CobaController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\halamancontroller;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,20 +15,14 @@ use App\Http\Controllers\halamancontroller;
 */
 // 127.0.0.1:8000/ ==> view welcome
 Route::get('/', function () {
+    dd('tes');
     return view('welcome');
+  
 });
 
 
-Route::get('/belajar', function () {
-    return '<h1>Saya Indah Oktavia Belajar Routing</h1>';
-});
+Route::resources([
+    'users' => UsersController::class
+]);
 
-Route::get('/halaman', function () {
-    return view('halaman');
-});
 
-Route::get('/halamanku', function () {
-    return view('halaman' , ['judul' => 'Mari Belajar Routing Di Laravel']);
-});
- 
-Route::get('/halaman', [halamanController::class, 'index']);
