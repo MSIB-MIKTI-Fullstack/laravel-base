@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\MahasiswaController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingPage\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +31,16 @@ Route::prefix('home')->group(function () {
     Route::put('/{id}', [HomeController::class, 'update'])->name('home.update');
     Route::delete('/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
     Route::post('/', [HomeController::class, 'store'])->name('home.store');
+});
+
+Route::prefix('/')->group(function () {
+    Route::get('register', [AuthController::class, 'register'])->name('register');
+    Route::get('login', [AuthController::class, 'login'])->middleware('guest')->name('login');
+    Route::get('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+    Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::resource('user', UserController::class)->names('admin.user');
+    Route::resource('mahasiswa', MahasiswaController::class)->names('admin.mahasiswa');
 });
