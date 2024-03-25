@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Service\MailService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -28,6 +30,16 @@ class HomeController extends Controller
 
     public function beranda()
     {
-        echo "Ini adalah beranda admin";
+        $users = Cache::remember('users', 60, function () {
+            return User::all();
+        });
+
+
+        return view('beranda', compact('users'));
+    }
+
+    public function readFile($filename)
+    {
+        return response()->file("img/{$filename}");
     }
 }
