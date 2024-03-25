@@ -7,6 +7,13 @@
     <title>Create</title>
 </head>
 <body>
-    
+    <form action="{{ route('users.store') }}" method="POST">
+        @csrf
+        <input type="text" name="name" placeholder="name" />
+        <input type="text" name="email" placeholder="email" />
+        <input type="password" name="password" placeholder="password" />
+        <button type="submit">Submit</button>
+    </form>
+    <button onclick="window.location.href='{{ route('users.index') }}';">Back to index</button>
 </body>
 </html>
