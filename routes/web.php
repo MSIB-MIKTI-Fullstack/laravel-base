@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SessionControll;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/view', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
@@ -36,3 +37,7 @@ Route::get('/view', function () {
 Route::get('siswa',[SiswaController::class,'index']);
 
 Route::get('siswa/{id}',[SiswaController::class,'detail']);
+
+Route::get('/sesi',[SessionControll::class,'index']);
+Route::post('/sesi/login',[SessionControll::class,'login']);
+
