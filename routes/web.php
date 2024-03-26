@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +33,6 @@ route::prefix('/halaman')->group(function () {
 route::resources([
     'user' => UserController::class,
 ]);
+
+route::get('admin', [AdminController::class,'index'])->name('admin.dashboard');
+Route::get('admin/produk', [AdminController::class,'products'])->name('admin.products');
