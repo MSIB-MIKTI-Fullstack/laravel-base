@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller
 {
@@ -14,7 +16,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = Cache::remember('cache_query_users', 3600, function () {
+            return User::all();
+        });
 
         return view('users.index', compact('users'));
     }
@@ -40,7 +44,9 @@ class UsersController extends Controller
             'remember_token' => '123123',
         ]);
 
-        return redirect()->back();
+        Cache::forget('users');
+
+        return redirect()->back()->with('success', "User berhasil ditambahkan");
     }
 
     /**
@@ -74,6 +80,8 @@ class UsersController extends Controller
             'remember_token' => '123123',
         ]);
 
+        Cache::forget('cache_query_users');
+
         return redirect()->route('users.index');
     }
 
@@ -83,6 +91,8 @@ class UsersController extends Controller
     public function destroy(string $id)
     {
         User::find($id)->delete();
+
+        Cache::forget('users');
 
         return redirect()->route('users.index');
     }
