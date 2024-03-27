@@ -40,6 +40,6 @@ class HomeController extends Controller
 
     public function readFile($filename)
     {
-        return response()->file("img/{$filename}");
+        return response()->file("design-system/assets/images/{$filename}");
     }
 }
