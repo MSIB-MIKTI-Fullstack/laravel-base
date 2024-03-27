@@ -1,3 +1,8 @@
+<x-admin-layout>
+    <h1>Ini konten dari index users</h1>
+</x-admin-layout>
+
+{{-- Past Task About CRUD Users Table
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,4 +43,5 @@
         </table>
     </div>
 </body>
-</html>
+</html> 
+--}}

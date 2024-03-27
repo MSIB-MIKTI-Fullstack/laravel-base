@@ -1049,7 +1049,6 @@
                                     <div class="items-center ">
                                         <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')</h1>
                                         <ol class="list-reset flex text-sm">
-                                            @yield('breadcrumb')
                                         </ol>
                                     </div>
                                 </div>
@@ -1059,7 +1058,7 @@
                 </div>
             </div><!--end container-->
             <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
-                @yield('content')
+                {{ $slot }}
             </div><!--end container-->
         </div>
     </div>
@@ -1071,7 +1070,10 @@
     <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
+    <script src="{{ asset('design-system/assets/images') }}"></script>
+
     <!-- JAVASCRIPTS -->
+
 </body>
 
 </html>
