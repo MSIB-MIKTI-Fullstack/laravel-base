@@ -1109,15 +1109,9 @@
                             <div class="">
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
-                                        <h1 class="font-medium text-3xl block dark:text-slate-100">Title Page</h1>
+                                        <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')</h1>
                                         <ol class="list-reset flex text-sm">
-                                            <li><a href="#" class="text-gray-500 dark:text-slate-400">Module</a>
-                                            </li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-gray-500 dark:text-slate-400">Sub Module</li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
-                                                Sub Module Active</li>
+                                            @yield('breadcrumb')
                                         </ol>
                                     </div>
                                 </div>
@@ -1125,8 +1119,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </div><!--end container-->
+            <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
+                @yield('content')
+            </div><!--end container-->
         </div>
     </div>
 

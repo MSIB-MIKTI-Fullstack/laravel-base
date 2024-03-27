@@ -43,6 +43,10 @@ Route::get('/view', function () {
     return view('coba');
 });
 
+Route::get('/admin', function () {
+    return view('user.admin');
+});
+
 Route::resources([
     'users' => UsersController::class,
 ]);
