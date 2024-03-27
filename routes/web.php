@@ -16,8 +16,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/coba', function () {
-    return view('welcome'); 
+Route::get('/create', function () {
+    return view('users.layout.create'); 
 });
 
 Route::get('/contoh', function(){
@@ -26,7 +26,7 @@ Route::get('/contoh', function(){
     
 });
 
-Route::get('/',[Homecontroller::class, 'index']); 
+Route::get('/',[Homecontroller::class, 'index']);  //vue admin
 
 Route::get('/user/{$id}', [UserController::class, 'show']); // ('/URI namanya')
 
@@ -38,6 +38,9 @@ Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edi
 Route::put('/todo/{todo}/update', [TodoController::class, 'update'])->name('todo.update');
 Route::delete('/todo/{todo}/destroy', [TodoController::class, 'destroy'])->name('todo.destroy');
 
+Route::get('/admin', function(){
+    return view('users.layout.index');
+});
 // Route::resources([
 //     'todo' => TodoController::class,
 // ]);

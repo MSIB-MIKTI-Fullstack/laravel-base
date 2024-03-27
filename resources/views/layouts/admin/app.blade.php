@@ -9,16 +9,14 @@
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="design-system/assets/images/favicon.ico" />
 
     <!-- Css -->
     <!-- Main Css -->
-    <link rel="stylesheet"
-        href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}?v={{ time() }}">
-    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}?v={{ time() }}"
-        type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}?v={{ time() }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
+    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    @vite(['resources/js/app.js'])
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
@@ -1110,6 +1108,7 @@
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
                                         <h1 class="font-medium text-3xl block dark:text-slate-100">Title Page</h1>
+                                        <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')</h1>
                                         <ol class="list-reset flex text-sm">
                                             <li><a href="#" class="text-gray-500 dark:text-slate-400">Module</a>
                                             </li>
@@ -1118,6 +1117,7 @@
                                             <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
                                             <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
                                                 Sub Module Active</li>
+                                                @yield('breadcrumb')
                                         </ol>
                                     </div>
                                 </div>
@@ -1127,6 +1127,7 @@
                 </div>
             </div>
 
+            
         </div>
     </div>
 
