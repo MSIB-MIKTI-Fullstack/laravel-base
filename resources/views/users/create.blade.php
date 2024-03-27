@@ -12,8 +12,17 @@
         <div class="max-w-xs">
             <form action="{{ route('users.store') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 @csrf
+                @error('name')
+                    <p>{{$message}}</p>
+                @enderror
                 <input type="text" name="name" placeholder="Name" class="border my-2 px-2 rounded"/>
+                @error('email')
+                    <p>{{$message}}</p>
+                @enderror
                 <input type="text" name="email" placeholder="Email" class="border my-2 px-2 rounded" />
+                @error('password')
+                    <p>{{$message}}</p>
+                @enderror
                 <input type="password" name="password" placeholder="Password" class="border my-2 px-2 rounded" />
                 <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-3 mt-2 rounded">Submit</button>
             </form>

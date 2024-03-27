@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestRequestController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/token', function () {
+    return view('users.token');
+})->middleware('verify.token');
 
 Route::resources([
     'users' => UsersController::class
