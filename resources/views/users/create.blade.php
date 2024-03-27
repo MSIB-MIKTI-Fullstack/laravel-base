@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,4 +30,27 @@
     </form>
     
 </body>
-</html>
+</html> --}}
+
+</------------------------------------------------------------------------------------------------------------------------->
+
+@extends('layouts.admin.app')
+@section('title_page')
+    Create User
+@endsection
+@section('breadcrumb')
+<li>
+    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors duration-300">Users</a>
+</li>
+<li>
+    <span class="text-gray-500 dark:text-gray-400 mx-2">/</span>
+</li>
+<li class="text-primary-600 hover:text-primary-700 dark:text-primary-400 cursor-pointer transition-colors duration-300">Create User</li>
+
+@endsection
+@section('content')
+    <h1>isi create user</h1>
+    @endsection
+@push('scripts')
+    <script src="{{ asset('design-system/assets/js/pages/analytics-index.init.js') }}"></script>
+@endpush

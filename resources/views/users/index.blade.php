@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,4 +34,24 @@
         </tbody>
     </table>
 </body>
-</html>
+</html> --}}
+
+
+</------------------------------------------------------------------------------------------------------------------------->
+@extends('layouts.admin.app')
+@section('title_page')
+    halaman user
+@endsection
+@section('breadcrumb')
+<li>
+    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors duration-300">Users</a>
+</li>
+<li>
+    <span class="text-gray-500 dark:text-gray-400 mx-2">/</span>
+</li>
+<li class="text-primary-600 hover:text-primary-700 dark:text-primary-400 cursor-pointer transition-colors duration-300">Table User</li>
+
+@endsection
+@section('content')
+    <h1>Daftar User</h1>
+@endsection
