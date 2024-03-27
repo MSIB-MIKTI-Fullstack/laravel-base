@@ -27,3 +27,5 @@ Route::get('/token', function () {
 Route::resources([
     'users' => UsersController::class
 ]);
+
+Route::view('/component', 'learn-component.index');
