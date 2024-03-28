@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +34,7 @@ route::resources([
 ]);
 
 route::get('admin', [AdminController::class,'index'])->name('admin.dashboard');
-Route::get('admin/produk', [AdminController::class,'products'])->name('admin.products');
+Route::get('admin/products', [AdminController::class,'products'])->name('admin.products');
+
+route::view('view-component', 'view-component.dashboard')->name('view.admin.dashboard');
+route::view('view-component/products', 'view-component.products')->name('view.admin.products');
