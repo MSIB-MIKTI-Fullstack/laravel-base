@@ -1,21 +1,10 @@
 @extends('layout.app')
-
-@section('title', 'Users')
-
-@section('content')
-<div class="ltr:flex flex-1 rtl:flex-row-reverse">
-    <div class="page-wrapper relative ltr:ml-auto rtl:mr-auto rtl:ml-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300">
-        <div class="xl:w-full">
-            <div class="flex flex-wrap">
-                <div class="flex items-center py-4 w-full">
-                    <div class="w-full">
-                        <div class="">
-                            @include('partials.page_header')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@section('title_page')
+Halaman Create User
+@endsection
+@section('breadcrumb')
+<li><a href="#" class="text-gray-500 dark:text-slate-400">Users</a></li>
+<li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+<li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+    User Create</li>
 @endsection

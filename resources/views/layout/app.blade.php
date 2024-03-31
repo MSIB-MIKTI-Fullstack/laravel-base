@@ -46,7 +46,7 @@
                     focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
                         <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets/images/users/avatar-1.png') }}" alt="user photo" />
                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                            <span class="block font-medium text-slate-600 dark:text-gray-300">Maria Gibson</span>
+                            <span class="block font-medium text-slate-600 dark:text-gray-300">Renaldi</span>
                             <span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">Admin</span>
                         </span>
                     </button>
@@ -94,16 +94,11 @@
                             <div class="">
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
-                                        <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('')</h1>
-                                        <ol class="list-reset flex text-sm">
-                                            <li><a href="#" class="text-gray-500 dark:text-slate-400">Module</a>
-                                            </li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-gray-500 dark:text-slate-400">Sub Module</li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
-                                                Sub Module Active</li>
-                                        </ol>
+                                        <<h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')
+                                            </h1>
+                                            <ol class="list-reset flex text-sm">
+                                                @yield('breadcrumb')
+                                            </ol>
                                     </div>
                                 </div>
                             </div>
