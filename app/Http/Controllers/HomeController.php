@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function testing()
     {
-        return view('users.index');
+        return view('layout.app');
     }
 }
