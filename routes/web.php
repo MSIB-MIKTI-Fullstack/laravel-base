@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController as ControllersHomeController;
 use App\Http\Controllers\LandingPage\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +23,5 @@ Route::get('about', function () {
     return "Hello";
 });
 
-Route::prefix('home')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home.index');
-    Route::get('/{id}', [HomeController::class, 'show'])->name('home.show');
-    Route::put('/{id}', [HomeController::class, 'update'])->name('home.update');
-    Route::delete('/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
-    Route::post('/', [HomeController::class, 'store'])->name('home.store');
-});
+Route::resource('users', UserController::class);
+Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
