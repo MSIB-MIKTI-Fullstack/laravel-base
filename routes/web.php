@@ -20,6 +20,10 @@ Route::get('/create', function () {
     return view('users.layout.create'); 
 });
 
+Route::get('/admin', function(){
+    return view('users.layout.index');
+});
+
 Route::get('/contoh', function(){
     $c = 12;
     echo $c; 
@@ -38,9 +42,6 @@ Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edi
 Route::put('/todo/{todo}/update', [TodoController::class, 'update'])->name('todo.update');
 Route::delete('/todo/{todo}/destroy', [TodoController::class, 'destroy'])->name('todo.destroy');
 
-Route::get('/admin', function(){
-    return view('users.layout.index');
-});
 // Route::resources([
 //     'todo' => TodoController::class,
 // ]);

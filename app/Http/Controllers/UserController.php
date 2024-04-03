@@ -16,4 +16,7 @@ class UserController extends Controller
          dd($users);
         return view('user.view', compact('users'));
     }
+
+    
 }
+
