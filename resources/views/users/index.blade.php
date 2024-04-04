@@ -1,30 +1,21 @@
-@extends('layouts.admin')
-
-@section('content')
-    <div class="container">
-        <h1>Daftar Pengguna</h1>
-        <a href="{{ route('users.create') }}" class="btn btn-primary mb-2">Tambahkan Pengguna Baru</a>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nama Lengkap</th>
-                    <th>Alamat Email</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($users as $user)
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-info btn-sm">Detail</a>
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <h1>Ini konten dari index users</h1>
+{{-- @extends('layouts.admin.app')
+@section('title_page')
+    Halaman Daftar User
 @endsection
+	@@ -10,4 +10,16 @@
+@endsection
+@section('content')
+    <h1>Ini konten dari index users</h1>
+@endsection --}}
+<x-admin-layout textColor="text-red-500">
+    <x-slot:title>
+        Daftar Users
+    </x-slot>
+
+    <x-slot:breadcrumb>
+        <li><a href="#" class="text-gray-500 dark:text-slate-400">Users</a></li>
+        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+        <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+            User Table</li>
+    </x-slot>
+</x-admin-layout>
