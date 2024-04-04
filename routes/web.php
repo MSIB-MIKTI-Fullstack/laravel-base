@@ -23,7 +23,7 @@ Route::get('/aldi', function () {
     return "<h1>SAYA ALDI</h1>";
 });
 
-Route::get('/home', [HomeController::class, 'testing']);
+Route::get('/home', [HomeController::class, 'beranda']);
 
 Route::get('/dashboard', function () {
     return view('dashboard', ['name' => 'Renaldi'], ['tglLahir' => date('d-m-Y')]);

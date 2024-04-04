@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function testing()
+    public function beranda(Request $request)
     {
-        return view('layout.app');
+        return view('customers.product');
+        $products = Product::where('product_category_id', $request->category_id)->get();
+
+        return view('customers.product', compact('products'));
     }
 }
