@@ -19,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/contoh', [App\Http\Controllers\ContohController::class, 'contoh']);
+
+
+Route::resources([
+    'users' => App\Http\Controllers\UsersController::class
+]);
