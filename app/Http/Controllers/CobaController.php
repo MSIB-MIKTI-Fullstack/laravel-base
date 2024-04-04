@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CobaController extends Controller
@@ -16,4 +17,10 @@ class CobaController extends Controller
 
         return view('view',['teks' => $teks]);
     }
+    public function beranda(Request $request){
+        $products = Product::with('product_category')->where('product_category_id', $request->category_id)->get();
+        //dd($products);
+        return view('customers.product', compact('products'));
+    }
+
 }

@@ -19,25 +19,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/coba', function (){
-    $angka = 15;
-    echo $angka;
-});
+// Route::get('/coba', function (){
+//     $angka = 15;
+//     echo $angka;
+// });
 
-Route::get('/controller', [CobaController::class, 'coba']);
-Route::get('/cobaview', [CobaController::class, 'view']);
+// Route::get('/controller', [CobaController::class, 'coba']);
+// Route::get('/cobaview', [CobaController::class, 'view']);
 
-Route::prefix('/user')->group(function () {
-    Route::get('/contoh', function (){
-        $angka = 100;
-        echo $angka;
-    });
+// Route::prefix('/user')->group(function () {
+//     Route::get('/contoh', function (){
+//         $angka = 100;
+//         echo $angka;
+//     });
 
-    Route::get('/teks', function (){
-        $teks = "Ini Teks";
-        echo $teks;
-    });
-});
+//     Route::get('/teks', function (){
+//         $teks = "Ini Teks";
+//         echo $teks;
+//     });
+// });
 
 Route::get('/view', function () {
     return view('coba');
@@ -46,6 +46,8 @@ Route::get('/view', function () {
 Route::get('/admin', function () {
     return view('user.admin');
 });
+
+Route::get('/beranda', [CobaController::class, 'beranda']);
 
 Route::resources([
     'users' => UsersController::class,
