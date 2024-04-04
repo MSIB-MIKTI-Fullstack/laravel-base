@@ -21,4 +21,8 @@
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>
+    <h1>Ini konten dari create users</h1>
 @endsection
+@push('scripts')
+    <script src="{{ asset('design-system/assets/js/pages/analytics-index.init.js') }}"></script>
+@endpush

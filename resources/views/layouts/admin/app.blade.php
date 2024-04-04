@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
-
+    <link rel="shortcut icon" href="design-system/assets/images/favicon.ico" />
     <!-- Css -->
     <!-- Main Css -->
     <link rel="stylesheet"

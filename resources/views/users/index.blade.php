@@ -26,4 +26,5 @@
             </tbody>
         </table>
     </div>
+    <h1>Ini konten dari index users</h1>
 @endsection

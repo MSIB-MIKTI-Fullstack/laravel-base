@@ -4,16 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
 {
     public function index()
     {
         $users = User::all();
-        return view('users.index', ['users' => $users]);
+        $users = Cache::remember('cache_query_users', 3600, function () {
+            return User::all();
+        });
+        return view('users.index', compact('users'));
     }
+    
 
     public function create()
     {
