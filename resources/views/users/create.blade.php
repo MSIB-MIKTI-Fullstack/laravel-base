@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <form action="{{ route('users.store') }}" method="POST">
-        @csrf
-        <input type="text" name="name" placeholder="name" />
-        <input type="text" name="email" placeholder="email" />
-        <input type="password" name="password" placeholder="password" />
-        <button type="submit">Submit</button>
-    </form>
-</body>
-
-</html>
+@section('content')
+    <div class="container">
+        <h1>Menambahkan Pengguna Baru</h1>
+        <form action="{{ route('users.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="name">Nama Lengkap :</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Alamat Email :</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Pasword :</label>
+                <input type="pasword" name="pasword" id="pasword" class="form-control">
+            </div>
+            <!-- Tambahkan input untuk bidang lainnya jika diperlukan -->
+            <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+    </div>
+@endsection

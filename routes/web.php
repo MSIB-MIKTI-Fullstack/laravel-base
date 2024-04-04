@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\ContohController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContohController;
+use App\Http\Controllers\HomeController as ControllersHomeController;
+use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +27,6 @@ Route::get('/contoh', [App\Http\Controllers\ContohController::class, 'contoh']);
 Route::resources([
     'users' => App\Http\Controllers\UsersController::class
 ]);
+
+Route::resource('users', UsersController::class);
+Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');

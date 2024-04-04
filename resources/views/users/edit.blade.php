@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <form action="{{ route('users.update', $user->id) }}" method="POST">
-        @csrf
-        <input type="text" name="name" placeholder="name" value="{{ $user->id }}" />
-        <input type="text" name="email" placeholder="email" value="{{ $user->email }}" />
-        <input type="password" name="password" placeholder="password" />
-        <button type="submit">Submit</button>
-    </form>
-</body>
-
-</html>
+@section('content')
+    <div class="container">
+        <h1>Edit Pengguna</h1>
+        <form action="{{ route('users.update', $user->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}">
+            </div>
+            <!-- Tambahkan input untuk bidang lainnya jika diperlukan -->
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        </form>
+    </div>
+@endsection
