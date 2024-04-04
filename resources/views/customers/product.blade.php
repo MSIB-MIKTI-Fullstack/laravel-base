@@ -18,452 +18,46 @@
                         </div><!--end col-->
                         <div class="col-span-12 sm:col-span-8 md:col-span-9 lg:col-span-9 xl:col-span-9">
                             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
-                                                    off</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/01.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">White
-                                                    Table Camera </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
+                                @foreach ($products as $item)
+                                    <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
+                                        <div
+                                            class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                                            <div class="flex-auto  text-center">
+                                                <div class="flex-auto text-center bg-gray-100">
+                                                    <span
+                                                        class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
+                                                        off</span>
+                                                    <a href="customers-pro-details.html">
+                                                        <img src="{{ $item->image }}" alt=""
+                                                            class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
+                                                    </a>
                                                 </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>49 <del
-                                                        class="text-base text-slate-400">$99</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
-                                                    soon</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/04.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Covid
-                                                    Safety</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">N95
-                                                    Covid Safety Mask </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
+                                                <div class="flex-auto  text-center p-4">
+                                                    <span
+                                                        class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
+                                                    <a href="ecommerce-product-detail.html"
+                                                        class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">{{ $item->name }}</a>
+                                                    <div class="mb-4">
+                                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                                        <span class="text-slate-800 font-semibold">4.8</span>
+                                                    </div>
+                                                    <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
+                                                            class="text-sm text-slate-500">Rp.
+                                                        </sup>{{ number_format($item->price, 0) }}
+                                                    </h4>
+                                                    <button type="button"
+                                                        class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
+                                                        onclick="location.href='customers-pro-details.html'">Buy
+                                                        Now</button>
                                                 </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>9 <del
-                                                        class="text-base text-slate-400">$19</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
                                             </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/03.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Imported
-                                                    VR Box </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>29 <del
-                                                        class="text-base text-slate-400">$39</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/02.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
-                                                    Colorfull Shoes </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>99 <del
-                                                        class="text-base text-slate-400">$199</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
-                                                    off</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/pro-4.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Mannat
-                                                    530 Bluetooth Wireless </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>49 <del
-                                                        class="text-base text-slate-400">$99</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
-                                                    soon</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/pro-1.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
-                                                    Colorfull Shoes </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>99 <del
-                                                        class="text-base text-slate-400">$199</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/pro-2.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Clothes</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Robo
-                                                    Men Oversized hoo - Blue </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>29 <del
-                                                        class="text-base text-slate-400">$39</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/pro-3.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Mannat
-                                                    HD, Smart LED Fire TV </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>199 <del
-                                                        class="text-base text-slate-400">$399</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
-                                                    off</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/01.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">White
-                                                    Table Camera </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>49 <del
-                                                        class="text-base text-slate-400">$99</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
-                                                    soon</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/04.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Covid
-                                                    Safety</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">N95
-                                                    Covid Safety Mask </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>9 <del
-                                                        class="text-base text-slate-400">$19</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/03.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Imported
-                                                    VR Box </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>29 <del
-                                                        class="text-base text-slate-400">$39</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto  text-center">
-                                            <div class="flex-auto text-center bg-gray-100">
-                                                <span
-                                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span>
-                                                <a href="customers-pro-details.html">
-                                                    <img src="assets/images/products/02.png" alt=""
-                                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                                </a>
-                                            </div>
-                                            <div class="flex-auto  text-center p-4">
-                                                <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
-                                                <a href="ecommerce-product-detail.html"
-                                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
-                                                    Colorfull Shoes </a>
-                                                <div class="mb-4">
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                    <span class="text-slate-800 font-semibold">4.8</span>
-                                                </div>
-                                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>99 <del
-                                                        class="text-base text-slate-400">$199</del></h4>
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                    onclick="location.href='customers-pro-details.html'">Buy
-                                                    Now</button>
-                                            </div>
-                                        </div>
-                                    </div> <!--end card-->
-                                </div><!--end col-->
+                                        </div> <!--end card-->
+                                    </div>
+                                @endforeach
                             </div><!--end inner-grid-->
                             <div class="flex justify-between mt-4">
                                 <div class="self-center">
@@ -513,8 +107,7 @@
                                         <a href="customers-home.html">
                                             <img src="assets/images/logo-sm.png" alt=""
                                                 class="h-8 inline-block me-3">
-                                            <img src="assets/images/logo.png" alt=""
-                                                class="h-8 inline-block">
+                                            <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
                                         </a>
                                     </div>
                                     <p class="text-slate-500 text-lg">It is a long established fact that a reader will

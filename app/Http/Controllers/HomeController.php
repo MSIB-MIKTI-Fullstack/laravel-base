@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use App\Service\MailService;
 use Illuminate\Http\Request;
@@ -28,9 +29,11 @@ class HomeController extends Controller
     }
 
 
-    public function beranda()
+    public function beranda(Request $request)
     {
-        return view('customers.product');
+        $products = Product::where('product_category_id', $request->category_id)->get();
+
+        return view('customers.product', compact('products'));
     }
 
     public function readFile($filename)
