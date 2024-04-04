@@ -34,7 +34,6 @@ class HomeController extends Controller
             return User::all();
         });
 
-
         return view('beranda', compact('users'));
     }
 
