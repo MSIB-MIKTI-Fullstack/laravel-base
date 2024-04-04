@@ -9,24 +9,27 @@
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="design-system/assets/images/favicon.ico" />
+
     <!-- Css -->
     <!-- Main Css -->
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
     @vite(['resources/js/app.js'])
+
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
     class="bg-[#EEF0FC] dark:bg-gray-900">
 
     <!-- leftbar-tab-menu -->
+
     <div
-    class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#5c3dc3] to-100% dark:bg-[#06090f] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
+        class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#5c3dc3] to-100% dark:bg-[#06090f] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
         <div
             class=" text-center border-b bg-[#06090f] border-r h-[64px] flex justify-center items-center brand-logo dark:bg-[#06090f] dark:border-slate-700/40 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f] group-data-[sidebar=brand]:border-slate-700/40">
-            <a href="{{ asset('design-system/index.html')}}" class="logo">
+            <a href="index.html" class="logo">
                 <span>
                     <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo-small"
                         class="logo-sm h-8 align-middle inline-block">
@@ -64,7 +67,7 @@
                             <div id="Admin-flush" class="hidden  overflow-hidden">
                                 <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/index.html')}}"
+                                        <a href="index.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400 "></i>
@@ -72,7 +75,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-products.html')}}"
+                                        <a href="admin-products.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -80,7 +83,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-products.html')}}"
+                                        <a href="admin-add-product.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -88,7 +91,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-customers.html')}}"
+                                        <a href="admin-customers.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -96,7 +99,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-customers-details.html')}}"
+                                        <a href="admin-customers-details.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -104,7 +107,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-orders.html')}}"
+                                        <a href="admin-orders.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -112,7 +115,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-order-details.html')}}"
+                                        <a href="admin-order-details.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -120,7 +123,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/admin-refund.html')}}"
+                                        <a href="admin-refund.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -141,7 +144,7 @@
                             <div id="Customer-flush" class="hidden  overflow-hidden">
                                 <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-home.html')}}"
+                                        <a href="customers-home.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400 "></i>
@@ -149,7 +152,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-pro-details.html')}}"
+                                        <a href="customers-pro-details.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -157,7 +160,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-products.html')}}"
+                                        <a href="customers-products.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -165,7 +168,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-cart.html')}}"
+                                        <a href="customers-cart.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -173,7 +176,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-checkout.html')}}"
+                                        <a href="customers-checkout.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -181,7 +184,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-profile.html')}}"
+                                        <a href="customers-profile.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -189,7 +192,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-stores.html')}}"
+                                        <a href="customers-stores.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -197,7 +200,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-wishlist.html')}}"
+                                        <a href="customers-wishlist.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -205,7 +208,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-order-track.html')}}"
+                                        <a href="customers-order-track.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -213,7 +216,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/customers-invoice.html')}}"
+                                        <a href="customers-invoice.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -236,7 +239,7 @@
                                 <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2" id="apps-accordion"
                                     data-fc-type="accordion">
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/apps-chat.html')}}"
+                                        <a href="apps-chat.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200  flex items-center decoration-0 px-3 py-3">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -244,7 +247,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/apps-contact-list.html')}}"
+                                        <a href="apps-contact-list.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -252,7 +255,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/apps-calendar.html')}}"
+                                        <a href="apps-calendar.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -260,7 +263,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/apps-files.html')}}"
+                                        <a href="apps-files.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -268,7 +271,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a href="{{ asset('design-system/apps-invoice.html')}}"
+                                        <a href="apps-invoice.html"
                                             class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -291,7 +294,7 @@
                                             aria-labelledby="Email">
                                             <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/apps-email-inbox.html')}}"
+                                                    <a href="apps-email-inbox.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -299,7 +302,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/apps-email-read.html')}}"
+                                                    <a href="apps-email-read.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -351,7 +354,7 @@
                                             aria-labelledby="UI_Elements">
                                             <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-alerts.html')}}"
+                                                    <a href="ui-alerts.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -359,7 +362,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-avatars.html')}}"
+                                                    <a href="ui-avatars.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -367,7 +370,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-buttons.html')}}"
+                                                    <a href="ui-buttons.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -375,7 +378,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-badges.html')}}"
+                                                    <a href="ui-badges.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -383,7 +386,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('ui-cards.html')}}"
+                                                    <a href="ui-cards.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -391,7 +394,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-carousels.html')}}"
+                                                    <a href="ui-carousels.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -399,7 +402,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('ui-dropdowns.html')}}"
+                                                    <a href="ui-dropdowns.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -407,7 +410,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-grids.html')}}"
+                                                    <a href="ui-grids.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -415,7 +418,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-images.html')}}"
+                                                    <a href="ui-images.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -423,7 +426,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-lists.html')}}"
+                                                    <a href="ui-lists.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -431,7 +434,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-modals.html')}}"
+                                                    <a href="ui-modals.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -439,7 +442,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-navs.html')}}"
+                                                    <a href="ui-navs.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -447,7 +450,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('ui-navbars.html')}}"
+                                                    <a href="ui-navbars.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -455,7 +458,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('ui-paginations.html')}}"
+                                                    <a href="ui-paginations.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -463,7 +466,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-popover-tooltips.html')}}"
+                                                    <a href="ui-popover-tooltips.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -471,7 +474,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-progress.html')}}"
+                                                    <a href="ui-progress.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -479,7 +482,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-spinners.html')}}"
+                                                    <a href="ui-spinners.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -487,7 +490,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-tabs-accordions.html')}}"
+                                                    <a href="ui-tabs-accordions.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -495,7 +498,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-typography.html')}}"
+                                                    <a href="ui-typography.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -503,7 +506,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/ui-progress.html')}}"
+                                                    <a href="ui-videos.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -531,7 +534,7 @@
                                             aria-labelledby="Advanced_UI">
                                             <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-animation.html')}}"
+                                                    <a href="advanced-animation.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -539,7 +542,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-clipboard.html')}}"
+                                                    <a href="advanced-clipboard.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -547,7 +550,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-dragula.html')}}"
+                                                    <a href="advanced-dragula.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -555,7 +558,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-highlight.html')}}"
+                                                    <a href="advanced-highlight.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -563,7 +566,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-rangeslider.html')}}"
+                                                    <a href="advanced-rangeslider.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -571,7 +574,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-ratings.html')}}"
+                                                    <a href="advanced-ratings.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -579,7 +582,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/advanced-ribbons.html')}}"
+                                                    <a href="advanced-ribbons.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -587,7 +590,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href=" {{ asset('design-system/advanced-sweetalerts.html')}}"
+                                                    <a href="advanced-sweetalerts.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -615,7 +618,7 @@
                                             aria-labelledby="Forms">
                                             <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                                 <li class="nav-item relative block">
-                                                    <a href="{{ asset('design-system/forms-elements.html')}}"
+                                                    <a href="forms-elements.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -623,7 +626,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item relative block">
-                                                    <a href="{{asset('design-system/forms-advance.html')}}"
+                                                    <a href="forms-advance.html"
                                                         class="nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative group-data-[sidebar=brand]:hover:text-slate-200   flex items-center decoration-0 px-3 py-3">
                                                         <i
                                                             class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -1031,10 +1034,12 @@
                     <button
                         class="px-2 py-1 mb-2 text-orange-400 hover:text-white border border-orange-300 hover:bg-orange-300 focus:outline-none  rounded text-sm  text-center dark:border-orange-300 dark:text-orange-300 dark:hover:text-white dark:hover:bg-orange-300 ">Upgrade
                         your plan</button>
+
                 </div>
             </div>
         </div>
     </div>
+
     @include('layouts.admin.navbar')
 
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
@@ -1047,17 +1052,20 @@
                             <div class="">
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
-                                        <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')</h1>
+                                        <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')
+                                        </h1>
                                         <ol class="list-reset flex text-sm">
                                             @yield('breadcrumb')
                                         </ol>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!--end container-->
+
             <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
                 @yield('content')
             </div><!--end container-->
@@ -1066,10 +1074,13 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
+    <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+
     <script src="{{ asset('design-system/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <!-- JAVASCRIPTS -->
 </body>

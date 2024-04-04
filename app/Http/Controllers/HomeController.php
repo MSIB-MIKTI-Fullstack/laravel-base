@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use App\Service\MailService;
 use Illuminate\Http\Request;
@@ -28,18 +29,15 @@ class HomeController extends Controller
     }
 
 
-    public function beranda()
+    public function beranda(Request $request)
     {
-        $users = Cache::remember('users', 60, function () {
-            return User::all();
-        });
+        $products = Product::with(['product_category'])->where('product_category_id', $request->category_id)->get();
 
-
-        return view('beranda', compact('users'));
+        return view('customers.product', compact('products'));
     }
 
     public function readFile($filename)
     {
-        return response()->file("img/{$filename}");
+        return response()->file("design-system/assets/images/{$filename}");
     }
 }

@@ -1,3 +1,17 @@
+<x-admin-layout textColor="text-blue-500">
+    <x-slot:title>
+        Create User
+    </x-slot>
+
+    <x-slot:breadcrumb>
+        <li><a href="#" class="text-gray-500 dark:text-slate-400">Users</a></li>
+        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+        <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+            Create User</li>
+    </x-slot>
+</x-admin-layout>
+
+{{-- Past Task About CRUD Users Table
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,3 +52,4 @@
     </div>
 </body>
 </html>
+--}}
