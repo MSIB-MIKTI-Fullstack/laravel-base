@@ -38,6 +38,7 @@ Route::prefix('kasir')->group(function(){
 Route::get('/user/{id}', [UserController::class, 'show']);
 Route::post('/user/{id}', [UserController::class, 'update'])->name('user.update');
 
+Route::get('/beranda',[HomeController::class, 'beranda']);
 // resource
 Route::resources([
     'users'=> UserResourcController::class,
