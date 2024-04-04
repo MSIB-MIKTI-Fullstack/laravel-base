@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestRequestController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,5 @@ Route::resources([
 ]);
 
 Route::view('/component', 'learn-component.index');
+
+Route::get('/beranda', [HomeController::class, 'beranda']);
