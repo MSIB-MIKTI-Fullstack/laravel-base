@@ -30,11 +30,7 @@ class HomeController extends Controller
 
     public function beranda()
     {
-        $users = Cache::remember('users', 60, function () {
-            return User::all();
-        });
-
-        return view('beranda', compact('users'));
+        return view('customers.product');
     }
 
     public function readFile($filename)
