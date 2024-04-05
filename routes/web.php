@@ -30,7 +30,7 @@ Route::get('/contoh', function(){
     
 });
 
-Route::get('/',[Homecontroller::class, 'index']);  //vue admin
+Route::get('/home',[Homecontroller::class, 'index']);  //index adalah method yg ada di controller Homecontroller
 
 Route::get('/user/{$id}', [UserController::class, 'show']); // ('/URI namanya')
 

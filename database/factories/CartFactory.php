@@ -24,3 +24,4 @@ class CartFactory extends Factory
         ];
     }
 }
+
