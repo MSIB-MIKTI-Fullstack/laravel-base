@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/beranda', [HomeController::class, 'beranda']);
+// Route::get('/beranda', [HomeController::class, 'beranda']);

@@ -23,8 +23,9 @@ Route::resources([
     'users' => UserResourceController::class,
 ]);
 
-Route::middleware('cache.headers:public;max_age=3600')->group(function () {
-    Route::get('/file/{filename}', [HomeController::class, 'readFile']);
-});
+// Route::middleware('cache.headers:public;max_age=3600')->group(function () {
+//     Route::get('/file/{filename}', [HomeController::class, 'readFile']);
+// });
 
 Route::get('/beranda', [HomeController::class, 'beranda']);
+

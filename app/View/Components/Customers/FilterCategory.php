@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Customers;
 
+use App\Models\ProductCategory;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,8 @@ class FilterCategory extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.customers.filter-category');
+        $categories = ProductCategory::all();
+
+        return view('components.customers.filter-category', compact('categories'));
     }
 }
