@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -12,9 +13,11 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function beranda()
+    public function beranda(Request $request)
     {
-        return view('customers.product');
+        $products = Product::with(['product_category'])->where('product_category_id', $request->category_id)->get();
+
+        return view('customers.product', compact('products'));
     }
 }
 
