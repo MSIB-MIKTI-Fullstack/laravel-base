@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\UserResourcController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,30 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/percobaan', function(){
-    echo "Percobaan";
-});
-Route::get('/coba', [HomeController::class, 'coba']);
-Route::get('/home', [HomeController::class, 'index']);
 
-Route::post('home/create', [HomeController::class, 'coba']);
-Route::put('home/create', [HomeController::class, 'coba']);
-Route::delete('home/create', [HomeController::class, 'coba']);
 
-Route::prefix('kasir')->group(function(){
-    Route::post('home/create', [HomeController::class, 'coba']);
-    Route::put('home/create', [HomeController::class, 'coba']);
-    Route::delete('home/create', [HomeController::class, 'coba']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
-Route::get('/user/{id}', [UserController::class, 'show']);
-Route::post('/user/{id}', [UserController::class, 'update'])->name('user.update');
-
-Route::get('/beranda',[HomeController::class, 'beranda']);
-// resource
-Route::resources([
-    'users'=> UserResourcController::class,
-]);
+Route::get('/products',[HomeController::class, 'products'])->name('costumer.products');
+ 
