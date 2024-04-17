@@ -4,6 +4,18 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,22 +27,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/aldi', function () {
-    return "<h1>SAYA ALDI</h1>";
-});
+// Route::get('/aldi', function () {
+//     return "<h1>SAYA ALDI</h1>";
+// });
 
-Route::get('/home', [HomeController::class, 'beranda']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard', ['name' => 'Renaldi'], ['tglLahir' => date('d-m-Y')]);
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard', ['name' => 'Renaldi'], ['tglLahir' => date('d-m-Y')]);
+// });
 
-Route::get('/aldi', function () {
-    return redirect('dashboard');
-});
+// Route::get('/aldi', function () {
+//     return redirect('dashboard');
+// });
 
-Route::resource('users', UserController::class);
+// Route::resource('users', UserController::class);

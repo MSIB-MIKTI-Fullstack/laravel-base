@@ -25,13 +25,13 @@
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC] dark:bg-gray-900">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
 
-    <div class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#06090f] to-100% dark:bg-[#06090f] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
-        class="min-h-full z-[99] fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#5c3dc3] to-100% dark:bg-[#06090f] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
-        <div class=" text-center border-b bg-[#06090f] border-r h-[64px] flex justify-center items-center brand-logo dark:bg-[#06090f] dark:border-slate-700/40 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f] group-data-[sidebar=brand]:border-slate-700/40">
+    <div class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#06090f] to-100% main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
+        class="min-h-full z-[99] fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#5c3dc3] to-100% main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
+        <div class=" text-center border-b bg-[#06090f] border-r h-[64px] flex justify-center items-center brand-logo group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f] group-data-[sidebar=brand]:border-slate-700/40">
             <a href="index.html" class="logo">
                 @@ -1022,82 +1022,25 @@ class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=b
         </div>
@@ -42,7 +42,7 @@
     </div>
 
 
-    <nav id="topbar" class="topbar border-b  dark:border-slate-700/40  fixed inset-x-0  duration-300
+    <nav id="topbar" class="topbar border-b   fixed inset-x-0  duration-300
              block print:hidden z-50">
         <div class="mx-0 flex max-w-full flex-wrap items-center lg:mx-auto relative top-[50%] start-[50%] transform -translate-x-1/2 -translate-y-1/2">
             <div class="ltr:mx-2  rtl:mx-2">
@@ -60,48 +60,48 @@
                 </div>
                 <div class="me-2  dropdown relative">
                     <button type="button" class="dropdown-toggle flex items-center rounded-full text-sm
-                    focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
+                    focus:bg-none focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
                         <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets/images/users/avatar-1.png') }}" alt="user photo" />
                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                            <span class="block font-medium text-slate-600 dark:text-gray-300">Maria Gibson</span>
-                            <span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">Admin</span>
+                            <span class="block font-medium text-slate-600">Maria Gibson</span>
+                            <span class="-mt-0.5 block text-xs text-slate-500">Admin</span>
                         </span>
                     </button>
 
                     <div class="left-auto right-0 z-50 my-1 hidden list-none
                     divide-y divide-gray-100 rounded border border-slate-700/10
-                    text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40" id="navUserdata">
+                    text-base shadow bg-white w-40" id="navUserdata">
                         <div class="rounded-md py-4 px-3 mt-12  mb-4 relative bg-primary-300/10 text-center">
                             <a href="javascript: void(0);" class="float-right close-btn text-slate-400">
                                 <i class="mdi mdi-close"></i>
                             </a>
-                            <h5 class="my-3 text-lg font-medium text-slate-700 dark:text-slate-300 group-data-[sidebar=dark]:text-slate-300 group-data-[sidebar=brand]:text-slate-300">
+                            <h5 class="my-3 text-lg font-medium text-slate-700 group-data-[sidebar=dark]:text-slate-300 group-data-[sidebar=brand]:text-slate-300">
                                 Mannat Themes</h5>
                             <p class="mb-3 text-sm text-slate-400">We Design and Develop Clean and High Quality Web
                                 Applications</p>
-                            <button class="px-2 py-1 mb-2 text-orange-400 hover:text-white border border-orange-300 hover:bg-orange-300 focus:outline-none  rounded text-sm  text-center dark:border-orange-300 dark:text-orange-300 dark:hover:text-white dark:hover:bg-orange-300 ">Upgrade
+                            <button class="px-2 py-1 mb-2 text-orange-400 hover:text-white border border-orange-300 hover:bg-orange-300 focus:outline-none  rounded text-sm  text-center ">Upgrade
                                 your plan</button>
 
                             <ul class="py-1" aria-labelledby="navUserdata">
                                 <li>
                                     <a href="#" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                          dark:text-gray-200 dark:hover:bg-gray-900/20
-                          dark:hover:text-white">
-                                        <span data-lucide="user" class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                         
+                         ">
+                                        <span data-lucide="user" class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                         Profile</a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                          dark:text-gray-200 dark:hover:bg-gray-900/20
-                          dark:hover:text-white">
-                                        <span data-lucide="settings" class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                         
+                         ">
+                                        <span data-lucide="settings" class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                         Settings</a>
                                 </li>
                                 <li>
                                     <a href="auth-lockscreen.html" class="flex items-center py-2 px-3 text-sm text-red-500 hover:bg-gray-50 hover:text-red-600
-                          dark:text-red-500 dark:hover:bg-gray-900/20
-                          dark:hover:text-red-500">
-                                        <span data-lucide="power" class="w-4 h-4 inline-block text-red-500 dark:text-red-500 me-2"></span>
+                         
+                         ">
+                                        <span data-lucide="power" class="w-4 h-4 inline-block text-red-500 me-2"></span>
                                         Sign out</a>
                                 </li>
                             </ul>
@@ -119,16 +119,16 @@
                             <div class="">
                                 <div class=" flex flex-wrap justify-between">
             <div class="items-center ">
-                <h1 class="font-medium text-3xl block dark:text-slate-100">Title Page</h1>
-                <h1 class="font-medium text-3xl block dark:text-slate-100">@yield('title_page')
+                <h1 class="font-medium text-3xl block">Title Page</h1>
+                <h1 class="font-medium text-3xl block">@yield('title_page')
                 </h1>
                 <ol class="list-reset flex text-sm">
-                    <li><a href="#" class="text-gray-500 dark:text-slate-400">Module</a>
+                    <li><a href="#" class="text-gray-500">Module</a>
                     </li>
-                    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                    <li class="text-gray-500 dark:text-slate-400">Sub Module</li>
-                    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                    <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+                    <li><span class="text-gray-500 mx-2">/</span></li>
+                    <li class="text-gray-500">Sub Module</li>
+                    <li><span class="text-gray-500 mx-2">/</span></li>
+                    <li class="text-primary-500 hover:text-primary-600">
                         Sub Module Active</li>
                     @yield('breadcrumb')
                 </ol>
