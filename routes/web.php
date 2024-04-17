@@ -27,7 +27,7 @@ Route::resources([
 //     Route::get('/file/{filename}', [HomeController::class, 'readFile']);
 // });
 
-Route::get('/beranda', [HomeController::class, 'beranda']);
+Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
 
 
 Route::middleware([
