@@ -1,5 +1,5 @@
 <nav id="topbar" class="topbar border-b  dark:border-slate-700/40  fixed inset-x-0  duration-300
-            block print:hidden z-50">
+             block print:hidden z-50">
     <div class="mx-0 flex max-w-full flex-wrap items-center lg:mx-auto relative top-[50%] start-[50%] transform -translate-x-1/2 -translate-y-1/2">
         <div class="ltr:mx-2  rtl:mx-2">
             <button id="toggle-menu-hide" class="button-menu-mobile flex rounded-full md:me-0 relative">
@@ -43,7 +43,7 @@
 
                 <div class="left-auto right-0 z-50 my-1 hidden w-64
                     list-none divide-y h-52 divide-gray-100 rounded border border-slate-700/10
-                text-base shadow dark:divide-gray-600 bg-white
+                   text-base shadow dark:divide-gray-600 bg-white
                     dark:bg-slate-800" id="navNotifications" data-simplebar>
                     <ul class="py-1" aria-labelledby="navNotifications">
                         <li class="py-2 px-4">
@@ -67,7 +67,7 @@
                         <li class="py-2 px-4">
                             <a href="javascript:void(0);" class="dropdown-item">
                                 <div class="flex">
-                                    <img class="object-cover rounded-full h-8 w-8 shrink-0 me-3" src="design-system/assets/images/users/avatar-3.png') }}" alt="logo" />
+                                    <img class="object-cover rounded-full h-8 w-8 shrink-0 me-3" src="public/assets/images/users/avatar-3.png') }}" alt="logo" />
                                     <div class="flex-grow flex-1 ms-0.5 overflow-hidden">
                                         <p class="text-sm font-medium text-gray-900 truncate
                                 dark:text-gray-300">
