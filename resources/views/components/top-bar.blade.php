@@ -1,6 +1,6 @@
 <div>
     <nav id="topbar"
-    class="topbar border-b  dark:border-slate-700/40  fixed inset-x-0  duration-300
+    class="topbar border-b   fixed inset-x-0  duration-300
          block print:hidden z-50">
     <div
         class="mx-0 flex max-w-full flex-wrap items-center lg:mx-auto relative top-[50%] start-[50%] transform -translate-x-1/2 -translate-y-1/2">
@@ -20,47 +20,47 @@
             <div class="me-2  dropdown relative">
                 <button type="button"
                     class="dropdown-toggle flex items-center rounded-full text-sm
-                focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
+                focus:bg-none focus:ring-0 md:me-0"
                     id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
                     <img class="h-8 w-8 rounded-full"
                         src="{{ asset('design-system/assets/images/users/avatar-1.png') }}" alt="user photo" />
                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                        <span class="block font-medium text-slate-600 dark:text-gray-300">Maria Gibson</span>
-                        <span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">Admin</span>
+                        <span class="block font-medium text-slate-600">Maria Gibson</span>
+                        <span class="-mt-0.5 block text-xs text-slate-500">Admin</span>
                     </span>
                 </button>
 
                 <div class="left-auto right-0 z-50 my-1 hidden list-none
                 divide-y divide-gray-100 rounded border border-slate-700/10
-                text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40"
+                text-base shadow bg-white w-40"
                     id="navUserdata">
 
                     <ul class="py-1" aria-labelledby="navUserdata">
                         <li>
                             <a href="#"
                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                      dark:text-gray-200 dark:hover:bg-gray-900/20
-                      dark:hover:text-white">
+                     
+                     ">
                                 <span data-lucide="user"
-                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                 Profile</a>
                         </li>
                         <li>
                             <a href="#"
                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                      dark:text-gray-200 dark:hover:bg-gray-900/20
-                      dark:hover:text-white">
+                     
+                     ">
                                 <span data-lucide="settings"
-                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                 Settings</a>
                         </li>
                         <li>
                             <a href="auth-lockscreen.html"
                                 class="flex items-center py-2 px-3 text-sm text-red-500 hover:bg-gray-50 hover:text-red-600
-                      dark:text-red-500 dark:hover:bg-gray-900/20
-                      dark:hover:text-red-500">
+                     
+                     ">
                                 <span data-lucide="power"
-                                    class="w-4 h-4 inline-block text-red-500 dark:text-red-500 me-2"></span>
+                                    class="w-4 h-4 inline-block text-red-500 me-2"></span>
                                 Sign out</a>
                         </li>
                     </ul>

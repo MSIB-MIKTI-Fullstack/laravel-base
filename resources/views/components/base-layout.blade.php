@@ -8,7 +8,7 @@
     </head>
 
     <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-        class="bg-[#EEF0FC] dark:bg-gray-900">
+        class="bg-[#EEF0FC]">
 
         <x-left-bar></x-left-bar>
         <x-top-bar></x-top-bar>

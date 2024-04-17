@@ -21,14 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/token', function () {
-    return view('users.token');
-})->middleware('verify.token');
+Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
 
-Route::resources([
-    'users' => UsersController::class
-]);
-
-Route::view('/component', 'learn-component.index');
-
-Route::get('/beranda', [HomeController::class, 'beranda']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function beranda(Request $request)
+    public function products(Request $request)
     {
-        $products = Product::where('product_category_id', $request->category_id)->get();
+        $products = Product::with(['product_category'])
+            ->when($request->category_id != "", function ($q) use ($request) {
+                $q->where('product_category_id', $request->category_id);
+            })->paginate(10);
+
+
         return view('customers.product', compact('products'));
     }
 }

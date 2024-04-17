@@ -9,14 +9,14 @@
                             <div class="">
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
-                                        <h1 class="font-medium text-3xl block dark:text-red-500">{{ $titlePage }}</h1>
+                                        <h1 class="font-medium text-3xl block">{{ $titlePage }}</h1>
                                         <ol class="list-reset flex text-sm">
-                                            <li><a href="#" class="text-gray-500 dark:text-slate-400">Module</a>
+                                            <li><a href="#" class="text-gray-500">Module</a>
                                             </li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-gray-500 dark:text-slate-400">Sub Module</li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+                                            <li><span class="text-gray-500 mx-2">/</span></li>
+                                            <li class="text-gray-500">Sub Module</li>
+                                            <li><span class="text-gray-500 mx-2">/</span></li>
+                                            <li class="text-primary-500 hover:text-primary-600">
                                                 Sub Module Active</li>
                                         </ol>
                                     </div>
