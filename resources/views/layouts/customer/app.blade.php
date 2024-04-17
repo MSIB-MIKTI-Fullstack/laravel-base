@@ -22,11 +22,11 @@
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC] dark:bg-gray-900">
+    class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
     <header class="relative z-40 w-full bg-white print:hidden">
-        <div class="hidden border-b dark:border-slate-700/40 sm:block py-1 bg-black">
+        <div class="hidden border-b sm:block py-1 bg-black">
             <div class="container mx-auto">
                 <div class="-mx-4 flex flex-wrap">
                     <div class="w-full px-4 md:w-1/2 lg:w-1/2 self-center">
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="border-b dark:border-slate-700/40 lg:py-3 bg-[#EEF0FC]">
+        <div class="border-b lg:py-3 bg-[#EEF0FC]">
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
@@ -108,7 +108,7 @@
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
                         <div class="hidden w-full lg:flex">
                             <form
-                                class="relative flex w-full items-center rounded-md border dark:border-slate-700/40 bg-[#fff]">
+                                class="relative flex w-full items-center rounded-md border bg-[#fff]">
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
@@ -129,18 +129,18 @@
                         <div class="flex w-full items-center justify-end space-x-2 md:space-x-4">
                             <div class=" dropdown relative block lg:hidden">
                                 <button type="button"
-                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
+                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] bg-[#f4f7ff] text-dark"
                                     aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
                                     <span data-lucide="search" class="w-5 h-5"></span>
                                 </button>
 
                                 <div class="-left-40 md:left-auto right-0 z-50 my-1 hidden min-w-[300px] sm:min-w-[400px] md:min-w-[400px] lg:min-w-[500px] max-w-full
                         list-none divide-y  divide-gray-100 rounded-md border-slate-700
-                        md:border-white text-base shadow dark:divide-gray-600 bg-white
-                        dark:bg-slate-800"
+                        md:border-white text-base shadow bg-white
+                       "
                                     onclick="event.stopPropagation()">
                                     <form
-                                        class="relative flex w-full items-center rounded-md border dark:border-slate-700/40 bg-[#f4f7ff] ">
+                                        class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -161,48 +161,48 @@
                             <div class="me-2  dropdown relative">
                                 <button type="button"
                                     class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
+                        focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
                                     <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600 dark:text-gray-300">Maria
+                                        <span class="block font-medium text-slate-600">Maria
                                             Gibson</span>
                                     </span>
                                 </button>
 
                                 <div class="left-auto right-0 z-50 my-1 hidden list-none
                         divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40"
+                        text-base shadow bg-white w-40"
                                     id="navUserdata">
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
                                             <a href="customers-profile.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                              dark:text-gray-200 dark:hover:bg-gray-900/20
-                              dark:hover:text-white">
+                             
+                             ">
                                                 <span data-lucide="user"
-                                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                 Profile</a>
                                         </li>
                                         <li>
                                             <a href="customers-invoice.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                              dark:text-gray-200 dark:hover:bg-gray-900/20
-                              dark:hover:text-white">
+                             
+                             ">
                                                 <span data-lucide="file-spreadsheet"
-                                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                 Invoice</a>
                                         </li>
                                         <li>
                                             <a href="auth-lock-screen.html"
                                                 class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                              dark:text-red-400 dark:hover:bg-gray-900/20
-                              dark:hover:text-red-500">
+                             
+                             ">
                                                 <span data-lucide="power"
-                                                    class="w-4 h-4 inline-block text-red-400 dark:text-red-400 me-2"></span>
+                                                    class="w-4 h-4 inline-block text-red-400 me-2"></span>
                                                 Sign out</a>
                                         </li>
                                     </ul>
@@ -227,9 +227,9 @@
                             </a>
 
                             <div
-                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] dark:border-slate-700/40 bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
+                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
                                 <span
-                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 dark:border-slate-700/40 bg-white lg:block"></span>
+                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 bg-white lg:block"></span>
 
                                 <div class="group submenu relative px-6">
                                     <a href="javascript:void(0)"
@@ -241,7 +241,7 @@
                                     </a>
 
                                     <div
-                                        class="left-full top-0 dark:border-slate-700/40 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
+                                        class="left-full top-0 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
                                         <div class="-mx-2 flex flex-wrap">
                                             <div class="w-full px-2 lg:w-1/3">
                                                 <div>

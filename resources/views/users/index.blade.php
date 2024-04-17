@@ -4,9 +4,9 @@
     </x-slot>
 
     <x-slot:breadcrumb>
-        <li><a href="#" class="text-gray-500 dark:text-slate-400">Users</a></li>
-        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-        <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+        <li><a href="#" class="text-gray-500">Users</a></li>
+        <li><span class="text-gray-500 mx-2">/</span></li>
+        <li class="text-primary-500 hover:text-primary-600">
             User Table</li>
     </x-slot>
 </x-admin-layout>

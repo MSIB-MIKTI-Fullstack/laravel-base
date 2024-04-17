@@ -5,7 +5,7 @@
             <a href="/beranda?category_id={{ $item->id }}">
                 <div
                     class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">
-                    <label class="custom-label inline-block dark:text-slate-300">
+                    <label class="custom-label inline-block">
                         <span class="ms-1">{{ $item->name }}</span>
                     </label>
                 </div>
