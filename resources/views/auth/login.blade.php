@@ -1,97 +1,48 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth group" data-sidebar="brand" dir="ltr">
+<x-guest-layout>
+    <x-authentication-card>
+        <x-slot name="logo">
+            <x-authentication-card-logo />
+        </x-slot>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Robotech - Admin & Dashboard Template</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta content="Tailwind Multipurpose Admin & Dashboard Template" name="description" />
-  <meta content="" name="Mannatthemes" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="/design-system/assets/images/favicon.ico" />
+        <x-validation-errors class="mb-4" />
 
-  <!-- Css -->
-  <!-- Main Css -->
-  <link rel="stylesheet" href="/design-system/assets/libs/icofont/icofont.min.css">
-  <link href="/design-system/assets/libs/flatpickr/flatpickr.min.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="/design-system/assets/css/tailwind.min.css">
-
-</head>
-
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-  class="bg-[#EEF0FC] dark:bg-gray-900">
-
-  <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
-    <div
-      class="w-full  m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md">
-      <div class="text-center p-6 bg-slate-900 rounded-t">
-        <a href="index.html"><img src="/design-system/assets/images/logo-sm.png" alt="" class="w-14 h-14 mx-auto mb-2"></a>
-        <h3 class="font-semibold text-white text-xl mb-1">Let's Get Started Robotech</h3>
-        <p class="text-xs text-slate-400">Sign in to continue to Robotech.</p>
-      </div>
-
-      @if ($errors->has('email'))
-      <div class="flex p-3 mb-4 bg-red-100 rounded-lg dark:bg-red-200" role="alert">
-        <i class="fas fa-triangle-exclamation flex-shrink-0 text-red-700 self-center"></i>
-        <div class="ml-3 text-sm font-medium text-red-700 dark:text-red-800">
-            {{ $errors->first('email') }}
-        </div>
-        <button type="button"
-          class="justify-center items-center ml-auto -mx-1.5 -my-1.5 bg-red-100 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300 alert-hidden">
-
-          <i class="icofont-close"></i>
-        </button>
-      </div>
-      @endif
-
-      <form action="" class="p-6">
-        <div>
-          <label for="email" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email</label>
-          <input type="text" id="email" name="email"
-            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700"
-            placeholder="Your Email" required>
-        </div>
-        <div class="mt-4">
-          <label for="password" class="font-medium text-sm text-slate-600 dark:text-slate-400">Your password</label>
-          <input type="password" id="password" name="password"
-            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700"
-            placeholder="Password" required>
-        </div>
-        <a href="{{ route('forgot-password') }}" class="text-xs font-medium text-brand-500 underline ">Forget Password?</a>
-        <div class="block mt-3">
-          <label class="custom-label block dark:text-slate-300">
-            <div
-              class="bg-white dark:bg-slate-700  border border-slate-200 dark:border-slate-600 rounded w-4 h-4  inline-block leading-4 text-center -mb-[3px]">
-              <input type="checkbox" class="hidden">
-              <i class="fas fa-check hidden text-xs text-slate-700 dark:text-slate-200"></i>
+        @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
             </div>
-            Remember me
-          </label>
-        </div>
-        <div class="mt-4">
-          <button
-            class="w-full px-2 py-2 tracking-wide text-white transition-colors duration-200 transform bg-brand-500 rounded hover:bg-brand-600 focus:outline-none focus:bg-brand-600">
-            Login
-          </button>
-        </div>
-      </form>
-      <p class="mb-5 text-sm font-medium text-center text-slate-500"> Don't have an account? <a
-          href="{{ route('register') }}" class="font-medium text-brand-500 hover:underline">Sign up</a>
-      </p>
-    </div>
-  </div>
+        @endif
 
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-  <!-- JAVASCRIPTS -->
-  <!-- <div class="menu-overlay"></div> -->
-  <script src="/design-system/assets/libs/lucide/umd/lucide.min.js"></script>
-  <script src="/design-system/assets/libs/simplebar/simplebar.min.js"></script>
-  <script src="/design-system/assets/libs/flatpickr/flatpickr.min.js"></script>
-  <script src="/design-system/assets/libs/@frostui/tailwindcss/frostui.js"></script>
+            <div>
+                <x-label for="email" value="{{ __('Email') }}" />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            </div>
 
-  <script src="/design-system/assets/js/app.js"></script>
-  <!-- JAVASCRIPTS -->
-</body>
+            <div class="mt-4">
+                <x-label for="password" value="{{ __('Password') }}" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            </div>
 
-</html>
+            <div class="block mt-4">
+                <label for="remember_me" class="flex items-center">
+                    <x-checkbox id="remember_me" name="remember" />
+                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+
+                <x-button class="ms-4">
+                    {{ __('Log in') }}
+                </x-button>
+            </div>
+        </form>
+    </x-authentication-card>
+</x-guest-layout>

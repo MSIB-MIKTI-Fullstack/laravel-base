@@ -1,13 +1,13 @@
 @push('breadcrumb')
   <div class="flex flex-wrap justify-between">
     <div class="items-center ">
-      <h1 class="font-medium text-3xl block dark:text-slate-100">Detail Mahasiswa</h1>
+      <h1 class="font-medium text-3xl block">Detail Mahasiswa</h1>
       <ol class="list-reset flex text-sm">
-        <li><a href="#" class="text-gray-500 dark:text-slate-400">Master Data</a></li>
-        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-        <li class="text-gray-500 dark:text-slate-400">Mahasiswa</li>
-        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-        <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">Detail Mahasiswa</li>
+        <li><a href="#" class="text-gray-500">Master Data</a></li>
+        <li><span class="text-gray-500 mx-2">/</span></li>
+        <li class="text-gray-500">Mahasiswa</li>
+        <li><span class="text-gray-500 mx-2">/</span></li>
+        <li class="text-primary-500 hover:text-primary-600">Detail Mahasiswa</li>
       </ol>
     </div>
     <div class="flex items-center">
@@ -21,22 +21,22 @@
 
 <x-admin.app title="Mahasiswa">
 
-  <div class="bg-white dark:bg-slate-800 shadow  rounded-md w-full relative">
+  <div class="bg-white shadow  rounded-md w-full relative">
     <div class="flex-auto p-4 text-center">
       <img src="/design-system/assets/images/users/avatar-1.png" alt=""
         class="h-16 inline-block rounded-full mb-4">
-      <h5 class="text-lg font-semibold text-slate-700 dark:text-gray-400 leading-3">{{ $mahasiswa->nama }} </h5>
+      <h5 class="text-lg font-semibold text-slate-700 leading-3">{{ $mahasiswa->nama }} </h5>
       <span class="text-slate-500 text-sm">Mahasiswa</span>
       <div class="mt-0 mb-2">
-        <p class="text-sm text-slate-500 font-medium block"><span class="text-slate-700 dark:text-slate-400"><i
+        <p class="text-sm text-slate-500 font-medium block"><span class="text-slate-700"><i
               class="ti ti-phone text-lg text-slate-500"></i> NIM :</span> {{ $mahasiswa->nim }}</p>
-        <p class="text-sm text-slate-500 font-medium block"><span class="text-slate-700 dark:text-slate-400"><i
+        <p class="text-sm text-slate-500 font-medium block"><span class="text-slate-700"><i
               class="ti ti-mail text-lg text-slate-500"></i> Jurusan :</span> {{ $mahasiswa->jurusan }}</p>
       </div>
       <button
-        class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500  text-sm font-medium py-1 px-3 rounded">KHS</button>
+        class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">KHS</button>
       <button
-        class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500  text-sm font-medium py-1 px-3 rounded">Transkrip</button>
+        class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Transkrip</button>
 
     </div>
   </div>

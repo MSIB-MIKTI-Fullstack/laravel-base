@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
         // data dummy
         $this->call([
             MahasiswaSeeder::class,
+            ProductCategorySeeder::class,
+            ProductSeeder::class,
+            CartSeeder::class
         ]);
     }
 }

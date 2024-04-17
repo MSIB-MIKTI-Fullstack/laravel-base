@@ -3,63 +3,18 @@
 namespace App\Http\Controllers\LandingPage;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function products(Request $request)
     {
-        return 'Hello, index!';
-    }
+        $products = Product::with(['product_category'])
+            ->when($request->category_id != "", function ($q) use ($request) {
+                $q->where('product_category_id', $request->category_id);
+            })->paginate(10);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return 'Hello, create!';
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        return 'Hello, store!';
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        return 'Hello, show!';
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        return 'Hello, edit!';
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        return 'Hello, update!';
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        return 'Hello, destroy!';
+        return view('customer.product.index', compact('products'));
     }
 }
