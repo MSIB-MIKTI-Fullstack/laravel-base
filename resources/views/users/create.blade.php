@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{{-- @extends('layouts.admin.app')
+@section('title_page')
+    Halaman Create User
+@endsection
+@section('breadcrumb')
+    <li><a href="#" class="text-gray-500">Users</a></li>
+    <li><span class="text-gray-500 mx-2">/</span></li>
+    <li class="text-primary-500 hover:text-primary-600">
+        User Create</li>
+@endsection
+@section('content')
+    <h1>Ini konten dari create users</h1>
+@endsection
+@push('scripts')
+    <script src="{{ asset('design-system/assets/js/pages/analytics-index.init.js') }}"></script>
+@endpush --}}
+<x-admin-layout textColor="text-blue-500">
+    <x-slot:title>
+        Create User
+    </x-slot>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create User</title>
-</head>
-
-<body>
-    <form action="{{ route('users.store') }}" method="POST">
-        @csrf
-        <input type="text" name="name" placeholder="name" />
-        <input type="text" name="email" placeholder="email" />
-        <input type="password" name="password" placeholder="password" />
-        <button type="submit">Submit</button>
-    </form>
-</body>
-
-</html>
+    <x-slot:breadcrumb>
+        <li><a href="#" class="text-gray-500">Users</a></li>
+        <li><span class="text-gray-500 mx-2">/</span></li>
+        <li class="text-primary-500 hover:text-primary-600">
+            Create User</li>
+    </x-slot>
+</x-admin-layout>
