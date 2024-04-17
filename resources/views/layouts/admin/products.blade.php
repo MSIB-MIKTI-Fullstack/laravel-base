@@ -10,12 +10,12 @@
                             <div class="">
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
-                                        <h1 class="font-medium text-3xl block dark:text-slate-100">Products</h1>
+                                        <h1 class="font-medium text-3xl block">Products</h1>
                                         <ol class="list-reset flex text-sm">
-                                            <li><a href="#" class="text-gray-500 dark:text-slate-400">Admin</a>
+                                            <li><a href="#" class="text-gray-500">Admin</a>
                                             </li>
-                                            <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
-                                            <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">
+                                            <li><span class="text-gray-500 mx-2">/</span></li>
+                                            <li class="text-primary-500 hover:text-primary-600">
                                             Products</li>
                                         </ol>
                                     </div>

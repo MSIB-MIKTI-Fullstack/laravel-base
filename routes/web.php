@@ -16,25 +16,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// route::get('/coba', function () {
+//     echo 'belajar routing dengan laravel';
+// });
+
+// route::prefix('/halaman')->group(function () {
+//     route::get('/home', [HomeController::class, 'index'])->name('halaman.home');
+//     route::get('/dashboard', [HomeController::class, 'dashboard'])->name('halaman.dashboard');
+// });
+
+// route::resources([
+//     'user' => UserController::class,
+// ]);
+
+// route::get('admin', [AdminController::class, 'index'])->name('admin.dashboard');
+// Route::get('admin/products', [AdminController::class, 'products'])->name('admin.products');
+
+// route::view('view-component', 'view-component.dashboard')->name('view.admin.dashboard');
+// route::view('view-component/products', 'view-component.products')->name('view.admin.products');
+
+route::get('/products', [HomeController::class, 'products'])->name('customer.products');
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
-
-route::get('/coba', function () {
-    echo "belajar routing dengan laravel";
-});
-
-route::prefix('/halaman')->group(function () {
-    route::get('/home', [HomeController::class, 'index'])->name('halaman.home');
-    route::get('/dashboard', [HomeController::class, 'dashboard'])->name('halaman.dashboard');
-});
-
-route::resources([
-    'user' => UserController::class,
-]);
-
-route::get('admin', [AdminController::class,'index'])->name('admin.dashboard');
-Route::get('admin/products', [AdminController::class,'products'])->name('admin.products');
-
-route::view('view-component', 'view-component.dashboard')->name('view.admin.dashboard');
-route::view('view-component/products', 'view-component.products')->name('view.admin.products');
