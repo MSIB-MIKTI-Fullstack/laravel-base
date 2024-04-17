@@ -30,7 +30,7 @@ Route::get('/contoh', function(){
     
 });
 
-Route::get('/home',[Homecontroller::class, 'index']);  //index adalah method yg ada di controller Homecontroller
+
 
 Route::get('/user/{$id}', [UserController::class, 'show']); // ('/URI namanya')
 
@@ -50,3 +50,15 @@ Route::delete('/todo/{todo}/destroy', [TodoController::class, 'destroy'])->name(
 
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/products',[Homecontroller::class, 'products'])->name('customer.products');  //index adalah method yg ada di controller Homecontroller

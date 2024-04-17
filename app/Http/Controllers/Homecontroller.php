@@ -13,9 +13,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+
+    public function products(Request $request)
     {
-        $products = Product::where('product_category_id', $request->category_id)->get();
+        $products = Product::with(['product_category'])
+            ->when($request->category_id != "", function ($q) use ($request) {
+                $q->where('product_category_id', $request->category_id);
+            })->paginate(8);
+        
         return view('customers.product', compact('products'));
     }
 }

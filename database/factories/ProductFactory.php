@@ -22,8 +22,9 @@ class ProductFactory extends Factory
         $name = fake()->text(255);
         return [
             'name' => $name,
+            'image' => fake()->imageUrl(640, 640),
             'description' => fake()->text(255),
-            'price' => fake()->numberBetween(1000, 1000), //1000 disini adalah harga minimum dan 10000 adalah harga maksimum
+            'price' => fake()->numberBetween(10000, 1000000), //1000 disini adalah harga minimum dan 10000 adalah harga maksimum
             'slug' => Str::slug($name),
             'product_category_id' => ProductCategory::factory()
             ];
