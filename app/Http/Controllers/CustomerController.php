@@ -6,10 +6,10 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
-class HomeController extends Controller
+class CustomerController extends Controller
 {
     public function home() {
-        // 
+        return view('customers.home');
     }
     public function products(Request $request)
     {
