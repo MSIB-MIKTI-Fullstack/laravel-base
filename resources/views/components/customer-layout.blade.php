@@ -12,17 +12,20 @@
     <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
-    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
-    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
-    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
+    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}"
+        type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
     @vite(['resources/js/app.js'])
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC]">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
     <header class="relative z-40 w-full bg-white print:hidden">
@@ -101,14 +104,15 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            <img src="{{ asset('design-system/assets') }}/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
-                            <img src="{{ asset('design-system/assets') }}/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
+                            <img src="{{ asset('design-system/assets') }}/images/logo-sm.png"
+                                alt="logo" class="w-6 md:w-8 inline-block">
+                            <img src="{{ asset('design-system/assets') }}/images/logo-dark.png"
+                                alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
                         <div class="hidden w-full lg:flex">
-                            <form
-                                class="relative flex w-full items-center rounded-md border bg-[#fff]">
+                            <form class="relative flex w-full items-center rounded-md border bg-[#fff]">
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
@@ -137,10 +141,8 @@
                                 <div class="-left-40 md:left-auto right-0 z-50 my-1 hidden min-w-[300px] sm:min-w-[400px] md:min-w-[400px] lg:min-w-[500px] max-w-full
                         list-none divide-y  divide-gray-100 rounded-md border-slate-700
                         md:border-white text-base shadow bg-white
-                       "
-                                    onclick="event.stopPropagation()">
-                                    <form
-                                        class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
+                       " onclick="event.stopPropagation()">
+                                    <form class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -159,12 +161,11 @@
                                 </div>
                             </div>
                             <div class="me-2  dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
-                                    id="user-profile" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets') }}/images/users/avatar-10.png"
+                                <button type="button" class="dropdown-toggle flex items-center rounded-full text-sm
+                        focus:bg-none focus:ring-0 md:me-0" id="user-profile" aria-expanded="false"
+                                    data-fc-autoclose="both" data-fc-type="dropdown">
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="{{ asset('design-system/assets') }}/images/users/avatar-10.png"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                         <span class="block font-medium text-slate-600">Maria
@@ -174,13 +175,11 @@
 
                                 <div class="left-auto right-0 z-50 my-1 hidden list-none
                         divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow bg-white w-40"
-                                    id="navUserdata">
+                        text-base shadow bg-white w-40" id="navUserdata">
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
-                                            <a href="customers-profile.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
+                                            <a href="customers-profile.html" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                              
                              ">
                                                 <span data-lucide="user"
@@ -188,8 +187,7 @@
                                                 Profile</a>
                                         </li>
                                         <li>
-                                            <a href="customers-invoice.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
+                                            <a href="customers-invoice.html" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                              
                              ">
                                                 <span data-lucide="file-spreadsheet"
@@ -197,8 +195,7 @@
                                                 Invoice</a>
                                         </li>
                                         <li>
-                                            <a href="auth-lock-screen.html"
-                                                class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
+                                            <a href="auth-lock-screen.html" class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
                              
                              ">
                                                 <span data-lucide="power"
@@ -406,20 +403,30 @@
         <div class="page-wrapper relative  duration-300 pt-0 w-full">
             <div class="xl:w-full  min-h-[calc(100vh-0px)] relative pb-0">
                 {{ $slot }}
-            </div><!--end main-->
-        </div><!--end page-wrapper-->
-    </div><!--end div-->
+            </div>
+            <!--end main-->
+        </div>
+        <!--end page-wrapper-->
+    </div>
+    <!--end div-->
 
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-    <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}">
+    </script>
+    <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}">
+    </script>
+    <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}">
+    </script>
+    <script
+        src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}">
+    </script>
 
-    <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}">
+    </script>
+    <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}">
+    </script>
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <script>
         NiceSelect.bind(document.querySelector(".nice-select"));
