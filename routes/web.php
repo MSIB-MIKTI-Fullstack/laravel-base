@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SessionControll;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', function () {
     return view('welcome');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
 // //127.0.0.1:8000/siswa ==>  <h1>SAYA SISWA</h1>
@@ -41,3 +50,5 @@ Route::get('siswa/{id}',[SiswaController::class,'detail']);
 Route::get('/sesi',[SessionControll::class,'index']);
 Route::post('/sesi/login',[SessionControll::class,'login']);
 
+
+Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
