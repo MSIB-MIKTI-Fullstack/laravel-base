@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,17 @@ Route::put('/barangs/{id}', [BarangController::class, 'update'])->name('crud.upd
 Route::delete('/barangs/{id}', [BarangController::class, 'destroy'])->name('crud.destroy');
 
 
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [CustomerController::class, 'home'])->name('home');
+    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+});
