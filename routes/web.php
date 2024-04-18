@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\Admin\MahasiswaController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\LandingPage\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,20 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // Route::get('about', function () {
 //     return "Hello, I'm Moch Ihsan Saepulloh";
-// });
-
-// Route::prefix('home')->group(function () {
-//     Route::get('/', [HomeController::class, 'index'])->name('home.index');
-//     Route::get('/{id}', [HomeController::class, 'show'])->name('home.show');
-//     Route::put('/{id}', [HomeController::class, 'update'])->name('home.update');
-//     Route::delete('/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
-//     Route::post('/', [HomeController::class, 'store'])->name('home.store');
 // });
 
 // // Route::prefix('/')->group(function () {
@@ -51,8 +38,11 @@ Route::middleware([
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::resource('user', UserController::class)->names('admin.user');
     Route::resource('mahasiswa', MahasiswaController::class)->names('admin.mahasiswa');
+    Route::resource('user', UserController::class)->names('admin.user');
 });
 
-Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [CustomerController::class, 'home'])->name('home');
+    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+});

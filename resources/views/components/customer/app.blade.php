@@ -33,15 +33,9 @@
   <div class="ltr:flex flex-1 rtl:flex-row-reverse">
     <div class="page-wrapper relative  duration-300 pt-0 w-full">
       <div class="xl:w-full  min-h-[calc(100vh-0px)] relative pb-0">
-        <div class="container my-4">
-          <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
 
-            <x-customer.filter />
+        {{ $slot }}
 
-            {{ $slot }}
-
-          </div> <!--end grid-->
-        </div><!--end container-->
         <!-- footer -->
         <div
           class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black dark:border-slate-700/40">
