@@ -298,7 +298,7 @@
                                 <span class="pe-2">
                                     <i data-lucide="menu" class="h-5 w-5"></i>
                                 </span>
-                                All categories
+                                <!-- All categories -->
                             </a>
 
                             <div
