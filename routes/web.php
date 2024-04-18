@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SessionControll;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\HomeController;
@@ -51,4 +52,7 @@ Route::get('/sesi',[SessionControll::class,'index']);
 Route::post('/sesi/login',[SessionControll::class,'login']);
 
 
-Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
+Route::group(['as' => 'customer.'], function () {
+Route::get('/products', [CustomerController::class, 'products'])->name('products');
+Route::get('/', [CustomerController::class, 'home'])->name('home');
+});
