@@ -23,17 +23,17 @@
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <a href="#" class="">
-                                                        <img src="assets/images/products/pro-3.png" alt="" class="w-full h-auto p-10">
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/pro-3.png" alt="" class="w-full h-auto p-10">
                                                     </a>
                                                 </div>  
                                                 <div class="swiper-slide">
                                                     <a href="#" class="">
-                                                        <img src="assets/images/products/pro-7.png" alt="" class="w-full h-auto p-10">
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/pro-7.png" alt="" class="w-full h-auto p-10">
                                                     </a>
                                                 </div>  
                                                 <div class="swiper-slide">
                                                     <a href="#" class="">
-                                                        <img src="assets/images/products/pro-4.png" alt="" class="w-full h-auto p-10">
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/pro-4.png" alt="" class="w-full h-auto p-10">
                                                     </a>
                                                 </div>                         
                                             </div>
@@ -53,7 +53,7 @@
                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
                     <div class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900  rounded-md w-full relative overflow-hidden" >
                         <div class="absolute end-36 z-0 hidden md:block">
-                            <img src="assets/images/products/p-1.png" alt="">
+                            <img src="{{ asset('design-system/assets/') }}/images/products/p-1.png" alt="">
                         </div>
                         <div class="flex-auto p-4">
                             <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">                                                   
@@ -66,7 +66,7 @@
                                 </div><!--end col-->
                                 <div class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4 self-center">
                                     <div class="flex-auto p-4 ">
-                                        <img src="assets/images/products/pro-1.png" alt="" class="w-full h-auto z-[1] relative"> 
+                                        <img src="{{ asset('design-system/assets/') }}/images/products/pro-1.png" alt="" class="w-full h-auto z-[1] relative"> 
                                     </div><!--end card-body-->
                                 </div><!--end col-->                                                                         
                             </div> <!--end grid-->
@@ -76,7 +76,7 @@
                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
                     <div class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900  rounded-md w-full relative overflow-hidden" >
                         <div class="absolute end-0 bottom-0 z-0">
-                            <img src="assets/images/products/p-2.png" alt="">
+                            <img src="{{ asset('design-system/assets/') }}/images/products/p-2.png" alt="">
                         </div>
                         <div class="flex-auto p-4">
                             <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">                                                   
@@ -89,7 +89,7 @@
                                 </div><!--end col-->
                                 <div class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4 self-center">
                                     <div class="flex-auto p-4 ">
-                                        <img src="assets/images/products/pro-2.png" alt="" class="w-full h-auto z-[1] relative"> 
+                                        <img src="{{ asset('design-system/assets/') }}/images/products/pro-2.png" alt="" class="w-full h-auto z-[1] relative"> 
                                     </div><!--end card-body-->
                                 </div><!--end col-->                                                                         
                             </div> <!--end grid-->
@@ -112,42 +112,42 @@
                                             <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2 self-center">
                                                 <div class="flex-auto p-4 ">
                                                     <a href="#">
-                                                        <img src="assets/images/products/bl-1.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/bl-1.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
                                                     </a>
                                                 </div><!--end card-body-->
                                             </div><!--end col-->  
                                             <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2 self-center">
                                                 <div class="flex-auto p-4 ">
                                                     <a href="#">
-                                                        <img src="assets/images/products/bl-2.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500">
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/bl-2.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500">
                                                     </a> 
                                                 </div><!--end card-body-->
                                             </div><!--end col-->  
                                             <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2 self-center">
                                                 <div class="flex-auto p-4 ">
                                                     <a href="#">
-                                                        <img src="assets/images/products/bl-3.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/bl-3.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
                                                     </a>
                                                 </div><!--end card-body-->
                                             </div><!--end col--> 
                                             <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2 self-center">
                                                 <div class="flex-auto p-4 ">
                                                    <a href="#">
-                                                        <img src="assets/images/products/bl-1.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/bl-1.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
                                                    </a>
                                                 </div><!--end card-body-->
                                             </div><!--end col-->  
                                             <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2 self-center">
                                                 <div class="flex-auto p-4 ">
                                                     <a href="#">
-                                                        <img src="assets/images/products/bl-3.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/bl-3.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
                                                     </a>
                                                 </div><!--end card-body-->
                                             </div><!--end col-->  
                                             <div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2 self-center">
                                                 <div class="flex-auto p-4 ">
                                                     <a href="#">
-                                                        <img src="assets/images/products/bl-4.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
+                                                        <img src="{{ asset('design-system/assets/') }}/images/products/bl-4.png" alt="" class="w-20 h-auto grayscale hover:grayscale-0 duration-500"> 
                                                     </a>
                                                 </div><!--end card-body-->
                                             </div><!--end col-->                                                                        

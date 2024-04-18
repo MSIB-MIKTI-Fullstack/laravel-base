@@ -101,8 +101,8 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            <img src="assets/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
-                            <img src="assets/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
+                            <img src="{{ asset('design-system/assets') }}/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
+                            <img src="{{ asset('design-system/assets') }}/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
@@ -178,7 +178,7 @@
                         focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
+                                    <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets/') }}/images/users/avatar-10.png"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                         <span class="block font-medium text-slate-600">Maria
@@ -302,9 +302,9 @@
                                     <div class="flex-auto p-4">
                                         <div class="mb-5">
                                             <a href="customers-home.html">
-                                                <img src="assets/images/logo-sm.png" alt=""
+                                                <img src="{{ asset('design-system/assets/') }}/images/logo-sm.png" alt=""
                                                     class="h-8 inline-block me-3">
-                                                <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
+                                                <img src="{{ asset('design-system/assets/') }}/images/logo.png" alt="" class="h-8 inline-block">
                                             </a>
                                         </div>
                                         <p class="text-slate-500 text-lg">It is a long established fact that a reader will
