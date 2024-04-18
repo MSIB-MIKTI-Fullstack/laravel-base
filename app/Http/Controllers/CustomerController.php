@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     public function home(){
-        
+        return view('customers.home');
+
     }
     public function products(Request $request){
         $products = Product::with('product_category')
