@@ -22,8 +22,7 @@
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC]">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
     <header class="relative z-40 w-full bg-white print:hidden">
@@ -102,14 +101,15 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            <img src="assets/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
-                            <img src="assets/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
+                                class="w-6 md:w-8 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
+                                class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
                         <div class="hidden w-full lg:flex">
-                            <form
-                                class="relative flex w-full items-center rounded-md border bg-[#fff]">
+                            <form class="relative flex w-full items-center rounded-md border bg-[#fff]">
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
@@ -140,8 +140,7 @@
                         md:border-white text-base shadow bg-white
                        "
                                     onclick="event.stopPropagation()">
-                                    <form
-                                        class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
+                                    <form class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -158,80 +157,18 @@
                                         </a>
                                     </form>
                                 </div>
-                                <div class="dropdown relative">
-                      <button
-                        type="button"
-                        class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                        id="Notifications"
-                        aria-expanded="false"
-                         data-fc-autoclose="both" data-fc-type="dropdown">
-                        <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                        <span class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                          2
-                        </span>
-                      </button>
-
-                      <div
-                        class="left-auto -right-10 md:right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
-                        <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
-                          <div class="-mx-1 flex items-center justify-between pb-4">
-                            <div class="flex items-center px-1">
-                              <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                <img src="assets/images/products/02.png" alt="product image" class="w-8 h-8">
-                              </div>
-                              <div>
-                                <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                  Circular Sienna
-                                </a>
-                                <p class="truncate text-xs font-medium text-body-color">
-                                  Awesome white shirt
-                                </p>
-                              </div>
                             </div>
-                            <div class="px-1">
-                              <p class="text-base font-semibold text-black">$36.00</p>
-                            </div>
-                          </div>
-                          <div class="-mx-1 flex items-center justify-between py-4">
-                            <div class="flex items-center px-1">
-                              <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                  <img src="assets/images/products/01.png" alt="product image" class="w-8 h-8">
-                              </div>
-                              <div>
-                                <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                  Black T-shirt
-                                </a>
-                                <p class="truncate text-xs font-medium text-body-color">
-                                  It's a nice black t-shirt
-                                </p>
-                              </div>
-                            </div>
-                            <div class="px-1">
-                              <p class="text-base font-semibold text-black">$36.00</p>
-                            </div>
-                          </div>
-                        </div>
-                
-                        <div class="-mx-1 flex items-center justify-between  pb-6">
-                          <div class="px-1">
-                            <p class="text-base font-medium text-black">
-                              Total Payable
-                            </p>
-                          </div>
-                          <div class="px-1">
-                            <p class="text-base font-semibold text-black">$88.15</p>
-                          </div>
-                        </div>
-
-                        <div>
-                          <a href="customers-checkout.html" class="flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
-                            Place Order
-                          </a>
-                        </div>
-                      </div>
-</div>
+                            <div class="dropdown relative">
+                                <button type="button"
+                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
+                                    id="Notifications" aria-expanded="false" data-fc-autoclose="both"
+                                    data-fc-type="dropdown">
+                                    <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
+                                    <span
+                                        class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
+                                        2
+                                    </span>
+                                </button>
                             </div>
                             <div class="me-2  dropdown relative">
                                 <button type="button"
@@ -239,7 +176,8 @@
                         focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                         <span class="block font-medium text-slate-600">Maria
@@ -256,7 +194,7 @@
                                         <li>
                                             <a href="customers-profile.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             
+
                              ">
                                                 <span data-lucide="user"
                                                     class="w-4 h-4 inline-block text-slate-800 me-2"></span>
@@ -265,7 +203,7 @@
                                         <li>
                                             <a href="customers-invoice.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             
+
                              ">
                                                 <span data-lucide="file-spreadsheet"
                                                     class="w-4 h-4 inline-block text-slate-800 me-2"></span>
@@ -274,7 +212,7 @@
                                         <li>
                                             <a href="auth-lock-screen.html"
                                                 class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                             
+
                              ">
                                                 <span data-lucide="power"
                                                     class="w-4 h-4 inline-block text-red-400 me-2"></span>
@@ -291,136 +229,6 @@
         <div>
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
-                    <div class="w-full max-w-full px-4 lg:w-60">
-                        <div class="relative py-4 group categories">
-                            <a href="javascript:void(0)"
-                                class="inline-flex  relative items-center justify-between whitespace-nowrap rounded bg-brand-50/70 px-5 py-2 text-base font-medium text-brand-500 hover:bg-opacity-90">
-                                <span class="pe-2">
-                                    <i data-lucide="menu" class="h-5 w-5"></i>
-                                </span>
-                                All categories
-                            </a>
-
-                            <div
-                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
-                                <span
-                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 bg-white lg:block"></span>
-
-                                <div class="group submenu relative px-6">
-                                    <a href="javascript:void(0)"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand group-hover:text-brand">
-                                        Fashion
-                                        <span>
-                                            <i data-lucide="chevron-right" class="h-4"></i>
-                                        </span>
-                                    </a>
-
-                                    <div
-                                        class="left-full top-0 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
-                                        <div class="-mx-2 flex flex-wrap">
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <div>
-                                                    <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                        Man
-                                                    </h3>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Cargo Pants
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Jackets
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        T-Shirts
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Shirts
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Jeans
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <div>
-                                                    <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                        Woman
-                                                    </h3>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Dresses
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Tees
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Leggings
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Wedding Dresses
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Prom Dresses
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                    Kids
-                                                </h3>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Body Wash
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Nightwear
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Shorts
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Sunglasses
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Summer Caps
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Phone & Smartwatch
-                                    </a>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Laptops
-                                    </a>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Jewelry
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="flex w-full items-center justify-between px-4">
                         <div class="w-full">
                             <button data-collapse-toggle="mobile-menu-2" type="button" id="toggle-menu"
@@ -434,14 +242,14 @@
                                 class="order-2 hidden w-full items-center justify-between md:order-1 md:ms-5 lg:flex md:w-auto">
                                 <ul class="blcok items-center lg:flex px-4 md:px-0">
                                     <li>
-                                        <a href="customers-home.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                        <a href="{{ route('customer.home') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.home') ? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-products.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                        <a href="{{ route('customer.products') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }}  hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Products
                                         </a>
                                     </li>
@@ -484,6 +292,129 @@
             </div><!--end main-->
         </div><!--end page-wrapper-->
     </div><!--end div-->
+
+    <!-- footer -->
+    <div class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black">
+        <div class="container">
+            <!-- Footer Start -->
+            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-10">
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <div class="mb-5">
+                            <a href="customers-home.html">
+                                <img src="assets/images/logo-sm.png" alt="" class="h-8 inline-block me-3">
+                                <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
+                            </a>
+                        </div>
+                        <p class="text-slate-500 text-lg">It is a long established fact that a reader will
+                            be distracted by the readable content of a page when looking at its layout. </p>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
+                        <ul class="list-none footer-links">
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Product
+                                    details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Invoice</a>
+                            </li>
+                        </ul>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
+                        <ul class="list-none footer-links">
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Dashboard</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Add
+                                    product</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Orders</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Customers</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Order
+                                    details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
+                            </li>
+                        </ul>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6 sm:text-center xl:text-left">
+                            Contact Us</h5>
+                        <div class="mb-5">
+                            <p class="text-slate-400 font-semibold">1884 George Avenue<br>
+                                Mobile, AL 36603
+                            </p>
+                        </div>
+                        <div class="flex sm:justify-center xl:justify-start">
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600">
+                                <i class="icofont-facebook"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
+                                <i class="icofont-twitter"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
+                                <i class="icofont-google-plus"></i>
+                            </a>
+                        </div>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+            </div>
+            <footer class="footer bg-transparent  text-center  font-medium text-slate-400 md:text-left ">
+                &copy;
+                <script>
+                    var year = new Date();
+                    document.write(year.getFullYear());
+                </script>
+                Robotech
+                <span class="float-right hidden text-slate-400 md:inline-block">Crafted
+                    with <i class="ti ti-heart text-red-500"></i> by
+                    Mannatthemes</span>
+            </footer>
+            <!-- end Footer -->
+        </div>
+    </div>
 
 
     <!-- JAVASCRIPTS -->
