@@ -229,7 +229,6 @@
         <div>
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
-                 
                     <div class="flex w-full items-center justify-between px-4">
                         <div class="w-full">
                             <button data-collapse-toggle="mobile-menu-2" type="button" id="toggle-menu"
@@ -243,14 +242,14 @@
                                 class="order-2 hidden w-full items-center justify-between md:order-1 md:ms-5 lg:flex md:w-auto">
                                 <ul class="blcok items-center lg:flex px-4 md:px-0">
                                     <li>
-                                        <a href="{{ route('customer.home')}}"
-                                            class="{{ Route::is('customer.home')? 'text-brand' : ''}} flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                        <a href="{{ route('customer.home') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.home') ? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('customer.products')}}"
-                                            class="{{ Route::is('customer.home')? 'text-brand' : ''}} flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                        <a href="{{ route('customer.products') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Products
                                         </a>
                                     </li>
