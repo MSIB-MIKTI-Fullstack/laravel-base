@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 /*
@@ -25,9 +26,3 @@ Route::middleware([
 
 Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
 
-Route::get('about', function () {
-    return "Hello";
-});
-
-Route::resource('users', UserController::class);
-Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
