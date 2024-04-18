@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CobaController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/products', [CobaController::class, 'products'])->name('customer.products');
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+    Route::get('/', [CustomerController::class, 'home'])->name('home');
+});

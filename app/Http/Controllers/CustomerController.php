@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CobaController extends Controller
+class CustomerController extends Controller
 {
+    public function home(){
+        
+    }
     public function products(Request $request){
         $products = Product::with('product_category')
         ->when($request->category_id != "", function ($q) use ($request){
