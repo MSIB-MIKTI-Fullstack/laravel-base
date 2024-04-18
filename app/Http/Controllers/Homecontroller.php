@@ -14,6 +14,15 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+    public function home(){
+
+        $products = Product::orderBy('created_at', 'desc')
+        ->orderBy('created_at', 'desc')
+        ->take(8)
+        ->get();
+        return view('customers.home', compact('products'));
+    }
+
     public function products(Request $request)
     {
         $products = Product::with(['product_category'])

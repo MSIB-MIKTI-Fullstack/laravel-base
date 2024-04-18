@@ -61,4 +61,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/products',[Homecontroller::class, 'products'])->name('customer.products');  //index adalah method yg ada di controller Homecontroller
+Route::group(['as' => 'customer.'], function(){
+    Route::get('/products',[Homecontroller::class, 'products'])->name('products');  //index adalah method yg ada di controller Homecontroller
+    Route::get('/home', [Homecontroller::class, 'home'])->name('home'); //home adalah method yg ada di controller Homecontroller
+});
+
