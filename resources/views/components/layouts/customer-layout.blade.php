@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    @vite(['resources/js/app.js'])
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC]">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
     <header class="relative z-40 w-full bg-white print:hidden">
@@ -101,14 +101,15 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            <img src="assets/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
-                            <img src="assets/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
+                                class="w-6 md:w-8 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
+                                class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
                         <div class="hidden w-full lg:flex">
-                            <form
-                                class="relative flex w-full items-center rounded-md border bg-[#fff]">
+                            <form class="relative flex w-full items-center rounded-md border bg-[#fff]">
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
@@ -139,8 +140,7 @@
                         md:border-white text-base shadow bg-white
                        "
                                     onclick="event.stopPropagation()">
-                                    <form
-                                        class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
+                                    <form class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -158,13 +158,26 @@
                                     </form>
                                 </div>
                             </div>
+                            <div class="dropdown relative">
+                                <button type="button"
+                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
+                                    id="Notifications" aria-expanded="false" data-fc-autoclose="both"
+                                    data-fc-type="dropdown">
+                                    <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
+                                    <span
+                                        class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
+                                        2
+                                    </span>
+                                </button>
+                            </div>
                             <div class="me-2  dropdown relative">
                                 <button type="button"
                                     class="dropdown-toggle flex items-center rounded-full text-sm
                         focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                         <span class="block font-medium text-slate-600">Maria
@@ -181,7 +194,7 @@
                                         <li>
                                             <a href="customers-profile.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             
+
                              ">
                                                 <span data-lucide="user"
                                                     class="w-4 h-4 inline-block text-slate-800 me-2"></span>
@@ -190,7 +203,7 @@
                                         <li>
                                             <a href="customers-invoice.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             
+
                              ">
                                                 <span data-lucide="file-spreadsheet"
                                                     class="w-4 h-4 inline-block text-slate-800 me-2"></span>
@@ -199,7 +212,7 @@
                                         <li>
                                             <a href="auth-lock-screen.html"
                                                 class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                             
+
                              ">
                                                 <span data-lucide="power"
                                                     class="w-4 h-4 inline-block text-red-400 me-2"></span>
@@ -409,6 +422,129 @@
             </div><!--end main-->
         </div><!--end page-wrapper-->
     </div><!--end div-->
+
+    <!-- footer -->
+    <div class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black">
+        <div class="container">
+            <!-- Footer Start -->
+            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-10">
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <div class="mb-5">
+                            <a href="customers-home.html">
+                                <img src="assets/images/logo-sm.png" alt="" class="h-8 inline-block me-3">
+                                <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
+                            </a>
+                        </div>
+                        <p class="text-slate-500 text-lg">It is a long established fact that a reader will
+                            be distracted by the readable content of a page when looking at its layout. </p>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
+                        <ul class="list-none footer-links">
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Product
+                                    details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Invoice</a>
+                            </li>
+                        </ul>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
+                        <ul class="list-none footer-links">
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Dashboard</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Add
+                                    product</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Orders</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Customers</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Order
+                                    details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
+                            </li>
+                        </ul>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6 sm:text-center xl:text-left">
+                            Contact Us</h5>
+                        <div class="mb-5">
+                            <p class="text-slate-400 font-semibold">1884 George Avenue<br>
+                                Mobile, AL 36603
+                            </p>
+                        </div>
+                        <div class="flex sm:justify-center xl:justify-start">
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600">
+                                <i class="icofont-facebook"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
+                                <i class="icofont-twitter"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
+                                <i class="icofont-google-plus"></i>
+                            </a>
+                        </div>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+            </div>
+            <footer class="footer bg-transparent  text-center  font-medium text-slate-400 md:text-left ">
+                &copy;
+                <script>
+                    var year = new Date();
+                    document.write(year.getFullYear());
+                </script>
+                Robotech
+                <span class="float-right hidden text-slate-400 md:inline-block">Crafted
+                    with <i class="ti ti-heart text-red-500"></i> by
+                    Mannatthemes</span>
+            </footer>
+            <!-- end Footer -->
+        </div>
+    </div>
 
 
     <!-- JAVASCRIPTS -->
