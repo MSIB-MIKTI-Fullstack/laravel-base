@@ -181,7 +181,7 @@
                                     <i class="icofont-star text-yellow-400 inline-block"></i>
                                     <span class="text-slate-800 font-semibold">4.8</span>
                                 </div>
-                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">Rp. </sup>{{ number_format($product->price, 0)}} <del class="text-base text-slate-400">$99</del></h4>                                                
+                                <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">Rp. </sup>{{ number_format($product->price, 0)}}</h4>                                                
                                 <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy Now</button>
                             </div>
                         </div>
