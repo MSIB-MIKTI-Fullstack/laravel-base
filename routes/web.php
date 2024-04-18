@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +37,11 @@ use Illuminate\Support\Facades\Route;
 // route::view('view-component', 'view-component.dashboard')->name('view.admin.dashboard');
 // route::view('view-component/products', 'view-component.products')->name('view.admin.products');
 
-route::get('/products', [HomeController::class, 'products'])->name('customer.products');
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [CustomerController::class, 'home'])->name('home');
+    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+});
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
