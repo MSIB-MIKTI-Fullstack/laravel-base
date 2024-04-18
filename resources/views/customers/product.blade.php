@@ -11,9 +11,10 @@
                                 </div>
                                 <div class="flex-auto p-4">
                                     <x-customers.filter-category></x-customers.filter-category>
-                                </div><!--end card-body-->
+                                </div> <!--end card-body-->
                             </div> <!--end inner-grid-->
-                        </div><!--end col-->
+                        </div> <!--end col-->
+                        
                         <div class="col-span-12 sm:col-span-8 md:col-span-9 lg:col-span-9 xl:col-span-9">
                             @if ($products->count() > 0)
                                 <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
@@ -188,8 +189,6 @@
                         <!-- end Footer -->
                     </div>
                 </div>
-
-
             </div><!--end main-->
         </div><!--end page-wrapper-->
     </div><!--end div-->
