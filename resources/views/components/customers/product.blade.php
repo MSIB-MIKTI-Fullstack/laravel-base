@@ -163,7 +163,7 @@
                                 document.write(year.getFullYear());
                             </script>
                             Robotech
-                            <span class="float-right hidden text-slate-400 dark:text-slate-400 md:inline-block">Crafted
+                            <span class="float-right hidden text-slate-400 md:inline-block">Crafted
                                 with <i class="ti ti-heart text-red-500"></i> by
                                 Mannatthemes</span>
                         </footer>
