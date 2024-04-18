@@ -25,6 +25,6 @@ Route::middleware([
 });
 
 Route::group(['as' => 'customer.'], function () {
-    Route::get('/', [CustomerController::class, 'home'])->name('home');
+    Route::get('', [CustomerController::class, 'home'])->name('home');
     Route::get('/products', [CustomerController::class, 'products'])->name('products');
 });

@@ -9,7 +9,8 @@ class CustomerController extends Controller
 {
     public function home()
     {
-        return view('customers.home');
+        $products = Product::with(['product_category'])->orderBy('created_at', 'desc')->take(8)->get();
+        return view('customers.home', compact('products'));
     }
 
     public function products(Request $request)
