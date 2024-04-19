@@ -1,21 +1,44 @@
-@extends('layouts.admin')
-
+@extends('users.layout.app')
+@section('title')
+    Edit User {{ $user->name }}
+@endsection
 @section('content')
-    <div class="container">
-        <h1>Edit Pengguna</h1>
-        <form action="{{ route('users.update', $user->id) }}" method="POST">
+    <div class="w-full max-w-xs">
+        <form action="{{ route('users.update', $user->id) }}" method="POST"
+            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf
             @method('PUT')
-            <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="name" type="text" placeholder="Name" value="{{ $user->name }}">
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    Email
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="email" type="text" placeholder="Email" value="{{ $user->email }}">
             </div>
-            <!-- Tambahkan input untuk bidang lainnya jika diperlukan -->
-            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="password" type="password">
+            </div>
+            <div class="flex items-center justify-between">
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Submit
+                </button>
+            </div>
         </form>
     </div>
 @endsection

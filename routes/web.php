@@ -1,10 +1,7 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContohController;
-use App\Http\Controllers\HomeController as ControllersHomeController;
-use App\Http\Controllers\LandingPage\HomeController;
-use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,16 +14,17 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
-Route::get('/contoh', [App\Http\Controllers\ContohController::class, 'contoh']);
-
-
-Route::resources([
-    'users' => App\Http\Controllers\UsersController::class
-]);
-
-Route::resource('users', UsersController::class);
-Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [CustomerController::class, 'home'])->name('home');
+    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+});

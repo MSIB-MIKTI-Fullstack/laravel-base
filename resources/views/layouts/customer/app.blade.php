@@ -22,11 +22,11 @@
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC] dark:bg-gray-900">
+    class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
     <header class="relative z-40 w-full bg-white print:hidden">
-        <div class="hidden border-b dark:border-slate-700/40 sm:block py-1 bg-black">
+        <div class="hidden border-b sm:block py-1 bg-black">
             <div class="container mx-auto">
                 <div class="-mx-4 flex flex-wrap">
                     <div class="w-full px-4 md:w-1/2 lg:w-1/2 self-center">
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="border-b dark:border-slate-700/40 lg:py-3 bg-[#EEF0FC]">
+        <div class="border-b lg:py-3 bg-[#EEF0FC]">
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
@@ -108,7 +108,7 @@
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
                         <div class="hidden w-full lg:flex">
                             <form
-                                class="relative flex w-full items-center rounded-md border dark:border-slate-700/40 bg-[#fff]">
+                                class="relative flex w-full items-center rounded-md border bg-[#fff]">
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
@@ -129,18 +129,18 @@
                         <div class="flex w-full items-center justify-end space-x-2 md:space-x-4">
                             <div class=" dropdown relative block lg:hidden">
                                 <button type="button"
-                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
+                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] bg-[#f4f7ff] text-dark"
                                     aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
                                     <span data-lucide="search" class="w-5 h-5"></span>
                                 </button>
 
                                 <div class="-left-40 md:left-auto right-0 z-50 my-1 hidden min-w-[300px] sm:min-w-[400px] md:min-w-[400px] lg:min-w-[500px] max-w-full
                         list-none divide-y  divide-gray-100 rounded-md border-slate-700
-                        md:border-white text-base shadow dark:divide-gray-600 bg-white
-                        dark:bg-slate-800"
+                        md:border-white text-base shadow bg-white
+                       "
                                     onclick="event.stopPropagation()">
                                     <form
-                                        class="relative flex w-full items-center rounded-md border dark:border-slate-700/40 bg-[#f4f7ff] ">
+                                        class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -158,52 +158,51 @@
                                     </form>
                                 </div>
                             </div>
-                            <x-cart />
                             <div class="me-2  dropdown relative">
                                 <button type="button"
                                     class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
+                        focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
                                     <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600 dark:text-gray-300">Maria
+                                        <span class="block font-medium text-slate-600">Maria
                                             Gibson</span>
                                     </span>
                                 </button>
 
                                 <div class="left-auto right-0 z-50 my-1 hidden list-none
                         divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40"
+                        text-base shadow bg-white w-40"
                                     id="navUserdata">
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
                                             <a href="customers-profile.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                              dark:text-gray-200 dark:hover:bg-gray-900/20
-                              dark:hover:text-white">
+                             
+                             ">
                                                 <span data-lucide="user"
-                                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                 Profile</a>
                                         </li>
                                         <li>
                                             <a href="customers-invoice.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                              dark:text-gray-200 dark:hover:bg-gray-900/20
-                              dark:hover:text-white">
+                             
+                             ">
                                                 <span data-lucide="file-spreadsheet"
-                                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                 Invoice</a>
                                         </li>
                                         <li>
                                             <a href="auth-lock-screen.html"
                                                 class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                              dark:text-red-400 dark:hover:bg-gray-900/20
-                              dark:hover:text-red-500">
+                             
+                             ">
                                                 <span data-lucide="power"
-                                                    class="w-4 h-4 inline-block text-red-400 dark:text-red-400 me-2"></span>
+                                                    class="w-4 h-4 inline-block text-red-400 me-2"></span>
                                                 Sign out</a>
                                         </li>
                                     </ul>
@@ -228,9 +227,9 @@
                             </a>
 
                             <div
-                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] dark:border-slate-700/40 bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
+                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
                                 <span
-                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 dark:border-slate-700/40 bg-white lg:block"></span>
+                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 bg-white lg:block"></span>
 
                                 <div class="group submenu relative px-6">
                                     <a href="javascript:void(0)"
@@ -242,7 +241,7 @@
                                     </a>
 
                                     <div
-                                        class="left-full top-0 dark:border-slate-700/40 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
+                                        class="left-full top-0 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
                                         <div class="-mx-2 flex flex-wrap">
                                             <div class="w-full px-2 lg:w-1/3">
                                                 <div>
@@ -406,656 +405,7 @@
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
         <div class="page-wrapper relative  duration-300 pt-0 w-full">
             <div class="xl:w-full  min-h-[calc(100vh-0px)] relative pb-0">
-                <div class="container my-4">
-                    <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-4 xl:col-span-4 ">
-                            <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                <div
-                                    class="border-b border-slate-200 dark:border-slate-700/40 py-3 px-4 dark:text-slate-300/70">
-                                    <div class="flex-none md:flex">
-                                        <h4 class="font-medium flex-1 self-center mb-2 md:mb-0">Order Summary</h4>
-                                    </div>
-                                </div><!--end header-title-->
-                                <div class="flex flex-col">
-                                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                        <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
-                                            <div class="overflow-hidden">
-                                                <table class="min-w-full">
-                                                    <thead class="bg-slate-100 dark:bg-slate-700/20">
-                                                        <tr>
-                                                            <th scope="col"
-                                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                                                Products
-                                                            </th>
-                                                            <th scope="col"
-                                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                                                Quantity
-                                                            </th>
-                                                            <th scope="col"
-                                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                                                Total
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- Product 1 -->
-                                                        <tr
-                                                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                <img src="assets/images/products/01.png"
-                                                                    alt="" class="mr-2 h-8 inline-block">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                                    White Table Camera</h5>
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                1
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                $99
-                                                            </td>
-                                                        </tr>
-                                                        <!-- Product 2 -->
-                                                        <tr
-                                                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                <img src="assets/images/products/02.png"
-                                                                    alt="" class="mr-2 h-8 inline-block">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                                    New Colorfull Shoes</h5>
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                1
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                $59
-                                                            </td>
-                                                        </tr>
-                                                        <!-- Product 3 -->
-                                                        <tr
-                                                            class="bg-white border-b-2 border-solid dark:bg-gray-900 dark:border-gray-700/40">
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                <img src="assets/images/products/03.png"
-                                                                    alt="" class="mr-2 h-8 inline-block">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                                    Imported VR Box</h5>
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                1
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                $49
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="bg-white dark:bg-gray-900">
-                                                            <td
-                                                                class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                Total
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                3
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                $207
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!--end card-->
-                            <div class="bg-black dark:bg-slate-800/30 shadow  rounded-md relative w-full mt-4">
-                                <div class="flex-auto p-4">
-                                    <div class="grid grid-cols-1  rounded-md">
-                                        <div class="sm:-mx-6 lg:-mx-8">
-                                            <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
-                                                <table class="min-w-full">
-                                                    <tbody>
-                                                        <!-- 1 -->
-                                                        <tr
-                                                            class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
-                                                            <td
-                                                                class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                                Subtotal
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                                $207.00
-                                                            </td>
-                                                        </tr>
-                                                        <!-- 2 -->
-                                                        <tr
-                                                            class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
-                                                            <td
-                                                                class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                                Shipping Charge
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                                $5.00
-                                                            </td>
-                                                        </tr>
-                                                        <!-- 3 -->
-                                                        <tr class="">
-                                                            <td
-                                                                class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                                Promo Code
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                                -$10.00
-                                                            </td>
-                                                        </tr>
-                                                        <!-- 4 -->
-                                                        <tr
-                                                            class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
-                                                            <td
-                                                                class="p-3 text-base text-gray-200 whitespace-nowrap font-medium">
-                                                                Total
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                                $202.00
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="flex gap-4 mb-4">
-                                            <button
-                                                class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
-                                                shopping</button>
-                                            <button
-                                                class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Back
-                                                to cart</button>
-                                        </div>
-                                        <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note
-                                                :</span> It is a long established fact that a reader will be distracted
-                                            by the readable content of a page when looking at its layout.</p>
-                                    </div>
-                                </div><!--end card-body-->
-                            </div>
-                        </div><!--end col-->
-                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-8 xl:col-span-8 ">
-                            <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative mb-4">
-                                <div
-                                    class="border-b border-slate-200 dark:border-slate-700/40 py-3 px-4 dark:text-slate-300/70">
-                                    <h4 class="font-medium">Delivery Address</h4>
-                                </div><!--end header-title-->
-                                <div class="flex-auto p-4">
-                                    <div class="grid grid-cols-4 gap-4">
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                            <div class="mb-2">
-                                                <label for="First_Name"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">First
-                                                    Name<small class="text-red-600 text-sm">*</small></label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="First name" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                            <div class="mb-2">
-                                                <label for="Last_name"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
-                                                    Name<small class="text-red-600 text-sm">*</small></label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Last name" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-4 gap-4">
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                            <div class="mb-2">
-                                                <label for="Delivery_Address"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Delivery
-                                                    Address<small class="text-red-600 text-sm">*</small></label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Address" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                            <div class="mb-2">
-                                                <label for="Address"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Address</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Address" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="City"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="City"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">Surat</option>
-                                                    <option class="dark:text-slate-700">New York</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="State"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="State"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">Gujarat</option>
-                                                    <option class="dark:text-slate-700">California</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Country"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="Country"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">India</option>
-                                                    <option class="dark:text-slate-700">USA</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-4 gap-4">
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Zip_code"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
-                                                    code<small class="text-red-600 text-sm">*</small></label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="------" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                            <div class="mb-2">
-                                                <label for="Email_Address"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
-                                                    Address</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Enter Email" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Mobile_No"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
-                                                    No<small class="text-red-600 text-sm">*</small></label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Mobile no" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="flex">
-                                        <input type="checkbox" class="accent-brand-500">
-                                        <span for="default-checkbox"
-                                            class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
-                                            Shipping Address</span>
-                                    </label>
-                                    <div class="mt-3">
-                                        <button
-                                            class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
-                                        <button
-                                            class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancle</button>
-                                    </div>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                            <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-                                <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto p-4">
-                                            <div class="flex items-center mb-4">
-                                                <img src="assets/images/logos/card-2.png" alt=""
-                                                    class="mr-2 h-8 inline-block">
-                                                <div class="self-center">
-                                                    <span class="block  font-medium text-slate-700">Master Card</span>
-                                                    <h5 class="text-xs font-medium text-slate-500 dark:text-gray-400">
-                                                        Last time used: 21 march 2023</h5>
-                                                </div>
-                                            </div>
-                                            <div class="grid grid-cols-3 gap-4">
-                                                <div class="col-span-3 md:col-span-3 lg:col-span-3 xl:col-span-3">
-                                                    <div class="mb-2">
-                                                        <label for="Card_name"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Name
-                                                            of card :</label>
-                                                        <input
-                                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                            placeholder="Nmae" type="text">
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <label for="Zip_code"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Card
-                                                            No :</label>
-                                                        <input
-                                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                            placeholder="---- ---- ----" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid grid-cols-3 gap-4">
-                                                <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                                    <div class="mb-2">
-                                                        <label for="Expiry_Month"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                            Month</label>
-                                                        <select id="Expiry_Month"
-                                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                            <option class="dark:text-slate-700">-- select --</option>
-                                                            <option class="dark:text-slate-700">01</option>
-                                                            <option class="dark:text-slate-700">02</option>
-                                                            <option class="dark:text-slate-700">03</option>
-                                                            <option class="dark:text-slate-700">04</option>
-                                                            <option class="dark:text-slate-700">05</option>
-                                                            <option class="dark:text-slate-700">06</option>
-                                                            <option class="dark:text-slate-700">07</option>
-                                                            <option class="dark:text-slate-700">08</option>
-                                                            <option class="dark:text-slate-700">09</option>
-                                                            <option class="dark:text-slate-700">10</option>
-                                                            <option class="dark:text-slate-700">11</option>
-                                                            <option class="dark:text-slate-700">12</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                                    <div class="mb-2">
-                                                        <label for="Expiry_Year"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                            Year</label>
-                                                        <select id="Expiry_Year"
-                                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                            <option class="dark:text-slate-700">-- select --</option>
-                                                            <option class="dark:text-slate-700">2024</option>
-                                                            <option class="dark:text-slate-700">2025</option>
-                                                            <option class="dark:text-slate-700">2026</option>
-                                                            <option class="dark:text-slate-700">2027</option>
-                                                            <option class="dark:text-slate-700">2028</option>
-                                                            <option class="dark:text-slate-700">2029</option>
-                                                            <option class="dark:text-slate-700">2030</option>
-                                                            <option class="dark:text-slate-700">2031</option>
-                                                            <option class="dark:text-slate-700">2032</option>
-                                                            <option class="dark:text-slate-700">2033</option>
-                                                            <option class="dark:text-slate-700">2034</option>
-                                                            <option class="dark:text-slate-700">2035</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                                    <div class="mb-2">
-                                                        <label for="CVV"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">CVV</label>
-                                                        <input
-                                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                            placeholder="cvv" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button
-                                                class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500 w-full">Confirm
-                                                payment $202.00</button>
-                                        </div><!--end card-body-->
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                                <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 ">
-                                    <div
-                                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                        <div class="flex-auto p-4">
-                                            <div class="flex items-center mb-4">
-                                                <img src="assets/images/logos/card-1.png" alt=""
-                                                    class="mr-2 h-8 inline-block">
-                                                <div class="self-center">
-                                                    <span class="block  font-medium text-slate-700">Visa Card</span>
-                                                    <h5 class="text-xs font-medium text-slate-500 dark:text-gray-400">
-                                                        Last time used: 21 march 2023</h5>
-                                                </div>
-                                            </div>
-                                            <div class="grid grid-cols-3 gap-4">
-                                                <div class="col-span-3 md:col-span-3 lg:col-span-3 xl:col-span-3">
-                                                    <div class="mb-2">
-                                                        <label for="Card_name"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Name
-                                                            of card :</label>
-                                                        <input
-                                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                            placeholder="Nmae" type="text">
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <label for="Zip_code"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Card
-                                                            No :</label>
-                                                        <input
-                                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                            placeholder="---- ---- ----" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid grid-cols-3 gap-4">
-                                                <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                                    <div class="mb-2">
-                                                        <label for="Expiry_Month"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                            Month</label>
-                                                        <select id="Expiry_Month"
-                                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                            <option class="dark:text-slate-700">-- select --</option>
-                                                            <option class="dark:text-slate-700">01</option>
-                                                            <option class="dark:text-slate-700">02</option>
-                                                            <option class="dark:text-slate-700">03</option>
-                                                            <option class="dark:text-slate-700">04</option>
-                                                            <option class="dark:text-slate-700">05</option>
-                                                            <option class="dark:text-slate-700">06</option>
-                                                            <option class="dark:text-slate-700">07</option>
-                                                            <option class="dark:text-slate-700">08</option>
-                                                            <option class="dark:text-slate-700">09</option>
-                                                            <option class="dark:text-slate-700">10</option>
-                                                            <option class="dark:text-slate-700">11</option>
-                                                            <option class="dark:text-slate-700">12</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                                    <div class="mb-2">
-                                                        <label for="Expiry_Year"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                            Year</label>
-                                                        <select id="Expiry_Year"
-                                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                            <option class="dark:text-slate-700">-- select --</option>
-                                                            <option class="dark:text-slate-700">2024</option>
-                                                            <option class="dark:text-slate-700">2025</option>
-                                                            <option class="dark:text-slate-700">2026</option>
-                                                            <option class="dark:text-slate-700">2027</option>
-                                                            <option class="dark:text-slate-700">2028</option>
-                                                            <option class="dark:text-slate-700">2029</option>
-                                                            <option class="dark:text-slate-700">2030</option>
-                                                            <option class="dark:text-slate-700">2031</option>
-                                                            <option class="dark:text-slate-700">2032</option>
-                                                            <option class="dark:text-slate-700">2033</option>
-                                                            <option class="dark:text-slate-700">2034</option>
-                                                            <option class="dark:text-slate-700">2035</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                                    <div class="mb-2">
-                                                        <label for="CVV"
-                                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">CVV</label>
-                                                        <input
-                                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                            placeholder="cvv" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button
-                                                class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500 w-full">Confirm
-                                                payment $202.00</button>
-                                        </div><!--end card-body-->
-                                    </div> <!--end card-->
-                                </div><!--end col-->
-                            </div><!--end inner-grid-->
-                        </div><!--end col-->
-                    </div><!--end inner-grid-->
-                </div><!--end container-->
-                <!-- footer -->
-                <div
-                    class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black dark:border-slate-700/40">
-                    <div class="container">
-                        <!-- Footer Start -->
-                        <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-10">
-                            <div class="w-full relative mb-4">
-                                <div class="flex-auto p-4">
-                                    <div class="mb-5">
-                                        <a href="customers-home.html">
-                                            <img src="assets/images/logo-sm.png" alt=""
-                                                class="h-8 inline-block me-3">
-                                            <img src="assets/images/logo.png" alt=""
-                                                class="h-8 inline-block">
-                                        </a>
-                                    </div>
-                                    <p class="text-slate-500 text-lg">It is a long established fact that a reader will
-                                        be distracted by the readable content of a page when looking at its layout. </p>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                            <div class="w-full relative mb-4">
-                                <div class="flex-auto p-4">
-                                    <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
-                                    <ul class="list-none footer-links">
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Product
-                                                details</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Invoice</a>
-                                        </li>
-                                    </ul>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                            <div class="w-full relative mb-4">
-                                <div class="flex-auto p-4">
-                                    <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
-                                    <ul class="list-none footer-links">
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Dashboard</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Add
-                                                product</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Orders</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Customers</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Order
-                                                details</a>
-                                        </li>
-                                        <li class="mb-2">
-                                            <a href="#"
-                                                class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
-                                        </li>
-                                    </ul>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                            <div class="w-full relative mb-4">
-                                <div class="flex-auto p-4">
-                                    <h5 class="text-xl font-semibold text-slate-300 mb-6 sm:text-center xl:text-left">
-                                        Contact Us</h5>
-                                    <div class="mb-5">
-                                        <p class="text-slate-400 font-semibold">1884 George Avenue<br>
-                                            Mobile, AL 36603
-                                        </p>
-                                    </div>
-                                    <div class="flex sm:justify-center xl:justify-start">
-                                        <a href=""
-                                            class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600">
-                                            <i class="icofont-facebook"></i>
-                                        </a>
-                                        <a href=""
-                                            class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
-                                            <i class="icofont-twitter"></i>
-                                        </a>
-                                        <a href=""
-                                            class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
-                                            <i class="icofont-google-plus"></i>
-                                        </a>
-                                    </div>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                        </div>
-                        <footer
-                            class="footer bg-transparent  text-center  font-medium text-slate-400 dark:text-slate-400 md:text-left ">
-                            &copy;
-                            <script>
-                                var year = new Date();
-                                document.write(year.getFullYear());
-                            </script>
-                            Robotech
-                            <span class="float-right hidden text-slate-400 dark:text-slate-400 md:inline-block">Crafted
-                                with <i class="ti ti-heart text-red-500"></i> by
-                                Mannatthemes</span>
-                        </footer>
-                        <!-- end Footer -->
-                    </div>
-                </div>
-
-
+                {{ $slot }}
             </div><!--end main-->
         </div><!--end page-wrapper-->
     </div><!--end div-->

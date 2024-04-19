@@ -1,4 +1,4 @@
-?php
+<?php
 
 namespace App\Http\Requests;
 
@@ -25,7 +25,7 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email',
-            'password' => [Password::min(8), Password::min(8)->symbols(), Password::min(2)->numbers()]
+            // 'password' => [Password::min(8), Password::min(8)->symbols(), Password::min(2)->numbers()]
         ];
     }
 
@@ -38,7 +38,7 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name.required' => 'Nama harus diisi bro!',
-            'email.required' => 'Email jangan lupa',
+            'email.required' => 'Email juga bro jgn lupa',
         ];
     }
 }

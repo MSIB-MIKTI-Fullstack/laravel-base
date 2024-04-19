@@ -2,85 +2,98 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $users = User::all();
         $users = Cache::remember('cache_query_users', 3600, function () {
             return User::all();
         });
+
         return view('users.index', compact('users'));
     }
-    
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         return view('users.create');
     }
 
-
-    public function store(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreUserRequest $request)
     {
-
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email_verified_at' => now(),
+            'password' => Hash::make($request->password),
+            'remember_token' => '123123',
         ]);
 
+        Cache::forget('users');
 
-        $user = new User();
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password')); // Enkripsi password
-        $user->save();
-
-
-        return redirect()->route('users.index')->with('success', 'User created successfully.');
+        return redirect()->back()->with('success', "User berhasil ditambahkan");
     }
 
-
-    public function show(User $user)
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
     {
-        return view('users.show', ['user' => $user]);
+        //
     }
 
-
-    public function edit(User $user)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-        return view('users.edit', ['user' => $user]);
+        $user = User::findOrFail($id);
+
+        return view('users.edit', compact('user'));
     }
 
-
-    public function update(Request $request, User $user)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-
+        User::find($id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email_verified_at' => now(),
+            'password' => Hash::make($request->password),
+            'remember_token' => '123123',
         ]);
 
+        Cache::forget('cache_query_users');
 
-        $user->update($request->all());
-
-        return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
+        return redirect()->route('users.index');
     }
 
-
-    public function destroy(User $user)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
     {
-        $user->delete();
+        User::find($id)->delete();
 
-        return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully');
+        Cache::forget('users');
+
+        return redirect()->route('users.index');
     }
 }

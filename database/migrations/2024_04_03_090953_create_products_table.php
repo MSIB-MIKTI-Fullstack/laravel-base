@@ -18,8 +18,9 @@ return new class extends Migration
             $table->text('image');
             $table->integer('price');
             $table->text('slug');
+            $table->unsignedBigInteger('product_category_id');
+            $table->foreign('product_category_id')->references('id')->on('product_categories');
             $table->timestamps();
-
         });
     }
 
