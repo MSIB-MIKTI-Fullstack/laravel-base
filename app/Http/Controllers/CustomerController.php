@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Product;
 
-class HomeController extends Controller
+class CustomerController extends Controller
 {
     public function testing()
     {
