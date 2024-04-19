@@ -8,9 +8,14 @@ use App\Models\Product;
 
 class CustomerController extends Controller
 {
-    public function testing()
+    public function home()
     {
-        return view('home');
+        $products = Product::with(['product_category'])
+            ->orderBy('created_at', 'desc')
+            ->take(8)
+            ->get();
+
+        return view('customers.home', compact('products'));
     }
     public function products(Request $request)
     {
