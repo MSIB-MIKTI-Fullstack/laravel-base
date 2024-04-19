@@ -1,33 +1,25 @@
 <?php
 
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\CustomerController;
-use Illuminate\Support\Facades\Route;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+class CustomerController extends Controller
+{
+    public function home()
+    {
+        return view('customers.home');
+    }
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+    public function products(Request $request)
+    {
+        $products = Product::with(['product_category'])
+            ->when($request->category_id != "", function ($q) use ($request) {
+                $q->where('product_category_id', $request->category_id);
+            })->paginate(10);
 
-Route::get('/products', [CustomerController::class, 'products'])->name('customer.products');
-
-Route::group(['as' => 'customer.'], function () {
-    Route::get('/', [CustomerController::class, 'home'])->name('home');
-    Route::get('/products', [CustomerController::class, 'products'])->name('products');
-});
+        return view('customers.product', compact('products'));
+    }
+}
