@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,19 +13,23 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
+|
+|
 */
 
-Route::get('/', function () {
-    return redirect()->to('products');
-});
-route::get('/coba', function () {
-    echo "Belajar routing dengan Laravel";
-});
-
-route::prefix('/halaman')->group(function () {
-    route::get('/home', [HomeController::class, 'index'])->name('halaman.home');
-    route::get('/dashboard', [HomeController::class, 'dashboard'])->name('halaman.dashboard');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('products', ProductsController::class);
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
+    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product-detail');
+});
