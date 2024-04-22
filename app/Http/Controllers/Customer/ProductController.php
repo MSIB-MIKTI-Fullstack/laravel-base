@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
@@ -17,5 +16,12 @@ class ProductController extends Controller
             ->appends($request->query());
 
         return view('customers.product', compact('products'));
+    }
+
+    public function detail($slug)
+    {
+        $product = Product::with(['product_category'])->where('slug', $slug)->first();
+
+        return view('customers.product-detail', compact('product'));
     }
 }
