@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserResourceController;
 
 /*
@@ -23,11 +24,6 @@ Route::resources([
     'users' => UserResourceController::class,
 ]);
 
-// Route::middleware('cache.headers:public;max_age=3600')->group(function () {
-//     Route::get('/file/{filename}', [HomeController::class, 'readFile']);
-// });
-// Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -39,6 +35,6 @@ Route::middleware([
 });
 
 Route::group(['as' => 'customer.'], function () {
-    Route::get('/products', [CustomerController::class, 'products'])->name('products');
-    Route::get('/home', [CustomerController::class, 'home'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
 });
