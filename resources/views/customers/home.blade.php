@@ -234,8 +234,9 @@
                                     </div>
                                     
                             </div>
-                        <//div> <!--end card-->
+                        </div> <!--end card-->
                     </div><!--end col-->
+                    </div>
                 @endforeach
             </div><!--end inner-grid-->
         </div><!--end container-->
