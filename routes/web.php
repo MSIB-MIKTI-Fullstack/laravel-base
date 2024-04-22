@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,8 +40,10 @@ use Illuminate\Support\Facades\Route;
 // route::view('view-component/products', 'view-component.products')->name('view.admin.products');
 
 Route::group(['as' => 'customer.'], function () {
-    Route::get('/', [CustomerController::class, 'home'])->name('home');
-    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
+    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('products-detail');
 });
 
 
