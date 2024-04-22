@@ -302,8 +302,10 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href="customers-home.html">
-                                <img src="assets/images/logo-sm.png" alt="" class="h-8 inline-block me-3">
-                                <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
+                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
+                                    class="h-8 inline-block me-3">
+                                <img src="{{ asset('design-system/assets/images/logo.png') }}" alt=""
+                                    class="h-8 inline-block">
                             </a>
                         </div>
                         <p class="text-slate-500 text-lg">It is a long established fact that a reader will
