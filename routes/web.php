@@ -34,6 +34,7 @@ Route::middleware([
 });
 
 Route::group(['as' => 'customer.'], function () {
-    Route::get('/products', [ProductController::class, 'index'])->name('products');
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
+    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product-detail');
 });
