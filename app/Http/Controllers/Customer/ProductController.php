@@ -22,6 +22,6 @@ class ProductController extends Controller
     {
         $product = Product::where('slug', $slug)->first();
 
-        dd($product);
+        return view('customers.product-detail', compact('product'));
     }
 }
