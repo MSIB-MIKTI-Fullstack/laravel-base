@@ -20,13 +20,15 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         $name = fake()->text(255);
+        $product_category = ProductCategory::inRandomOrder()->first();
+
         return [
             'name' => $name,
             'image' => fake()->imageUrl(640, 640),
             'description' => fake()->text(255),
             'price' => fake()->numberBetween(10000, 1000000), //1000 disini adalah harga minimum dan 10000 adalah harga maksimum
             'slug' => Str::slug($name),
-            'product_category_id' => ProductCategory::factory()
+            'product_category_id' => $product_category->id
             ];
     }
 }

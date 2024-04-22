@@ -12,6 +12,6 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Product::factory(5)->create(); //seeder fungsi untuk mengisi data ke database
+        \App\Models\Product::factory(10)->create(); //seeder fungsi untuk mengisi data ke database
     }
 }

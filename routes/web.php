@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Homecontroller;
-use App\Http\Controllers\TodoController;
+
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
+
+use GuzzleHttp\Handler\Proxy;   
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,8 +48,9 @@ Route::middleware([
 
 
 //route group marketplaces halaman customer
-Route::group(['as' => 'customer.'], function(){
-    Route::get('/products',[Homecontroller::class, 'products'])->name('products');  //index adalah method yg ada di controller Homecontroller
-    Route::get('/', [Homecontroller::class, 'home'])->name('home'); //home adalah method yg ada di controller Homecontroller
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
+    Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('product-detail');
 });
 
