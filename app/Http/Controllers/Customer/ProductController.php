@@ -17,4 +17,11 @@ class ProductController extends Controller
 
         return view('customers.product', compact('products'));
     }
+
+    public function detail($slug)
+    {
+        $product = Product::where('slug', $slug)->first();
+
+        return view('customers.product-detail', compact('product'));
+    }
 }
