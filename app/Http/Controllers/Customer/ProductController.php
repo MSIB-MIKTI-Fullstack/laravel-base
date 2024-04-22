@@ -21,8 +21,8 @@ class ProductController extends Controller
 
     public function detail($slug)
     {
-        $product = Product::where('slug', $slug)->first();
+        $product = Product::with(['product_category'])->where('slug', $slug)->first();
 
-        dd($product);
+        return view('customers.product-detail', compact('product'));
     }
 }
