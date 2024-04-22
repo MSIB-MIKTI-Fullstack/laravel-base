@@ -34,7 +34,7 @@
                                                     <div class="flex-auto  text-center p-4">
                                                         <span
                                                             class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $item->product_category->name }}</span>
-                                                        <a href="ecommerce-product-detail.html"
+                                                        <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}"
                                                             class="text-xl font-semibold text-slate-500 leading-3 block mb-2 truncate">{{ $item->name }}</a>
                                                         <div class="mb-4">
                                                             <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -50,7 +50,7 @@
                                                         </h4>
                                                         <button type="button"
                                                             class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                            onclick="location.href='customers-pro-details.html'">Buy
+                                                            onclick="location.href='{{ route('customer.product-detail', ['slug' => $item->slug]) }}'">Buy
                                                             Now</button>
                                                     </div>
                                                 </div>
