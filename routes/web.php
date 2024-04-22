@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/products', [ProductController::class, 'index'])->name('products');
+    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product-detail');
 });
 
 Route::middleware([
