@@ -28,7 +28,7 @@
                     <div class="flex-auto  text-center p-4">
                       <span
                         class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $product->product_category->name }}</span>
-                      <a href="ecommerce-product-detail.html"
+                      <a href="{{ route('customer.product.detail', ['slug' => $product->slug]) }}"
                         class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">{{ $product->name }}
                       </a>
                       <div class="mb-4">
@@ -44,9 +44,11 @@
                         {{ number_format($product->price, 0, ',', '.') }} <del class="text-base text-slate-400">Rp.
                           {{ number_format($product->price - 10000, 0, ',', '.') }}</del></h4>
                       {{-- dummy discount --}}
-                      <button type="button"
-                        class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                        onclick="alert('Coming Soon..')">Buy Now</button>
+                      <a href="{{ route('customer.product.detail', ['slug' => $product->slug]) }}">
+                        <button type="button"
+                          class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                          Now</button>
+                      </a>
                     </div>
                   </div>
                 </div> <!--end card-->

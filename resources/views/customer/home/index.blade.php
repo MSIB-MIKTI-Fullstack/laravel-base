@@ -200,7 +200,7 @@
                 <div class="flex-auto  text-center p-4">
                   <span
                     class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $product->product_category->name }}</span>
-                  <a href="ecommerce-product-detail.html"
+                  <a href="{{ route('customer.product.detail', ['slug' => $product->slug]) }}"
                     class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">{{ $product->name }}</a>
                   <div class="mb-4">
                     <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -213,9 +213,12 @@
                   <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">Rp.
                     </sup> {{ number_format($product->price, 0, ',', '.') }} <del class="text-base text-slate-400">Rp.
                       {{ number_format($product->price - 10000, 0, ',', '.') }}</del></h4>
-                  <button type="button"
-                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                    Now</button>
+                  <a href="{{ route('customer.product.detail', ['slug' => $product->slug]) }}"
+                    rel="noopener noreferrer">
+                    <button type="button"
+                      class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                      Now</button>
+                  </a>
                 </div>
               </div>
             </div> <!--end card-->

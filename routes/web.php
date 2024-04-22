@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Admin\MahasiswaController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\LandingPage\CustomerController;
+use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\LandingPage\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Route::group(['as' => 'customer.'], function () {
-    Route::get('/', [CustomerController::class, 'home'])->name('home');
-    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product.detail');
 });

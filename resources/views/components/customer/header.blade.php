@@ -208,8 +208,8 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{{ route('customer.products') }}"
-                    class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                  <a href="{{ route('customer.product.index') }}"
+                    class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.product.*') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                     Products
                   </a>
                 </li>
