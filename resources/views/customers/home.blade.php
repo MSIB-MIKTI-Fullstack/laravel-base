@@ -220,7 +220,7 @@
                                     <span
                                         class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
                                         off</span>
-                                    <a href="#">
+                                    <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
                                         <img src="{{ $product->image }}" alt=""
                                             class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                     </a>

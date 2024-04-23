@@ -25,15 +25,17 @@
                                                         <span
                                                             class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 rounded font-medium py-0 px-2 mb-5 inline-block">50%
                                                             off</span>
-                                                        <a href="customers-pro-details.html">
-                                                            <img src="{{ $item->image }}" alt=""
+                                                        <a
+                                                            href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
+                                                            <img src="https://random.imagecdn.app/500/500"
+                                                                alt=""
                                                                 class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                                         </a>
                                                     </div>
                                                     <div class="flex-auto  text-center p-4">
                                                         <span
                                                             class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $item->product_category->name }}</span>
-                                                        <a href="ecommerce-product-detail.html"
+                                                        <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}"
                                                             class="text-xl font-semibold text-slate-500 leading-3 block mb-2 truncate">{{ $item->name }}</a>
                                                         <div class="mb-4">
                                                             <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -41,16 +43,18 @@
                                                             <i class="icofont-star text-yellow-400 inline-block"></i>
                                                             <i class="icofont-star text-yellow-400 inline-block"></i>
                                                             <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                            <span class="text-slate-800 font-semibold">4.8</span>
+                                                            <span
+                                                                class="text-slate-800 font-semibold">{{ rand(1, 4), rand(0, 9) }}</span>
                                                         </div>
                                                         <h4 class="text-3xl font-medium mb-4"><sup
                                                                 class="text-sm text-slate-500">Rp.
-                                                            </sup>{{ number_format($item->price, 0) }}
+                                                            </sup>{{ number_format($item->price, 2, ',', '.') }}
                                                         </h4>
                                                         <button type="button"
                                                             class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                                            onclick="location.href='customers-pro-details.html'">Buy
-                                                            Now</button>
+                                                            onclick="location.href='{{ route('customer.product-detail', ['slug' => $item->slug]) }}'">Masukan
+                                                            Keranjang
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div> <!--end card-->

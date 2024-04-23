@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -22,7 +23,6 @@ class ProductController extends Controller
     public function detail($slug)
     {
         $product = Product::with(['product_category'])->where('slug', $slug)->first();
-
         return view('customers.product-detail', compact('product'));
     }
 }
