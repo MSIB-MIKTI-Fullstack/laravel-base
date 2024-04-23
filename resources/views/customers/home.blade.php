@@ -220,7 +220,7 @@
                                     <span
                                         class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
                                         off</span>
-                                    <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
+                                    <a href="{{ route('customer.product-detail', ['slug' => $product->slug]) }}">
                                         <img src="{{ $product->image }}" alt=""
                                             class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                     </a>
@@ -240,7 +240,7 @@
                                     </div>
                                     <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
                                             class="text-sm text-slate-500">Rp.
-                                        </sup>{{ number_format($product->price, 0) }}</h4>
+                                        </sup>{{ number_format($product->price, 2, ',', '.') }}</h4>
                                     <button type="button"
                                         class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
                                         Now</button>

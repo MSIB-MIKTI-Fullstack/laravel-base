@@ -18,6 +18,10 @@
                             @if ($products->count() > 0)
                                 <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
                                     @foreach ($products as $item)
+                                        @php
+                                            $var = rand(400, 900);
+                                            $rating = rand(0, 5);
+                                        @endphp
                                         <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
                                             <div class="bg-white border border-slate-200  rounded-md w-full relative">
                                                 <div class="flex-auto  text-center">
@@ -27,7 +31,7 @@
                                                             off</span>
                                                         <a
                                                             href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
-                                                            <img src="https://random.imagecdn.app/500/500"
+                                                            <img src="https://random.imagecdn.app/{{ $var }}/{{ $var }}"
                                                                 alt=""
                                                                 class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                                         </a>
@@ -38,13 +42,15 @@
                                                         <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}"
                                                             class="text-xl font-semibold text-slate-500 leading-3 block mb-2 truncate">{{ $item->name }}</a>
                                                         <div class="mb-4">
-                                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                                            @if ($rating > 0)
+                                                                @for ($i = 1; $i <= $rating; $i++)
+                                                                    <i
+                                                                        class="icofont-star text-yellow-400 inline-block">
+                                                                    </i>
+                                                                @endfor
+                                                            @endif
                                                             <span
-                                                                class="text-slate-800 font-semibold">{{ rand(1, 4), rand(0, 9) }}</span>
+                                                                class="text-slate-800 font-semibold">{{ $rating != 0 ? $rating : '' }}</span>
                                                         </div>
                                                         <h4 class="text-3xl font-medium mb-4"><sup
                                                                 class="text-sm text-slate-500">Rp.
