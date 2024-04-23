@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
+use App\Http\Controllers\ProductController as ControllersProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,6 @@ Route::middleware([
 });
 
 Route::group(['as' => 'customer.'], function () {
-    Route::get('/', [CustomerController::class, 'home'])->name('home');
-    Route::get('/products', [CustomerController::class, 'products'])->name('products');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
 });
