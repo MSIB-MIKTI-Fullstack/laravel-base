@@ -109,7 +109,7 @@
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
                         <div class="hidden w-full lg:flex">
-                            <form <form class="relative flex w-full items-center rounded-md border bg-[#fff]">
+                            <form class="relative flex w-full items-center rounded-md border bg-[#fff]">
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
@@ -140,7 +140,7 @@
                         md:border-white text-base shadow bg-white
                        "
                                     onclick="event.stopPropagation()">
-                                    <form<form class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
+                                    <form class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -158,128 +158,61 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="dropdown relative">
-                                <button
-                                  type="button"
-                                  class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                  id="Notifications"
-                                  aria-expanded="false"
-                                   data-fc-autoclose="both" data-fc-type="dropdown">
-                                  <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                  <span class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                    2
-                                  </span>
-                                </button>
-          
-                                <div
-                                  class="left-auto -right-10 md:right-0 z-50 my-1 hidden list-none
-                                  divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                                  text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
-                                  <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
-                                    <div class="-mx-1 flex items-center justify-between pb-4">
-                                      <div class="flex items-center px-1">
-                                        <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                          <img src="assets/images/products/02.png" alt="product image" class="w-8 h-8">
-                                        </div>
-                                        <div>
-                                          <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                            Circular Sienna
-                                          </a>
-                                          <p class="truncate text-xs font-medium text-body-color">
-                                            Awesome white shirt
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="px-1">
-                                        <p class="text-base font-semibold text-black">$36.00</p>
-                                      </div>
-                                    </div>
-                                    <div class="-mx-1 flex items-center justify-between py-4">
-                                      <div class="flex items-center px-1">
-                                        <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                            <img src="assets/images/products/01.png" alt="product image" class="w-8 h-8">
-                                        </div>
-                                        <div>
-                                          <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                            Black T-shirt
-                                          </a>
-                                          <p class="truncate text-xs font-medium text-body-color">
-                                            It's a nice black t-shirt
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="px-1">
-                                        <p class="text-base font-semibold text-black">$36.00</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                          
-                                  <div class="-mx-1 flex items-center justify-between  pb-6">
-                                    <div class="px-1">
-                                      <p class="text-base font-medium text-black">
-                                        Total Payable
-                                      </p>
-                                    </div>
-                                    <div class="px-1">
-                                      <p class="text-base font-semibold text-black">$88.15</p>
-                                    </div>
-                                  </div>
-          
-                                  <div>
-                                    <a href="customers-checkout.html" class="flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
-                                      Place Order
-                                    </a>
-                                  </div>
-                                </div>
-                              </div
-                            <div class="me-2  dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
-                                    id="user-profile" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full"
-                                        src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
-                                    <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600">Maria
-                                            Gibson</span>
-                                    </span>
-                                </button>
 
-                                <div class="left-auto right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow bg-white w-40"
-                                    id="navUserdata">
-
-                                    <ul class="py-1" aria-labelledby="navUserdata">
-                                        <li>
-                                            <a href="customers-profile.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
-                                                <span data-lucide="user"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="customers-invoice.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             
-                             ">
-                                                <span data-lucide="file-spreadsheet"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen.html"
-                                                class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                             
-                             ">
-                                                <span data-lucide="power"
-                                                    class="w-4 h-4 inline-block text-red-400 me-2"></span>
-                                                Sign out</a>
-                                        </li>
-                                    </ul>
+                            @if (Auth::user() != null)
+                                <div class="dropdown relative">
+                                    <button type="button"
+                                        class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
+                                        id="Notifications" aria-expanded="false" data-fc-autoclose="both"
+                                        data-fc-type="dropdown">
+                                        <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
+                                        <span
+                                            class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
+                                            2
+                                        </span>
+                                    </button>
                                 </div>
-                            </div>
+                                <div class="me-2  dropdown relative">
+                                    <button type="button"
+                                        class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
+                                        id="user-profile" aria-expanded="false" data-fc-autoclose="both"
+                                        data-fc-type="dropdown">
+                                        <img class="h-8 w-8 rounded-full"
+                                            src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
+                                            alt="user photo" />
+                                        <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
+                                            <span class="block font-medium text-slate-600">Maria
+                                                Gibson</span>
+                                        </span>
+                                    </button>
+
+                                    <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
+                                        id="navUserdata">
+
+                                        <ul class="py-1" aria-labelledby="navUserdata">
+                                            <li>
+                                                <a href="customers-profile.html"
+                                                    class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
+                                                    <span data-lucide="user"
+                                                        class="w-4 h-4 inline-block text-slate-800 me-2"></span>
+                                                    Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="auth-lock-screen.html"
+                                                    class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500">
+                                                    <span data-lucide="power"
+                                                        class="w-4 h-4 inline-block text-red-400 me-2"></span>
+                                                    Sign out</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
+                                    <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
+                                    Login</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -306,9 +239,9 @@
                                             Home
                                         </a>
                                     </li>
-                                    <li> 
+                                    <li>
                                         <a href="{{ route('customer.products') }}"
-                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Products
                                         </a>
                                     </li>
@@ -361,10 +294,10 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href="customers-home.html">
-                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
-                                    class="w-6 md:w-8 inline-block">
-                                <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
-                                    class="w-20 md:w-24 inline-block">
+                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
+                                    class="h-8 inline-block me-3">
+                                <img src="{{ asset('design-system/assets/images/logo.png') }}" alt=""
+                                    class="h-8 inline-block">
                             </a>
                         </div>
                         <p class="text-slate-500 text-lg">It is a long established fact that a reader will
@@ -476,6 +409,7 @@
             <!-- end Footer -->
         </div>
     </div>
+
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
