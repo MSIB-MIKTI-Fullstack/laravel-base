@@ -8,6 +8,7 @@
                         <div class="border-b border-slate-200 dark:border-slate-700/40 py-3 px-4 dark:text-slate-300/70">
                             <h4 class="font-medium">Title</h4>
                         </div><!--end header-title-->
+                        <x-alert></x-alert>
                         <div class="flex-auto p-4">
                             @if (\Session::has('success'))
                                 {!! \Session::get('success') !!}
