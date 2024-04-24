@@ -200,7 +200,7 @@
                                                     Profile</a>
                                             </li>
                                             <li>
-                                                <form action="{{ route('logout') }}">
+                                                <form action="{{ route('logout') }}" method="POST">
                                                     @csrf
                                                     <button type="submit"
                                                     class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
