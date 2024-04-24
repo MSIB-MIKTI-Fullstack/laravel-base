@@ -12,11 +12,15 @@
     <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
-    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
-    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
-    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
+    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}"
+        type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
     @vite(['resources/js/app.js'])
 
@@ -101,10 +105,10 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
-                                class="w-6 md:w-8 inline-block">
-                            <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
-                                class="w-20 md:w-24 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-sm.png') }}"
+                                alt="logo" class="w-6 md:w-8 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-dark.png') }}"
+                                alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
@@ -138,9 +142,9 @@
                                 <div class="-left-40 md:left-auto right-0 z-50 my-1 hidden min-w-[300px] sm:min-w-[400px] md:min-w-[400px] lg:min-w-[500px] max-w-full
                         list-none divide-y  divide-gray-100 rounded-md border-slate-700
                         md:border-white text-base shadow bg-white
-                       "
-                                    onclick="event.stopPropagation()">
-                                    <form<form class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
+                       " onclick="event.stopPropagation()">
+                                    <form<form
+                                        class="relative flex w-full items-center rounded-md border bg-[#f4f7ff] ">
                                         <div class="relative z-20 border-r border-[#d9d9d9] px-2 hidden lg:block">
                                             <select id="default"
                                                 class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
@@ -155,135 +159,68 @@
                                             class="absolute top-0 right-0 flex h-full w-[52px] items-center justify-center rounded-tr-md rounded-br-md border-s ">
                                             <i data-lucide="search" class="w-6 h-6"></i>
                                         </a>
-                                    </form>
+                                        </form>
                                 </div>
                             </div>
-                            <div class="dropdown relative">
-                                <button
-                                  type="button"
-                                  class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                  id="Notifications"
-                                  aria-expanded="false"
-                                   data-fc-autoclose="both" data-fc-type="dropdown">
-                                  <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                  <span class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                    2
-                                  </span>
-                                </button>
-          
-                                <div
-                                  class="left-auto -right-10 md:right-0 z-50 my-1 hidden list-none
-                                  divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                                  text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
-                                  <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
-                                    <div class="-mx-1 flex items-center justify-between pb-4">
-                                      <div class="flex items-center px-1">
-                                        <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                          <img src="assets/images/products/02.png" alt="product image" class="w-8 h-8">
-                                        </div>
-                                        <div>
-                                          <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                            Circular Sienna
-                                          </a>
-                                          <p class="truncate text-xs font-medium text-body-color">
-                                            Awesome white shirt
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="px-1">
-                                        <p class="text-base font-semibold text-black">$36.00</p>
-                                      </div>
-                                    </div>
-                                    <div class="-mx-1 flex items-center justify-between py-4">
-                                      <div class="flex items-center px-1">
-                                        <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                            <img src="assets/images/products/01.png" alt="product image" class="w-8 h-8">
-                                        </div>
-                                        <div>
-                                          <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                            Black T-shirt
-                                          </a>
-                                          <p class="truncate text-xs font-medium text-body-color">
-                                            It's a nice black t-shirt
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="px-1">
-                                        <p class="text-base font-semibold text-black">$36.00</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                          
-                                  <div class="-mx-1 flex items-center justify-between  pb-6">
-                                    <div class="px-1">
-                                      <p class="text-base font-medium text-black">
-                                        Total Payable
-                                      </p>
-                                    </div>
-                                    <div class="px-1">
-                                      <p class="text-base font-semibold text-black">$88.15</p>
-                                    </div>
-                                  </div>
-          
-                                  <div>
-                                    <a href="customers-checkout.html" class="flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
-                                      Place Order
-                                    </a>
-                                  </div>
+                            @if(Auth::user() != null)
+                                <div class="dropdown relative">
+                                    <button type="button"
+                                        class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
+                                        id="Notifications" aria-expanded="false" data-fc-autoclose="both"
+                                        data-fc-type="dropdown">
+                                        <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
+                                        <span
+                                            class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
+                                            2
+                                        </span>
+                                    </button>
                                 </div>
-                              </div
-                            <div class="me-2  dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
-                                    id="user-profile" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full"
-                                        src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
-                                    <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600">Maria
-                                            Gibson</span>
-                                    </span>
-                                </button>
+                                <div class="me-2  dropdown relative">
+                                    <button type="button" class="dropdown-toggle flex items-center rounded-full text-sm
+                focus:bg-none focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both"
+                                        data-fc-type="dropdown">
+                                        <img class="h-8 w-8 rounded-full"
+                                            src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
+                                            alt="user photo" />
+                                        <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
+                                            <span class="block font-medium text-slate-600">Maria
+                                                Gibson</span>
+                                        </span>
+                                    </button>
 
-                                <div class="left-auto right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow bg-white w-40"
-                                    id="navUserdata">
+                                    <div class="left-auto right-0 z-50 my-1 hidden list-none
+                divide-y divide-gray-100 rounded border-slate-700 md:border-white
+                text-base shadow bg-white w-40" id="navUserdata">
 
-                                    <ul class="py-1" aria-labelledby="navUserdata">
-                                        <li>
-                                            <a href="customers-profile.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
-                                                <span data-lucide="user"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="customers-invoice.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             
-                             ">
-                                                <span data-lucide="file-spreadsheet"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen.html"
-                                                class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                             
-                             ">
-                                                <span data-lucide="power"
-                                                    class="w-4 h-4 inline-block text-red-400 me-2"></span>
-                                                Sign out</a>
-                                        </li>
-                                    </ul>
+                                        <ul class="py-1" aria-labelledby="navUserdata">
+                                            <li>
+                                                <a href="customers-profile.html"
+                                                    class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
+                                                    <span data-lucide="user"
+                                                        class="w-4 h-4 inline-block text-slate-800 me-2"></span>
+                                                    Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="auth-lock-screen.html"
+                                                    class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500">
+                                                    <span data-lucide="power"
+                                                        class="w-4 h-4 inline-block text-red-400 me-2"></span>
+                                                    Sign out</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
+                                    <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
+                                    Login</a>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div>
             <div class="container mx-auto">
@@ -348,9 +285,12 @@
         <div class="page-wrapper relative  duration-300 pt-0 w-full">
             <div class="xl:w-full  min-h-[calc(100vh-0px)] relative pb-0">
                 {{ $slot }}
-            </div><!--end main-->
-        </div><!--end page-wrapper-->
-    </div><!--end div-->
+            </div>
+            <!--end main-->
+        </div>
+        <!--end page-wrapper-->
+    </div>
+    <!--end div-->
 
     <!-- footer -->
     <div class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black">
@@ -361,16 +301,18 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href="customers-home.html">
-                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
-                                    class="w-6 md:w-8 inline-block">
-                                <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
-                                    class="w-20 md:w-24 inline-block">
+                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}"
+                                    alt="logo" class="w-6 md:w-8 inline-block">
+                                <img src="{{ asset('design-system/assets/images/logo-dark.png') }}"
+                                    alt="logo" class="w-20 md:w-24 inline-block">
                             </a>
                         </div>
                         <p class="text-slate-500 text-lg">It is a long established fact that a reader will
                             be distracted by the readable content of a page when looking at its layout. </p>
-                    </div><!--end card-body-->
-                </div> <!--end card-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
                         <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
@@ -401,8 +343,10 @@
                                     class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Invoice</a>
                             </li>
                         </ul>
-                    </div><!--end card-body-->
-                </div> <!--end card-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
                         <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
@@ -434,8 +378,10 @@
                                     class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
                             </li>
                         </ul>
-                    </div><!--end card-body-->
-                </div> <!--end card-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
                         <h5 class="text-xl font-semibold text-slate-300 mb-6 sm:text-center xl:text-left">
@@ -459,8 +405,10 @@
                                 <i class="icofont-google-plus"></i>
                             </a>
                         </div>
-                    </div><!--end card-body-->
-                </div> <!--end card-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
             </div>
             <footer class="footer bg-transparent  text-center  font-medium text-slate-400 md:text-left ">
                 &copy;
@@ -479,13 +427,20 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-    <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}">
+    </script>
+    <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}">
+    </script>
+    <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}">
+    </script>
+    <script
+        src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}">
+    </script>
 
-    <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}">
+    </script>
+    <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}">
+    </script>
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <script>
         NiceSelect.bind(document.querySelector(".nice-select"));

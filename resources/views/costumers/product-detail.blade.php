@@ -15,10 +15,10 @@
                                     </div>
                                 </div>
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 self-center">
-                                    <span class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">Robotech</span>
+                                    <span class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{ $product->product_category->name }}</span>
                                     <div class="">
                                         <h5 class="dark:text-slate-200 font-medium text-[30px] leading-9 mt-4">{{ $product->name }}</h5>
-                                        <p tabindex="0" class="focus:outline-none text-primary-500 dark:text-gray-400 text-base font-medium">Morden and good look model 2023.</p>
+                                        <p tabindex="0" class="focus:outline-none text-primary-500 dark:text-gray-400 text-base font-medium">{{ $product->product_category->name }}</p>
                                         <ul class="mb-4">
                                             <li class="inline-block">
                                                 <i class="icofont-star text-xl text-yellow-400 inline-block"></i>
