@@ -13,7 +13,7 @@ class HomeController extends Controller
         $products = Product::orderBy('created_at', 'desc')
         ->orderBy('created_at', 'desc')
         ->take(8)
-        ->get();
+        ->get(); //get perlu foreach di blade, kalau first tidak perlu foreach
         return view('customers.home', compact('products'));
     }
 }

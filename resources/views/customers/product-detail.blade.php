@@ -643,7 +643,5 @@
         </div><!--end container-->
     </div>
     </div>
-
-
     </div><!--end main-->
 </x-customer-layout>

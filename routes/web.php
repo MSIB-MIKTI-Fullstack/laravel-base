@@ -51,6 +51,7 @@ Route::middleware([
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/products', [ProductController::class, 'index'])->name('products');
-    Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('product-detail');
+    Route::post('/products/add-to-cart', [ProductController::class, 'addToCart'])->name('products.add-to-cart');
+    Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('product-detail'); //name harus sesuai dgn nama di view digunakan untuk memanggil route di view blade
 });
 
