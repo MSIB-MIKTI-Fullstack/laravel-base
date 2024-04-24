@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
@@ -24,5 +27,19 @@ class ProductController extends Controller
     {
         $product = Product::with(['product_category'])->where('slug', $slug)->first();
         return view('customers.product-detail', compact('product'));
+    }
+
+    public function addToCart(Request $request)
+    {
+        try {
+            Cart::create([
+                'product_id' => $request->product_id,
+                'user_id' => Auth::user()->id,
+                'qty' => $request->qty,
+            ]);
+            return redirect()->back()->with('success', 'Produk berhasil dimasukan kedalam keranjang!');
+        } catch (\Throwable $e) {
+            return redirect()->back()->with('error', 'Produk gagal dimasukan kedalam keranjang!');
+        }
     }
 }
