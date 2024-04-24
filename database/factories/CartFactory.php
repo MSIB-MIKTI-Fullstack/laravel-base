@@ -20,7 +20,7 @@ class CartFactory extends Factory
     {
         return [
             'product_id' => Product::factory(),
-            'user_id' => User::factory()
+            'user_id' => User::factory(),
         ];
     }
 }
