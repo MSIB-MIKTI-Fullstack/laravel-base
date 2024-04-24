@@ -36,6 +36,10 @@ Route::middleware([
 
 Route::group(['as' => 'customer.'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/products', [ProductController::class, 'index'])->name('products');
-    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product-detail');
+
+    Route::prefix('/products')->group(function() {
+        Route::get('/', [ProductController::class, 'index'])->name('products');
+        Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail');
+        Route::get('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
+    });
 });
