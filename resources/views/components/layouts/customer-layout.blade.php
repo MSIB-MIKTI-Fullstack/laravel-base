@@ -154,8 +154,7 @@
                     focus:bg-none focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
                                     <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets/images/users/avatar-10.png') }}" alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600">Maria
-                                            Gibson</span>
+                                        <span class="block font-medium text-slate-600">{{ Auth::user()->name}}</span>
                                     </span>
                                 </button>
 
@@ -165,14 +164,17 @@
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
-                                            <a href="customers-profile.html" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
+                                            <a href="{{route('dashboard')}}" class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                 <span data-lucide="user" class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                 Profile</a>
                                         </li>
                                         <li>
-                                            <a href="auth-lock-screen.html" class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500">
-                                                <span data-lucide="power" class="w-4 h-4 inline-block text-red-400 me-2"></span>
-                                                Sign out</a>
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
+                                                    <span data-lucide="power" class="w-4 h-4 inline-block text-red-400 me-2"></span>
+                                                    Sign out</button>
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
