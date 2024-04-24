@@ -463,6 +463,5 @@
                 </div><!--end col-->
             </div><!--end grid-->
         </div><!--end container-->
-          </div>
     </div><!--end main-->
 </x-customer-layout>
