@@ -32,8 +32,8 @@
                                                             off</span>
                                                         <a
                                                             href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
-                                                            {{-- <img src="https://random.imagecdn.app/{{ $var }}/{{ $var }}" --}}
-                                                            <img src="{{ $item->image }}" alt=""
+                                                            <img src="https://random.imagecdn.app/{{ $var }}/{{ $var }}"
+                                                                {{-- <img src="{{ $item->image }}" alt="" --}}
                                                                 class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                                         </a>
                                                     </div>

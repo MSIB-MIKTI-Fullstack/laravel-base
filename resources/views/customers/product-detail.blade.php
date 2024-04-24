@@ -8,25 +8,17 @@
                         <div class="border-b border-slate-200 dark:border-slate-700/40 py-3 px-4 dark:text-slate-300/70">
                             <h4 class="font-medium">{{ $product->name }}</h4>
                         </div><!--end header-title-->
+                        <x-alert></x-alert>
                         <div class="flex-auto p-4">
                             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 text-center">
                                     <div id="img-container" class="w-[400px] text-center inline-block mx-auto">
-                                        <img src="{{ $product->image }}" alt="" class="inline-block">
+                                        {{-- <img src="{{ $product->image }}" alt="" class="inline-block"> --}}
+                                        <img src="https://random.imagecdn.app/400/400" alt="" class="inline-block">
                                     </div>
                                 </div>
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 self-center">
-                                    <span>
-                                        @if (\Session::has('success'))
-                                            {!! \Session::get('success') !!}
-                                            <br>
-                                        @endif
 
-                                        @if (\Session::has('error'))
-                                            {!! \Session::get('error') !!}
-                                            <br>
-                                        @endif
-                                    </span>
                                     <span
                                         class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{ $product->product_category->name }}</span>
                                     <div class="">
