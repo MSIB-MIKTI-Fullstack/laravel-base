@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $products = Product::with(['product_category'])
             ->orderBy('created_at', 'desc')

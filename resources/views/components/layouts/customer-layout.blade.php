@@ -158,29 +158,24 @@
                                     </form>
                                 </div>
                             </div>
+
                             @if (Auth::user() != null)
                                 <div class="dropdown relative">
-                                    <button type="button"
-                                        class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                        id="Notifications" aria-expanded="false" data-fc-autoclose="both"
-                                        data-fc-type="dropdown">
-                                        <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                        <span
-                                            class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                            2
-                                        </span>
-                                    </button>
+
+                                    <x-customers.cart></x-customers.cart>
                                 </div>
                                 <div class="me-2  dropdown relative">
                                     <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
+                                        class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
                                         id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                         data-fc-type="dropdown">
                                         <img class="h-8 w-8 rounded-full"
                                             src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
                                             alt="user photo" />
+                                        <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                             <span
                                                 class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
+                                        </span>
                                     </button>
 
                                     <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
@@ -188,14 +183,14 @@
 
                                         <ul class="py-1" aria-labelledby="navUserdata">
                                             <li>
-                                            <a href="{{ route('dashboard') }}"
+                                                <a href="{{ route('dashboard') }}"
                                                     class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                     <span data-lucide="user"
                                                         class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                     Profile</a>
                                             </li>
                                             <li>
-                                            <form action="{{ route('logout') }}" method="POST">
+                                                <form action="{{ route('logout') }}" method="POST">
                                                     @csrf
                                                     <button type="submit"
                                                         class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
@@ -233,13 +228,13 @@
                                 <ul class="blcok items-center lg:flex px-4 md:px-0">
                                     <li>
                                         <a href="{{ route('customer.home') }}"
-                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.home')? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.home') ? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Home
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('customer.products') }}"
-                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products')? 'text-brand' : '' }}  hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Products
                                         </a>
                                     </li>
@@ -405,6 +400,131 @@
                             <!-- end Footer -->
                         </div>
                     </div>
+
+    <!-- footer -->
+    <div class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black">
+        <div class="container">
+            <!-- Footer Start -->
+            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-10">
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <div class="mb-5">
+                            <a href="customers-home.html">
+                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
+                                    class="h-8 inline-block me-3">
+                                <img src="{{ asset('design-system/assets/images/logo.png') }}" alt=""
+                                    class="h-8 inline-block">
+                            </a>
+                        </div>
+                        <p class="text-slate-500 text-lg">It is a long established fact that a reader will
+                            be distracted by the readable content of a page when looking at its layout. </p>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
+                        <ul class="list-none footer-links">
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Product
+                                    details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Invoice</a>
+                            </li>
+                        </ul>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
+                        <ul class="list-none footer-links">
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Dashboard</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Add
+                                    product</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Orders</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Customers</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Order
+                                    details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
+                            </li>
+                        </ul>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+                <div class="w-full relative mb-4">
+                    <div class="flex-auto p-4">
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6 sm:text-center xl:text-left">
+                            Contact Us</h5>
+                        <div class="mb-5">
+                            <p class="text-slate-400 font-semibold">1884 George Avenue<br>
+                                Mobile, AL 36603
+                            </p>
+                        </div>
+                        <div class="flex sm:justify-center xl:justify-start">
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600">
+                                <i class="icofont-facebook"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
+                                <i class="icofont-twitter"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
+                                <i class="icofont-google-plus"></i>
+                            </a>
+                        </div>
+                    </div><!--end card-body-->
+                </div> <!--end card-->
+            </div>
+            <footer class="footer bg-transparent  text-center  font-medium text-slate-400 md:text-left ">
+                &copy;
+                <script>
+                    var year = new Date();
+                    document.write(year.getFullYear());
+                </script>
+                Robotech
+                <span class="float-right hidden text-slate-400 md:inline-block">Crafted
+                    with <i class="ti ti-heart text-red-500"></i> by
+                    Mannatthemes</span>
+            </footer>
+            <!-- end Footer -->
+        </div>
+    </div>
 
 
     <!-- JAVASCRIPTS -->
