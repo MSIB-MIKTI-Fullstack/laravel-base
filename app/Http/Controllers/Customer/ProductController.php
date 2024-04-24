@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -28,11 +30,17 @@ class ProductController extends Controller
 
     public function addToCart(Request $request)
     {
-        $products = Product::with(['product_category'])
-            ->where('name', 'like', '%' . $request->keyword . '%')
-            ->paginate(8)
-            ->appends($request->query());
+        try {
+            Cart::create([
+                'product_id' => $request->product_id,
+                'user_id' => Auth::user()->id,
+                'qty' => $request->qty,
+            ]);
 
-        return view('customers.product', compact('products'));
+            return redirect()->back()->with('success', 'Product added to cart');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', $th->getMessage());
+        }
+        
     }
 }
