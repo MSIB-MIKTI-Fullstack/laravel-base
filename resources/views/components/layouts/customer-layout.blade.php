@@ -161,16 +161,7 @@
 
                             @if (Auth::user() != null)
                                 <div class="dropdown relative">
-                                    <button type="button"
-                                        class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                        id="Notifications" aria-expanded="false" data-fc-autoclose="both"
-                                        data-fc-type="dropdown">
-                                        <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                        <span
-                                            class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                            2
-                                        </span>
-                                    </button>
+                                    <x-customers.cart></x-customers.cart>
                                 </div>
                                 <div class="me-2  dropdown relative">
                                     <button type="button"
@@ -181,9 +172,8 @@
                                             src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
                                             alt="user photo" />
                                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                            <span class="block font-medium text-slate-600">
-                                                {{ Auth::user()->name }}
-                                            </span>
+                                            <span
+                                                class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
                                         </span>
                                     </button>
 
@@ -192,18 +182,21 @@
 
                                         <ul class="py-1" aria-labelledby="navUserdata">
                                             <li>
-                                                <a href="customers-profile.html"
+                                                <a href="{{ route('dashboard') }}"
                                                     class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                     <span data-lucide="user"
                                                         class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                     Profile</a>
                                             </li>
                                             <li>
-                                                <a href="auth-lock-screen.html"
-                                                    class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500">
-                                                    <span data-lucide="power"
-                                                        class="w-4 h-4 inline-block text-red-400 me-2"></span>
-                                                    Sign out</a>
+                                                <form action="{{ route('logout') }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit"
+                                                        class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
+                                                        <span data-lucide="power"
+                                                            class="w-4 h-4 inline-block text-red-400 me-2"></span>
+                                                        Sign out</button>
+                                                </form>
                                             </li>
                                         </ul>
                                     </div>
