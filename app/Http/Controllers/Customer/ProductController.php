@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function addToCart(Request $request)
     {
         try {
-            Cart::insert([
+            Cart::create([
                 'product_id' => $request->product_id,
                 'user_id' => Auth::user()->id,
                 'qty' => $request->qty
