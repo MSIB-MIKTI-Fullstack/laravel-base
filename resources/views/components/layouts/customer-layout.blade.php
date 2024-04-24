@@ -158,6 +158,7 @@
                                     </form>
                                 </div>
                             </div>
+                            @if (Auth::user() != null)
                             <div class="dropdown relative">
                                 <button type="button"
                                     class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
@@ -172,8 +173,7 @@
                             </div>
                             <div class="me-2  dropdown relative">
                                 <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
+                                    class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
                                     <img class="h-8 w-8 rounded-full"
@@ -185,35 +185,20 @@
                                     </span>
                                 </button>
 
-                                <div class="left-auto right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow bg-white w-40"
+                                <div class="left-auto right-0 z-50 my-1 hidden list-none  divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
                                     id="navUserdata">
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
                                             <a href="customers-profile.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-
-                             ">
+                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                 <span data-lucide="user"
                                                     class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                 Profile</a>
                                         </li>
                                         <li>
-                                            <a href="customers-invoice.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-
-                             ">
-                                                <span data-lucide="file-spreadsheet"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Invoice</a>
-                                        </li>
-                                        <li>
                                             <a href="auth-lock-screen.html"
-                                                class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-
-                             ">
+                                                class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500">
                                                 <span data-lucide="power"
                                                     class="w-4 h-4 inline-block text-red-400 me-2"></span>
                                                 Sign out</a>
@@ -221,6 +206,12 @@
                                     </ul>
                                 </div>
                             </div>
+                            @else
+                            <a href="{{ route('login') }}"
+                                    class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
+                                    <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
+                                    Login</a>
+                            @endif
                         </div>
                     </div>
                 </div>

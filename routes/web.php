@@ -42,8 +42,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::get('/products', [ProductController::class, 'index'])->name('products');
-    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('products-detail');
+    Route::prefix('/product')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('products');
+        Route::get('/{slug}', [ProductController::class, 'detail'])->name('products-detail');
+        Route::post('/add-to-cart', [ProductController::class, 'detail'])->name('products-detail');
+    });
 });
 
 

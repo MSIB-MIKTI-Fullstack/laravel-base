@@ -32,4 +32,9 @@ class ProductController extends Controller
 
         return view('customers.product-detail', compact('product', 'products'));
     }
+
+    public function addToCart(Request $request)
+    {
+
+    }
 }
