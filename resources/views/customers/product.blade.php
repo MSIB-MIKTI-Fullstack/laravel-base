@@ -10,6 +10,7 @@
                                     <h4 class="font-medium flex-1 self-center mb-2 md:mb-0 text-xxl">Filter</h4>
                                 </div>
                                 <div class="flex-auto p-4">
+
                                     <x-customers.filter-category></x-customers.filter-category>
                                 </div><!--end card-body-->
                             </div> <!--end inner-grid-->
@@ -31,8 +32,8 @@
                                                             off</span>
                                                         <a
                                                             href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
-                                                            <img src="https://random.imagecdn.app/{{ $var }}/{{ $var }}"
-                                                                alt=""
+                                                            {{-- <img src="https://random.imagecdn.app/{{ $var }}/{{ $var }}" --}}
+                                                            <img src="{{ $item->image }}" alt=""
                                                                 class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                                         </a>
                                                     </div>

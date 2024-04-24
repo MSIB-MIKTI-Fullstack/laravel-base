@@ -22,7 +22,7 @@ class FilterCategory extends Component
      */
     public function render(): View|Closure|string
     {
-        $categories = ProductCategory::all();
+        $categories = ProductCategory::orderBy('name', 'ASC')->get();
 
         return view('components.customers.filter-category', compact('categories'));
     }
