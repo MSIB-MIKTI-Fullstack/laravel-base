@@ -25,4 +25,8 @@ return new class extends Migration
             //
         });
     }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> yoga
