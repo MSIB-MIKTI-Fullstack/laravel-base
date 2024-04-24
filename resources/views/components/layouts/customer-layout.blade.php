@@ -162,7 +162,7 @@
                             @if (Auth::user() != null)
                                 <div class="dropdown relative">
 
-                                    <x-customers.cart></x-customers.cart>
+                                <x-customers.cart></x-customers.cart>
                                 </div>
                                 <div class="me-2  dropdown relative">
                                     <button type="button"
