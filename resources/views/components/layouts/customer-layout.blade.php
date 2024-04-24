@@ -171,6 +171,7 @@
                                             2
                                         </span>
                                     </button>
+                                    <x-customers.cart></x-customers.cart>
                                 </div>
                                 <div class="me-2  dropdown relative">
                                     <button type="button"
