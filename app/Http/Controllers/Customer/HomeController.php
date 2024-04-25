@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as RoutingController;
 
-class HomeController extends RoutingController
+
+class HomeController extends Controller
 {
     public function index()
     {

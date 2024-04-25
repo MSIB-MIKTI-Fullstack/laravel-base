@@ -1,17 +1,12 @@
 <?php
-namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 
-class HomeController extends Controller
+namespace App\Http\Controllers;
+
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
+
+class Controller extends BaseController
 {
-    public function index()
-    {
-        return view('home');
-    }
-    public function dashboard()
-    {
-        $teks = "Passing data dari controller";
-        return view('dashboard', compact('teks'));
-    }
+    use AuthorizesRequests, ValidatesRequests;
 }
