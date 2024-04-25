@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"> {{-- jquery --}}
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
@@ -182,7 +183,7 @@
 
                                         <ul class="py-1" aria-labelledby="navUserdata">
                                             <li>
-                                                <a href="{{ route('dashboard') }}"
+                                                <a href="{{ route('dashboard') }}" {{-- dashboard ke halaman jekstrim --}}
                                                     class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                     <span data-lucide="user"
                                                         class="w-4 h-4 inline-block text-slate-800 me-2"></span>
@@ -202,7 +203,7 @@
                                     </div>
                                 </div>
                             @else
-                                <a href="{{ route('register') }}"
+                                <a href="{{ route('login') }}"
                                     class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
                                     <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
                                     Login</a>
@@ -407,6 +408,9 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
@@ -428,7 +432,15 @@
             },
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <!-- JAVASCRIPTS -->
+
+    <script>
+        let notyf;
+        $(document).ready(function() {
+            notyf = new Notyf()
+        })
+    </script>
 </body>
 
 </html>

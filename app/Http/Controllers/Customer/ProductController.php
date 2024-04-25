@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Cart as ModelsCart;
 
 class ProductController extends Controller
 {
@@ -30,6 +31,10 @@ class ProductController extends Controller
 
     public function addToCart(Request $request)
     {
+        $request->validate([
+            'qty' => 'integer|min:1'
+        ]);
+        
         try {
             Cart::create([
                 'product_id' => $request->product_id,
@@ -37,9 +42,13 @@ class ProductController extends Controller
                 'qty' => $request->qty,
             ]);
 
-            return redirect()->back()->with('success', 'Product added to cart');
+            $count = ModelsCart::where('user_id', Auth::user()->id)
+            ->distinct('product_id')
+            ->count();
+    
+            return response()->json(['message' => 'Product added to cart', 'count' => $count], 200);
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', $th->getMessage());
+            return response()->json(['message' => $th->getMessage()], 500);
         }
         
     }
