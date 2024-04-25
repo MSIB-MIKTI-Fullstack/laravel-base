@@ -20,7 +20,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         $name = fake()->text(25);
-        $product_category = ProductCategory::inRandomOrder()->first();
+        $product_category = ProductCategory::inOrderRandom()->first();
 
         return [
             'name' => $name,

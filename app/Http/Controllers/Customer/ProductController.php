@@ -13,7 +13,15 @@ class ProductController extends Controller
         $products = Product::with(['product_category'])
             ->when($request->category_id != "", function ($q) use ($request) {
                 $q->where('product_category_id', $request->category_id);
-            })->paginate(10);
+            })->paginate(10)
+            ->appends($request->query());
         return view('customers.product', compact('products'));
+    }
+
+    public function detail($slug)
+    {
+         $product = Product::with(['product_category'])->where('slug', $slug)->first();
+
+        return view('customers.product-detail', compact('product'));
     }
 }
