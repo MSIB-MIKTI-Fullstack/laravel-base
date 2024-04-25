@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::prefix('/product')->group(function () {
+    Route::prefix('/products')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('products');
         Route::get('/{slug}', [ProductController::class, 'detail'])->name('products-detail');
         Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
