@@ -17,4 +17,10 @@ class ProductController extends Controller
             ->appends($request->query());
         return view('customers.product', compact('products'));
     }
+    public function detail($slug)
+    {
+        $product = Product::where('slug', $slug)->first();
+
+        dd($product);
+    }
 }
