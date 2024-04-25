@@ -8,6 +8,9 @@
                             <h4 class="font-medium">Title</h4>
                         </div><!--end header-title-->
                         <div class="flex-auto p-4">
+                            @if (\Session::has('success'))
+                                {!! \Session::get('success') !!}
+                            @endif
                             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 text-center">
                                     <div id="img-container" class="w-[400px] text-center inline-block mx-auto">
@@ -46,15 +49,17 @@
                                             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look.
                                             <a href="#" class="text-primary-500">more details</a>
                                         </p>
-                                        <!-- <h6 class="text-sm font-medium text-slate-800 dark:text-slate-400 mt-2">Features :</h6>
-                                        <ol class="list-none list-inside mt-1">
-                                            <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> It is a long established fact that a reader will be distracted.</li>
-                                            <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> Contrary to popular belief, Lorem Ipsum is not text.</li>
-                                            <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> There are many variations of passages of Lorem Ipsum available.</li>
-                                        </ol> -->
-
-                                        <input class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-brand-500  dark:hover:border-slate-700" style="width:100px;" type="number" min="0" value="0" id="example-number-input">
-                                        <button type="button" class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i class="ti ti-shopping-cart"></i> Add to cart</button>
+                                        <form action="{{ route('customer.product-add-to-cart') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                            <input
+                                                class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-brand-500  dark:hover:border-slate-700"
+                                                style="width:100px;" type="number" min="0" value="0"
+                                                id="example-number-input" name="qty">
+                                            <button type="submit"
+                                                class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
+                                                    class="ti ti-shopping-cart"></i> Add to cart</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
