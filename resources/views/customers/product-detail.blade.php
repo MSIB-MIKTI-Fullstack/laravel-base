@@ -63,14 +63,15 @@
                                                         <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> Contrary to popular belief, Lorem Ipsum is not text.</li>
                                                         <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> There are many variations of passages of Lorem Ipsum available.</li>
                                                     </ol> -->
-                                    <form action="{{ route('customer.product-add-to-cart') }}" method="post">
+                                    <form id="form-cart" action="{{ route('customer.product-add-to-cart') }}"
+                                        method="post" enctype="multipart/form-data">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <input
                                             class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-brand-500  dark:hover:border-slate-700"
                                             style="width:100px;" type="number" min="0" value="0"
                                             id="example-number-input" name="qty">
-                                        <button type="submit"
+                                        <button id="btn-add-to-cart" type="submit"
                                             class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
                                                 class="ti ti-shopping-cart"></i> Add to cart</button>
                                     </form>
@@ -458,3 +459,35 @@
     </div><!--end grid-->
     </div><!--end container-->
 </x-customer-layout>
+<script>
+    $(document).ready(function() {
+        $('#form-cart').submit(function(e) {
+            e.preventDefault();
+            let form = new FormData(this)
+            $('#btn-add-to-cart').html('Loading')
+            $('#btn-add-to-cart').attr('disabled', true)
+            $.ajax({
+                data: form,
+                url: `{{ route('customer.product-add-to-cart') }}`,
+                type: 'POST',
+                contentType: false,
+                cache: false,
+                processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                },
+                success: function(data) {
+                    $('#btn-add-to-cart').html('Add to cart')
+                    $('#btn-add-to-cart').attr('disabled', false)
+                    $('#cart-total').html(data.cart_count)
+                    notyf.success(data.message)
+                },
+                error: function(data) {
+                    $('#btn-add-to-cart').html('Add to cart')
+                    $('#btn-add-to-cart').attr('disabled', false)
+                    notyf.error(data.responseJSON.message)
+                }
+            })
+        })
+    })
+</script>
