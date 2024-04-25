@@ -162,37 +162,35 @@
 
                             @if (Auth::user() != null)
                                 <div class="dropdown relative">
-                                x-customers.cart></x-customers.cart>
+                                    <x-customers.cart></x-customers.cart>
                                 </div>
                                 <div class="me-2  dropdown relative">
                                     <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
+                                        class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
                                         id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                         data-fc-type="dropdown">
                                         <img class="h-8 w-8 rounded-full"
                                             src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
                                             alt="user photo" />
                                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span
+                                            <span
                                                 class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
                                         </span>
                                     </button>
 
-                             
-                             <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
+                                    <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
                                         id="navUserdata">
 
-                             
-                             <ul class="py-1" aria-labelledby="navUserdata">
+                                        <ul class="py-1" aria-labelledby="navUserdata">
                                             <li>
-                                            <a href="{{ route('dashboard') }}"
+                                                <a href="{{ route('dashboard') }}"
                                                     class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                     <span data-lucide="user"
                                                         class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                                     Profile</a>
                                             </li>
                                             <li>
-                                            <form action="{{ route('logout') }}" method="POST">
+                                                <form action="{{ route('logout') }}" method="POST">
                                                     @csrf
                                                     <button type="submit"
                                                         class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
@@ -204,7 +202,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                @else
+                            @else
                                 <a href="{{ route('login') }}"
                                     class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
                                     <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
@@ -291,7 +289,7 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href="customers-home.html">
-                                <<img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
+                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
                                     class="h-8 inline-block me-3">
                                 <img src="{{ asset('design-system/assets/images/logo.png') }}" alt=""
                                     class="h-8 inline-block">
@@ -433,9 +431,10 @@
             },
         });
     </script>
-     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
         let notyf;
+
         $(document).ready(function() {
             notyf = new Notyf()
         })
@@ -444,4 +443,3 @@
 </body>
 
 </html>
-
