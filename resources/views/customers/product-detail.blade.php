@@ -414,7 +414,7 @@
             </div><!--end col-->
         </div>
         <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-            @foreach ($products as $product)
+            @foreach ($product as $products)
                 <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
                     <div
                         class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
@@ -464,7 +464,9 @@
         $('#form-cart').submit(function(e) {
             e.preventDefault();
             let form = new FormData(this)
-            $('#btn-add-to-cart').html('Loading')
+            $('#btn-add-to-cart').html(
+                '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
+            )
             $('#btn-add-to-cart').attr('disabled', true)
             $.ajax({
                 data: form,
