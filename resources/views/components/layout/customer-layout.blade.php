@@ -10,7 +10,7 @@
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('design-system/assets') }}/images/favicon.ico" />
 
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
@@ -39,14 +39,14 @@
                                 </a>
                             </li>
                             <li class="mx-1">
-                                <a href="customers-wishlist.html"
+                                <a href="#"
                                     class="inline-block  px-2 text-sm font-medium text-gray-400 border border-slate-500/40 rounded-full text-body-color hover:text-white">
                                     Wishlist <span
                                         class="bg-green-600/5 text-green-600 text-[11px] font-medium px-1 py-0.5 rounded-full h-5">3</span>
                                 </a>
                             </li>
                             <li class="mx-1">
-                                <a href="customers-order-track.html"
+                                <a href="#"
                                     class="inline-block  px-2 text-sm font-medium text-gray-400 border border-slate-500/40 rounded-full text-body-color hover:text-white">
                                     Order Tracking
                                 </a>
@@ -101,7 +101,7 @@
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
-                        <a href="index.html" class="block w-full py-5 lg:py-3">
+                        <a href="{{ route('customer.home') }}" class="block w-full py-5 lg:py-3">
                             <img src="{{ asset('design-system/assets') }}/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
                             <img src="{{ asset('design-system/assets') }}/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
@@ -159,84 +159,14 @@
                                     </form>
                                 </div>
                             </div>
+
+                            @if (Auth::user() != null)
                             <div class="dropdown relative">
-                                <button
-                                  type="button"
-                                  class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                  id="Notifications"
-                                  aria-expanded="false"
-                                   data-fc-autoclose="both" data-fc-type="dropdown">
-                                  <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                  <span class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                    2
-                                  </span>
-                                </button>
-          
-                                <div
-                                  class="left-auto -right-10 md:right-0 z-50 my-1 hidden list-none
-                                  divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                                  text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
-                                  <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
-                                    <div class="-mx-1 flex items-center justify-between pb-4">
-                                      <div class="flex items-center px-1">
-                                        <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                          <img src="{{ asset('design-system/assets') }}/images/products/02.png" alt="product image" class="w-8 h-8">
-                                        </div>
-                                        <div>
-                                          <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                            Circular Sienna
-                                          </a>
-                                          <p class="truncate text-xs font-medium text-body-color">
-                                            Awesome white shirt
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="px-1">
-                                        <p class="text-base font-semibold text-black">$36.00</p>
-                                      </div>
-                                    </div>
-                                    <div class="-mx-1 flex items-center justify-between py-4">
-                                      <div class="flex items-center px-1">
-                                        <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                            <img src="{{ asset('design-system/assets') }}/images/products/01.png" alt="product image" class="w-8 h-8">
-                                        </div>
-                                        <div>
-                                          <a href="product-details.html" class="text-sm font-medium text-black hover:text-brand">
-                                            Black T-shirt
-                                          </a>
-                                          <p class="truncate text-xs font-medium text-body-color">
-                                            It's a nice black t-shirt
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="px-1">
-                                        <p class="text-base font-semibold text-black">$36.00</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                          
-                                  <div class="-mx-1 flex items-center justify-between  pb-6">
-                                    <div class="px-1">
-                                      <p class="text-base font-medium text-black">
-                                        Total Payable
-                                      </p>
-                                    </div>
-                                    <div class="px-1">
-                                      <p class="text-base font-semibold text-black">$88.15</p>
-                                    </div>
-                                  </div>
-          
-                                  <div>
-                                    <a href="customers-checkout.html" class="flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
-                                      Place Order
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
+                                <x-customers.cart></x-customers.cart>
+                            </div>
                             <div class="me-2  dropdown relative">
                                 <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
+                                    class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
                                     <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets') }}/images/users/avatar-10.png"
@@ -247,9 +177,7 @@
                                     </span>
                                 </button>
 
-                                <div class="left-auto right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow bg-white w-40"
+                                <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
                                     id="navUserdata">
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
@@ -283,6 +211,12 @@
                                     </ul>
                                 </div>
                             </div>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
+                                    <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
+                                    Login</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -316,19 +250,19 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-wishlist.html"
+                                        <a href="#"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.wishlist') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Wishlist
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-stores.html"
+                                        <a href="#"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.stores') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Stores
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-checkout.html"
+                                        <a href="#"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.checkout') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Checkout
                                         </a>
@@ -363,7 +297,7 @@
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
                         <div class="mb-5">
-                            <a href="customers-home.html">
+                            <a href="{{ route('customer.home') }}">
                                 <img src="{{ asset('design-system/assets') }}/images/logo-sm.png" alt=""
                                     class="h-8 inline-block me-3">
                                 <img src="{{ asset('design-system/assets') }}/images/logo.png" alt="" class="h-8 inline-block">
