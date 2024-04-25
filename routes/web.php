@@ -31,6 +31,9 @@ Route::group(['as' => 'customer.'], function () {
     Route::prefix('/products')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('products');
         Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail');
-        Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
+
+        Route::middleware('auth')->group(function () {
+            Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
+        });
     });
 });
