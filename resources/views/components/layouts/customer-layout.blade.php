@@ -161,16 +161,6 @@
 
                             @if (Auth::user() != null)
                                 <div class="dropdown relative">
-                                    <button type="button"
-                                        class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                        id="Notifications" aria-expanded="false" data-fc-autoclose="both"
-                                        data-fc-type="dropdown">
-                                        <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                        <span
-                                            class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                            2
-                                        </span>
-                                    </button>
                                     <x-customers.cart></x-customers.cart>
                                 </div>
                                 <div class="me-2  dropdown relative">
