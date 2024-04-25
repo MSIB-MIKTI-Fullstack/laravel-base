@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
+use App\Models\Chart as ModelsChart;
 
 class Cart extends Component
 {
@@ -23,9 +24,9 @@ class Cart extends Component
      */
     public function render(): View|Closure|string
     {
-        $cart = DB::selectOne("SELECT COUNT(c.product_id) as count FROM (SELECT product_id FROM `carts` WHERE user_id = :user_id GROUP BY product_id) as c;", ['user_id' => Auth::user()->id]);
-
-        $count = $cart->count;
+        $count = ModelsChart::where('user_id', Auth::user()->id)
+            ->distinct('product_id')
+            ->count();
 
         return view('components.customers.cart', compact('count'));
     }
