@@ -14,11 +14,4 @@ class HomeController extends Controller
 
         return view('customers.home', compact('products'));
     }
-
-    public function detail($slug)
-    {
-        $product = Product::where('slug', $slug)->first();
-
-        return view('customers.product-detail', compact('product'));
-    }
 }
