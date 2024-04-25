@@ -31,15 +31,26 @@ class ProductController extends Controller
 
     public function addToCart(Request $request)
     {
+        // validasi
+        $request->validate([
+            'qty' => 'integer|min:1'
+        ]);
+
         try {
             Cart::create([
                 'product_id' => $request->product_id,
                 'user_id' => Auth::user()->id,
                 'qty' => $request->qty,
             ]);
-            return redirect()->back()->with('success', 'Produk berhasil dimasukan kedalam keranjang!');
-        } catch (\Throwable $e) {
-            return redirect()->back()->with('error', 'Produk gagal dimasukan kedalam keranjang!');
+
+            $count = Cart::where('user_id', Auth::user()->id)
+                ->distinct('product_id')
+                ->count();
+
+            return response()->json(['message' => 'Produk berhasil dimasukan kedalam keranjang!', 'cart_count' => $count], 200);
+            // return redirect()->back()->with('success', 'Produk berhasil dimasukan kedalam keranjang!');
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $th->getMessage()], 500);
         }
     }
 }
