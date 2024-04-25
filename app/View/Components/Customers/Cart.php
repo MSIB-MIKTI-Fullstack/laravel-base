@@ -24,9 +24,9 @@ class Cart extends Component
      */
     public function render(): View|Closure|string
     {
-        $cart = DB::selectOne("SELECT COUNT(c.product_id) as count FROM (SELECT product_id FROM `carts` WHERE user_id = :user_id GROUP BY product_id) as c;", ['user_id' => Auth::user()->id]);
-
-        $count = $cart->count;
+        $count = ModelsCart::where('user_id', Auth::user()->id)
+        ->distinct('product_id')
+        ->count();
 
         return view('components.customers.cart', compact('count'));
     }
