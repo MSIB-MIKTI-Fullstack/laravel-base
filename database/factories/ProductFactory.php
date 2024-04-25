@@ -19,14 +19,14 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         $name = fake()->text(25);
-
+        $product_category = ProductCategory::inOrderRandom()->first();
         return [
             'name' => $name,
             'description' => fake()->text(255),
             'image' => fake()->imageUrl(640, 640),
             'price' => fake()->numberBetween(10000, 100000),
             'slug' => Str::slug($name),
-            'product_category_id' => ProductCategory::factory()
+            'product_category_id' => $product_category->id
         ];
     }
 }
