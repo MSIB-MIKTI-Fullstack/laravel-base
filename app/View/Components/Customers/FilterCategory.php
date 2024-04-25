@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use App\Models\ProductCategories;
+use App\Models\ProductCategory;
 
 class FilterCategory extends Component
 {
@@ -22,7 +23,7 @@ class FilterCategory extends Component
      */
     public function render(): View|Closure|string
     {
-        $categories = ProductCategories::all();
+        $categories = ProductCategory::all();
 
         return view('components.customers.filter-category', compact('categories'));
     }
