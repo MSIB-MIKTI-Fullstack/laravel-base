@@ -21,6 +21,7 @@ class ProductController extends Controller
         return view('customers.product', compact('products'));
     }
 
+<<<<<<< HEAD
         public function detail($slug){
             $product = Product::with(['product_category'])->where('slug', $slug)->first();
             return view('customers.product-detail', compact('product'));
@@ -28,6 +29,17 @@ class ProductController extends Controller
 
     }
     public function addToCart(Request $request){
+=======
+    public function detail($slug)
+    {
+        $product = Product::with(['product_category'])->where('slug', $slug)->first();
+
+        return view('customers.product-detail', compact('product'));
+    }
+
+    public function addToCart(Request $request)
+    {
+>>>>>>> origin/yoga
         try {
             Cart::create([
                 'product_id' => $request->product_id,
@@ -41,4 +53,7 @@ class ProductController extends Controller
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/yoga
