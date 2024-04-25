@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
-
+use App\Http\Controllers\Customer\CartController;
+use App\Models\Cart;
 use GuzzleHttp\Handler\Proxy;   
 
 
@@ -54,6 +55,15 @@ Route::group(['as' => 'customer.'], function () {
         Route::get('/', [ProductController::class, 'index'])->name('products');
         Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
         Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail'); //name harus sesuai dgn nama di view digunakan untuk memanggil route di view blade
+        Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
+        Route::middleware(['auth'])->group(function () {
+            Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
+        });
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/cart', [CartController::class, 'index'])->name('cart');
     });
 
    

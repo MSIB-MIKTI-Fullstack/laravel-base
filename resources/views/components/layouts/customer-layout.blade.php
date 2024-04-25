@@ -438,7 +438,14 @@
     <script>
         let notyf;
         $(document).ready(function() {
-            notyf = new Notyf()
+            notyf = new Notyf({
+                dismissible: true,
+                position: {
+                    x: 'left',
+                    y: 'bottom',
+                }
+            })
+
         })
     </script>
 </body>
