@@ -653,37 +653,35 @@
 
     </div><!--end main-->
 </x-customer-layout>
-@push('js')
-    <script>
-        $(document).ready(function() {
-            $('#form-cart').submit(function(e) {
-                e.preventDefault();
-                let form = new FormData(this)
-                $('#btn-add-to-cart').html('Loading')
-                $('#btn-add-to-cart').attr('disabled', true)
-                $.ajax({
-                    data: form,
-                    url: `{{ route('customer.product-add-to-cart') }}`,
-                    type: 'POST',
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    headers: {
-                        'X-CSRF-TOKEN': `{{ csrf_token() }}`
-                    },
-                    success: function(data) {
-                        $('#btn-add-to-cart').html('Add to cart')
-                        $('#btn-add-to-cart').attr('disabled', false)
-                        $('#cart-total').html(data.cart_count)
-                        notyf.success(data.message)
-                    },
-                    error: function(data) {
-                        $('#btn-add-to-cart').html('Add to cart')
-                        $('#btn-add-to-cart').attr('disabled', false)
-                        notyf.error(data.responseJSON.message)
-                    }
-                })
+<script>
+    $(document).ready(function() {
+        $('#form-cart').submit(function(e) {
+            e.preventDefault();
+            let form = new FormData(this)
+            $('#btn-add-to-cart').html('Loading')
+            $('#btn-add-to-cart').attr('disabled', true)
+            $.ajax({
+                data: form,
+                url: `{{ route('customer.product-add-to-cart') }}`,
+                type: 'POST',
+                contentType: false,
+                cache: false,
+                processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                },
+                success: function(data) {
+                    $('#btn-add-to-cart').html('Add to cart')
+                    $('#btn-add-to-cart').attr('disabled', false)
+                    $('#cart-total').html(data.cart_count)
+                    notyf.success(data.message)
+                },
+                error: function(data) {
+                    $('#btn-add-to-cart').html('Add to cart')
+                    $('#btn-add-to-cart').attr('disabled', false)
+                    notyf.error(data.responseJSON.message)
+                }
             })
         })
-    </script>
-@endpush
+    })
+</script>
