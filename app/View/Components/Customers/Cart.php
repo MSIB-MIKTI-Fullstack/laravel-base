@@ -25,8 +25,8 @@ class Cart extends Component
     public function render(): View|Closure|string
     {
         $count = ModelsCart::where('user_id', Auth::user()->id)
-        ->distinct('product_id')
-        ->count();
+            ->distinct('product_id')
+            ->count();
 
         return view('components.customers.cart', compact('count'));
     }
