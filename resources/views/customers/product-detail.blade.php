@@ -13,9 +13,9 @@
                             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 text-center">
                                     <div id="img-container" class="w-[400px] text-center inline-block mx-auto">
-                                        {{-- <img src="{{ $product->image }}" alt="" class="inline-block"> --}}
-                                        <img src="https://random.imagecdn.app/400/400" alt=""
-                                            class="inline-block">
+                                        <img src="{{ $product->image }}" alt="" class="inline-block">
+                                        {{-- <img src="https://random.imagecdn.app/400/400" alt="" --}}
+                                        {{-- class="inline-block"> --}}
                                     </div>
                                 </div>
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 self-center">
@@ -771,41 +771,41 @@
 
 
 <script>
-    $(function() {
+    $(document).ready(function() {
+
         $('#form-cart').submit(function(e) {
-                e.preventDefault();
+            e.preventDefault();
 
-                let form = new FormData(this);
+            let form = new FormData(this);
 
-                // $("#btn-add-to-cart").html("Loading...");
-                $('#btn-add-to-cart').html(
-                    '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
-                )
-                $("#btn-add-to-cart").attr("disable", true);
+            // $("#btn-add-to-cart").html("Loading...");
+            $('#btn-add-to-cart').html(
+                '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
+            )
+            $("#btn-add-to-cart").attr("disable", true);
 
-                $.ajax({
-                        type: "POST",
-                        url: `{{ route('customer.product-add-to-cart') }}`,
-                        data: form,
-                        contentType: false,
-                        cache: false,
-                        dataType: false,
-                        headers: {
-                            'X-CSRF-TOKEN': `{{ csrf_token() }}`,
-                        },
-                        success: function(data) {
-                            $('#btn-add-to-cart').html('Add to cart')
-                            $('#btn-add-to-cart').attr('disabled', false)
-                            $('#cart-total').html(data.cart_count)
-                            notyf.success(data.message)
-                        },
-                        error: function(data) {
-                            $('#btn-add-to-cart').html('Add to cart')
-                            $('#btn-add-to-cart').attr('disabled', false)
-                            notyf.error(data.responseJSON.message)
-                        }
-                    }
-                });
-        });
+            $.ajax({
+                data: form,
+                url: `{{ route('customer.product-add-to-cart') }}`,
+                type: 'POST',
+                contentType: false,
+                cache: false,
+                processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                },
+                success: function(data) {
+                    $('#btn-add-to-cart').html('Add to cart')
+                    $('#btn-add-to-cart').attr('disabled', false)
+                    $('#cart-total').html(data.cart_count)
+                    notyf.success(data.message)
+                },
+                error: function(data) {
+                    $('#btn-add-to-cart').html('Add to cart')
+                    $('#btn-add-to-cart').attr('disabled', false)
+                    notyf.error(data.responseJSON.message)
+                }
+            });
+        })
     });
 </script>
