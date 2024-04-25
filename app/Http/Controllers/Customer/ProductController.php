@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
@@ -26,13 +27,6 @@ class ProductController extends Controller
 
         return view('customers.product-detail', compact('product'));
     }
-<<<<<<< HEAD
-    
-    public function addToCart(Request $request)
-    {
-    }
-}
-=======
 
     public function addToCart(Request $request)
     {
@@ -49,4 +43,3 @@ class ProductController extends Controller
         }
     }
 }
->>>>>>> yoga
