@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     @vite(['resources/js/app.js'])
 
 </head>
@@ -407,6 +409,8 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
@@ -427,6 +431,13 @@
                 prevEl: ".swiper-button-prev",
             },
         });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+        let notyf;
+        $(document).ready(function() {
+            notyf = new Notyf()
+        })
     </script>
     <!-- JAVASCRIPTS -->
 </body>

@@ -21,15 +21,6 @@ class ProductController extends Controller
         return view('customers.product', compact('products'));
     }
 
-<<<<<<< HEAD
-        public function detail($slug){
-            $product = Product::with(['product_category'])->where('slug', $slug)->first();
-            return view('customers.product-detail', compact('product'));
-
-
-    }
-    public function addToCart(Request $request){
-=======
     public function detail($slug)
     {
         $product = Product::with(['product_category'])->where('slug', $slug)->first();
@@ -39,7 +30,10 @@ class ProductController extends Controller
 
     public function addToCart(Request $request)
     {
->>>>>>> origin/yoga
+        $request->validate([
+            'qty' => 'integer|min:1'
+        ]);
+
         try {
             Cart::create([
                 'product_id' => $request->product_id,
@@ -47,13 +41,13 @@ class ProductController extends Controller
                 'qty' => $request->qty
             ]);
 
-            return redirect()->back()->with('success', 'Add product to cart succesfuly');
+           $count = Cart::where('user_id', Auth::user()->id)
+                ->distinct('product_id')
+                ->count();
+
+            return response()->json(['message' => 'Add product to cart succesfuly', 'cart_count' => $count], 200);
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', $th->getMessage());
+            return response()->json(['message' => $th->getMessage()], 500);
         }
     }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/yoga
