@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CobaController;
+use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
 use App\Http\Controllers\CustomerController;
@@ -42,5 +43,9 @@ Route::group(['as' => 'customer.'], function () {
         Route::middleware('auth')->group(function () {
             Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
         });
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/cart', [CartController::class, 'index'])->name('cart');
     });
 });
