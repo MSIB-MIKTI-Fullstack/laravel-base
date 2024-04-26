@@ -648,7 +648,9 @@
         $('#form-cart').submit(function(e) {
             e.preventDefault();
             let form = new FormData(this)
-            $('#btn-add-to-cart').html('Loading')
+            $('#btn-add-to-cart').html(
+                '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
+                )
             $('#btn-add-to-cart').attr('disabled', true)
             $.ajax({
                 data: form,
