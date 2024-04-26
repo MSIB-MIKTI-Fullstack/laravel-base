@@ -27,15 +27,25 @@ class ProductController extends Controller
     }
 
     public function addToCart(Request $request){
+        $request->validate([
+            'qty' => 'integer|min:1'
+        ]);
+
        try{
         Cart::create([
             'product_id' => $request->product_id,
             'user_id' => Auth::user()->id,
             'qty' => $request->qty,
         ]);
+
+        $count = Cart::where('user_id', Auth::user()->id)
+                ->distinct('product_id')
+                ->count();
+        
         return redirect()->back()->with('success', 'add to cart Succesfuly');
-       }catch(\Throwable $th){
-        return redirect()->back()->with('error', $th->getMessage());
+       
+        }catch(\Throwable $th){
+            return redirect()->back()->with('error', $th->getMessage());
 
        }
     }
