@@ -54,8 +54,7 @@
                                             randomised words which don't look.
                                             <a href="#" class="text-primary-500">more details</a>
                                         </p>
-                                        <form id="form-cart" action="{{ route('customer.product-add-to-cart') }}"
-                                            method="POST" enctype="multipart/form-data">                                            @csrf
+                                        <form id="form-cart" action="{{ route('customer.product-add-to-cart') }}" method="POST" enctype="multipart/form-data"> @csrf
                                             <input type="hidden" name="product_id" value="{{ $product->id }}" />
                                             <input class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-brand-500  dark:hover:border-slate-700" style="width:100px;" type="number" min="0" value="0" id="example-number-input" name="qty">
                                             <button id="btn-add-to-cart" type="submit" class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i class="ti ti-shopping-cart"></i> Add to cart</button>
@@ -352,33 +351,26 @@
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <span class="text-slate-800 font-semibold">4.8</span>
                             </div>
-                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                        class="text-sm text-slate-500">$</sup>49 <del
-                                        class="text-base text-slate-400">$99</del></h4>
-                                <button type="button"
-                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                    Now</button>
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">$</sup>49 <del class="text-base text-slate-400">$99</del></h4>
+                            <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                Now</button>
                         </div>
                     </div>
                 </div> <!--end card-->
             </div><!--end col-->
             <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
-            <div
-                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">                    <div class="flex-auto  text-center">
+                <div class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                    <div class="flex-auto  text-center">
                         <div class="flex-auto text-center bg-gray-100">
-                        <span
-                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
-                                    soon</span>                            <a href="#">
-<img src="assets/images/products/04.png" alt=""
-                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">                            </a>
+                            <span class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
+                                soon</span> <a href="#">
+                                <img src="assets/images/products/04.png" alt="" class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500"> </a>
                         </div>
                         <div class="flex-auto  text-center p-4">
-                        <span
-                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Covid
-                                    Safety</span>
-                                <a href="ecommerce-product-detail.html"
-                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">N95
-                                    Covid Safety Mask </a>
+                            <span class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Covid
+                                Safety</span>
+                            <a href="ecommerce-product-detail.html" class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">N95
+                                Covid Safety Mask </a>
                             <div class="mb-4">
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -387,30 +379,24 @@
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <span class="text-slate-800 font-semibold">4.8</span>
                             </div>
-                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                        class="text-sm text-slate-500">$</sup>9 <del
-                                        class="text-base text-slate-400">$19</del></h4>
-                                <button type="button"
-                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                    Now</button>
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">$</sup>9 <del class="text-base text-slate-400">$19</del></h4>
+                            <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                Now</button>
                         </div>
                     </div>
                 </div> <!--end card-->
             </div><!--end col-->
             <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
-            <div
-                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">                    <div class="flex-auto  text-center">
+                <div class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                    <div class="flex-auto  text-center">
                         <div class="flex-auto text-center bg-gray-100">
                             <a href="#">
-                            <img src="assets/images/products/03.png" alt=""
-                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">                            </a>
+                                <img src="assets/images/products/03.png" alt="" class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500"> </a>
                         </div>
                         <div class="flex-auto  text-center p-4">
-                        <span
-                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
-                                <a href="ecommerce-product-detail.html"
-                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Imported
-                                    VR Box </a>
+                            <span class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
+                            <a href="ecommerce-product-detail.html" class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Imported
+                                VR Box </a>
                             <div class="mb-4">
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -419,31 +405,24 @@
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <span class="text-slate-800 font-semibold">4.8</span>
                             </div>
-                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                        class="text-sm text-slate-500">$</sup>29 <del
-                                        class="text-base text-slate-400">$39</del></h4>
-                                <button type="button"
-                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                    Now</button>
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">$</sup>29 <del class="text-base text-slate-400">$39</del></h4>
+                            <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                Now</button>
                         </div>
                     </div>
                 </div> <!--end card-->
             </div><!--end col-->
             <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
-            <div
-                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">                    <div class="flex-auto  text-center">
+                <div class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                    <div class="flex-auto  text-center">
                         <div class="flex-auto text-center bg-gray-100">
-                        <span
-                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span>                            <a href="#">
-                                    <img src="assets/images/products/02.png" alt=""
-                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">                            </a>
+                            <span class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span> <a href="#">
+                                <img src="assets/images/products/02.png" alt="" class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500"> </a>
                         </div>
                         <div class="flex-auto  text-center p-4">
-                        <span
-                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
-                                <a href="ecommerce-product-detail.html"
-                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
-                                    Colorfull Shoes </a>
+                            <span class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
+                            <a href="ecommerce-product-detail.html" class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
+                                Colorfull Shoes </a>
                             <div class="mb-4">
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -452,32 +431,25 @@
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <span class="text-slate-800 font-semibold">4.8</span>
                             </div>
-                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                        class="text-sm text-slate-500">$</sup>99 <del
-                                        class="text-base text-slate-400">$199</del></h4>
-                                <button type="button"
-                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                    Now</button>
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">$</sup>99 <del class="text-base text-slate-400">$199</del></h4>
+                            <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                Now</button>
                         </div>
                     </div>
                 </div> <!--end card-->
             </div><!--end col-->
             <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
-            <div
-                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">                    <div class="flex-auto  text-center">
+                <div class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                    <div class="flex-auto  text-center">
                         <div class="flex-auto text-center bg-gray-100">
-                        <span
-                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
-                                    off</span>                            <a href="#">
-                                    <img src="assets/images/products/pro-4.png" alt=""
-                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">                            </a>
+                            <span class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
+                                off</span> <a href="#">
+                                <img src="assets/images/products/pro-4.png" alt="" class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500"> </a>
                         </div>
                         <div class="flex-auto  text-center p-4">
-                        <span
-                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
-                                <a href="ecommerce-product-detail.html"
-                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Mannat
-                                    530 Bluetooth Wireless </a>
+                            <span class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
+                            <a href="ecommerce-product-detail.html" class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">Mannat
+                                530 Bluetooth Wireless </a>
                             <div class="mb-4">
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -486,32 +458,25 @@
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <span class="text-slate-800 font-semibold">4.8</span>
                             </div>
-                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                        class="text-sm text-slate-500">$</sup>49 <del
-                                        class="text-base text-slate-400">$99</del></h4>
-                                <button type="button"
-                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                    Now</button>
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">$</sup>49 <del class="text-base text-slate-400">$99</del></h4>
+                            <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                Now</button>
                         </div>
                     </div>
                 </div> <!--end card-->
             </div><!--end col-->
             <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
-            <div
-                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">                    <div class="flex-auto  text-center">
+                <div class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                    <div class="flex-auto  text-center">
                         <div class="flex-auto text-center bg-gray-100">
-                        <span
-                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
-                                    soon</span>                            <a href="#">
-                                    <img src="assets/images/products/pro-1.png" alt=""
-                                        class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">                            </a>
+                            <span class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
+                                soon</span> <a href="#">
+                                <img src="assets/images/products/pro-1.png" alt="" class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500"> </a>
                         </div>
                         <div class="flex-auto  text-center p-4">
-                        <span
-                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
-                                <a href="ecommerce-product-detail.html"
-                                    class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
-                                    Colorfull Shoes </a>
+                            <span class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
+                            <a href="ecommerce-product-detail.html" class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">New
+                                Colorfull Shoes </a>
                             <div class="mb-4">
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
@@ -520,12 +485,9 @@
                                 <i class="icofont-star text-yellow-400 inline-block"></i>
                                 <span class="text-slate-800 font-semibold">4.8</span>
                             </div>
-                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                        class="text-sm text-slate-500">$</sup>99 <del
-                                        class="text-base text-slate-400">$199</del></h4>
-                                <button type="button"
-                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                    Now</button>
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup class="text-sm text-slate-500">$</sup>99 <del class="text-base text-slate-400">$199</del></h4>
+                            <button type="button" class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                Now</button>
                         </div>
                     </div>
                 </div> <!--end card-->
@@ -539,7 +501,9 @@
         $('#form-cart').submit(function(e) {
             e.preventDefault();
             let form = new FormData(this)
-            $('#btn-add-to-cart').html('Loading')
+            $('#btn-add-to-cart').html(
+                '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
+            )
             $('#btn-add-to-cart').attr('disabled', true)
             $.ajax({
                 data: form,
