@@ -7,13 +7,8 @@
                         <div class="border-b border-slate-200 dark:border-slate-700/40 py-3 px-4 dark:text-slate-300/70">
                             <h4 class="font-medium">Title</h4>
                         </div><!--end header-title-->
+                        <x-alert></x-alert>
                         <div class="flex-auto p-4">
-                            @if (\Session::has('success'))
-                            {!! \Session::get('success') !!}
-                            @endif
-                            @if (\Session::has('error'))
-                                {!! \Session::get('error') !!}
-                            @endif
                             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 text-center">
                                     <div id="img-container" class="w-[400px] text-center inline-block mx-auto">
