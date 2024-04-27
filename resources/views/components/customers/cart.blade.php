@@ -6,10 +6,3 @@
         class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">        {{ $count }}
     </span>
 </button>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-<script>
-    $('#btn-cart').click(function() {
-        window.location.href = `{{ route('customer.cart') }}`
-    })
-</script>
