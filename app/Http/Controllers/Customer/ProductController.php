@@ -41,7 +41,7 @@ class ProductController extends Controller
                 'qty' => $request->qty
             ]);
 
-           $count = Cart::where('user_id', Auth::user()->id)
+            $count = Cart::where('user_id', Auth::user()->id)
                 ->distinct('product_id')
                 ->count();
 
