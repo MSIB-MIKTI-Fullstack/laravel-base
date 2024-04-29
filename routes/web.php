@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
+use App\Http\Controllers\Customer\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserResourceController;
 
@@ -43,5 +44,9 @@ Route::group(['as' => 'customer.'], function () {
         Route::middleware('auth')->group(function () {
             Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
         });
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/cart', [CartController::class, 'index'])->name('cart');
     });
 });
