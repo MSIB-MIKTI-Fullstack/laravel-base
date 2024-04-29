@@ -34,11 +34,21 @@ class ProductController extends Controller
             'qty' => 'integer|min:1'
         ]);
         try {
-            Cart::create([
-                'product_id' => $request->product_id,
-                'user_id' => Auth::user()->id,
-                'qty' => $request->qty
-            ]);
+            $cart = Cart::where('product_id', $request->product_id)->where('user_id', Auth::user()->id);
+
+            if ($cart->exists()) {
+                $data = $cart->first();
+
+                $cart->update([
+                    'qty' => $data->qty + $request->qty
+                ]);
+            } else {
+                Cart::create([
+                    'product_id' => $request->product_id,
+                    'user_id' => Auth::user()->id,
+                    'qty' => $request->qty
+                ]);
+            }
 
             $count = Cart::where('user_id', Auth::user()->id)
                 ->distinct('product_id')
