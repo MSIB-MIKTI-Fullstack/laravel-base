@@ -11,16 +11,39 @@ class CartController extends Controller
 {
     public function index()
     {
-        // $carts = Cart::selectRaw('SUM(qty) as total_qty, name, description, price, image')
-        // ->leftJoin('products', 'products.id', '=', 'carts.product_id')
-        // ->where('user_id', Auth::user()->id)
-        // ->groupBy('product_id')
-        // ->get();
-
         $carts = Cart::getCartByUser()
             ->get();
 
         //dd($carts);
         return view('customers.cart', compact('carts'));
+    }
+
+    public function changeCart(Request $request)
+    {
+        $cart = Cart::find($request->id);
+
+        try {
+            $cart->update([
+                'qty' => $request->qty
+            ]);
+
+            return response()->json(['message' => 'Success change cart quantity'], 200);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json(['message' => $th->getMessage()], 500);
+        }
+    }
+
+    public function getTotalCart()
+    {
+        $carts = Cart::getCartByUser()->get();
+
+        $total = 0;
+
+        foreach ($carts as $key => $item) {
+            $total += $item->total_qty * $item->price;
+        }
+
+        return response()->json(['total' => $total], 200);
     }
 }

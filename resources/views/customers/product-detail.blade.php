@@ -10,9 +10,6 @@
                         </div><!--end header-title-->
                         <x-alert></x-alert>
                         <div class="flex-auto p-4">
-                            @if (\Session::has('success'))
-                                {!! \Session::get('success') !!}
-                            @endif
                             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 text-center">
                                     <div id="img-container" class="w-[400px] text-center inline-block mx-auto">
@@ -61,7 +58,8 @@
                                             <a href="#" class="text-primary-500">more details</a>
                                         </p>
 
-                                        <form id="form-cart" action="{{ route('customer.product-add-to-cart') }}" method="POST" enctype="multipart/form-data">
+                                        <form id="form-cart" action="{{ route('customer.product-add-to-cart') }}"
+                                            method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="product_id" value="{{ $product->id }}" />
                                             <input
@@ -647,13 +645,17 @@
 </x-customer-layout>
 <script>
     $(document).ready(function() {
+
         $('#form-cart').submit(function(e) {
             e.preventDefault();
+
             let form = new FormData(this)
+
             $('#btn-add-to-cart').html(
                 '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
-            )
+                )
             $('#btn-add-to-cart').attr('disabled', true)
+
             $.ajax({
                 data: form,
                 url: `{{ route('customer.product-add-to-cart') }}`,
@@ -667,6 +669,7 @@
                 success: function(data) {
                     $('#btn-add-to-cart').html('Add to cart')
                     $('#btn-add-to-cart').attr('disabled', false)
+
                     $('#cart-total').html(data.cart_count)
                     notyf.success(data.message)
                 },
