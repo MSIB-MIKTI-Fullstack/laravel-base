@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Chart;
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,13 +34,13 @@ class ProductController extends Controller
             'qty' => 'integer|min:1'
         ]);
         try {
-            Chart::create([
+            Cart::create([
                 'product_id' => $request->product_id,
                 'user_id' => Auth::user()->id,
                 'qty' => $request->qty
             ]);
 
-            $count = Chart::where('user_id', Auth::user()->id)
+            $count = Cart::where('user_id', Auth::user()->id)
                 ->distinct('product_id')
                 ->count();
 

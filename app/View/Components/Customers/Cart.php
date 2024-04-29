@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
-use App\Models\Chart as ModelsChart;
+use App\Models\Cart as ModelsCart;
 
 class Cart extends Component
 {
@@ -24,7 +24,7 @@ class Cart extends Component
      */
     public function render(): View|Closure|string
     {
-        $count = ModelsChart::where('user_id', Auth::user()->id)
+        $count = ModelsCart::where('user_id', Auth::user()->id)
             ->distinct('product_id')
             ->count();
 
