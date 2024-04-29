@@ -19,15 +19,13 @@ class CartController extends Controller
     public function changeCart(Request $request)
     {
         $cart = Cart::find($request->id);
+
         try {
-            //code...
             $cart->update([
                 'qty' => $request->qty
             ]);
 
-
-
-            return response()->json(['message' => 'Success change cart'], 200);
+            return response()->json(['message' => 'Success change cart quantity'], 200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message' => $th->getMessage()], 500);
