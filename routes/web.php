@@ -38,7 +38,7 @@ Route::middleware([
 Route::group(['as' => 'customer.'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::prefix('/products')->group(function() {
+    Route::prefix('/products')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('products');
         Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail');
         Route::middleware('auth')->group(function () {
@@ -48,5 +48,7 @@ Route::group(['as' => 'customer.'], function () {
 
     Route::middleware('auth')->group(function () {
         Route::get('/cart', [CartController::class, 'index'])->name('cart');
+        Route::get('/cart/total-cart', [CartController::class, 'getTotalCart'])->name('cart.total-cart');
+        Route::post('/cart/change-cart', [CartController::class, 'changeCart'])->name('cart.change-cart');
     });
 });
