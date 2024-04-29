@@ -20,6 +20,7 @@ class CartController extends Controller
         $carts = Cart::getCartByUser()
             ->get();
 
+        //dd($carts);
         return view('customers.cart', compact('carts'));
     }
 }
