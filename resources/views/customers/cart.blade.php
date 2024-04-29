@@ -35,158 +35,47 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <!-- 1 -->
+                                                @foreach ($carts as $item)
                                                 <tr
                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
                                                         class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                         <div class="flex items-center">
-                                                            <img src="assets/images/products/01.png" alt=""
+                                                            <img src="{{ $item->image }}" alt=""
                                                                 class="mr-2 h-8 inline-block">
                                                             <div class="self-center">
                                                                 <h5
                                                                     class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                    White Table Camera</h5>
-                                                                <span class="block  font-medium text-slate-500">EOS
-                                                                    R50 (RF-S18-45mm)</span>
+                                                                    {{ $item->name }}</h5>
+                                                                <span class="block  font-medium text-slate-500">{{ Str::limit($item->description, 10) }}</span>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        $99
+                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400" 
+                                                        data-price="{{ $item->price }}">
+                                                        Rp. {{ number_format($item->price, 0) }}
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
                                                         <input
                                                             class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
                                                             style="width:100px;" type="number" min="0"
-                                                            value="1" id="example-number-input">
+                                                            value="{{ $item->total_qty }}" 
+                                                            onchange="changeQty(this)" id="example-number-input">
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                        $99
+                                                        Rp. {{ number_format($item->price * $item->total_qty) }}
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                        <a href="#"><i
-                                                                class="ti ti-trash text-lg text-red-500 dark:text-red-400"></i></a>
+                                                        <a href="#">
+                                                            <i data-lucide="trash" class="top-icon w-5 h-5"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
-                                                <!-- 2 -->
-                                                <tr
-                                                    class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                    <td
-                                                        class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                        <div class="flex items-center">
-                                                            <img src="assets/images/products/02.png" alt=""
-                                                                class="mr-2 h-8 inline-block">
-                                                            <div class="self-center">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                    New Colorfull Shoes</h5>
-                                                                <span class="block  font-medium text-slate-500">Men's
-                                                                    Protonium Lite Running Shoe</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        $119
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        <input
-                                                            class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                                            style="width:100px;" type="number" min="0"
-                                                            value="1" id="example-number-input">
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                        $119
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                        <a href="#"><i
-                                                                class="ti ti-trash text-lg text-red-500 dark:text-red-400"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <!-- 3 -->
-                                                <tr
-                                                    class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                    <td
-                                                        class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                        <div class="flex items-center">
-                                                            <img src="assets/images/products/03.png" alt=""
-                                                                class="mr-2 h-8 inline-block">
-                                                            <div class="self-center">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                    Imported VR Box </h5>
-                                                                <span class="block  font-medium text-slate-500">VR
-                                                                    Supported Smartphones</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        $39
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        <input
-                                                            class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                                            style="width:100px;" type="number" min="0"
-                                                            value="1" id="example-number-input">
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                        $39
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                        <a href="#"><i
-                                                                class="ti ti-trash text-lg text-red-500 dark:text-red-400"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <!-- 4 -->
-                                                <tr class="bg-white dark:bg-gray-900">
-                                                    <td
-                                                        class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                        <div class="flex items-center">
-                                                            <img src="assets/images/products/04.png" alt=""
-                                                                class="mr-2 h-8 inline-block">
-                                                            <div class="self-center">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                    N95 Mask</h5>
-                                                                <span
-                                                                    class="block  font-medium text-slate-500">Anti-Pollution
-                                                                    Mask, NABL</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        $5
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                        <input
-                                                            class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                                            style="width:100px;" type="number" min="0"
-                                                            value="10" id="example-number-input">
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                        $50
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                        <a href="#"><i
-                                                                class="ti ti-trash text-lg text-red-500 dark:text-red-400"></i></a>
-                                                    </td>
-                                                </tr>
+                                                @endforeach   
                                             </tbody>
                                         </table>
                                     </div>
@@ -200,8 +89,7 @@
                         class="bg-black dark:bg-gray-900 shadow border border-slate-700/40 dark:border-slate-700/40  rounded-md w-full relative ">
                         <div class="flex-auto p-4">
                             <div class="text-center">
-                                <img src="assets/images/logo-sm.png" alt=""
-                                    class="h-12 inline-block mx-auto">
+                                <img src="assets/images/logo-sm.png" alt="" class="h-12 inline-block mx-auto">
                                 <h4 class="text-2xl font-semibold my-2 text-slate-300">Have a promo code ?</h4>
                                 <div class="relative w-full">
                                     <input type="text" id="promocode"
@@ -231,12 +119,10 @@
                                                 </tr>
                                                 <!-- 2 -->
                                                 <tr class="border-b border-dashed border-slate-500/60">
-                                                    <td
-                                                        class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
+                                                    <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping
                                                     </td>
-                                                    <td
-                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         <div>
                                                             <label class="inline-flex items-center">
                                                                 <input type="radio"
@@ -304,3 +190,31 @@
         </div><!--end container-->
     </div><!--end main-->
 </x-customer-layout>
+
+<script>
+    function changeQty(e) {
+        let qty = $(e).val();
+        let price = $(e).parent().siblings().eq(1).data('price');
+
+        let total = price * qty
+
+        $(e).parent().siblings().eq(2).html(
+            `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
+            
+            $.ajax({
+            data: form,
+            url: `{{ route('customer.product-add-to-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+            },
+            error: function(data) {
+            }
+        })
+    }
+</script>
