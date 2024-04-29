@@ -15,9 +15,8 @@ class Cart extends Model
 
     public function scopeGetCartByUser(Builder $query): void
     {
-        $query->selectRaw('SUM(qty) as total_qty, name, description, price, image')
+        $query->selectRaw("carts.id as id, qty as total_qty, name, description, price, image")
             ->leftJoin('products', 'products.id', '=', 'carts.product_id')
-            ->where('user_id', Auth::user()->id)
-            ->groupBy('product_id');
+            ->where('user_id', Auth::user()->id);
     }
 }
