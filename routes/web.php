@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\MahasiswaController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\LandingPage\HomeController;
-use App\Http\Controllers\LandingPage\ProductController;
+use App\Http\Controllers\Customer\CartController;
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,17 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('about', function () {
-//     return "Hello, I'm Moch Ihsan Saepulloh";
-// });
-
-// // Route::prefix('/')->group(function () {
-// //     Route::get('register', [AuthController::class, 'register'])->name('register');
-// //     Route::get('login', [AuthController::class, 'login'])->middleware('guest')->name('login');
-// //     Route::get('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
-// //     Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
-// // });
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -38,14 +26,19 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::resource('mahasiswa', MahasiswaController::class)->names('admin.mahasiswa');
-    Route::resource('user', UserController::class)->names('admin.user');
-});
-
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::get('/products', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product.detail');
+    Route::prefix('/products')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('products');
+        Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail');
+
+        Route::middleware('auth')->group(function () {
+            Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
+        });
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    });
 });
