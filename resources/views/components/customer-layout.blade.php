@@ -159,20 +159,8 @@
                                 </div>
                             </div>
                             <div class="me-2  dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
-                                    id="user-profile" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full"
-                                        src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
-                                        alt="user photo" />
-                                    <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600">Maria
-                                            Gibson</span>
-                                    </span>
-                                </button>
-
+                               <x-customers.cart></x-customers.cart>
+                            </div>
                                 <div class="left-auto right-0 z-50 my-1 hidden list-none
                         divide-y divide-gray-100 rounded border-slate-700 md:border-white
                         text-base shadow bg-white w-40"
