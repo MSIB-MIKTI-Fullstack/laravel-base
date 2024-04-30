@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
@@ -15,18 +15,17 @@ class CartController extends Controller
 
         return view('customers.cart', compact('carts'));
     }
+
     public function changeCart(Request $request)
     {
         $cart = Cart::find($request->id);
+
         try {
-            //code...
             $cart->update([
                 'qty' => $request->qty
             ]);
 
-
-
-            return response()->json(['message' => 'Success change cart'], 200);
+            return response()->json(['message' => 'Success change cart quantity'], 200);
         } catch (\Throwable $th) {
             //throw $th;
             return response()->json(['message' => $th->getMessage()], 500);
