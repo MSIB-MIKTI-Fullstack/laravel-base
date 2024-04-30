@@ -12,6 +12,12 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
+        // $products = Product::with(['product_category'])
+        // ->when($request->filled('category_id'), function($q) use ($request) {
+        //     $q->whereHas('product_category', function($subQuery) use ($request) {
+        //         $subQuery->where('name', $request->category_id);
+        //     });
+        // })
         $products = Product::with(['product_category'])
         ->when($request->category_id != "", function($q) use ($request){
             $q->where('product_category_id', $request->category_id);
@@ -28,15 +34,25 @@ class ProductController extends Controller
     }
     public function addToCart(Request $request)
     {
+        $request->validate([
+            'qty' => 'integer|min:1'
+        ]);
         try {
-            $request->validate([
-                'qty' => 'integer|min:1'
-            ]);
-            Cart::create([
-                'product_id' => $request->product_id,
-                'qty' => $request->qty,
-                'user_id' => Auth::user()->id, 
-            ]);
+            $cart = Cart::where('product_id', $request->product_id)->where('user_id', Auth::user()->id);
+            if ($cart->exists()) {
+                $data = $cart->first();
+
+                $cart->update([
+                    'qty' => $data->qty + $request->qty
+                ]);
+            }else{
+                Cart::create([
+                    'product_id' => $request->product_id,
+                    'qty' => $request->qty,
+                    'user_id' => Auth::user()->id, 
+                ]);
+            }
+           
             $cart_count = Cart::where('user_id', Auth::user()->id)
             ->distinct('product_id')
             ->count();
