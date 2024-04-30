@@ -35,12 +35,8 @@ class CartController extends Controller
         }
     }
 
-    public function getTotalCart(Request $request)
+    public function getTotalCart()
     {
-        $request->validate([
-            'qty' => 'integer|min:1'
-        ]);
-
         $carts = Cart::getCartByUser()->get();
 
         $total = 0;
