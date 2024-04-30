@@ -102,9 +102,9 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
-                                class="w-6 md:w-8 inline-block">
-                            <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
+                            {{-- <img src="{{ asset('assets/images/logo.png') }}" alt="logo"
+                                class="w-6 md:w-8 inline-block"> --}}
+                            <img src="{{ asset('assets/images/logo4.png') }}" alt="logo"
                                 class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
@@ -441,7 +441,7 @@
             notyf = new Notyf({
                 dismissible: true,
                 position: {
-                    x: 'left',
+                    x: 'right',
                     y: 'bottom',
                 }
             })

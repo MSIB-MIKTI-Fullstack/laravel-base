@@ -64,6 +64,8 @@ Route::group(['as' => 'customer.'], function () {
 
     Route::middleware('auth')->group(function () {
         Route::get('/cart', [CartController::class, 'index'])->name('cart');
+        Route::get('/cart/total-cart', [CartController::class, 'getTotalCart'])->name('cart.total-cart');
+        Route::post('/cart/change-cart', [CartController::class, 'changeCart'])->name('cart.change-cart');
     });
 
    

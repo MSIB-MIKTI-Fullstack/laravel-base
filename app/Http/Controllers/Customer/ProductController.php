@@ -34,22 +34,32 @@ class ProductController extends Controller
         $request->validate([
             'qty' => 'integer|min:1'
         ]);
-        
-        try {
-            Cart::create([
-                'product_id' => $request->product_id,
-                'user_id' => Auth::user()->id,
-                'qty' => $request->qty,
-            ]);
 
-            $count = ModelsCart::where('user_id', Auth::user()->id)
-            ->distinct('product_id')
-            ->count();
-    
-            return response()->json(['message' => 'Product added to cart', 'count' => $count], 200);
+        try {
+            $cart = Cart::where('product_id', $request->product_id)->where('user_id', Auth::user()->id);
+
+            if ($cart->exists()) {
+                $data = $cart->first();
+
+                $cart->update([
+                    'qty' => $data->qty + $request->qty
+                ]);
+            } else {
+                Cart::create([
+                    'product_id' => $request->product_id,
+                    'user_id' => Auth::user()->id,
+                    'qty' => $request->qty
+                ]);
+            }
+
+
+            $count = Cart::where('user_id', Auth::user()->id)
+                ->distinct('product_id')
+                ->count();
+
+            return response()->json(['message' => 'Add product to cart succesfuly', 'cart_count' => $count], 200);
         } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }
-        
     }
 }
