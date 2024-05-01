@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Product;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -26,29 +24,39 @@ class ProductController extends Controller
     public function detail($slug)
     {
         $product = Product::with(['product_category'])->where('slug', $slug)->first();
+
         return view('customers.product-detail', compact('product'));
     }
 
     public function addToCart(Request $request)
     {
-        // validasi
         $request->validate([
             'qty' => 'integer|min:1'
         ]);
 
         try {
-            Cart::create([
-                'product_id' => $request->product_id,
-                'user_id' => Auth::user()->id,
-                'qty' => $request->qty,
-            ]);
+            $cart = Cart::where('product_id', $request->product_id)->where('user_id', Auth::user()->id);
+
+            if ($cart->exists()) {
+                $data = $cart->first();
+
+                $cart->update([
+                    'qty' => $data->qty + $request->qty
+                ]);
+            } else {
+                Cart::create([
+                    'product_id' => $request->product_id,
+                    'user_id' => Auth::user()->id,
+                    'qty' => $request->qty
+                ]);
+            }
+
 
             $count = Cart::where('user_id', Auth::user()->id)
                 ->distinct('product_id')
                 ->count();
 
-            return response()->json(['message' => 'Produk berhasil dimasukan kedalam keranjang!', 'cart_count' => $count], 200);
-            // return redirect()->back()->with('success', 'Produk berhasil dimasukan kedalam keranjang!');
+            return response()->json(['message' => 'Add product to cart succesfuly', 'cart_count' => $count], 200);
         } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }

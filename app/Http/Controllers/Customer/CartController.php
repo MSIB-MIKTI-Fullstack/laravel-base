@@ -5,15 +5,47 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
     public function index()
     {
+        $carts = Cart::getCartByUser()
+            ->get();
 
-        $cart = Cart::where('user_id', Auth::user()->id)->distinct('product_id')->toArray();
-        return view('customers.cart');
+        return view('customers.cart', compact('carts'));
+    }
+
+    public function changeCart(Request $request)
+    {
+        $cart = Cart::find($request->id);
+
+        try {
+            $cart->update([
+                'qty' => $request->qty
+            ]);
+
+            return response()->json(['message' => 'Success change cart quantity'], 200);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json(['message' => $th->getMessage()], 500);
+        }
+    }
+
+    public function getTotalCart()
+    {
+        $carts = Cart::getCartByUser()->get();
+
+        $total = 0;
+
+        foreach ($carts as $key => $item) {
+            $total += $item->total_qty * $item->price;
+        }
+
+        return response()->json(['total' => $total], 200);
+    }
+
+    public function getCart(){
+        
     }
 }
