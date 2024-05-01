@@ -209,6 +209,7 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
+                $('#table-cart').html(`Empty Cart`)
                 let html;
                 $('#cart-total').html(res.data.length);
                 if (res.data.length > 0) {
@@ -288,3 +289,4 @@
         })
     }
 </script>
+                
