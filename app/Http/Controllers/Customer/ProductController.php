@@ -26,13 +26,13 @@ class ProductController extends Controller
     {
         $product = Product::where('slug', $slug)->first();
 
-        // $products = Product::with(['product_category'])
-        //     ->where('id', '!=', $product->id)
-        //     ->orderBy('created_at', 'desc')
-        //     ->take(6)
-        //     ->get();
+        $products = Product::with(['product_category'])
+            ->where('id', '!=', $product->id)
+            ->orderBy('created_at', 'desc')
+            ->take(6)
+            ->get();
 
-        return view('customers.product-detail', compact('product'));
+        return view('customers.product-detail', compact('product', 'products'));
     }
 
     public function addToCart(Request $request)
