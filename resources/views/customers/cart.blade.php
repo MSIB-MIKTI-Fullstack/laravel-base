@@ -209,6 +209,7 @@
     }
 
     function getCartData() {
+        $('#table-cart').html(loader())
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
             type: 'GET',
