@@ -255,7 +255,8 @@
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
                                                             <a href="#">
-                                                                <i data-lucide="trash" class="top-icon w-5 h-5"></i>
+                                                            <a href="#" class="text-red-500">
+                                                                Remove
                                                             </a>
                                                         </td>
                                                     </tr>
