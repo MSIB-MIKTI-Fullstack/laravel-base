@@ -29,7 +29,7 @@
                                                         Total
                                                     </th>
                                                     <th scope="col"
-                                                        class="p-3 text-xs font-medium tracking-wider text-right text-gray-700 uppercase dark:text-gray-400">
+                                                        class="p-3 text-xs font-medium tracking-wider text-center text-gray-700 uppercase dark:text-gray-400">
                                                         Action
                                                     </th>
                                                 </tr>
@@ -65,51 +65,6 @@
                                     <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
                                         <table class="min-w-full">
                                             <tbody>
-                                                <!-- 1 -->
-                                                {{-- <tr class="border-b border-dashed border-slate-500/60">
-                                                    <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                        Subtotal
-                                                    </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $15,500.00
-                                                    </td>
-                                                </tr> --}}
-                                                <!-- 2 -->
-                                                {{-- <tr class="border-b border-dashed border-slate-500/60">
-                                                    <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                        Shipping
-                                                    </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        <div>
-                                                            <label class="inline-flex items-center">
-                                                                <input type="radio" class="form-radio text-indigo-600"
-                                                                    name="radio-colors" value="1" checked>
-                                                                <span class="ms-2">Shipping Charge :
-                                                                    $5.00</span>
-                                                            </label>
-                                                        </div>
-                                                        <div>
-                                                            <label class="inline-flex items-center">
-                                                                <input type="radio" class="form-radio text-indigo-600"
-                                                                    name="radio-colors" value="2">
-                                                                <span class="ms-2">Express Shipping Charge :
-                                                                    $10.00</span>
-                                                            </label>
-                                                        </div>
-                                                        <a href="#" class="text-slate-200 font-semibold">Change
-                                                            Address</a>
-                                                    </td>
-                                                </tr> --}}
-                                                <!-- 3 -->
-                                                {{-- <tr class="">
-                                                    <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                        Promo Code
-                                                    </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        -$10.00
-                                                    </td>
-                                                </tr> --}}
-                                                <!-- 4 -->
                                                 <tr class="border-t-2 border-solid border-slate-500/60">
                                                     <td
                                                         class="p-3 text-base text-gray-200 whitespace-nowrap font-medium">
@@ -259,9 +214,9 @@
                             ${number_format(item.price * item.total_qty)}
                         </td>
                         <td
-                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-center ">
                             <a href="#">
-                                <i data-lucide="trash-2" class="top-icon w-5 h-5"></i>
+                                <i class="fa fa-trash fa-fw"></i>
                             </a>
                         </td>
                     </tr>
