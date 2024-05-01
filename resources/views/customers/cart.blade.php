@@ -179,9 +179,12 @@
             headers: {
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
-            success: function(data) { getTotalCart()
+            success: function(data) 
+            {                notyf.success(data.message)
+                 getTotalCart()
             },
             error: function(data) {
+                notyf.error(data.responseJSON.message)
             }
         })
     }
@@ -199,7 +202,9 @@
                 $('#total-cart').html(
                     `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(data.total)}`
                 )},
-            error: function(data) {}
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
         })
     }
 </script>
