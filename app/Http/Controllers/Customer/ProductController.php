@@ -38,10 +38,12 @@ class ProductController extends Controller
             ]);
 
             $count = Cart::where('user_id', Auth::user()->id)
-            ->distinct('product_id')
-            ->count();
+                ->distinct('product_id')
+                ->count();
 
-        return response()->json(['message' => 'Add product to cart succesfuly', 'cart_count' => $count], 200);        } catch (\Throwable $th) {
-            return response()->json(['message' => $th->getMessage()], 500);        }
+            return response()->json(['message' => 'Add product to cart succesfuly', 'cart_count' => $count], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $th->getMessage()], 500);
+        }
     }
 }
