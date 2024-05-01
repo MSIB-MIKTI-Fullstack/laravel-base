@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"> {{-- jquery --}}
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     @vite(['resources/js/app.js'])
 
 </head>
@@ -102,9 +102,9 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a href="index.html" class="block w-full py-5 lg:py-3">
-                            {{-- <img src="{{ asset('assets/images/logo.png') }}" alt="logo"
-                                class="w-6 md:w-8 inline-block"> --}}
-                            <img src="{{ asset('assets/images/logo4.png') }}" alt="logo"
+                            <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt="logo"
+                                class="w-6 md:w-8 inline-block">
+                            <img src="{{ asset('design-system/assets/images/logo-dark.png') }}" alt="logo"
                                 class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
@@ -183,7 +183,7 @@
 
                                         <ul class="py-1" aria-labelledby="navUserdata">
                                             <li>
-                                                <a href="{{ route('dashboard') }}" {{-- dashboard ke halaman jekstrim --}}
+                                                <a href="{{ route('dashboard') }}"
                                                     class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
                                                     <span data-lucide="user"
                                                         class="w-4 h-4 inline-block text-slate-800 me-2"></span>
@@ -410,7 +410,6 @@
     <!-- <div class="menu-overlay"></div> -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
-
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
@@ -433,21 +432,25 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <!-- JAVASCRIPTS -->
-
     <script>
         let notyf;
-        $(document).ready(function() {
-            notyf = new Notyf({
-                dismissible: true,
-                position: {
-                    x: 'right',
-                    y: 'bottom',
-                }
-            })
 
+        $(document).ready(function() {
+            notyf = new Notyf()
         })
+
+        function number_format(number) {
+            return Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number)
+        }
+
+        function loader() {
+            return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+        }
     </script>
+    <!-- JAVASCRIPTS -->
 </body>
 
 </html>
