@@ -12,7 +12,7 @@ class CartController extends Controller
         $carts = Cart::getCartByUser()
         ->get();
 
-        return view('customer.cart', compact('carts'));
+        return view('customers.cart', compact('carts'));
     }
 
     public function changeCart(Request $request)
