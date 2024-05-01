@@ -12,6 +12,23 @@
     <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
 
     <!-- Css -->
+    <style>
+        .loader {
+            width: 25px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 6px solid lightblue;
+            border-right-color: orange;
+            animation: l2 4s infinite linear;
+        }
+
+        @keyframes l2 {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+    </style>
+
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
@@ -447,9 +464,9 @@
         }
 
         function loader() {
-            return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+            return `<div class="loader"></div>`;
         }
-    </script>
+    </script> // function loader adalah function untuk membuat spinner loading
     <!-- JAVASCRIPTS -->
 </body>
 
