@@ -199,22 +199,26 @@
             }
         })
 
-        function getCartData() {
-            $('#table-cart').html(loader())
 
-            $.ajax({
-                url: `{{ route('customer.cart.get-cart') }}`,
-                type: 'GET',
-                contentType: false,
-                cache: false,
-                processData: false,
-                headers: {
-                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
-                },
-                success: function(res) {
-                    let html;
-                    res.data.forEach(item => {
-                        html += ` 
+    }
+
+    function getCartData() {
+        $('#table-cart').html(loader())
+
+        $.ajax({
+            url: `{{ route('customer.cart.get-cart') }}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(res) {
+                let html;
+                $('#cart-total').html(res.data.length);
+                res.data.forEach(item => {
+                    html += ` 
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                 <td
                                     class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
@@ -249,22 +253,47 @@
                                 </td>
                                 <td
                                     class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                    <a href="#">
-                                        <i data-lucide="trash" class="top-icon w-5 h-5"></i>
-                                    </a>
+                                    <button type="button" onClick="deleteCart(this,${item.id})" class="text-red-500">
+                                       Remove
+                                    </button>
                                 </td>
                             </tr>
                             `
-                    });
-                    $('#table-cart').html(html)
-                    getTotalCart()
+                });
+                $('#table-cart').html(html)
+                getTotalCart()
 
-                },
-                error: function(data) {
-                    notyf.error(data.responseJSON.message)
-                }
-            })
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
 
-        }
+    }
+
+    function deleteCart(e, id) {
+        let form = new FormData();
+        form.append('_method', 'DELETE');
+        form.append('id', id);
+        $.ajax({
+            url: `{{ route('customer.cart.delete-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            data: form,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+                getCartData();
+                notyf.success(data.message);
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+
+
     }
 </script>
