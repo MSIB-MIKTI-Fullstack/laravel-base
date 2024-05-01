@@ -34,49 +34,7 @@
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @foreach ($carts as $item)
-                                                    <tr
-                                                        class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                        <td
-                                                            class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                            <div class="flex items-center">
-                                                                <img src="assets/images/products/01.png" alt=""
-                                                                    class="mr-2 h-8 inline-block">
-                                                                <div class="self-center">
-                                                                    <h5
-                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                        {{ $item->name }}</h5>
-                                                                    <span
-                                                                        class="block  font-medium text-slate-500">{{ Str::limit($item->description, 10) }}</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
-                                                            data-price ="{{ $item->price }}">
-                                                            Rp. {{ number_format($item->price, 0) }}
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                            <input
-                                                                class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                                                style="width:100px;" type="number" min="0"
-                                                                onchange="changeQty(this)"
-                                                                value="{{ $item->total_qty }}"
-                                                                data-id="{{ $item->id }}" id="example-number-input">
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                            Rp. {{ number_format($item->price * $item->total_qty) }}
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                            <a href="#">
-                                                                <i data-lucide="trash" class="top-icon w-5 h-5"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
+                                            <tbody id="table-cart">
                                             </tbody>
                                         </table>
                                     </div>
@@ -107,7 +65,7 @@
                                     <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
                                         <table class="min-w-full">
                                             <tbody>
-                                                <!-- 1 -->
+                                                {{-- <!-- 1 -->
                                                 <tr class="border-b border-dashed border-slate-500/60">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Subtotal
@@ -116,8 +74,8 @@
                                                         $15,500.00
                                                     </td>
                                                 </tr>
-                                                <!-- 2 -->
-                                                <tr class="border-b border-dashed border-slate-500/60">
+                                                <!-- 2 --> --}}
+                                                {{-- <tr class="border-b border-dashed border-slate-500/60">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping
                                                     </td>
@@ -141,7 +99,7 @@
                                                         <a href="#" class="text-slate-200 font-semibold">Change
                                                             Address</a>
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <!-- 3 -->
                                                 <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
@@ -187,7 +145,7 @@
 </x-customer-layout>
 <script>
     $(document).ready(function() {
-        getTotalCart();
+        getCartData();
     })
 
     function changeQty(e) {
@@ -240,5 +198,73 @@
                 notyf.error(data.responseJSON.message)
             }
         })
+
+        function getCartData() {
+            $('#table-cart').html(loader())
+
+            $.ajax({
+                url: `{{ route('customer.cart.get-cart') }}`,
+                type: 'GET',
+                contentType: false,
+                cache: false,
+                processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                },
+                success: function(res) {
+                    let html;
+                    res.data.forEach(item => {
+                        html += ` 
+                        <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                                    <div class="flex items-center">
+                                        <img src="${item.image}" alt=""
+                                            class="mr-2 h-8 inline-block">
+                                        <div class="self-center">
+                                            <h5
+                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                ${item.name}</h5>
+                                            <span
+                                                class="block  font-medium text-slate-500">${item.description.substring(0,15)}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
+                                    data-price ="${item.price}">
+                                    Rp. ${number_format(item.price)}
+                                </td>
+                                <td
+                                    class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
+                                    <input
+                                        class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
+                                        style="width:100px;" type="number" min="0"
+                                        onchange="changeQty(this)"
+                                        value="${item.total_qty}"
+                                        data-id="${item.id}" id="example-number-input">
+                                </td>
+                                <td
+                                    class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
+                                    Rp.  ${number_format(item.price)}
+                                </td>
+                                <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+                                    <a href="#">
+                                        <i data-lucide="trash" class="top-icon w-5 h-5"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            `
+                    });
+                    $('#table-cart').html(html)
+                    getTotalCart()
+
+                },
+                error: function(data) {
+                    notyf.error(data.responseJSON.message)
+                }
+            })
+
+        }
     }
 </script>
