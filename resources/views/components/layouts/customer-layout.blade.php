@@ -450,7 +450,7 @@
         }
 
         function loader() {
-            return `<div class="border-t-transparent border-solid animate-spin rounded-full border-primary-500 border-2 h-4 w-4 inline-block text-center"></div>`;
+            return `<div class="border-t-transparent border-solid animate-spin rounded-full border-primary-500 border-2 h-5 w-5 inline-block"></div>`;
         }
     </script>
     <!-- JAVASCRIPTS -->

@@ -164,7 +164,11 @@
     }
 
     function getCartData() {
-        $('#table-cart').html(loader())
+        $('#table-cart').html(`<tr>
+                        <td colspan="5" align="center" class="p-3">` +
+            loader() +
+            `</td>
+                    </tr>`)
 
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
@@ -176,7 +180,11 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
-                $('#table-cart').html(`Empty Cart`)
+                $('#table-cart').html(`<tr>
+                                    <td colspan="5" class="p-3 text-sm text-red-400 font-medium dark:text-gray-400" align="center">
+                                        <span class="text-center">Empty Cart</span>
+                                    </td>
+                                </tr>`)
                 let html;
                 $('#cart-total').html(res.data.length)
 
@@ -184,17 +192,13 @@
                     html +=
                         `
                     <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                        <td
-                            class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                        <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                             <div class="flex items-center">
-                                <img src="${item.image}" alt=""
-                                    class="mr-2 h-8 inline-block">
+                                <img src="${item.image}" alt="" class="mr-2 h-8 inline-block">
                                 <div class="self-center">
-                                    <h5
-                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                    <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">
                                         ${item.name}</h5>
-                                    <span
-                                        class="block  font-medium text-slate-500">${item.description.substring(0, 10)}</span>
+                                    <span class="block  font-medium text-slate-500">${item.description.substring(0, 10)}</span>
                                 </div>
                             </div>
                         </td>
@@ -202,21 +206,16 @@
                             data-price="${item.price}">
                             ${number_format(item.price)}
                         </td>
-                        <td
-                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
+                        <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
                             <input
                                 class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                style="width:100px;" type="number" min="0"
-                                value="${item.total_qty}"
-                                onchange="changeQty(this)" id="example-number-input"
-                                data-id="${item.id}">
+                                style="width:100px;" type="number" min="0" value="${item.total_qty}" onchange="changeQty(this)"
+                                id="example-number-input" data-id="${item.id}">
                         </td>
-                        <td
-                            class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
+                        <td class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
                             ${number_format(item.price * item.total_qty)}
                         </td>
-                        <td
-                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-center ">
+                        <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-center ">
                             <button onclick="deleteCart(this, ${item.id})">
                                 <i class="fa fa-trash fa-fw"></i>
                             </button>
@@ -237,7 +236,11 @@
     }
 
     function deleteCart(e, id) {
-        $(e).html(loader())
+        $(e).html(`<tr>
+                        <td colspan="5">
+                            ${loader()}
+                        </td>
+                    </tr>`)
         let form = new FormData()
         form.append('_method', 'DELETE')
         form.append('id', id)
