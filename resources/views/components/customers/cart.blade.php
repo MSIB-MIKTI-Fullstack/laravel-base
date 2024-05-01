@@ -11,7 +11,7 @@
     crossorigin="anonymous"></script>
 <script>
     $('#btn-cart').click(function() {
-        window.location.href = `{{ route('customer.cart') }}`
+        window.location.href = `{{ route('customer.cart.index') }}`
     })
 </script>
 
