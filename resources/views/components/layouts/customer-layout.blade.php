@@ -55,7 +55,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="w-full px-4 md:w-1/2 lg:w-1/2">
                         <div class="-mx-3 hidden items-center justify-end md:flex">
                             <div class="me-2">
@@ -450,7 +450,7 @@
         }
 
         function loader() {
-            return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+            return `<div class="border-t-transparent border-solid animate-spin rounded-full border-primary-500 border-2 h-4 w-4 inline-block text-center"></div>`;
         }
     </script>
     <!-- JAVASCRIPTS -->
