@@ -40,6 +40,8 @@ Route::prefix('/products')->group(function () {
 });
     Route::middleware('auth')->group(function () {
         Route::get('/cart', [CartController::class, 'index'])->name('cart');
+        Route::get('/cart/total-cart', [CartController::class, 'getTotalCart'])->name('cart.total-cart');
+        Route::post('/cart/change-art', [CartController::class, 'changeCart'])->name('cart.change-cart');
 });
    
 });
