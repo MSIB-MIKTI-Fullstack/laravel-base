@@ -231,5 +231,21 @@
         let total = price * qty
         $(e).parent().siblings().eq(2).html(
             `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
+
+            $.ajax({
+            data: form,
+            url: `{{ route('customer.product-add-to-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+            },
+            error: function(data) {
+            }
+        })
     }
 </script>

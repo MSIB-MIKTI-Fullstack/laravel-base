@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
@@ -12,5 +13,10 @@ class CartController extends Controller
         ->get();
 
         return view('customer.cart', compact('carts'));
+    }
+
+    public function changeCart(Request $request)
+    {
+        
     }
 }
