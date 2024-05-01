@@ -27,6 +27,6 @@ class Cart extends Component
         ->distinct('product_id')
         ->count();
         
-        return view('components.customers.cart');
+        return view('components.customers.cart', compact('count'));
     }
 }
