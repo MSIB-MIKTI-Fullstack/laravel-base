@@ -197,20 +197,44 @@
         let id = $(e).data('id');
         let qty = $(e).val();
         let price = $(e).parent().siblings().eq(1).data('price');
+
         let total = price * qty
+
         $(e).parent().siblings().eq(2).html(
             `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
-            let form = new FormData()
+
+        let form = new FormData()
         form.append('id', id)
         form.append('qty', qty)
+
         $('#total-cart').html(
             `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`
-            )
+        )
 
-            $.ajax({
+        $.ajax({
             data: form,
             url: `{{ route('customer.cart.change-cart') }}`,
             type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+                notyf.success(data.message)
+                getTotalCart()
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
+
+    function getTotalCart() {
+        $.ajax({
+            url: `{{ route('customer.cart.total-cart') }}`,
+            type: 'GET',
             contentType: false,
             cache: false,
             processData: false,
