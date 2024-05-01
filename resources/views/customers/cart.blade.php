@@ -41,43 +41,10 @@
                                                         <td
                                                             class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                             <div class="flex items-center">
-                                                                <img src="assets/images/products/01.png" alt=""
+                                                                <img src="{{ $item->image }}" alt=""
                                                                     class="mr-2 h-8 inline-block">
                                                                 <div class="self-center">
                                                                     <h5
-                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                        {{ $item->name }}</h5>
-                                                                    <span
-                                                                        class="block  font-medium text-slate-500">{{ Str::limit($item->description, 10) }}</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                            Rp. {{ number_format($item->price, 0) }}
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                            <input
-                                                                class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                                                style="width:100px;" type="number" min="0"
-                                                                value="{{ $item->total_qty }}"
-                                                                id="example-number-input">
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                            Rp. {{ number_format($item->price * $item->total_qty) }}
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                            <a href="#"><i
-                                                                    class="ti ti-trash text-lg text-red-500 dark:text-red-400"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
 
     
         
@@ -87,8 +54,70 @@
         
         Expand All
     
-    @@ -200,8 +88,7 @@ class="ti ti-trash text-lg text-red-500 dark:text-red-400"></i></a>
+    @@ -52,8 +52,8 @@ class="block  font-medium text-slate-500">{{ Str::limit($item->description, 10)
   
+                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                                        {{ $item->name }}</h5>
+                                                                    <span
+                                                                        class="block  font-medium text-slate-500">{{ Str::limit($item->description, 10) }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
+                                                            data-price="{{ $item->price }}">
+                                                            Rp. {{ number_format($item->price, 0) }}
+                                                        </td>
+                                                        <td
+
+    
+        
+          
+    
+
+        
+        Expand All
+    
+    @@ -62,16 +62,17 @@ class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-40
+  
+                                                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
+                                                            <input
+                                                                class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
+                                                                style="width:100px;" type="number" min="0"
+                                                                value="{{ $item->total_qty }}"
+                                                                onchange="changeQty(this)" id="example-number-input">
+                                                        </td>
+                                                        <td
+                                                            class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
+                                                            Rp. {{ number_format($item->price * $item->total_qty) }}
+                                                        </td>
+                                                        <td
+                                                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+                                                            <a href="#">
+                                                                <i data-lucide="trash" class="top-icon w-5 h-5"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+
+    
+          
+            
+    
+
+          
+          Expand Down
+          
+            
+    
+
+          
+          Expand Up
+    
+    @@ -183,3 +184,15 @@ class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm f
+  
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -103,17 +132,6 @@
                                 <h4 class="text-2xl font-semibold my-2 text-slate-300">Have a promo code ?</h4>
                                 <div class="relative w-full">
                                     <input type="text" id="promocode"
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -220,36 +107,30 @@ class="absolute right-0 bottom-0 top-0 inline-block focus:outline-none text-bran
-  
                                         class="form-input w-full rounded-md  border border-slate-500/60 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-500/60 focus:border-brand-500  text-slate-300"
                                         placeholder="promocode" required>
                                     <button type="submit"
@@ -156,17 +174,6 @@
                                                                     name="radio-colors" value="2">
                                                                 <span class="ms-2">Express Shipping Charge :
                                                                     $10.00</span>
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -261,12 +142,10 @@ class="form-radio text-indigo-600"
-  
                                                             </label>
                                                         </div>
                                                         <a href="#" class="text-slate-200 font-semibold">Change
@@ -182,17 +189,6 @@
                                                         -$10.00
                                                     </td>
                                                 </tr>
-
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
                                                 <!-- 4 -->
                                                 <tr class="border-t-2 border-solid border-slate-500/60">
                                                     <td
@@ -227,3 +223,13 @@
         </div><!--end container-->
     </div><!--end main-->
 </x-customer-layout>
+
+<script>
+    function changeQty(e) {
+        let qty = $(e).val();
+        let price = $(e).parent().siblings().eq(1).data('price');
+        let total = price * qty
+        $(e).parent().siblings().eq(2).html(
+            `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
+    }
+</script>
