@@ -105,7 +105,8 @@
     $(document).ready(function() {
         getCartData()
     })
-
+</script>
+<script>
     function changeQty(e) {
         let id = $(e).data('id');
         let qty = $(e).val();
@@ -119,7 +120,6 @@
         let form = new FormData()
         form.append('id', id)
         form.append('qty', qty)
-
         $('#total-cart').html(loader())
 
         $.ajax({
@@ -146,8 +146,8 @@
         $.ajax({
             url: `{{ route('customer.cart.total-cart') }}`,
             type: 'GET',
-            contentType: false,
             cache: false,
+            contentType: false,
             processData: false,
             headers: {
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
