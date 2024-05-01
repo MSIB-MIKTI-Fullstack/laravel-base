@@ -209,7 +209,7 @@
     }
 
     function getCartData() {
-        $('#table-cart').html(loader())
+
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
             type: 'GET',
@@ -220,10 +220,9 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
-                console.log(res);
-
+                $('#table-cart').html(`Empty Cart`)
                 let html;
-
+                $('#cart-total').html(res.data.length)
                 res.data.forEach(item => {
                     html +=
                         `
@@ -261,9 +260,9 @@
                                                         </td>
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                            <a href="#" class="text-red-500">
-                                                               Remove
-                                                            </a>
+                                                            <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
+                                                                Remove
+                                                            </button>
                                                         </td>
                                                     </tr>
                     `
@@ -271,6 +270,31 @@
 
                 $('#table-cart').html(html)
                 getTotalCart()
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
+
+    function deleteCart(e, id) {
+        $(e).html(loader())
+        let form = new FormData()
+        form.append('_method', 'DELETE')
+        form.append('id', id)
+        $.ajax({
+            url: `{{ route('customer.cart.delete-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: form,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(res) {
+                getCartData()
+                notyf.success(res.message)
             },
             error: function(data) {
                 notyf.error(data.responseJSON.message)
