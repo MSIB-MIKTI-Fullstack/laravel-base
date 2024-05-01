@@ -51,7 +51,7 @@ Route::group(['as' => 'customer.'], function () {
             Route::get('/', [CartController::class, 'index'])->name('index');
             Route::get('/total-cart', [CartController::class, 'getTotalCart'])->name('total-cart');
             Route::post('/change-cart', [CartController::class, 'changeCart'])->name('change-cart');
-            Route::post('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
+            Route::get('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
         });
     });
 });
