@@ -49,9 +49,14 @@ class CartController extends Controller
         return response()->json(['data' => $carts], 200);
     }
 
-    public function deleteChart(Request $request){
-        try{
-            Cart::finc($request->id)->delete();
+    public function deleteCart(Request $request)
+    {
+        try {
+            Cart::find($request->id)->delete();
+
+            return response()->json(['message' => 'Cart deleted successfully!']);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $th->getMessage()]);
         }
     }
 }

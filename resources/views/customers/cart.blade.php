@@ -176,7 +176,9 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
+                $('#table-cart').html(`Empty Cart`)
                 let html;
+                $('#cart-total').html(res.data.length)
 
                 res.data.forEach(item => {
                     html +=
@@ -215,9 +217,9 @@
                         </td>
                         <td
                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-center ">
-                            <a href="#">
+                            <button onclick="deleteCart(this, ${item.id})">
                                 <i class="fa fa-trash fa-fw"></i>
-                            </a>
+                            </button>
                         </td>
                     </tr>
                     `
@@ -234,5 +236,28 @@
         })
     }
 
-
+    function deleteCart(e, id) {
+        $(e).html(loader())
+        let form = new FormData()
+        form.append('_method', 'DELETE')
+        form.append('id', id)
+        $.ajax({
+            url: `{{ route('customer.cart.delete-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: form,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(res) {
+                getCartData()
+                notyf.success(res.message)
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
 </script>
