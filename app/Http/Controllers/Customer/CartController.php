@@ -11,11 +11,12 @@ class CartController extends Controller
 {
     public function index()
     {
-        $carts = Cart::getCartByUser()
-            ->get();
+        // $carts = Cart::getCartByUser()
+        //     ->get();
 
         //dd($carts);
-        return view('customers.cart', compact('carts'));
+        //return view('customers.cart', compact('carts'));
+        return view('customers.cart');
     }
 
     public function changeCart(Request $request)
@@ -48,6 +49,8 @@ class CartController extends Controller
     }
 
     public function getCart(){
-        
+        $carts = Cart::getCartByUser()
+         ->get();
+         return response()->json(['data' => $carts], 200);
     }
 }
