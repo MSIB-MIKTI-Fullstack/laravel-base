@@ -14,14 +14,13 @@
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/nice-select2/css/nice-select2.css') }}">
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.css') }}">
+
     <!-- Main Css -->
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+
     @vite(['resources/js/app.js'])
 
 </head>
@@ -56,6 +55,7 @@
                             </li>
                         </ul>
                     </div>
+                    
                     <div class="w-full px-4 md:w-1/2 lg:w-1/2">
                         <div class="-mx-3 hidden items-center justify-end md:flex">
                             <div class="me-2">
@@ -100,7 +100,6 @@
                 </div>
             </div>
         </div>
-
         <div class="border-b lg:py-3 bg-[#EEF0FC]">
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
@@ -412,8 +411,8 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
@@ -438,9 +437,21 @@
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
         let notyf;
+
         $(document).ready(function() {
             notyf = new Notyf()
         })
+
+        function number_format(number) {
+            return Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number)
+        }
+
+        function loader() {
+            return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+        }
     </script>
     <!-- JAVASCRIPTS -->
 </body>
