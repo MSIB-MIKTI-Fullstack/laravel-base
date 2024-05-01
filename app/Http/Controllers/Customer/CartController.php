@@ -48,4 +48,10 @@ class CartController extends Controller
 
         return response()->json(['data' => $carts], 200);
     }
+
+    public function deleteChart(Request $request){
+        try{
+            Cart::finc($request->id)->delete();
+        }
+    }
 }
