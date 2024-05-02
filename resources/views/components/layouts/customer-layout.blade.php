@@ -257,7 +257,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-checkout.html"
+                                        <a href="{{ route('customer.checkout.index') }}"
                                             class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Checkout
                                         </a>
