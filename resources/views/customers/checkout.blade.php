@@ -129,8 +129,8 @@
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="First name" type="text" name="first_name">
                                         </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                         <div class="mb-2">
                                             <label for="Last_name"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
@@ -152,7 +152,8 @@
                                                 placeholder="Address" type="text" name="address">
                                         </div>
                                     </div>
-                                    <div class="grid grid-cols-3 gap-4">
+                                </div>
+                                <div class="grid grid-cols-3 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="City"
@@ -179,9 +180,9 @@
                                                 <option class="dark:text-slate-700">Gujarat</option>
                                                 <option class="dark:text-slate-700">California</option>
                                             </select>
-                                            </div>
                                         </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Country"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small
@@ -193,9 +194,9 @@
                                                 <option class="dark:text-slate-700">India</option>
                                                 <option class="dark:text-slate-700">USA</option>
                                             </select>
-                                            </div>
                                         </div>
-                                        </div>
+                                    </div>
+                                </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
@@ -215,9 +216,9 @@
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="Enter Email" type="text" name="email">
-                                            </div>
                                         </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Mobile_No"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
@@ -225,9 +226,9 @@
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="Mobile no" type="text" name="phone_number">
-                                            </div>
                                         </div>
-                                        </div>
+                                    </div>
+                                </div>
                                 <label class="flex">
                                     <input type="checkbox" class="accent-brand-500">
                                     <span for="default-checkbox"
@@ -238,9 +239,8 @@
                                 <div class="mt-3">
                                     <button type="submit"
                                         class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
-                                    
                                     <button
-                                    class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancel</button>
+                                        class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancel</button>
                                 </div>
                             </div><!--end card-body-->
                         </form>
