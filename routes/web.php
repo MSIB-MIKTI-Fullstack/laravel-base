@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
@@ -45,6 +46,10 @@ Route::prefix('/products')->group(function () {
             Route::post('/change-art', [CartController::class, 'changeCart'])->name('cart.change-cart');
             Route::get('/get-cart', [CartController::class, 'getCart'])->name('cart.get-cart');
             Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('cart.delete-cart');
+        });
+
+        Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
+            Route::get('/', [CheckoutController::class, 'index'])->name('index');
         });
 });
    
