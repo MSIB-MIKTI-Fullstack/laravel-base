@@ -132,7 +132,7 @@
                                     class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
                                         onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
-                                    <button
+                                        <button id="btn-checkout"
                                     class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
                                         onclick="window.location.href = `{{ route('customer.checkout.index') }}`">Proceed
                                         to checkout</button>
@@ -226,8 +226,9 @@
                 $('#table-cart').html(`Empty Cart`)
                 let html;
                 $('#cart-total').html(res.data.length)
-                res.data.forEach(item => {
-                    html +=
+                if (res.data.length > 0) {
+                    res.data.forEach(item => {
+                        html +=
                         `
                     <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                         <td
@@ -270,7 +271,20 @@
                                                     </tr>
                     `
                 });
-                $('#table-cart').html(html)
+                    $('#table-cart').html(html)
+                    lucide.createIcons();
+
+                    $('#btn-checkout').attr('disabled', false)
+                    $('#btn-checkout').removeClass('bg-gray-600')
+                    $('#btn-checkout').addClass('bg-brand-500')
+                    $('#btn-checkout').addClass('hover:bg-brand-600')
+                } else {
+                    $('#btn-checkout').attr('disabled', true)
+                    $('#btn-checkout').addClass('bg-gray-600')
+                    $('#btn-checkout').removeClass('bg-brand-500')
+                    $('#btn-checkout').removeClass('hover:bg-brand-600')
+                }
+
                 getTotalCart()
             },
             error: function(data) {
@@ -281,9 +295,12 @@
 
     function deleteCart(e, id) {
         $(e).html(loader())
+
         let form = new FormData()
+
         form.append('_method', 'DELETE')
         form.append('id', id)
+
         $.ajax({
             url: `{{ route('customer.cart.delete-cart') }}`,
             type: 'POST',
