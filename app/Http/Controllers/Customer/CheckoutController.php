@@ -18,7 +18,7 @@ class CheckoutController extends Controller
     public function checkout(Request $request)
     {
 
-        dd($request);
+        // dd($request);
         try {
 
             $cart = Cart::getTotalCheckoutByUser()->first();
@@ -46,6 +46,7 @@ class CheckoutController extends Controller
                     'user_id' => $item->user_id,
                 ]);
 
+                // bersihkan keranjang setelah checkouts
                 $item->delete();
             }
 
