@@ -268,7 +268,7 @@
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
                                                             <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
-                                                                Remove
+                                                                <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -277,7 +277,7 @@
             }
 
 $('#table-cart').html(html)
-
+lucide.createIcons();
 getTotalCart()
 },
 error: function(data) {
