@@ -131,7 +131,7 @@
                                         class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
                                         onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
-                                        <button id="btn-checkout"
+                                    <button id="btn-checkout"
                                         class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
                                         onclick="window.location.href = `{{ route('customer.checkout.index') }}`">Proceed
                                         to checkout</button>
@@ -231,7 +231,7 @@
                 if (res.data.length > 0) {
                     res.data.forEach(item => {
                         html +=
-                        `
+                            `
                     <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                         <td
                                                             class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
@@ -272,9 +272,12 @@
                                                         </td>
                                                     </tr>
                     `
-                });
+                    });
+
                     $('#table-cart').html(html)
+
                     lucide.createIcons();
+
                     $('#btn-checkout').attr('disabled', false)
                     $('#btn-checkout').removeClass('bg-gray-600')
                     $('#btn-checkout').addClass('bg-brand-500')
@@ -286,7 +289,7 @@
                     $('#btn-checkout').removeClass('hover:bg-brand-600')
                 }
 
-                lucide.createIcons();
+
                 getTotalCart()
             },
             error: function(data) {
