@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Customer\CartController;
+use App\Http\Controllers\Customer\CheckoutController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -35,13 +36,16 @@ Route::group(['as' => 'customer.'], function () {
             Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
         });
     });
-        Route::middleware('auth')->group(function () {
-            Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
-                Route::get('/', [CartController::class, 'index'])->name('index');
-                Route::get('/total-cart', [CartController::class, 'getTotalCart'])->name('total-cart');
-                Route::post('/change-cart', [CartController::class, 'changeCart'])->name('change-cart');
-                Route::get('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
-                Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('delete-cart');
-            });
+    Route::middleware('auth')->group(function () {
+        Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
+            Route::get('/', [CartController::class, 'index'])->name('index');
+            Route::get('/total-cart', [CartController::class, 'getTotalCart'])->name('total-cart');
+            Route::post('/change-cart', [CartController::class, 'changeCart'])->name('change-cart');
+            Route::get('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
+            Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('delete-cart');
+        });
+        Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
+            Route::get('/', [CheckoutController::class, 'index'])->name('index');
         });
     });
+});
