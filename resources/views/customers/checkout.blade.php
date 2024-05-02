@@ -75,7 +75,7 @@
                                                         Total
                                                     </td>
                                                     <td id="total" class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                        - 
+                                                        -
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -83,11 +83,9 @@
                                     </div>
                                 </div>
                                 <div class="flex gap-4 mb-4">
-                                    <button class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
-                                        onclick="window.location.href = `{{ route('customer.products') }}`">Continue
+                                    <button class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block" onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
-                                    <button class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
-                                        onclick="window.location.href = `{{ route('customer.cart.index') }}`">Back
+                                    <button class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block" onclick="window.location.href = `{{ route('customer.cart.index') }}`">Back
                                         to cart</button>
                                 </div>
                                 <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It is
@@ -108,46 +106,33 @@
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                         <div class="mb-2">
-                                            <label for="First_Name"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">First
+                                            <label for="First_Name" class="font-medium text-sm text-slate-600 dark:text-slate-400">First
                                                 Name<small class="text-red-600 text-sm">*</small></label>
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="First name" type="text" name="first_name">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="First name" type="text" name="first_name">
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                         <div class="mb-2">
-                                            <label for="Last_name"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
+                                            <label for="Last_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
                                                 Name<small class="text-red-600 text-sm">*</small></label>
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Last name" type="text" name="last_name">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Last name" type="text" name="last_name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-4 lg:col-span-4 xl:col-span-4">
                                         <div class="mb-2">
-                                            <label for="Delivery_Address"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Delivery
+                                            <label for="Delivery_Address" class="font-medium text-sm text-slate-600 dark:text-slate-400">Delivery
                                                 Address<small class="text-red-600 text-sm">*</small></label>
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Address" type="text" name="address">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Address" type="text" name="address">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="City"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
-                                                    class="text-red-600 text-sm">*</small></label>
-                                            <select id="City"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="city">
+                                            <label for="City" class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small class="text-red-600 text-sm">*</small></label>
+                                            <select id="City" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="city">
                                                 <option class="dark:text-slate-700">-- select --</option>
                                                 <option class="dark:text-slate-700">Surat</option>
                                                 <option class="dark:text-slate-700">New York</option>
@@ -156,12 +141,8 @@
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="State"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
-                                                    class="text-red-600 text-sm">*</small></label>
-                                            <select id="State"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="state">
+                                            <label for="State" class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small class="text-red-600 text-sm">*</small></label>
+                                            <select id="State" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="state">
                                                 <option class="dark:text-slate-700">-- select --</option>
                                                 <option class="dark:text-slate-700">Gujarat</option>
                                                 <option class="dark:text-slate-700">California</option>
@@ -170,55 +151,41 @@
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="Country"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small
-                                                    class="text-red-600 text-sm">*</small></label>
-                                            <select id="Country"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="country">
+                                            <label for="Country" class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small class="text-red-600 text-sm">*</small></label>
+                                            <select id="Country" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="country">
                                                 <option class="dark:text-slate-700">-- select --</option>
                                                 <option class="dark:text-slate-700">India</option>
                                                 <option class="dark:text-slate-700">USA</option>
                                             </select>
                                         </div>
                                     </div>
-                                    </div>
+                                </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="Zip_code"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
+                                            <label for="Zip_code" class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="------" type="text" name="zip_code">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="------" type="text" name="zip_code">
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                         <div class="mb-2">
-                                            <label for="Email_Address"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
+                                            <label for="Email_Address" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
                                                 Address</label>
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Enter Email" type="text" name="email">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email">
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="Mobile_No"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
+                                            <label for="Mobile_No" class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
                                                 No<small class="text-red-600 text-sm">*</small></label>
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Mobile no" type="text" name="phone_number">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Mobile no" type="text" name="phone_number">
                                         </div>
                                     </div>
-                                    </div>
+                                </div>
                                 <label class="flex">
                                     <input type="checkbox" class="accent-brand-500">
-                                    <span for="default-checkbox"
-                                        class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
+                                    <span for="default-checkbox" class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
                                         Shipping
                                         Address</span>
                                 </label>
@@ -237,6 +204,7 @@
     $(document).ready(function() {
         getCartData()
     })
+
     function getTotalCart() {
         $.ajax({
             url: `{{ route('customer.cart.total-cart') }}`,
@@ -257,6 +225,7 @@
             }
         })
     }
+
     function getCartData() {
         $('#table-cart').html(loader())
         $.ajax({
