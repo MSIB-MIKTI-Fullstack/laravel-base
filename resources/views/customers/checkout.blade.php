@@ -473,7 +473,11 @@
     }
 
     function getCartData() {
-        $('#table-cart').html(loader())
+        $('#table-cart').html(`<tr>
+                        <td colspan="5" align="center" class="p-3">` +
+            loader() +
+            `</td>
+                    </tr>`)
 
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
