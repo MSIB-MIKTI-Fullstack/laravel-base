@@ -42,4 +42,12 @@ class CartController extends Controller
 
         return response()->json(['total' => $total], 200);
     }
+
+    public function getCart()
+    {
+        $carts = Cart::getCartByUser()
+            ->get;
+
+        return response()->json(['data' => $carts], 200);
+    }
 }
