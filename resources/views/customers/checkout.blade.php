@@ -31,82 +31,7 @@
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <!-- Product 1 -->
-                                                <tr
-                                                    class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                    <td
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                        <img src="assets/images/products/01.png" alt=""
-                                                            class="mr-2 h-8 inline-block">
-                                                        <h5
-                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                            White Table Camera</h5>
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                        1
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                        $99
-                                                    </td>
-                                                </tr>
-                                                <!-- Product 2 -->
-                                                <tr
-                                                    class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                    <td
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                        <img src="assets/images/products/02.png" alt=""
-                                                            class="mr-2 h-8 inline-block">
-                                                        <h5
-                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                            New Colorfull Shoes</h5>
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                        1
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                        $59
-                                                    </td>
-                                                </tr>
-                                                <!-- Product 3 -->
-                                                <tr
-                                                    class="bg-white border-b-2 border-solid dark:bg-gray-900 dark:border-gray-700/40">
-                                                    <td
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                        <img src="assets/images/products/03.png" alt=""
-                                                            class="mr-2 h-8 inline-block">
-                                                        <h5
-                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                            Imported VR Box</h5>
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                        1
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                        $49
-                                                    </td>
-                                                </tr>
-                                                <tr class="bg-white dark:bg-gray-900">
-                                                    <td
-                                                        class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                        Total
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                        3
-                                                    </td>
-                                                    <td
-                                                        class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                        $207
-                                                    </td>
-                                                </tr>
-                                            </tbody>
+                                            <tbody id="table-cart">
                                         </table>
                                     </div>
                                 </div>
@@ -126,12 +51,13 @@
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Subtotal
                                                     </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $207.00
+                                                    <td id="subtotal"
+                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                        -
                                                     </td>
                                                 </tr>
                                                 <!-- 2 -->
-                                                <tr
+                                                {{-- <tr
                                                     class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
@@ -139,16 +65,16 @@
                                                     <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         $5.00
                                                     </td>
-                                                </tr>
+                                                    </tr> --}}
                                                 <!-- 3 -->
-                                                <tr class="">
+                                                {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Promo Code
                                                     </td>
                                                     <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         -$10.00
                                                     </td>
-                                                </tr>
+                                                    </tr> --}}
                                                 <!-- 4 -->
                                                 <tr
                                                     class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
@@ -156,9 +82,9 @@
                                                         class="p-3 text-base text-gray-200 whitespace-nowrap font-medium">
                                                         Total
                                                     </td>
-                                                    <td
+                                                    <td id="total"
                                                         class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                        $202.00
+                                                        -
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -167,10 +93,12 @@
                                 </div>
                                 <div class="flex gap-4 mb-4">
                                     <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
+                                    class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
                                     <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Back
+                                    class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.cart.index') }}`">Back
                                         to cart</button>
                                 </div>
                                 <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It is
@@ -517,3 +445,95 @@
         </div><!--end container-->
     </div>
 </x-customer-layout>
+<script>
+    $(document).ready(function() {
+        getCartData()
+    })
+    function getTotalCart() {
+        $.ajax({
+            url: `{{ route('customer.cart.total-cart') }}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+                $('#total-cart').html(
+                    `${number_format(data.total)}`
+                )
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
+    function getCartData() {
+        $('#table-cart').html(loader())
+        $.ajax({
+            url: `{{ route('customer.cart.get-cart') }}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(res) {
+                $('#table-cart').html(`Empty Cart`)
+                let html;
+                let total_qty = 0;
+                let total_price = 0;
+                $('#cart-total').html(res.data.length)
+                res.data.forEach(item => {
+                    total_qty += item.total_qty
+                    total_price += item.total_qty * item.price
+                    html +=
+                        `
+                        <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                                    <td
+                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        <img src="${item.image}" alt=""
+                                                            class="mr-2 h-8 inline-block">
+                                                        <h5
+                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
+                                                            ${item.name}</h5>
+                                                    </td>
+                                                    <td
+                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                        ${item.total_qty}
+                                                    </td>
+                                                    <td
+                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                        ${number_format(item.total_qty * item.price)}
+                                                    </td>
+                                                </tr>`
+                });
+                html += `
+                <tr class="bg-white dark:bg-gray-900">
+                                                    <td
+                                                        class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        Total
+                                                    </td>
+                                                    <td
+                                                        class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        ${total_qty}
+                                                    </td>
+                                                    <td
+                                                        class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        ${number_format(total_price)}
+                                                    </td>
+                                                </tr>
+                `
+                $('#subtotal').html(number_format(total_price))
+                $('#total').html(number_format(total_price))
+                $('#table-cart').html(html)
+                getTotalCart()
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
+</script>

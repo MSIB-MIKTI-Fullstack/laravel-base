@@ -275,6 +275,7 @@
 
 
                 $('#table-cart').html(html)
+                lucide.createIcons();
 
                 lucide.createIcons();
                 getTotalCart()
