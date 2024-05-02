@@ -128,10 +128,12 @@
                                 </div>
                                 <div class="flex gap-4 mb-4">
                                     <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
+                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
                                     <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Proceed
+                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.checkout.index') }}`">Proceed
                                         to checkout</button>
                                 </div>
                                 <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note
@@ -264,7 +266,7 @@
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
                                                             <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
-                                                                Remove
+                                                                <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -274,6 +276,7 @@
 
                 $('#table-cart').html(html)
 
+                lucide.createIcons();
                 getTotalCart()
             },
             error: function(data) {
