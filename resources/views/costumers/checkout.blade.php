@@ -535,6 +535,8 @@
                     `;
                     $('#table-cart').html(html)
                 }
+                $('#subtotal').html(number_format(total_price))
+                $('#total').html(number_format(total_price))
                 getTotalCart()
 
 
