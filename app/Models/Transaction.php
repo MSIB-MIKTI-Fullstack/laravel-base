@@ -1,23 +1,13 @@
 <?php
 
-namespace Database\Factories;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Transaction>
- */
-class TransactionFactory extends Factory
+class Transaction extends Model
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
+    use HasFactory;
+
+    protected $guarded = ["created_at", "updated_at"];
 }
