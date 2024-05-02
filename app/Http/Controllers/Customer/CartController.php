@@ -9,10 +9,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function index(){
-        $carts = Cart::getCartByUser()
-        ->get();
-
-        return view('customers.cart', compact('carts'));
+        return view('customers.cart');
     }
 
     public function changeCart(Request $request)
@@ -41,5 +38,13 @@ class CartController extends Controller
         }
 
         return response()->json(['total' => $total], 200);
+    }
+
+    public function getCart()
+    {
+        $carts = Cart::getCartByUser()
+        ->get();
+
+        return response()->json(['data' => $carts], 200);
     }
 }
