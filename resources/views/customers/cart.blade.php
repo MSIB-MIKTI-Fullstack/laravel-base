@@ -34,49 +34,7 @@
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @foreach ($carts as $item)
-                                                    <tr
-                                                        class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                        <td
-                                                            class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                            <div class="flex items-center">
-                                                                <img src="{{ $item->image }}" alt=""
-                                                                    class="mr-2 h-8 inline-block">
-                                                                <div class="self-center">
-                                                                    <h5
-                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                        {{ $item->name }}</h5>
-                                                                    <span
-                                                                        class="block  font-medium text-slate-500">{{ Str::limit($item->description, 10) }}</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
-                                                            data-price="{{ $item->price }}">
-                                                            Rp. {{ number_format($item->price, 0) }}
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                                            <input
-                                                                class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                                                style="width:100px;" type="number" min="0"
-                                                                value="{{ $item->total_qty }}"
-                                                                onchange="changeQty(this)" id="example-number-input"
-                                                                data-id="{{ $item->id }}">
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                                            Rp. {{ number_format($item->price * $item->total_qty) }}
-                                                        </td>
-                                                        <td
-                                                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                            <a href="#">
-                                                                <i data-lucide="trash" class="top-icon w-5 h-5"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
+                                            <tbody id="table-cart">
                                             </tbody>
                                         </table>
                                     </div>
@@ -190,27 +148,21 @@
 
 <script>
     $(document).ready(function() {
-        getTotalCart()
+        getCartData();
     })
-
     function changeQty(e) {
         let id = $(e).data('id');
         let qty = $(e).val();
         let price = $(e).parent().siblings().eq(1).data('price');
-
         let total = price * qty
-
         $(e).parent().siblings().eq(2).html(
             `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
-
         let form = new FormData()
         form.append('id', id)
         form.append('qty', qty)
-
         $('#total-cart').html(
             `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`
-            )
-
+        )
         $.ajax({
             data: form,
             url: `{{ route('customer.cart.change-cart') }}`,
@@ -222,15 +174,11 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(data) {
-                notyf.success(data.message)
                 getTotalCart()
             },
-            error: function(data) {
-                notyf.error(data.responseJSON.message)
-            }
+            error: function(data) {}
         })
     }
-
     function getTotalCart() {
         $.ajax({
             url: `{{ route('customer.cart.total-cart') }}`,
@@ -245,6 +193,97 @@
                 $('#total-cart').html(
                     `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(data.total)}`
                 )
+                notyf.success(data.message);
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
+    function getCartData() {
+        $('#table-cart').html(loader())
+        $.ajax({
+            url: `{{ route('customer.cart.get-cart') }}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(res) {
+                let html;
+                $('#cart-total').html(res.data.length);
+                if (res.data.length > 0) {
+                    res.data.forEach(item => {
+                        html += `
+                        <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                                    <div class="flex items-center">
+                                        <img src="${item.image}" alt=""
+                                            class="mr-2 h-8 inline-block">
+                                        <div class="self-center">
+                                            <h5
+                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                ${item.name}</h5>
+                                            <span
+                                                class="block  font-medium text-slate-500">${item.description.substring(0,15)}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
+                                    data-price ="${item.price}">
+                                    Rp. ${number_format(item.price)}
+                                </td>
+                                <td
+                                    class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
+                                    <input
+                                        class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
+                                        style="width:100px;" type="number" min="0"
+                                        onchange="changeQty(this)"
+                                        value="${item.total_qty}"
+                                        data-id="${item.id}" id="example-number-input">
+                                </td>
+                                <td
+                                    class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
+                                    Rp.  ${number_format(item.price)}
+                                </td>
+                                <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+                                    <button type="button" onClick="deleteCart(this,${item.id})" class="text-red-500">
+                                       Remove
+                                    </button>
+                                </td>
+                            </tr>
+                            `
+                    });
+                    $('#table-cart').html(html)
+                    getTotalCart()
+                }
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
+    function deleteCart(e, id) {
+        let form = new FormData();
+        form.append('_method', 'DELETE');
+        form.append('id', id);
+        $.ajax({
+            url: `{{ route('customer.cart.delete-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            data: form,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+                getCartData();
+                notyf.success(data.message);
             },
             error: function(data) {
                 notyf.error(data.responseJSON.message)
