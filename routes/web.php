@@ -44,6 +44,7 @@ Route::prefix('/products')->group(function () {
             Route::get('/total-cart', [CartController::class, 'getTotalCart'])->name('cart.total-cart');
             Route::post('/change-art', [CartController::class, 'changeCart'])->name('cart.change-cart');
             Route::get('/get-cart', [CartController::class, 'getCart'])->name('cart.get-cart');
+            Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('cart.delete-cart');
         });
 });
    
