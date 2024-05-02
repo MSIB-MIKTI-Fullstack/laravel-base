@@ -110,7 +110,9 @@
                     </div>
                 </div><!--end col-->
                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-8 xl:col-span-8 ">
-                    <form action="{{ route('customer.checkout.checkout') }}">
+                    <form action="{{ route('customer.checkout.checkout') }}" method="POST">
+                        @csrf
+                        @method('POST')
 
                         <div
                             class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative mb-4">

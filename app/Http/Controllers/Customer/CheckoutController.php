@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
+use App\Models\DetailTransaction;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 
@@ -15,10 +17,13 @@ class CheckoutController extends Controller
 
     public function checkout(Request $request)
     {
+
+        dd($request);
         try {
 
+            $cart = Cart::getTotalCheckoutByUser()->first();
 
-            Transaction::create([
+            $transaction = Transaction::create([
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'address' => $request->address,
@@ -28,13 +33,26 @@ class CheckoutController extends Controller
                 'zip_code' => $request->zip_code,
                 'email_address' => $request->email_address,
                 'phone_number' => $request->phone_number,
-                'total_checkout' => $request->total_checkout,
+                'total_checkout' => $cart->total_checkout,
                 'status' => "pending",
             ]);
 
+            $cart = Cart::getCartByUser()->get();
 
+            foreach ($cart as $key => $item) {
+                DetailTransaction::create([
+                    'transaction_id' => $transaction->id,
+                    'product_id' => $item->product_id,
+                    'user_id' => $item->user_id,
+                ]);
+
+                $item->delete();
+            }
+
+            return redirect()->route('customer.products'); // sementara kesini dulu
         } catch (\Throwable $th) {
-            //throw $th;
+            dd($th->getMessage()); // sementara kita tampilkan error
+            return redirect()->back();
         }
     }
 }
