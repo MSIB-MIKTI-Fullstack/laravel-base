@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
-                                    <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
+                                    <div class="col-span-4 md:col-span-4 lg:col-span-4 xl:col-span-4">
                                         <div class="mb-2">
                                             <label for="Delivery_Address"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Delivery
@@ -293,15 +293,15 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
-                $('#table-cart').html(`<tr>
-                                    <td colspan="5" class="p-3 text-sm text-red-400 font-medium dark:text-gray-400" align="center">
-                                        <span class="text-center">Empty Cart</span>
-                                    </td>
-                                </tr>`)
+                $('#table-cart').html()
                 let html;
                 let total_qty = 0;
                 let total_price = 0;
-
+                `<tr>
+                                    <td colspan="5" class="p-3 text-sm text-red-400 font-medium dark:text-gray-400" align="center">
+                                        <span class="text-center">Empty Cart</span>
+                                    </td>
+                                </tr>`
                 $('#cart-total').html(res.data.length)
 
                 res.data.forEach(item => {
