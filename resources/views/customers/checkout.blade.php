@@ -66,9 +66,9 @@
                                                     <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         $5.00
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <!-- 3 -->
-                                                <tr class="">
+                                                {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Promo Code
                                                     </td>
@@ -116,338 +116,140 @@
                             class="border-b border-slate-200 dark:border-slate-700/40 py-3 px-4 dark:text-slate-300/70">
                             <h4 class="font-medium">Delivery Address</h4>
                         </div><!--end header-title-->
-                        <div class="flex-auto p-4">
-                            <div class="grid grid-cols-4 gap-4">
-                                <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                    <div class="mb-2">
-                                        <label for="First_Name"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">First
-                                            Name<small class="text-red-600 text-sm">*</small></label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="First name" type="text">
+                        <form action="{{ route('customer.checkout.process') }}" method="POST">
+                            @csrf
+                            <div class="flex-auto p-4">
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
+                                        <div class="mb-2">
+                                            <label for="First_Name"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">First
+                                                Name<small class="text-red-600 text-sm">*</small></label>
+                                            <input
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                placeholder="First name" type="text" name="first_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
+                                        <div class="mb-2">
+                                            <label for="Last_name"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
+                                                Name<small class="text-red-600 text-sm">*</small></label>
+                                            <input
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                placeholder="Last name" type="text" name="last_name">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                    <div class="mb-2">
-                                        <label for="Last_name"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
-                                            Name<small class="text-red-600 text-sm">*</small></label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="Last name" type="text">
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="col-span-4 md:col-span-4 lg:col-span-4 xl:col-span-4">
+                                        <div class="mb-2">
+                                            <label for="Delivery_Address"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Delivery
+                                                Address<small class="text-red-600 text-sm">*</small></label>
+                                            <input
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                placeholder="Address" type="text" name="address">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid grid-cols-4 gap-4">
-                                <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                    <div class="mb-2">
-                                        <label for="Delivery_Address"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Delivery
-                                            Address<small class="text-red-600 text-sm">*</small></label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="Address" type="text">
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="City"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="City"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="city">
+                                                <option class="dark:text-slate-700">-- select --</option>
+                                                <option class="dark:text-slate-700">Surat</option>
+                                                <option class="dark:text-slate-700">New York</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="State"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="State"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="state">
+                                                <option class="dark:text-slate-700">-- select --</option>
+                                                <option class="dark:text-slate-700">Gujarat</option>
+                                                <option class="dark:text-slate-700">California</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Country"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="Country"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="country">
+                                                <option class="dark:text-slate-700">-- select --</option>
+                                                <option class="dark:text-slate-700">India</option>
+                                                <option class="dark:text-slate-700">USA</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                    <div class="mb-2">
-                                        <label for="Address"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Address</label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="Address" type="text">
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Zip_code"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
+                                                code<small class="text-red-600 text-sm">*</small></label>
+                                            <input
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                placeholder="------" type="text" name="zip_code">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
+                                        <div class="mb-2">
+                                            <label for="Email_Address"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
+                                                Address</label>
+                                            <input
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                placeholder="Enter Email" type="text" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Mobile_No"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
+                                                No<small class="text-red-600 text-sm">*</small></label>
+                                            <input
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                placeholder="Mobile no" type="text" name="phone_number">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4">
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                    <div class="mb-2">
-                                        <label for="City"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
-                                                class="text-red-600 text-sm">*</small></label>
-                                        <select id="City"
-                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                            <option class="dark:text-slate-700">-- select --</option>
-                                            <option class="dark:text-slate-700">Surat</option>
-                                            <option class="dark:text-slate-700">New York</option>
-                                        </select>
-                                    </div>
+                                <label class="flex">
+                                    <input type="checkbox" class="accent-brand-500">
+                                    <span for="default-checkbox"
+                                        class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
+                                        Shipping
+                                        Address</span>
+                                </label>
+                                <div class="mt-3">
+                                    <button type="submit"
+                                        class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
+                                    <button
+                                        class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancel</button>
                                 </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                    <div class="mb-2">
-                                        <label for="State"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
-                                                class="text-red-600 text-sm">*</small></label>
-                                        <select id="State"
-                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                            <option class="dark:text-slate-700">-- select --</option>
-                                            <option class="dark:text-slate-700">Gujarat</option>
-                                            <option class="dark:text-slate-700">California</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                    <div class="mb-2">
-                                        <label for="Country"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small
-                                                class="text-red-600 text-sm">*</small></label>
-                                        <select id="Country"
-                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                            <option class="dark:text-slate-700">-- select --</option>
-                                            <option class="dark:text-slate-700">India</option>
-                                            <option class="dark:text-slate-700">USA</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-4 gap-4">
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                    <div class="mb-2">
-                                        <label for="Zip_code"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
-                                            code<small class="text-red-600 text-sm">*</small></label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="------" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                    <div class="mb-2">
-                                        <label for="Email_Address"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
-                                            Address</label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="Enter Email" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                    <div class="mb-2">
-                                        <label for="Mobile_No"
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
-                                            No<small class="text-red-600 text-sm">*</small></label>
-                                        <input
-                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                            placeholder="Mobile no" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <label class="flex">
-                                <input type="checkbox" class="accent-brand-500">
-                                <span for="default-checkbox"
-                                    class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm Shipping
-                                    Address</span>
-                            </label>
-                            <div class="mt-3">
-                                <button
-                                    class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
-                                <button
-                                    class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancle</button>
-                            </div>
-                        </div><!--end card-body-->
+                            </div><!--end card-body-->
+                        </form>
                     </div> <!--end card-->
-                    <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 ">
-                            <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                <div class="flex-auto p-4">
-                                    <div class="flex items-center mb-4">
-                                        <img src="assets/images/logos/card-2.png" alt=""
-                                            class="mr-2 h-8 inline-block">
-                                        <div class="self-center">
-                                            <span class="block  font-medium text-slate-700">Master Card</span>
-                                            <h5 class="text-xs font-medium text-slate-500 dark:text-gray-400">Last time
-                                                used: 21 march 2023</h5>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="col-span-3 md:col-span-3 lg:col-span-3 xl:col-span-3">
-                                            <div class="mb-2">
-                                                <label for="Card_name"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Name
-                                                    of card :</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Nmae" type="text">
-                                            </div>
-                                            <div class="mb-2">
-                                                <label for="Zip_code"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Card
-                                                    No :</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="---- ---- ----" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Expiry_Month"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                    Month</label>
-                                                <select id="Expiry_Month"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">01</option>
-                                                    <option class="dark:text-slate-700">02</option>
-                                                    <option class="dark:text-slate-700">03</option>
-                                                    <option class="dark:text-slate-700">04</option>
-                                                    <option class="dark:text-slate-700">05</option>
-                                                    <option class="dark:text-slate-700">06</option>
-                                                    <option class="dark:text-slate-700">07</option>
-                                                    <option class="dark:text-slate-700">08</option>
-                                                    <option class="dark:text-slate-700">09</option>
-                                                    <option class="dark:text-slate-700">10</option>
-                                                    <option class="dark:text-slate-700">11</option>
-                                                    <option class="dark:text-slate-700">12</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Expiry_Year"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                    Year</label>
-                                                <select id="Expiry_Year"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">2024</option>
-                                                    <option class="dark:text-slate-700">2025</option>
-                                                    <option class="dark:text-slate-700">2026</option>
-                                                    <option class="dark:text-slate-700">2027</option>
-                                                    <option class="dark:text-slate-700">2028</option>
-                                                    <option class="dark:text-slate-700">2029</option>
-                                                    <option class="dark:text-slate-700">2030</option>
-                                                    <option class="dark:text-slate-700">2031</option>
-                                                    <option class="dark:text-slate-700">2032</option>
-                                                    <option class="dark:text-slate-700">2033</option>
-                                                    <option class="dark:text-slate-700">2034</option>
-                                                    <option class="dark:text-slate-700">2035</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="CVV"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">CVV</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="cvv" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button
-                                        class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500 w-full">Confirm
-                                        payment $202.00</button>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                        </div><!--end col-->
-                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 ">
-                            <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                <div class="flex-auto p-4">
-                                    <div class="flex items-center mb-4">
-                                        <img src="assets/images/logos/card-1.png" alt=""
-                                            class="mr-2 h-8 inline-block">
-                                        <div class="self-center">
-                                            <span class="block  font-medium text-slate-700">Visa Card</span>
-                                            <h5 class="text-xs font-medium text-slate-500 dark:text-gray-400">Last time
-                                                used: 21 march 2023</h5>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="col-span-3 md:col-span-3 lg:col-span-3 xl:col-span-3">
-                                            <div class="mb-2">
-                                                <label for="Card_name"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Name
-                                                    of card :</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="Nmae" type="text">
-                                            </div>
-                                            <div class="mb-2">
-                                                <label for="Zip_code"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Card
-                                                    No :</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="---- ---- ----" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Expiry_Month"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                    Month</label>
-                                                <select id="Expiry_Month"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">01</option>
-                                                    <option class="dark:text-slate-700">02</option>
-                                                    <option class="dark:text-slate-700">03</option>
-                                                    <option class="dark:text-slate-700">04</option>
-                                                    <option class="dark:text-slate-700">05</option>
-                                                    <option class="dark:text-slate-700">06</option>
-                                                    <option class="dark:text-slate-700">07</option>
-                                                    <option class="dark:text-slate-700">08</option>
-                                                    <option class="dark:text-slate-700">09</option>
-                                                    <option class="dark:text-slate-700">10</option>
-                                                    <option class="dark:text-slate-700">11</option>
-                                                    <option class="dark:text-slate-700">12</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Expiry_Year"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Expiry
-                                                    Year</label>
-                                                <select id="Expiry_Year"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">2024</option>
-                                                    <option class="dark:text-slate-700">2025</option>
-                                                    <option class="dark:text-slate-700">2026</option>
-                                                    <option class="dark:text-slate-700">2027</option>
-                                                    <option class="dark:text-slate-700">2028</option>
-                                                    <option class="dark:text-slate-700">2029</option>
-                                                    <option class="dark:text-slate-700">2030</option>
-                                                    <option class="dark:text-slate-700">2031</option>
-                                                    <option class="dark:text-slate-700">2032</option>
-                                                    <option class="dark:text-slate-700">2033</option>
-                                                    <option class="dark:text-slate-700">2034</option>
-                                                    <option class="dark:text-slate-700">2035</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-3 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="CVV"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">CVV</label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="cvv" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button
-                                        class="px-2 py-2 lg:px-4 bg-brand  text-white text-sm  rounded hover:bg-brand-600 border border-brand-500 w-full">Confirm
-                                        payment $202.00</button>
-                                </div><!--end card-body-->
-                            </div> <!--end card-->
-                        </div><!--end col-->
-                    </div><!--end inner-grid-->
                 </div><!--end col-->
             </div><!--end inner-grid-->
         </div><!--end container-->
-        <!-- footer -->
-    </div><!--end main-->
+    </div>
 </x-customer-layout>
-
 <script>
     $(document).ready(function() {
         getCartData()
@@ -476,6 +278,7 @@
 
     function getCartData() {
         $('#table-cart').html(loader())
+
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
             type: 'GET',
@@ -490,10 +293,13 @@
                 let html;
                 let total_qty = 0;
                 let total_price = 0;
+
                 $('#cart-total').html(res.data.length)
+
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
+
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
@@ -515,6 +321,7 @@
                                                     </td>
                                                 </tr>`
                 });
+
                 html += `
                 <tr class="bg-white dark:bg-gray-900">
                                                     <td
@@ -531,9 +338,12 @@
                                                     </td>
                                                 </tr>
                 `
+
                 $('#subtotal').html(number_format(total_price))
                 $('#total').html(number_format(total_price))
+
                 $('#table-cart').html(html)
+
                 getTotalCart()
             },
             error: function(data) {
