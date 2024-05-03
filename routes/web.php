@@ -5,6 +5,7 @@ use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\ProductController;
 
 use App\Http\Controllers\Customer\CheckoutController;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,6 @@ Route::middleware([
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/products', [ProductController::class, 'index'])->name('products');
-    Route::get('/products/{slug}', [ProductController::class, 'detail'])->name('product-detail');
     Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
 
     Route::middleware('auth')->group(function () {
@@ -50,4 +50,8 @@ Route::group(['as' => 'customer.'], function () {
             Route::post('/process', [CheckoutController::class, 'checkout'])->name('checkout');
         });
     });
+});
+
+Route::get('/{slug}', function () {
+    Redirect::to(config('internet'));
 });

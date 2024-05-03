@@ -7,18 +7,25 @@ use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
+
         $products = Product::with(['product_category'])
             ->when($request->category_id != "", function ($q) use ($request) {
                 $q->where('product_category_id', $request->category_id);
             })->paginate(10)
             ->appends($request->query());
 
-        return view('customers.product', compact('products'));
+
+        if (Auth::check()) {
+            return view('customers.product', compact('products'));
+        } else {
+            return Redirect::to(config('internet'));
+        }
     }
 
     public function detail($slug)
