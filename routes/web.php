@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Customer\HomeController as CustomerHomeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 /*
@@ -24,5 +26,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/products', [HomeController::class, 'products'])->name('customer.products');
+Route::prefix('Customer');
+Route::resource('/products', ProductController::class)->middleware('auth');
+Route::resource('/', CustomerHomeController::class)->middleware('auth');
+
+//Route::get('/products', [CustomerHomeController::class, 'products'])->name('customer.products');//
+Route::get('/', [CustomerHomeController::class, 'index'])->name('home');
+Route::get('/products', [ProductController::class, 'index'])->name('products');
 

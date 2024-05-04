@@ -180,6 +180,7 @@
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
+                                            
                                             <a href="customers-profile.html"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
 
@@ -217,136 +218,7 @@
         <div>
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
-                    <div class="w-full max-w-full px-4 lg:w-60">
-                        <div class="relative py-4 group categories">
-                            <a href="javascript:void(0)"
-                                class="inline-flex  relative items-center justify-between whitespace-nowrap rounded bg-brand-50/70 px-5 py-2 text-base font-medium text-brand-500 hover:bg-opacity-90">
-                                <span class="pe-2">
-                                    <i data-lucide="menu" class="h-5 w-5"></i>
-                                </span>
-                                All categories
-                            </a>
-
-                            <div
-                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
-                                <span
-                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 bg-white lg:block"></span>
-
-                                <div class="group submenu relative px-6">
-                                    <a href="javascript:void(0)"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand group-hover:text-brand">
-                                        Fashion
-                                        <span>
-                                            <i data-lucide="chevron-right" class="h-4"></i>
-                                        </span>
-                                    </a>
-
-                                    <div
-                                        class="left-full top-0 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
-                                        <div class="-mx-2 flex flex-wrap">
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <div>
-                                                    <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                        Man
-                                                    </h3>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Cargo Pants
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Jackets
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        T-Shirts
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Shirts
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Jeans
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <div>
-                                                    <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                        Woman
-                                                    </h3>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Dresses
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Tees
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Leggings
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Wedding Dresses
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Prom Dresses
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                    Kids
-                                                </h3>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Body Wash
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Nightwear
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Shorts
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Sunglasses
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Summer Caps
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Phone & Smartwatch
-                                    </a>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Laptops
-                                    </a>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Jewelry
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="flex w-full items-center justify-between px-4">
                         <div class="w-full">
                             <button data-collapse-toggle="mobile-menu-2" type="button" id="toggle-menu"
@@ -359,15 +231,14 @@
                             <nav id="mobile-menu-2"
                                 class="order-2 hidden w-full items-center justify-between md:order-1 md:ms-5 lg:flex md:w-auto">
                                 <ul class="blcok items-center lg:flex px-4 md:px-0">
-                                    <li>
-                                        <a href="customers-home.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                    <li> 
+                                    <a href="{{ route('customer.home') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.home') ? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-products.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                    class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Products
                                         </a>
                                     </li>
