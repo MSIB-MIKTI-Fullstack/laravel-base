@@ -156,10 +156,10 @@
                                 <div class="grid grid-cols-3 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                        <label for="State"
+                                            <label for="State"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
                                                     class="text-red-600 text-sm">*</small></label>
-                                                    <select id="state"
+                                            <select id="state"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 name="state">
                                                 <option selected disabled>Select State</option>
@@ -168,10 +168,10 @@
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                        <label for="State"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
+                                            <label for="City"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
                                                     class="text-red-600 text-sm">*</small></label>
-                                            <select id="State"
+                                            <select id="city"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 name="city" disabled>
                                                 <option selected disabled>Select City</option>
@@ -346,6 +346,7 @@
             }
         })
     }
+
     function getState() {
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
@@ -364,10 +365,13 @@
             }
         })
     }
+
     $('#state').change(function() {
         $('#city').html('')
         $('#city').attr('disabled', false)
+
         let province = $(this).val()
+
         $.ajax({
             url: `{{ route('customer.checkout.get-city') }}?province=${province}`,
             type: 'GET',
