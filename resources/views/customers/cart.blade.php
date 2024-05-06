@@ -241,6 +241,7 @@
                 )
             },
             error: function(data) {
+                notyf.error(data.responseJSON.message)
             }
         })
     }
