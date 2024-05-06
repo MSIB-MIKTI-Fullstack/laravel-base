@@ -21,11 +21,11 @@ class ProductController extends Controller
             ->appends($request->query());
 
 
-        if (Auth::check()) {
-            return view('customers.product', compact('products'));
-        } else {
-            return Redirect::to(config('internet'));
-        }
+        return view('customers.product', compact('products'));
+        // if (Auth::check()) {
+        // } else {
+        //     return Redirect::to(config('internet'));
+        // }
     }
 
     public function detail($slug)

@@ -52,6 +52,6 @@ Route::group(['as' => 'customer.'], function () {
     });
 });
 
-Route::get('/{slug}', function () {
-    Redirect::to(config('internet'));
-});
+// Route::get('/{slug}', function () {
+//     Redirect::to(config('internet'));
+// });
