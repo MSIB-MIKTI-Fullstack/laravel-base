@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('transactions', function (Blueprint $table) {
-            $table->integer('shipping_cost')->after('total_checkout');
-            $table->text('shipping_detail')->after('status');
+            //
         });
     }
 
@@ -23,8 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('transactions', function (Blueprint $table) {
-            $table->integer('shipping_cost')->after('total_checkout');
-            $table->text('shipping_detail')->after('status');
+            //
         });
     }
 };
