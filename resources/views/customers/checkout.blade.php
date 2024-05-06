@@ -191,6 +191,31 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Courier"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Courier<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="courier"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="courier">
+                                                <option class="dark:text-slate-700" value="jne">JNE</option>
+                                                <option class="dark:text-slate-700" value="pos">POS</option>
+                                                <option class="dark:text-slate-700" value="tiki">TIKI</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Service"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="service"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="service">
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -379,14 +404,45 @@
             cache: false,
             processData: false,
             success: function(res) {
+                console.log(res)
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
                 })
+                getCostOngkir()
             },
             error: function(data) {
                 notyf.error(data.message)
             }
         })
     })
+
+    $('#city').change(function() {
+        getCostOngkir()
+    })
+
+    function getCostOngkir() {
+        let destination = $('#city').val()
+        let weight = 1000;
+        let courier = $('#courier').val()
+        $('#service').html('')
+
+        $.ajax({
+            url: `{{ route('customer.checkout.get-cost') }}?destination=${destination}&weight=${weight}&courier=${courier}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                res.rajaongkir.results[0].costs.forEach((item) => {
+                    $('#service').append(
+                        `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
+                    )
+                })
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
 </script>
