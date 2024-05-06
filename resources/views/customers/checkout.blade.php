@@ -155,46 +155,62 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid grid-cols-4 gap-4">
                                 <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                     <div class="mb-2">
-                                        <label for="Zip_code" class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
-                                            code<small class="text-red-600 text-sm">*</small></label>
-                                        <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="------" type="text" name="zip_code">
+                                        <label for="Courier" class="font-medium text-sm text-slate-600 dark:text-slate-400">Courier<small class="text-red-600 text-sm">*</small></label>
+                                        <select id="courier" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="courier">
+                                            <option class="dark:text-slate-700" value="jne">JNE</option>
+                                            <option class="dark:text-slate-700" value="pos">POS</option>
+                                            <option class="dark:text-slate-700" value="tiki">TIKI</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Service" class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small class="text-red-600 text-sm">*</small></label>
+                                            <select id="service" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="service">
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
-                                    <div class="mb-2">
-                                        <label for="Email_Address" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
-                                            Address</label>
-                                        <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email">
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Zip_code" class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
+                                                code<small class="text-red-600 text-sm">*</small></label>
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="------" type="text" name="zip_code">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
+                                        <div class="mb-2">
+                                            <label for="Email_Address" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
+                                                Address</label>
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Mobile_No" class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
+                                                No<small class="text-red-600 text-sm">*</small></label>
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Mobile no" type="text" name="phone_number">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                    <div class="mb-2">
-                                        <label for="Mobile_No" class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
-                                            No<small class="text-red-600 text-sm">*</small></label>
-                                        <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Mobile no" type="text" name="phone_number">
-                                    </div>
+                                <label class="flex">
+                                    <input type="checkbox" class="accent-brand-500">
+                                    <span for="default-checkbox" class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
+                                        Shipping
+                                        Address</span>
+                                </label>
+                                <div class="mt-3">
+                                    <button type="submit" class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
+                                    <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancel</button>
                                 </div>
-                            </div>
-                            <label class="flex">
-                                <input type="checkbox" class="accent-brand-500">
-                                <span for="default-checkbox" class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
-                                    Shipping
-                                    Address</span>
-                            </label>
-                            <div class="mt-3">
-                                <button type="submit" class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
-                                <button class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancel</button>
-                            </div>
-                    </div><!--end card-body-->
-                    </form>
-                </div> <!--end card-->
-            </div><!--end col-->
-        </div><!--end inner-grid-->
-    </div><!--end container-->
+                            </div><!--end card-body-->
+                        </form>
+                    </div> <!--end card-->
+                </div><!--end col-->
+            </div><!--end inner-grid-->
+        </div><!--end container-->
     </div>
 </x-customer-layout>
 <script>
@@ -334,10 +350,41 @@
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
                 })
+
+                getCostOngkir()
             },
             error: function(data) {
                 notyf.error(data.message)
             }
         })
     })
+
+    $('#city').change(function() {
+        getCostOngkir()
+    })
+
+    function getCostOngkir() {
+        let destination = $('#city').val()
+        let weight = 1000;
+        let courier = $('#courier').val()
+        $('#service').html('')
+
+        $.ajax({
+            url: `{{ route('customer.checkout.get-cost') }}?destination=${destination}&weight=${weight}&courier=${courier}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                res.rajaongkir.results[0].costs.forEach((item) => {
+                    $('#service').append(
+                        `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
+                    )
+                })
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    }
 </script>
