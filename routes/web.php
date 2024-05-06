@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\Customer\CartController;
+use App\Http\Controllers\Customer\CheckoutController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
 use Illuminate\Support\Facades\Route;
-
+use Laravel\Jetstream\Rules\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,11 @@ Route::group(['as' => 'customer.'], function () {
             Route::post('/change-cart', [CartController::class, 'changeCart'])->name('change-cart');
             Route::get('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
             Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('delete-cart');
+        });
+
+        Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
+            Route::get('/', [CheckoutController::class, 'index'])->name('index');
+            Route::post('/process', [CheckoutController::class, 'process'])->name('process');
         });
     });
 });

@@ -25,7 +25,7 @@ class CartController extends Controller
                 'qty' => $request->qty
             ]);
 
-            return response()->json(['message' => 'Success change cart quantity'], 200);
+            return response()->json(['message' => 'Success change cart quantity']);
         } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }

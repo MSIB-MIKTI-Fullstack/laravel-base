@@ -128,10 +128,12 @@
                                 </div>
                                 <div class="flex gap-4 mb-4">
                                     <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
+                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
-                                    <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Proceed
+                                    <button id="btn-checkout"
+                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.checkout.index') }}`">Proceed
                                         to checkout</button>
                                 </div>
                                 <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note
@@ -148,21 +150,25 @@
 
 <script>
     $(document).ready(function() {
-        getCartData();
+        getCartData()
     })
+
     function changeQty(e) {
         let id = $(e).data('id');
         let qty = $(e).val();
         let price = $(e).parent().siblings().eq(1).data('price');
+
         let total = price * qty
+
         $(e).parent().siblings().eq(2).html(
             `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
+
         let form = new FormData()
         form.append('id', id)
         form.append('qty', qty)
-        $('#total-cart').html(
-            `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`
-        )
+
+        $('#total-cart').html(loader())
+
         $.ajax({
             data: form,
             url: `{{ route('customer.cart.change-cart') }}`,
@@ -174,11 +180,15 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(data) {
+                notyf.success(data.message)
                 getTotalCart()
             },
-            error: function(data) {}
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
         })
     }
+
     function getTotalCart() {
         $.ajax({
             url: `{{ route('customer.cart.total-cart') }}`,
@@ -191,17 +201,18 @@
             },
             success: function(data) {
                 $('#total-cart').html(
-                    `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(data.total)}`
+                    `${number_format(data.total)}`
                 )
-                notyf.success(data.message);
             },
             error: function(data) {
                 notyf.error(data.responseJSON.message)
             }
         })
     }
+
     function getCartData() {
         $('#table-cart').html(loader())
+
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
             type: 'GET',
@@ -212,78 +223,102 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
+                $('#table-cart').html(`Empty Cart`)
                 let html;
-                $('#cart-total').html(res.data.length);
+
+                $('#cart-total').html(res.data.length)
+
                 if (res.data.length > 0) {
                     res.data.forEach(item => {
-                        html += `
-                        <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                <td
-                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                    <div class="flex items-center">
-                                        <img src="${item.image}" alt=""
-                                            class="mr-2 h-8 inline-block">
-                                        <div class="self-center">
-                                            <h5
-                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                ${item.name}</h5>
-                                            <span
-                                                class="block  font-medium text-slate-500">${item.description.substring(0,15)}</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
-                                    data-price ="${item.price}">
-                                    Rp. ${number_format(item.price)}
-                                </td>
-                                <td
-                                    class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
-                                    <input
-                                        class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
-                                        style="width:100px;" type="number" min="0"
-                                        onchange="changeQty(this)"
-                                        value="${item.total_qty}"
-                                        data-id="${item.id}" id="example-number-input">
-                                </td>
-                                <td
-                                    class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                    Rp.  ${number_format(item.price)}
-                                </td>
-                                <td
-                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                    <button type="button" onClick="deleteCart(this,${item.id})" class="text-red-500">
-                                       Remove
-                                    </button>
-                                </td>
-                            </tr>
+                        html +=
                             `
+                    <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                                        <td
+                                                            class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                                                            <div class="flex items-center">
+                                                                <img src="${item.image}" alt=""
+                                                                    class="mr-2 h-8 inline-block">
+                                                                <div class="self-center">
+                                                                    <h5
+                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                                        ${item.name}</h5>
+                                                                    <span
+                                                                        class="block  font-medium text-slate-500">${item.description.substring(0, 10)}</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400"
+                                                            data-price="${item.price}">
+                                                            ${number_format(item.price)}
+                                                        </td>
+                                                        <td
+                                                            class="p-3 text-sm text-gray-600 font-medium whitespace-nowrap dark:text-gray-400">
+                                                            <input
+                                                                class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-1 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary-500  dark:hover:border-slate-700"
+                                                                style="width:100px;" type="number" min="0"
+                                                                value="${item.total_qty}"
+                                                                onchange="changeQty(this)" id="example-number-input"
+                                                                data-id="${item.id}">
+                                                        </td>
+                                                        <td
+                                                            class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
+                                                            ${number_format(item.price * item.total_qty)}
+                                                        </td>
+                                                        <td
+                                                            class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-center">
+                                                            <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
+                                                                <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                    `
                     });
+
                     $('#table-cart').html(html)
-                    getTotalCart()
+
+                    lucide.createIcons();
+
+                    $('#btn-checkout').attr('disabled', false)
+                    $('#btn-checkout').removeClass('bg-gray-600')
+                    $('#btn-checkout').addClass('bg-brand-500')
+                    $('#btn-checkout').addClass('hover:bg-brand-600')
+                } else {
+                    $('#btn-checkout').attr('disabled', true)
+                    $('#btn-checkout').addClass('bg-gray-600')
+                    $('#btn-checkout').removeClass('bg-brand-500')
+                    $('#btn-checkout').removeClass('hover:bg-brand-600')
                 }
+
+
+                getTotalCart()
             },
             error: function(data) {
                 notyf.error(data.responseJSON.message)
             }
         })
     }
+
     function deleteCart(e, id) {
-        let form = new FormData();
-        form.append('_method', 'DELETE');
-        form.append('id', id);
+        $(e).html(loader())
+
+        let form = new FormData()
+
+        form.append('_method', 'DELETE')
+        form.append('id', id)
+
         $.ajax({
             url: `{{ route('customer.cart.delete-cart') }}`,
             type: 'POST',
             contentType: false,
             cache: false,
-            data: form,
             processData: false,
+            data: form,
             headers: {
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
-            success: function(data) {
-                getCartData();
-                notyf.success(data.message);
+            success: function(res) {
+                getCartData()
+                notyf.success(res.message)
             },
             error: function(data) {
                 notyf.error(data.responseJSON.message)
