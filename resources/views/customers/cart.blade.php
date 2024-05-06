@@ -131,7 +131,7 @@
                                         class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
                                         onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
-                                    <button
+                                    <button id="btn-checkout"
                                         class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
                                         onclick="window.location.href = `{{ route('customer.checkout.index') }}`">Proceed
                                         to checkout</button>
@@ -228,7 +228,6 @@
 
                 $('#cart-total').html(res.data.length)
 
-                // res.data.length > 0 buat ngecek apakah data kosong atau tidak
                 if (res.data.length > 0) {
                     res.data.forEach(item => {
                         html +=
@@ -268,7 +267,7 @@
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
                                                             <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
-                                                                <i data-lucide="trash" class="w-5 h-5 texxt-red-500"></i>
+                                                                <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -276,8 +275,21 @@
                     });
 
                     $('#table-cart').html(html)
+
+                    lucide.createIcons();
+
+                    $('#btn-checkout').attr('disabled', false)
+                    $('#btn-checkout').removeClass('bg-gray-600')
+                    $('#btn-checkout').addClass('bg-brand-500')
+                    $('#btn-checkout').addClass('hover:bg-brand-600')
+                } else {
+                    $('#btn-checkout').attr('disabled', true)
+                    $('#btn-checkout').addClass('bg-gray-600')
+                    $('#btn-checkout').removeClass('bg-brand-500')
+                    $('#btn-checkout').removeClass('hover:bg-brand-600')
                 }
-                lucide.createIcons();
+
+
                 getTotalCart()
             },
             error: function(data) {
