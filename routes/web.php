@@ -52,6 +52,7 @@ Route::group(['as' => 'customer.'] , function () {
 
         Route::group(['prefix' => '/checkout', 'as' =>'checkout.'], function(){
             Route::get('/', [CheckoutController::class, 'index'])->name('index');
+            Route::post('/prosess', [CheckoutController::class, 'process'])->name('process');
 
         });
     });
