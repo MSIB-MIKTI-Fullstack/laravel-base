@@ -15,4 +15,9 @@ class CartController extends Controller
 
         return view('customers.cart', compact('carts'));
     }
+
+    public function changeCart(Request $request)
+    {
+    }
+    
 }
