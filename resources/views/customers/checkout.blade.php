@@ -431,4 +431,8 @@
             }
         })
     }
+
+    $('#courier').change(function() {
+        getCostOngkir()
+    })
 </script>
