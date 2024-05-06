@@ -40,5 +40,6 @@ Route::group(['as' => 'customer.'], function () {
         Route::post('/process', [CheckoutController::class, 'process'])->name('process');
         Route::get('/get-province', [CheckoutController::class, 'getProvince'])->name('get-province');
         Route::get('/get-city', [CheckoutController::class, 'getCity'])->name('get-city');
+        Route::get('/get-cost', [CheckoutController::class, 'getCost'])->name('get-cost');
     });
 });
