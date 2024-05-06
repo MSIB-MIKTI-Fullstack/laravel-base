@@ -29,7 +29,7 @@
                                                         Total
                                                     </th>
                                                     <th scope="col"
-                                                        class="p-3 text-xs font-medium tracking-wider text-right text-gray-700 uppercase dark:text-gray-400">
+                                                        class="p-3 text-xs font-medium tracking-wider text-center text-gray-700 uppercase dark:text-gray-400">
                                                         Action
                                                     </th>
                                                 </tr>
