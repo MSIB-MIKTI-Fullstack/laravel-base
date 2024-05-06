@@ -158,7 +158,7 @@
                                 <div class="grid grid-cols-3 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="City"
+                                            <label for="state"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="state" name="state"
@@ -365,7 +365,12 @@
             contentType: false,
             cache: false,
             processData: false,
+            beforeSend: function() {
+                $("#city").html(loader());
+            },
             success: function(res) {
+
+                console.log(res.rajaongkir);
                 res.rajaongkir.results.forEach((item) => {
                     $('#state').append(
                         `<option value="${item.province_id}">${item.province}</option>`)
@@ -376,6 +381,7 @@
             }
         })
     }
+
     $('#state').change(function() {
         $('#city').html('')
         $('#city').attr('disabled', false)
