@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('weight')->after('price');
+            $table->integer('weight')->after('price')->default(0);
         });
     }
 
