@@ -406,6 +406,8 @@
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
                 })
+
+                getCostOngkir()
             },
             error: function(data) {
                 notyf.error(data.message)
@@ -414,7 +416,10 @@
     })
 
     $('#city').change(function() {
-        let destination = $(this).val()
+        getCostOngkir()
+    })
+    function getCostOngkir() {
+        let destination = $('#city').val()
         let weight = 1000;
         let courier = $('#courier').val()
         $('#service').html('')
@@ -435,5 +440,5 @@
                 notyf.error(data.message)
             }
         })
-    })
+    }
 </script>
