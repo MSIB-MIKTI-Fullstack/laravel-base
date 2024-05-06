@@ -159,26 +159,23 @@
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="City"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
                                                     class="text-red-600 text-sm">*</small></label>
-                                            <select id="City" name="city"
+                                            <select id="state" name="state"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                <option class="dark:text-slate-700">-- select --</option>
-                                                <option class="dark:text-slate-700">Surat</option>
-                                                <option class="dark:text-slate-700">New York</option>
+                                                <option class="dark:text-slate-700">-- Select State--</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-                                            <label for="State"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
+                                            <label for="city"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
                                                     class="text-red-600 text-sm">*</small></label>
-                                            <select id="State" name="state"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                <option class="dark:text-slate-700">-- select --</option>
-                                                <option class="dark:text-slate-700">Gujarat</option>
-                                                <option class="dark:text-slate-700">California</option>
+                                            <select id="city" name="city"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                disabled>
+                                                <option selected disabled>-- Select City --</option>
                                             </select>
                                         </div>
                                     </div>
@@ -189,9 +186,7 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="Country" name="country"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                <option class="dark:text-slate-700">-- select --</option>
-                                                <option class="dark:text-slate-700">India</option>
-                                                <option class="dark:text-slate-700">USA</option>
+                                                <option class="dark:text-slate-700">Indonesia</option>
                                             </select>
                                         </div>
                                     </div>
@@ -253,6 +248,7 @@
 <script>
     $(document).ready(function() {
         getCartData()
+        getState()
     })
 
     function getTotalCart() {
@@ -359,4 +355,47 @@
             }
         })
     }
+</script>
+
+<script>
+    function getState() {
+        $.ajax({
+            url: `{{ route('customer.checkout.get-province') }}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                res.rajaongkir.results.forEach((item) => {
+                    $('#state').append(
+                        `<option value="${item.province_id}">${item.province}</option>`)
+                })
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    }
+    $('#state').change(function() {
+        $('#city').html('')
+        $('#city').attr('disabled', false)
+        let province = $(this).val()
+        $.ajax({
+            url: `{{ route('customer.checkout.get-city') }}?province=${province}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                console.log(res)
+                res.rajaongkir.results.forEach((item) => {
+                    $('#city').append(
+                        `<option value="${item.city_id}">${item.city_name}</option>`)
+                })
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    })
 </script>
