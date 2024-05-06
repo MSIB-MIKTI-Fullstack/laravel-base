@@ -79,11 +79,14 @@ class CheckoutController extends Controller
         }
     }
 
-    public function getCity(Request $request){
+    public function getCity(Request $request)
+    {
         $curl = curl_init();
-        $province_id = $request->province_id;
+
+        $province = $request->province;
+
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?province={$province_id}",
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?province={$province}",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -94,9 +97,12 @@ class CheckoutController extends Controller
                 "key: " . env('API_KEY_RAJAONGKIR')
             ),
         ));
+
         $response = curl_exec($curl);
         $err = curl_error($curl);
+
         curl_close($curl);
+
         if ($err) {
             return response()->json(['message' => $err], 500);
         } else {
