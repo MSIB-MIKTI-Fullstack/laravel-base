@@ -39,7 +39,7 @@ class ProductController extends Controller
 
             $cart = Cart::where('product_id', $request->product_id)->where('user_id', Auth::user()->id);
 
-            if($cart->exist()) {
+            if($cart->exists()) {
                 $data = $cart->first();
 
                 $cart->update([
@@ -56,9 +56,9 @@ class ProductController extends Controller
             $count = Cart::where('user_id', Auth::user()->id)
             ->distinct('product_id')
             ->count();
-            return response()->json(['message' => 'add product to cart succesfuly', 'cart_count' => $count], 200);
 
-        }catch (\Throwable $th) {
+            return response()->json(['message' => 'add product to cart succesfuly', 'cart_count' => $count], 200);
+        } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }
     }
