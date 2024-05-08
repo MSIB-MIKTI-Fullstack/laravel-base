@@ -30,6 +30,8 @@ class CheckoutController extends Controller
                 'total_checkout' => $request->total_checkout,
                 'status' => "pending",
                 'total_checkout' => $cart->total_checkout,
+                'shipping_cost' => $request->service,
+                'shipping_detail' => "",
             ]);
 
             $cart = Cart::getCartByUser()->get();
