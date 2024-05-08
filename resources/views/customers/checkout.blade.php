@@ -365,9 +365,9 @@
             contentType: false,
             cache: false,
             processData: false,
-            beforeSend: function() {
-                $("#city").html(loader());
-            },
+            // beforeSend: function() {
+            //     $("#city").html(loader());
+            // },
             success: function(res) {
 
                 console.log(res.rajaongkir);
@@ -383,7 +383,8 @@
     }
 
     $('#state').change(function() {
-        $('#city').html('')
+        // $('#city').html('')
+        $('#city').html('<option selected disabled>Loading ...</option>')
         $('#city').attr('disabled', false)
         let province = $(this).val()
         $.ajax({
@@ -393,10 +394,35 @@
             cache: false,
             processData: false,
             success: function(res) {
+                $('#city').html('')
                 console.log(res)
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
+                })
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    })
+
+    $('#city').change(function() {
+        let destination = $(this).val()
+        let weight = 1000;
+        let courier = $('#courier').val()
+        $('#service').html('')
+        $.ajax({
+            url: `{{ route('customer.checkout.get-cost') }}?destination=${destination}&weight=${weight}&courier=${courier}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                res.rajaongkir.results[0].costs.forEach((item) => {
+                    $('#service').append(
+                        `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
+                    )
                 })
             },
             error: function(data) {
