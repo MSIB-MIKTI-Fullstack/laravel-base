@@ -223,7 +223,7 @@
                                             <label for="Zip_code"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                            <input
+                                            <input id="zip_code"
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="------" type="text" name="zip_code">
                                         </div>
@@ -271,6 +271,8 @@
     </div>
 </x-customer-layout>
 <script>
+let weight = 0;
+
     $(document).ready(function() {
         getCartData()
         getState()
@@ -320,17 +322,20 @@
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
+                    weight += item.weight
 
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
                                                         <img src="${item.image}" alt=""
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
                                                             class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                            ${item.name}</h5>
+                                                            <p>${item.name}</p>
+                                                            <small>${item.weight} (g)</small>
+                                                        </h5>
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -415,8 +420,9 @@
                 $('#city').html(``)
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
-                        `<option value="${item.city_id}">${item.city_name}</option>`)
+                        `<option value="${item.city_id}"data-code="${item.postal_code}">${item.city_name}</option>`)
                 })
+                $('#zip_code').val($('#city').find(':selected').data('code'))
                 getCostOngkir()
             },
             error: function(data) {
@@ -429,12 +435,12 @@
     })
     
     $('#city').change(function() {
+        $('#zip_code').val($('#city').find(':selected').data('code'))
         getCostOngkir()
     })
 
     function getCostOngkir() {
         let destination = $('#city').val()
-        let weight = 1000;
         let courier = $('#courier').val()
         $('#service').html('<option>Loading....</option>')
         $('#service').attr('disabled', false)
