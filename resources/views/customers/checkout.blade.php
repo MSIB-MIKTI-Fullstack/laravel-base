@@ -58,15 +58,16 @@
                                                     </td>
                                                 </tr>
                                                 <!-- 2 -->
-                                                {{-- <tr
+                                                <tr
                                                     class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $5.00
+                                                    <td id="shipping-charge"
+                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                        -
                                                     </td>
-                                                </tr> --}}
+                                                </tr>
                                                 <!-- 3 -->
                                                 {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
@@ -190,9 +191,11 @@
                                             </select>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
 
                                     {{--  --}}
-                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                    <div class="col-span-4 md:col-span-1 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Courier"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Courier<small
@@ -205,20 +208,19 @@
                                                 <option class="dark:text-slate-700" value="tiki">TIKI</option>
                                             </select>
                                         </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Service"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="service"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    name="service" disabled>
-                                                    <option selected disabled>Select Service</option>
-                                                </select>
-                                            </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Service"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="service"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="service" disabled>
+                                                <option selected disabled>Select Service</option>
+                                            </select>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -373,7 +375,12 @@
                 `
 
                 $('#subtotal').html(number_format(total_price))
-                $('#total').html(number_format(total_price))
+                // $('#total').html(number_format(total_price))
+
+                let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
+                    0 : $('#service').find(':selected').val())
+                $('#shipping-charge').html(number_format(shipping_charge))
+                $('#total').html(number_format(total_price + shipping_charge))
 
                 $('#table-cart').html(html)
 
@@ -428,6 +435,7 @@
             success: function(res) {
                 $('#city').html(``)
 
+                console.log(res.rajaongkir);
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
