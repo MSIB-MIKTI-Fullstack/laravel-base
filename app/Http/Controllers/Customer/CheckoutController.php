@@ -32,7 +32,9 @@ class CheckoutController extends Controller
                 'phone_number' => $request->phone_number,
                 'total_checkout' => $request->total_checkout,
                 'status' => "pending",
-                'total_checkout' => $cart->total_checkout
+                'total_checkout' => $cart->total_checkout,
+                'shiping_cost' => $request->service,
+                'shiping_detail' => ""
             ]);
 
             $cart = Cart::getCartByUser()->get();

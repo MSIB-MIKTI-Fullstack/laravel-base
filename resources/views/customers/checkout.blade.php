@@ -204,17 +204,17 @@
                                                 <option class="dark:text-slate-700" value="tiki">TIKI</option>
                                             </select>
                                         </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Service"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="service"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    name="service" disabled>
-                                                    <option selected disabled>Select Service</option>
-                                                </select>
-                                            </div>
+                                    </div>
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="mb-2">
+                                            <label for="Service"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
+                                                    class="text-red-600 text-sm">*</small></label>
+                                            <select id="service"
+                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                name="service" disabled>
+                                                <option selected disabled>Select Service</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +236,7 @@
                                                 Address</label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Enter Email" type="text" name="email">
+                                                placeholder="Enter Email" type="text" name="email_address">
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -324,6 +324,7 @@
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
                     weight += item.weight
+
 
                     html +=
                         `
