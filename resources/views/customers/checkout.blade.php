@@ -374,8 +374,7 @@
     }
 
     function getState() {
-        function getState() {
-
+        $('#state').html(`<option>Loading ...</option>`)
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
             type: 'GET',
@@ -395,7 +394,6 @@
                 notyf.error(data.message)
             }
         })
-    }
     }
 
     function getCity() {
