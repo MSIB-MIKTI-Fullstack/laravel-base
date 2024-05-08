@@ -417,6 +417,7 @@
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
                 })
+                getCostOngkir()
             },
             error: function(data) {
                 notyf.error(data.message)
