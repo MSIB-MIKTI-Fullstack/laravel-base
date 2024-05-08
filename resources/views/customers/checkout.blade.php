@@ -58,13 +58,14 @@
                                                     </td>
                                                 </tr>
                                                 <!-- 2 -->
-                                                <tr id="shipping_charge"
+                                                <tr
                                                     class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $5.00
+                                                    <td id="shipping_charge"
+                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                        -
                                                     </td>
                                                 </tr>
                                                 <!-- 3 -->
