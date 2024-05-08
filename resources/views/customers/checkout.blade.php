@@ -223,7 +223,7 @@
                                             <label for="Zip_code"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                            <input
+                                                <input id="zip_code"
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="------" type="text" name="zip_code">
                                         </div>
@@ -415,8 +415,10 @@
                 $('#city').html(``)
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
-                        `<option value="${item.city_id}">${item.city_name}</option>`)
+                        `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
+                    )
                 })
+                $('#zip_code').val($('#city').find(':selected').data('code'))
 
                 getCostOngkir()
             },
@@ -430,7 +432,7 @@
     })
 
     $('#city').change(function() {
-        getCostOngkir()
+        $('#zip_code').val($('#city').find(':selected').data('code'))
     })
 
     function getCostOngkir() {
