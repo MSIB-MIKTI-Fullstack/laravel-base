@@ -212,7 +212,8 @@
                                                         class="text-red-600 text-sm">*</small></label>
                                                 <select id="service"
                                                     class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    name="service">
+                                                    name="service" disabled>
+                                                    <option selected disabled>Select Service</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -387,6 +388,7 @@
 
 <script>
     function getState() {
+        $('#state').html(`<option>Loading ...</option>`)
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
             type: 'GET',
@@ -397,7 +399,7 @@
             //     $("#city").html(loader());
             // },
             success: function(res) {
-
+                $('#state').html('')
                 console.log(res.rajaongkir);
                 res.rajaongkir.results.forEach((item) => {
                     $('#state').append(
@@ -410,11 +412,13 @@
         })
     }
 
-    $('#state').change(function() {
-        // $('#city').html('')
-        $('#city').html('<option selected disabled>Loading ...</option>')
+
+    function getCity() {
+        $('#city').html('<option>Loading ...</option>')
         $('#city').attr('disabled', false)
-        let province = $(this).val()
+
+        let province = $('#state').val()
+
         $.ajax({
             url: `{{ route('customer.checkout.get-city') }}?province=${province}`,
             type: 'GET',
@@ -422,24 +426,36 @@
             cache: false,
             processData: false,
             success: function(res) {
-                $('#city').html('')
-                console.log(res)
+                $('#city').html(``)
+
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
                 })
+
+                getCostOngkir()
             },
             error: function(data) {
                 notyf.error(data.message)
             }
         })
+    }
+
+    $('#state').change(function() {
+        getCity()
     })
 
     $('#city').change(function() {
-        let destination = $(this).val()
+        getCostOngkir()
+    })
+
+    function getCostOngkir() {
+        let destination = $('#city').val()
         let weight = 1000;
         let courier = $('#courier').val()
-        $('#service').html('')
+        $('#service').html('<option>Loading ...</option>')
+        $('#service').attr('disabled', false)
+
         $.ajax({
             url: `{{ route('customer.checkout.get-cost') }}?destination=${destination}&weight=${weight}&courier=${courier}`,
             type: 'GET',
@@ -447,19 +463,27 @@
             cache: false,
             processData: false,
             success: function(res) {
+                $('#service').html('')
+
                 res.rajaongkir.results[0].costs.forEach((item) => {
                     $('#service').append(
                         `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
                     )
                 })
+
+                getCartData()
             },
             error: function(data) {
                 notyf.error(data.message)
             }
         })
-    })
+    }
 
     $('#courier').change(function() {
         getCostOngkir()
+    })
+
+    $('#service').change(function() {
+        getCartData()
     })
 </script>
