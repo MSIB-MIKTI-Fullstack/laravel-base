@@ -65,8 +65,9 @@
                                                     </td>
                                                     <td id="shipping-charge"
                                                         class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                        -
                                                     </td>
-                                                    </tr>
+                                                </tr>
                                                 <!-- 3 -->
                                                 {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
@@ -223,7 +224,7 @@
                                             <label for="Zip_code"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                                <input id="zip_code"
+                                            <input id="zip_code"
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="------" type="text" name="zip_code">
                                         </div>
@@ -272,6 +273,7 @@
 </x-customer-layout>
 <script>
     let weight = 0;
+
     $(document).ready(function() {
         getCartData()
         getState()
@@ -321,14 +323,13 @@
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
-
                     weight += item.weight
 
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
-                                                    class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
                                                         <img src="${item.image}" alt=""
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
@@ -366,8 +367,10 @@
                 `
 
                 $('#subtotal').html(number_format(total_price))
+
                 let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
                     0 : $('#service').find(':selected').val())
+
                 $('#shipping-charge').html(number_format(shipping_charge))
                 $('#total').html(number_format(total_price + shipping_charge))
 
@@ -383,6 +386,7 @@
 
     function getState() {
         $('#state').html(`<option>Loading ...</option>`)
+
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
             type: 'GET',
@@ -391,6 +395,7 @@
             processData: false,
             success: function(res) {
                 $('#state').html('')
+
                 res.rajaongkir.results.forEach((item) => {
                     $('#state').append(
                         `<option value="${item.province_id}">${item.province}</option>`)
@@ -423,6 +428,7 @@
                         `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
                     )
                 })
+
                 $('#zip_code').val($('#city').find(':selected').data('code'))
 
                 getCostOngkir()
@@ -432,12 +438,15 @@
             }
         })
     }
+
     $('#state').change(function() {
         getCity()
     })
 
     $('#city').change(function() {
         $('#zip_code').val($('#city').find(':selected').data('code'))
+
+        getCostOngkir()
     })
 
     function getCostOngkir() {
@@ -454,11 +463,13 @@
             processData: false,
             success: function(res) {
                 $('#service').html('')
+
                 res.rajaongkir.results[0].costs.forEach((item) => {
                     $('#service').append(
                         `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
                     )
                 })
+
                 getCartData()
             },
             error: function(data) {
@@ -466,9 +477,11 @@
             }
         })
     }
+
     $('#courier').change(function() {
         getCostOngkir()
     })
+
     $('#service').change(function() {
         getCartData()
     })

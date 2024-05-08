@@ -19,6 +19,7 @@ class Cart extends Model
             ->leftJoin('products', 'products.id', '=', 'carts.product_id')
             ->where('user_id', Auth::user()->id);
     }
+
     public function scopeGetTotalCheckoutByUser(Builder $query): void
     {
         $query->selectRaw("SUM(qty * price) as total_checkout")
