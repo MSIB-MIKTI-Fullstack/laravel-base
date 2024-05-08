@@ -58,15 +58,15 @@
                                                     </td>
                                                 </tr>
                                                 <!-- 2 -->
-                                                {{-- <tr
+                                                <tr
                                                     class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $5.00
+                                                    <td id="shipping-charge"
+                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                     </td>
-                                                </tr> --}}
+                                                    </tr>
                                                 <!-- 3 -->
                                                 {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
@@ -361,7 +361,10 @@
                 `
 
                 $('#subtotal').html(number_format(total_price))
-                $('#total').html(number_format(total_price))
+                let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
+                    0 : $('#service').find(':selected').val())
+                $('#shipping-charge').html(number_format(shipping_charge))
+                $('#total').html(number_format(total_price + shipping_charge))
 
                 $('#table-cart').html(html)
 
@@ -450,6 +453,7 @@
                         `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
                     )
                 })
+                getCartData()
             },
             error: function(data) {
                 notyf.error(data.message)
@@ -458,5 +462,8 @@
     }
     $('#courier').change(function() {
         getCostOngkir()
+    })
+    $('#service').change(function() {
+        getCartData()
     })
 </script>
