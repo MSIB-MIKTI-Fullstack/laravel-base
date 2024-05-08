@@ -13,9 +13,9 @@ class Cart extends Model
 
     protected $guarded = ['created_at', 'updated_at'];
 
-    public function scopeGetCartByUser(Builder $query): void
+    public function scopeGetCartByUser(Builder $query)
     {
-        $query->selectRaw("SUM(qty) as total_qty, name, description, price, image")
+        return $query->selectRaw("SUM(qty) as total_qty, name, description, price, image")
             ->leftJoin('products', 'products.id', '=', 'carts.product_id')
             ->where('user_id', Auth::user()->id)
             ->groupBy('product_id');
