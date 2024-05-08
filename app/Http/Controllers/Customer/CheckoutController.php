@@ -27,11 +27,13 @@ class CheckoutController extends Controller
             'state' => $request->state,
             'country' => $request->country,
             'zip_code' => $request->zip_code,
-            'email_address' => $request->zip_code,
+            'email_address' => $request->email_address,
             'phone_number' => $request->phone_number,
             'tota_checkout' => $request->tota_checkout,
             'status' => 'pending',
             'total_checkout' => $cart->total_checkout,
+            'shipping_cost' => $request->service,
+            'shipping_detail' => ""
         ]);
         $cart = Cart::getCartByUser()->get();
         
