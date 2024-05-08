@@ -63,8 +63,7 @@
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-                                                    {{-- id dibuat utk bisa dipanggil di js --}}
-                                                    <td id="shipping_charge"
+                                                    <td id="shipping-charge"
                                                         class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         -
                                                     </td>
@@ -205,18 +204,17 @@
                                                 <option class="dark:text-slate-700" value="tiki">TIKI</option>
                                             </select>
                                         </div>
-
-                                    </div>
-                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                        <div class="mb-2">
-                                            <label for="Service"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
-                                                    class="text-red-600 text-sm">*</small></label>
-                                            <select id="service"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="service" disabled>
-                                                <option selected disabled>Select Service</option>
-                                            </select>
+                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                            <div class="mb-2">
+                                                <label for="Service"
+                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small
+                                                        class="text-red-600 text-sm">*</small></label>
+                                                <select id="service"
+                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
+                                                    name="service" disabled>
+                                                    <option selected disabled>Select Service</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -274,6 +272,8 @@
     </div>
 </x-customer-layout>
 <script>
+    let weight = 0;
+
     $(document).ready(function() {
         getCartData()
         getState()
@@ -323,17 +323,20 @@
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
+                    weight += item.weight
 
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
                                                         <img src="${item.image}" alt=""
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
                                                             class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                            ${item.name.substring(0, 20)}</h5>
+                                                            <p>${item.name.substring(0, 20)}</p>
+                                                            <small>${item.weight} (g)</small>
+                                                            </h5>
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -365,12 +368,10 @@
 
                 $('#subtotal').html(number_format(total_price))
 
-                // get shipping charge dari id di veiw atas
                 let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
                     0 : $('#service').find(':selected').val())
 
-                //backend hitung total harga dan ongkir
-                $('#shipping_charge').html(number_format(shipping_charge))
+                $('#shipping-charge').html(number_format(shipping_charge))
                 $('#total').html(number_format(total_price + shipping_charge))
 
                 $('#table-cart').html(html)
@@ -422,7 +423,6 @@
             processData: false,
             success: function(res) {
                 $('#city').html(``)
-
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
@@ -451,7 +451,6 @@
 
     function getCostOngkir() {
         let destination = $('#city').val()
-        let weight = 1000;
         let courier = $('#courier').val()
         $('#service').html('<option>Loading ...</option>')
         $('#service').attr('disabled', false)
