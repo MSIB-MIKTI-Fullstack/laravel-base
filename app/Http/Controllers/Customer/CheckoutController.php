@@ -109,7 +109,7 @@ class CheckoutController extends Controller
 
     public function getCost(Request $request)
     {
-        $origin = "255"; // lokasi kita sekarang
+        $origin = "55"; // lokasi kita sekarang
         $destination = $request->destination;
         $weight = $request->weight;
         $courier = $request->courier;
