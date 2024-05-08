@@ -395,31 +395,6 @@
         })
     }
 
-    function getState() {
-        $('#state').html(`<option>Loading ...</option>`)
-
-        $.ajax({
-            url: `{{ route('customer.checkout.get-province') }}`,
-            type: 'GET',
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function(res) {
-                $('#state').html('')
-
-                res.rajaongkir.results.forEach((item) => {
-                    $('#state').append(
-                        `<option value="${item.province_id}">${item.province}</option>`)
-                })
-
-                getCity()
-            },
-            error: function(data) {
-                notyf.error(data.message)
-            }
-        })
-    }
-
     function getCity() {
         $('#city').html('<option>Loading ...</option>')
         $('#city').attr('disabled', false)
