@@ -34,6 +34,8 @@ class CheckoutController extends Controller
                 'email_address' => $request->email_address,
                 'phone_number' => $request->phone_number,
                 'total_checkout' => $cart->total_checkout,
+                'shipping_cost' => $request->service,
+                'shipping_detail' => "",
                 'status' => "pending",
             ]);
 
