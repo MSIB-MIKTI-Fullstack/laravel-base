@@ -418,13 +418,14 @@
                     $('#state').append(
                         `<option value="${item.province_id}">${item.province}</option>`)
                 })
+                getCity()
+
             },
             error: function(data) {
                 notyf.error(data.message)
             }
         })
     }
-
 
     function getCity() {
         $('#city').html('<option>Loading ...</option>')
@@ -469,7 +470,7 @@
 
     function getCostOngkir() {
         let destination = $('#city').val()
-        let weight = 1000;
+
         let courier = $('#courier').val()
         $('#service').html('<option>Loading ...</option>')
         $('#service').attr('disabled', false)
