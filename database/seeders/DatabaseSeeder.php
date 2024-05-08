@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        //\App\Models\User::factory(10)->create();
 
         $this->call([
             ProductCategorySeeder::class,
@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::create([
-            'name' => 'Yoga Meleniawan Pamungkas',
-            'email' => 'yogameleniawan@gmail.com',
+            'name' => 'Aurel Izzety',
+            'email' => 'aurelizzety@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('qwerty123'), // password
+            'password' => Hash::make('ujicoba123'), // password
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
             'remember_token' => Str::random(10),
