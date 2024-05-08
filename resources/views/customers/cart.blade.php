@@ -66,16 +66,16 @@
                                         <table class="min-w-full">
                                             <tbody>
                                                 <!-- 1 -->
-                                                <tr class="border-b border-dashed border-slate-500/60">
+                                                {{-- <tr class="border-b border-dashed border-slate-500/60">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Subtotal
                                                     </td>
                                                     <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         $15,500.00
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <!-- 2 -->
-                                                <tr class="border-b border-dashed border-slate-500/60">
+                                                {{-- <tr class="border-b border-dashed border-slate-500/60">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping
                                                     </td>
@@ -99,16 +99,16 @@
                                                         <a href="#" class="text-slate-200 font-semibold">Change
                                                             Address</a>
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <!-- 3 -->
-                                                <tr class="">
+                                                {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Promo Code
                                                     </td>
                                                     <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         -$10.00
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <!-- 4 -->
                                                 <tr class="border-t-2 border-solid border-slate-500/60">
                                                     <td
@@ -128,10 +128,12 @@
                                 </div>
                                 <div class="flex gap-4 mb-4">
                                     <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
+                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.products') }}`">Continue
                                         shopping</button>
-                                    <button
-                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Proceed
+                                    <button id="btn-checkout"
+                                        class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block"
+                                        onclick="window.location.href = `{{ route('customer.checkout.index') }}`">Proceed
                                         to checkout</button>
                                 </div>
                                 <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note
@@ -152,19 +154,22 @@
     })
 
     function changeQty(e) {
-        let qty = $(e).val();
         let id = $(e).data('id');
+        let qty = $(e).val();
         let price = $(e).parent().siblings().eq(1).data('price');
+
         let total = price * qty
+
         $(e).parent().siblings().eq(2).html(
             `${Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(total)}`)
 
-            let form = new FormData()
+        let form = new FormData()
         form.append('id', id)
         form.append('qty', qty)
+
         $('#total-cart').html(loader())
 
-            $.ajax({
+        $.ajax({
             data: form,
             url: `{{ route('customer.cart.change-cart') }}`,
             type: 'POST',
@@ -175,12 +180,15 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(data) {
+                notyf.success(data.message)
                 getTotalCart()
             },
             error: function(data) {
+                notyf.error(data.responseJSON.message)
             }
         })
     }
+
     function getTotalCart() {
         $.ajax({
             url: `{{ route('customer.cart.total-cart') }}`,
@@ -204,6 +212,7 @@
 
     function getCartData() {
         $('#table-cart').html(loader())
+
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
             type: 'GET',
@@ -214,10 +223,15 @@
                 'X-CSRF-TOKEN': `{{ csrf_token() }}`
             },
             success: function(res) {
+                $('#table-cart').html(`Empty Cart`)
                 let html;
-                res.data.forEach(item => {
-                    html +=
-                        
+
+                $('#cart-total').html(res.data.length)
+
+                if (res.data.length > 0) {
+                    res.data.forEach(item => {
+                        html +=
+                            `
                     <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                         <td
                                                             class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
@@ -252,17 +266,30 @@
                                                         </td>
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
-                                                            <a href="#">
-                                                                <a href="#" class="text-red-500">
-                                                                    <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
-                                                            </a>
+                                                            <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
+                                                                <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
+                                                            </button>
                                                         </td>
                                                     </tr>
-                    
-                });
-                $('#table-cart').html(html)
-                
-                lucide.createIcons();
+                    `
+                    });
+
+                    $('#table-cart').html(html)
+
+                    lucide.createIcons();
+
+                    $('#btn-checkout').attr('disabled', false)
+                    $('#btn-checkout').removeClass('bg-gray-600')
+                    $('#btn-checkout').addClass('bg-brand-500')
+                    $('#btn-checkout').addClass('hover:bg-brand-600')
+                } else {
+                    $('#btn-checkout').attr('disabled', true)
+                    $('#btn-checkout').addClass('bg-gray-600')
+                    $('#btn-checkout').removeClass('bg-brand-500')
+                    $('#btn-checkout').removeClass('hover:bg-brand-600')
+                }
+
+
                 getTotalCart()
             },
             error: function(data) {
@@ -271,4 +298,31 @@
         })
     }
 
+    function deleteCart(e, id) {
+        $(e).html(loader())
+
+        let form = new FormData()
+
+        form.append('_method', 'DELETE')
+        form.append('id', id)
+
+        $.ajax({
+            url: `{{ route('customer.cart.delete-cart') }}`,
+            type: 'POST',
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: form,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(res) {
+                getCartData()
+                notyf.success(res.message)
+            },
+            error: function(data) {
+                notyf.error(data.responseJSON.message)
+            }
+        })
+    }
 </script>
