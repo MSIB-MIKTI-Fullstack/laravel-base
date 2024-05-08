@@ -271,6 +271,8 @@
     </div>
 </x-customer-layout>
 <script>
+    let weight = 0;
+
     $(document).ready(function() {
         getCartData()
         getState()
@@ -320,17 +322,20 @@
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
+                    weight += item.weight
 
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                    class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
                                                         <img src="${item.image}" alt=""
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
                                                             class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                            ${item.name}</h5>
+                                                            <p>${item.name}</p>
+                                                            <small>${item.weight} (g)</small>
+                                                            </h5>
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -401,7 +406,7 @@
             }
         })
     }
-    function getCity() {
+    function getCity() 
         $('#city').html('<option>Loading ...</option>')
         $('#city').attr('disabled', false)
 
@@ -437,13 +442,12 @@
 
     $('#city').change(function() {
         $('#zip_code').val($('#city').find(':selected').data('code'))
-        
+
         getCostOngkir()
     })
 
     function getCostOngkir() {
         let destination = $('#city').val()
-        let weight = 1000;
         let courier = $('#courier').val()
         $('#service').html('<option>Loading ...</option>')
         $('#service').attr('disabled', false)
