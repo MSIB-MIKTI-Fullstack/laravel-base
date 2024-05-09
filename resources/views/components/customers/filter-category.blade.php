@@ -12,7 +12,11 @@
         @foreach ($categories as $item)
             <a href="{{ route('customer.products') }}?category_id={{ $item->id }}">
                 <div
+<<<<<<< HEAD
                     class="px-4 py-1 lg:px-4 {{ Request::get('category_id') == $item->id ? 'bg-brand-500/10 text-brand-500' : 'bg-transparent text-brand' }} text-base transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">
+=======
+                    class="px-4 py-1 lg:px-4 {{ Request::get('category_id') == $item->id ? 'bg-brand-500/10 text-brand-500' : 'bg-transparent text-brand' }} text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">
+>>>>>>> origin/rafa
                     <label class="custom-label inline-block">
                         <span class="ms-1">{{ $item->name }}</span>
                     </label>

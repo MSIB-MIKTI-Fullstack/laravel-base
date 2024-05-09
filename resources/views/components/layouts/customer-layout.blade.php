@@ -166,19 +166,34 @@
                                 </div>
                                 <div class="me-2  dropdown relative">
                                     <button type="button"
+<<<<<<< HEAD
                                         class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
+=======
+                                        class="dropdown-toggle flex items-center rounded-full text-sm
+                    focus:bg-none focus:ring-0 md:me-0"
+>>>>>>> origin/rafa
                                         id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                         data-fc-type="dropdown">
                                         <img class="h-8 w-8 rounded-full"
                                             src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
                                             alt="user photo" />
                                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
+<<<<<<< HEAD
                                             <span
                                                 class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
                                         </span>
                                     </button>
 
                                     <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
+=======
+                                            <span class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
+                                        </span>
+                                    </button>
+
+                                    <div class="left-auto right-0 z-50 my-1 hidden list-none
+                    divide-y divide-gray-100 rounded border-slate-700 md:border-white
+                    text-base shadow bg-white w-40"
+>>>>>>> origin/rafa
                                         id="navUserdata">
 
                                         <ul class="py-1" aria-labelledby="navUserdata">
@@ -193,10 +208,17 @@
                                                 <form action="{{ route('logout') }}" method="POST">
                                                     @csrf
                                                     <button type="submit"
+<<<<<<< HEAD
                                                         class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
                                                         <span data-lucide="power"
                                                             class="w-4 h-4 inline-block text-red-400 me-2"></span>
                                                         Sign out</button>
+=======
+                                                    class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
+                                                    <span data-lucide="power"
+                                                        class="w-4 h-4 inline-block text-red-400 me-2"></span>
+                                                    Sign out</button>
+>>>>>>> origin/rafa
                                                 </form>
                                             </li>
                                         </ul>
@@ -431,6 +453,7 @@
             },
         });
     </script>
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
         let notyf;
@@ -440,11 +463,22 @@
         })
 
         function number_format(number) {
+=======
+     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+     <script>
+         let notyf;
+         $(document).ready(function() {
+             notyf = new Notyf()
+         })
+
+         function number_format(number) {
+>>>>>>> origin/rafa
             return Intl.NumberFormat("id-ID", {
                 style: "currency",
                 currency: "IDR"
             }).format(number)
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -457,3 +491,14 @@
 </body>
 
 </html>
+=======
+
+        function loader() {
+            return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+        }
+     </script>
+    <!-- JAVASCRIPTS -->
+</body>
+
+</html>
+>>>>>>> origin/rafa

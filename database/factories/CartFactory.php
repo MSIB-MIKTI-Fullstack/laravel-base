@@ -19,8 +19,13 @@ class CartFactory extends Factory
     public function definition(): array
     {
         return [
+<<<<<<< HEAD
             'product_id' => Product::factory(),
             'user_id' => User::factory()
+=======
+           'product_id' => Product::factory(),
+           'user_id' => User::factory(),
+>>>>>>> origin/rafa
         ];
     }
 }

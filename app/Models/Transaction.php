@@ -9,8 +9,13 @@ class Transaction extends Model
 {
     use HasFactory;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/yoga
     protected $guarded = ["created_at", "updated_at"];
+=======
+
+    protected $guarded = ['created_at', 'updated_at'];
+>>>>>>> origin/rafa
 }

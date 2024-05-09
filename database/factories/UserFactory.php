@@ -50,14 +50,22 @@ class UserFactory extends Factory
      */
     public function withPersonalTeam(callable $callback = null): static
     {
+<<<<<<< HEAD
         if (!Features::hasTeamFeatures()) {
+=======
+        if (! Features::hasTeamFeatures()) {
+>>>>>>> origin/rafa
             return $this->state([]);
         }
 
         return $this->has(
             Team::factory()
                 ->state(fn (array $attributes, User $user) => [
+<<<<<<< HEAD
                     'name' => $user->name . '\'s Team',
+=======
+                    'name' => $user->name.'\'s Team',
+>>>>>>> origin/rafa
                     'user_id' => $user->id,
                     'personal_team' => true,
                 ])

@@ -11,9 +11,14 @@ class AdminLayout extends Component
     /**
      * Create a new component instance.
      */
+<<<<<<< HEAD
     public function __construct(
         public string $textColor
     ) {
+=======
+    public function __construct()
+    {
+>>>>>>> origin/rafa
         //
     }
 
@@ -22,10 +27,14 @@ class AdminLayout extends Component
      */
     public function render(): View|Closure|string
     {
+<<<<<<< HEAD
         $nama_perusahaan = "MIKTI";
 
         return view('components.admin-layout', [
             'nama_perusahaan' => $nama_perusahaan
         ]);
+=======
+        return view('components.admin-layout');
+>>>>>>> origin/rafa
     }
 }

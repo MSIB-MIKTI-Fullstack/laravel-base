@@ -9,8 +9,12 @@ class ProductCategory extends Model
 {
     use HasFactory;
 
+<<<<<<< HEAD
     public function product()
     {
+=======
+    public function product(){
+>>>>>>> origin/rafa
         return $this->hasMany(Product::class);
     }
 }

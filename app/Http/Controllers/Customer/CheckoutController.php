@@ -30,8 +30,11 @@ class CheckoutController extends Controller
                 'total_checkout' => $request->total_checkout,
                 'status' => "pending",
                 'total_checkout' => $cart->total_checkout,
+<<<<<<< HEAD
                 'shipping_cost' => $request->service,
                 'shipping_detail' => "",
+=======
+>>>>>>> origin/rafa
             ]);
 
             $cart = Cart::getCartByUser()->get();
@@ -53,6 +56,7 @@ class CheckoutController extends Controller
             //return response()->json(['message' => $th->getMessage()], 500);
         }
     }
+<<<<<<< HEAD
 
     public function getProvince(){
         $curl = curl_init();
@@ -147,4 +151,6 @@ class CheckoutController extends Controller
             return response()->json(json_decode($response), 200);
         }
     }
+=======
+>>>>>>> origin/rafa
 }

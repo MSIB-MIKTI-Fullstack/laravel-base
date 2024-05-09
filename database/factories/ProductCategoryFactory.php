@@ -17,7 +17,11 @@ class ProductCategoryFactory extends Factory
     public function definition(): array
     {
         return [
+<<<<<<< HEAD
             'name' => fake()->text('10')
+=======
+            'name' => fake()->text(10),
+>>>>>>> origin/rafa
         ];
     }
 }

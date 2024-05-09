@@ -37,7 +37,11 @@ Route::middleware([
 
 Route::group(['as' => 'customer.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/rafa
     route::prefix('/products')->group(function (){
         Route::get('/', [ProductController::class, 'index'])->name('products');
         Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail');
@@ -58,9 +62,12 @@ Route::group(['as' => 'customer.'], function () {
         Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
             Route::get('/', [CheckoutController::class, 'index'])->name('index');
             Route::post('/process', [CheckoutController::class, 'process'])->name('process');
+<<<<<<< HEAD
             Route::get('/get-province', [CheckoutController::class, 'getProvince'])->name('get-province');
             Route::get('/get-city', [CheckoutController::class, 'getCity'])->name('get-city');
             Route::get('/get-cost', [CheckoutController::class, 'getCost'])->name('get-cost');
+=======
+>>>>>>> origin/rafa
         });
     });
 });

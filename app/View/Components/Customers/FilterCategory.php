@@ -23,7 +23,10 @@ class FilterCategory extends Component
     public function render(): View|Closure|string
     {
         $categories = ProductCategory::all();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/rafa
         return view('components.customers.filter-category', compact('categories'));
     }
 }

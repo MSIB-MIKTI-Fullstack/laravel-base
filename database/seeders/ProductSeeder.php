@@ -12,6 +12,11 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
         \App\Models\Product::factory(100)->create();
+=======
+        //
+        \App\Models\Product::factory(10)->create();
+>>>>>>> origin/rafa
     }
 }
