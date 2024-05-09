@@ -445,6 +445,10 @@
                 currency: "IDR"
             }).format(number)
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/yoga
         function loader() {
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
         }

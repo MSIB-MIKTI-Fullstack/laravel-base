@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/yoga
     protected $guarded = ["created_at", "updated_at"];
 }

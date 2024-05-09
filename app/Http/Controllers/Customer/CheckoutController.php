@@ -32,9 +32,13 @@ class CheckoutController extends Controller
                 'phone_number' => $request->phone_number,
                 'total_checkout' => $request->total_checkout,
                 'status' => "pending",
+<<<<<<< HEAD
                 'total_checkout' => $cart->total_checkout,
                 'shipping_cost' => $request->service,
                 'shipping_detail' => ""
+=======
+                'total_checkout' => $cart->total_checkout
+>>>>>>> origin/yoga
             ]);
 
             $cart = Cart::getCartByUser()->get();
@@ -55,6 +59,7 @@ class CheckoutController extends Controller
             return redirect()->back();
         }
     }
+<<<<<<< HEAD
 
     public function getProvince()
     {
@@ -151,4 +156,6 @@ class CheckoutController extends Controller
             return response()->json(json_decode($response), 200);
         }
     }
+=======
+>>>>>>> origin/yoga
 }
