@@ -20,7 +20,6 @@ class ProductFactory extends Factory
     {
         $name = fake()->text(25);
         $product_category = ProductCategory::inRandomOrder()->first();
-
         return [
             'name' => $name,
             'description' => fake()->text(255),

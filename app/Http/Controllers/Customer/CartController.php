@@ -5,11 +5,17 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function index()
     {
+        // $carts = Cart::getCartByUser()
+        //     ->get();
+
+        //dd($carts);
+        //return view('customers.cart', compact('carts'));
         return view('customers.cart');
     }
 
@@ -24,6 +30,7 @@ class CartController extends Controller
 
             return response()->json(['message' => 'Success change cart quantity'], 200);
         } catch (\Throwable $th) {
+            //throw $th;
             return response()->json(['message' => $th->getMessage()], 500);
         }
     }
@@ -41,16 +48,13 @@ class CartController extends Controller
         return response()->json(['total' => $total], 200);
     }
 
-    public function getCart()
-    {
+    public function getCart(){
         $carts = Cart::getCartByUser()
-            ->get();
-
-        return response()->json(['data' => $carts], 200);
+         ->get();
+         return response()->json(['data' => $carts], 200);
     }
 
-    public function deleteCart(Request $request)
-    {
+    public function deleteCart(Request $request){
         try {
             Cart::find($request->id)->delete();
 

@@ -6,4 +6,8 @@
         class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
         {{ $count }}
     </span>
+<<<<<<< HEAD
 </button>
+=======
+</button>
+>>>>>>> origin/rafa

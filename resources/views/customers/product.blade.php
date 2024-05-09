@@ -11,10 +11,16 @@
                                 </div>
                                 <div class="flex-auto p-4">
                                     <x-customers.filter-category></x-customers.filter-category>
+<<<<<<< HEAD
                                 </div> <!--end card-body-->
                             </div> <!--end inner-grid-->
                         </div> <!--end col-->
 
+=======
+                                </div><!--end card-body-->
+                            </div> <!--end inner-grid-->
+                        </div><!--end col-->
+>>>>>>> origin/rafa
                         <div class="col-span-12 sm:col-span-8 md:col-span-9 lg:col-span-9 xl:col-span-9">
                             @if ($products->count() > 0)
                                 <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
@@ -26,8 +32,12 @@
                                                         <span
                                                             class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 rounded font-medium py-0 px-2 mb-5 inline-block">50%
                                                             off</span>
+<<<<<<< HEAD
                                                         <a
                                                             href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
+=======
+                                                        <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
+>>>>>>> origin/rafa
                                                             <img src="{{ $item->image }}" alt=""
                                                                 class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                                         </a>
@@ -67,7 +77,16 @@
                     </div> <!--end grid-->
                 </div><!--end container-->
 
+<<<<<<< HEAD
             </div><!--end main-->
         </div><!--end page-wrapper-->
     </div><!--end div-->
 </x-customer-layout>
+=======
+
+
+            </div><!--end main-->
+        </div><!--end page-wrapper-->
+    </div><!--end div-->
+</x-customer-layout>
+>>>>>>> origin/rafa
