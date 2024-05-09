@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\customer;
 
+use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\DetailTransaction;
 use App\Models\Transaction;
