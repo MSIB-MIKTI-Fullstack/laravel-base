@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('design-system/assets/images/favicon.ico') }}" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
 
     <!-- Css -->
     <style>
@@ -488,6 +489,9 @@
             return `<div class="loader"></div>`;
         }
     </script> // function loader adalah function untuk membuat spinner loading
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+
     <!-- JAVASCRIPTS -->
 </body>
 
