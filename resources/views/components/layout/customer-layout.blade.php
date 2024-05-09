@@ -173,8 +173,7 @@
                                     <img class="h-8 w-8 rounded-full" src="{{ asset('design-system/assets') }}/images/users/avatar-10.png"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600">Maria
-                                            Gibson</span>
+                                        <span class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
                                     </span>
                                 </button>
 
