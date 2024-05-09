@@ -67,6 +67,7 @@ Route::group(['as' => 'customer.'], function () {
 
         Route::group(['prefix' => '/transaction', 'as' => 'transaction.'], function () {
             Route::get('/', [TransactionController::class, 'index'])->name('index');
+            Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
             Route::post('/process', [CheckoutController::class, 'process'])->name('process');
             Route::get('/get-province', [CheckoutController::class, 'getProvince'])->name('get-province');
             Route::get('/get-city', [CheckoutController::class, 'getCity'])->name('get-city');
