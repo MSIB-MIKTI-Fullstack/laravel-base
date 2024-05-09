@@ -12,7 +12,7 @@ class Transaction extends Model
     use HasFactory;
 
     protected $guarded = ["created_at", "updated_at"];
-    
+
     public function scopeGetTransactionByUser(Builder $query)
     {
         $query->leftJoin('detail_transactions', 'transactions.id', '=', 'detail_transactions.transaction_id')

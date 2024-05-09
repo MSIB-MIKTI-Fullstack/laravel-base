@@ -52,6 +52,7 @@ class CheckoutController extends Controller
 
             return redirect()->route('customer.products'); // sementara kesini dulu
         } catch (\Throwable $th) {
+            dd($th->getMessage()); // sementara kita tampilkan error
             return redirect()->back();
         }
     }
@@ -152,3 +153,4 @@ class CheckoutController extends Controller
         }
     }
 }
+    
