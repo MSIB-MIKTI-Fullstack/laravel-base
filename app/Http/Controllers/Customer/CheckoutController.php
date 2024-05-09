@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\DetailTransaction;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
@@ -32,7 +32,9 @@ class CheckoutController extends Controller
                 'phone_number' => $request->phone_number,
                 'total_checkout' => $request->total_checkout,
                 'status' => "pending",
-                'total_checkout' => $cart->total_checkout
+                'total_checkout' => $cart->total_checkout,
+                'shipping_cost' => $request->service,
+                'shipping_detail' => ""
             ]);
 
             $cart = Cart::getCartByUser()->get();
@@ -51,29 +53,6 @@ class CheckoutController extends Controller
         } catch (\Throwable $th) {
             dd($th->getMessage()); // sementara kita tampilkan error
             return redirect()->back();
-        }
-
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "key: " . env('API_KEY_RAJAONGKIR')
-            ),
-        ));
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-        curl_close($curl);
-
-        if ($err) {
-            return response()->json(['message' => $err], 500);
-        } else {
-            return response()->json(json_decode($response), 200);
         }
     }
 
