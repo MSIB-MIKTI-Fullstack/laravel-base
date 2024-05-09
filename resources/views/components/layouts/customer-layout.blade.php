@@ -19,6 +19,7 @@
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
     @vite(['resources/js/app.js'])
 
 </head>
@@ -448,6 +449,7 @@
         }
         
     </script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <!-- JAVASCRIPTS -->
 </body>
 
