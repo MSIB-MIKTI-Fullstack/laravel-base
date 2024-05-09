@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
 class TransactionController extends Controller
@@ -13,9 +13,10 @@ class TransactionController extends Controller
     {
         return view('customers.transaction');
     }
+
     public function datatable(Request $request)
     {
-        $data = Transaction::all();
+        $data = Transaction::getTransactionByUser()->get();
 
         return DataTables::of($data)->toJson();
     }
