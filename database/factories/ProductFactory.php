@@ -20,23 +20,13 @@ class ProductFactory extends Factory
     {
         $name = fake()->text(25);
         $product_category = ProductCategory::inRandomOrder()->first();
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/rafa
         return [
             'name' => $name,
             'description' => fake()->text(255),
             'image' => fake()->imageUrl(640, 640),
-<<<<<<< HEAD
             'price' => fake()->numberBetween(10000, 100000),
             'slug' => Str::slug($name),
             'product_category_id' => $product_category->id
-=======
-            'price' => fake()->numberBetween(10000, 1000000),
-            'slug' => Str::slug($name),
-            'product_category_id' => $product_category->id,
->>>>>>> origin/rafa
         ];
     }
 }
