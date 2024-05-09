@@ -10,12 +10,15 @@ use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
-    public function index(){
-        return view('customers/checkout');
+    public function index()
+    {
+        return view('customers.checkout');
     }
 
-    public function process(Request $request){
+    public function process(Request $request)
+    {
         $cart = Cart::getTotalCheckoutByUser()->first();
+
         try {
             $transaction = Transaction::create([
                 'first_name' => $request->first_name,
@@ -31,12 +34,12 @@ class CheckoutController extends Controller
                 'status' => "pending",
                 'total_checkout' => $cart->total_checkout,
                 'shipping_cost' => $request->service,
-                'shipping_detail' => "",
+                'shipping_detail' => ""
             ]);
 
             $cart = Cart::getCartByUser()->get();
 
-            foreach ($cart as $key => $item){
+            foreach ($cart as $key => $item) {
                 DetailTransaction::create([
                     'transaction_id' => $transaction->id,
                     'product_id' => $item->product_id,
@@ -45,17 +48,18 @@ class CheckoutController extends Controller
 
                 $item->delete();
             }
-            return redirect()->route('customer.products');
-            //response()->json(['message' => 'Success change cart quantity'], 200);
+
+            return redirect()->route('customer.products'); // sementara kesini dulu
         } catch (\Throwable $th) {
-            //throw $th;
-            dd($th->getMessage());
-            //return response()->json(['message' => $th->getMessage()], 500);
+            dd($th->getMessage()); // sementara kita tampilkan error
+            return redirect()->back();
         }
     }
 
-    public function getProvince(){
+    public function getProvince()
+    {
         $curl = curl_init();
+
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
             CURLOPT_RETURNTRANSFER => true,

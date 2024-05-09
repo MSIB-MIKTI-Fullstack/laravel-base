@@ -58,27 +58,16 @@
                                                     </td>
                                                 </tr>
                                                 <!-- 2 -->
-<<<<<<< HEAD
                                                 <tr
-=======
-                                                {{-- <tr
->>>>>>> origin/rafa
                                                     class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-<<<<<<< HEAD
                                                     <td id="shipping-charge"
                                                         class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         -
                                                     </td>
                                                 </tr>
-=======
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $5.00
-                                                    </td>
-                                                </tr> --}}
->>>>>>> origin/rafa
                                                 <!-- 3 -->
                                                 {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
@@ -139,11 +128,7 @@
                                                 Name<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-<<<<<<< HEAD
                                                 placeholder="First name" type="text" name="first_name" required>
-=======
-                                                placeholder="First name" type="text" name="first_name">
->>>>>>> origin/rafa
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
@@ -153,11 +138,7 @@
                                                 Name<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-<<<<<<< HEAD
                                                 placeholder="Last name" type="text" name="last_name" required>
-=======
-                                                placeholder="Last name" type="text" name="last_name">
->>>>>>> origin/rafa
                                         </div>
                                     </div>
                                 </div>
@@ -169,18 +150,13 @@
                                                 Address<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-<<<<<<< HEAD
                                                 placeholder="Address" type="text" name="address" required>
-=======
-                                                placeholder="Address" type="text" name="address">
->>>>>>> origin/rafa
                                         </div>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-<<<<<<< HEAD
                                             <label for="State"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
                                                     class="text-red-600 text-sm">*</small></label>
@@ -188,23 +164,11 @@
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 name="state" required>
                                                 <option selected disabled>Select State</option>
-=======
-                                            <label for="City"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
-                                                    class="text-red-600 text-sm">*</small></label>
-                                            <select id="City"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="city">
-                                                <option class="dark:text-slate-700">-- select --</option>
-                                                <option class="dark:text-slate-700">Surat</option>
-                                                <option class="dark:text-slate-700">New York</option>
->>>>>>> origin/rafa
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
-<<<<<<< HEAD
                                             <label for="City"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
                                                     class="text-red-600 text-sm">*</small></label>
@@ -212,17 +176,6 @@
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 name="city" disabled required>
                                                 <option selected disabled>Select City</option>
-=======
-                                            <label for="State"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
-                                                    class="text-red-600 text-sm">*</small></label>
-                                            <select id="State"
-                                                class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="state">
-                                                <option class="dark:text-slate-700">-- select --</option>
-                                                <option class="dark:text-slate-700">Gujarat</option>
-                                                <option class="dark:text-slate-700">California</option>
->>>>>>> origin/rafa
                                             </select>
                                         </div>
                                     </div>
@@ -233,7 +186,6 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="Country"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-<<<<<<< HEAD
                                                 name="country" required>
                                                 <option class="dark:text-slate-700">Indonesia</option>
                                             </select>
@@ -265,15 +217,6 @@
                                             </div>
                                         </div>
                                     </div>
-=======
-                                                name="country">
-                                                <option class="dark:text-slate-700">-- select --</option>
-                                                <option class="dark:text-slate-700">India</option>
-                                                <option class="dark:text-slate-700">USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
->>>>>>> origin/rafa
                                 </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -281,15 +224,9 @@
                                             <label for="Zip_code"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-<<<<<<< HEAD
                                             <input id="zip_code"
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="------" type="text" name="zip_code" required>
-=======
-                                            <input
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="------" type="text" name="zip_code">
->>>>>>> origin/rafa
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
@@ -299,12 +236,8 @@
                                                 Address</label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-<<<<<<< HEAD
                                                 placeholder="Enter Email" type="text" name="email_address"
                                                 required>
-=======
-                                                placeholder="Enter Email" type="text" name="email">
->>>>>>> origin/rafa
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -314,11 +247,7 @@
                                                 No<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-<<<<<<< HEAD
                                                 placeholder="Mobile no" type="text" name="phone_number" required>
-=======
-                                                placeholder="Mobile no" type="text" name="phone_number">
->>>>>>> origin/rafa
                                         </div>
                                     </div>
                                 </div>
@@ -344,16 +273,11 @@
     </div>
 </x-customer-layout>
 <script>
-<<<<<<< HEAD
     let weight = 0;
 
     $(document).ready(function() {
         getCartData()
         getState()
-=======
-    $(document).ready(function() {
-        getCartData()
->>>>>>> origin/rafa
     })
 
     function getTotalCart() {
@@ -400,31 +324,20 @@
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
-<<<<<<< HEAD
                     weight += item.weight * item.total_qty
-=======
->>>>>>> origin/rafa
 
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
-<<<<<<< HEAD
                                                         class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-=======
-                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
->>>>>>> origin/rafa
                                                         <img src="${item.image}" alt=""
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
                                                             class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-<<<<<<< HEAD
                                                             <p>${item.name}</p>
                                                             <small>${item.weight} (g)</small>
                                                             </h5>
-=======
-                                                            ${item.name}</h5>
->>>>>>> origin/rafa
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -455,16 +368,12 @@
                 `
 
                 $('#subtotal').html(number_format(total_price))
-<<<<<<< HEAD
 
                 let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
                     0 : $('#service').find(':selected').val())
 
                 $('#shipping-charge').html(number_format(shipping_charge))
                 $('#total').html(number_format(total_price + shipping_charge))
-=======
-                $('#total').html(number_format(total_price))
->>>>>>> origin/rafa
 
                 $('#table-cart').html(html)
 
@@ -475,7 +384,6 @@
             }
         })
     }
-<<<<<<< HEAD
 
     function getState() {
         $('#state').html(`<option>Loading ...</option>`)
@@ -586,6 +494,3 @@
         getCartData()
     })
 </script>
-=======
-</script>
->>>>>>> origin/rafa

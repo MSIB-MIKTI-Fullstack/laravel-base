@@ -8,12 +8,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $products = Product::with(['product_category'])
-        ->orderBy('created_at', 'desc')
-        ->take(8)
-        ->get();
-        return view('customers.home', compact('products'));
+            ->orderBy('created_at', 'desc')
+            ->take(8)
+            ->get();
 
+        return view('customers.home', compact('products'));
     }
 }

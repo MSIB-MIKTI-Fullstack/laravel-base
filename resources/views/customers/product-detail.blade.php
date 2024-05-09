@@ -681,8 +681,5 @@
             })
         })
     })
-<<<<<<< HEAD
 </script>
-=======
-</script>
->>>>>>> origin/rafa
+    
