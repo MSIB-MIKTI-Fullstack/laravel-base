@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\DetailTransaction;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -32,6 +33,7 @@ class CheckoutController extends Controller
                 'total_checkout' => $cart->total_checkout,
                 'shipping_cost' => $request->service,
                 'shipping_detail' => "",
+                'user_id' => Auth::user()->id,
             ]);
 
             $cart = Cart::getCartByUser()->get();
@@ -40,7 +42,6 @@ class CheckoutController extends Controller
                 DetailTransaction::create([
                     'transaction_id' => $transaction->id,
                     'product_id' => $item->product_id,
-                    'user_id' => $item->user_id,
                 ]);
 
                 $item->delete();
