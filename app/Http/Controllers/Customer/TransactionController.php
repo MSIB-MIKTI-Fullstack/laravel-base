@@ -16,7 +16,7 @@ class TransactionController extends Controller
 
     public function datatable(Request $request)
     {
-        $data = Transaction::all();
+        $data = Transaction::getTransactionByUser()->get();
 
         return DataTables::of($data)->toJson();
     }
