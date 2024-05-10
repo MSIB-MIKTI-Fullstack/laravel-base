@@ -57,6 +57,7 @@ Route::group(['as' => 'customer.'], function () {
 
         Route::group(['prefix' => '/transaction', 'as' => 'transaction.'], function () {
             Route::get('/', [TransactionController::class, 'index'])->name('index');
+            Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
         });
     });
 });
