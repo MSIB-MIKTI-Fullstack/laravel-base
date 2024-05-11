@@ -15,6 +15,7 @@ class CheckoutController extends Controller
     {
         return view('customers.checkout');
     }
+
     public function process(Request $request)
     {
         $cart = Cart::getTotalCheckoutByUser()->first();
@@ -55,6 +56,7 @@ class CheckoutController extends Controller
             return redirect()->back();
         }
     }
+
     public function getProvince()
     {
         $curl = curl_init();
@@ -114,6 +116,7 @@ class CheckoutController extends Controller
             return response()->json(json_decode($response), 200);
         }
     }
+
     public function getCost(Request $request)
     {
         $origin = "255"; // lokasi kita sekarang

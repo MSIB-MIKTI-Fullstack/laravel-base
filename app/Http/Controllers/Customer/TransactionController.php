@@ -13,9 +13,11 @@ class TransactionController extends Controller
     {
         return view('customers.transaction');
     }
+
     public function datatable(Request $request)
     {
         $data = Transaction::getTransactionByUser()->get();
+
         return DataTables::of($data)->toJson();
     }
 }

@@ -12,20 +12,18 @@ class CartController extends Controller
     {
         return view('customers.cart');
     }
+
     public function changeCart(Request $request)
     {
         $cart = Cart::find($request->id);
 
         try {
-    
             $cart->update([
                 'qty' => $request->qty
             ]);
 
-
-
-            return response()->json(['message' => 'Success change cart quantity'], 200);        } catch (\Throwable $th) {
-            //throw $th;
+            return response()->json(['message' => 'Success change cart quantity'], 200);
+        } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage()], 500);
         }
     }
@@ -42,6 +40,7 @@ class CartController extends Controller
 
         return response()->json(['total' => $total], 200);
     }
+
     public function getCart()
     {
         $carts = Cart::getCartByUser()
@@ -49,6 +48,7 @@ class CartController extends Controller
 
         return response()->json(['data' => $carts], 200);
     }
+
     public function deleteCart(Request $request)
     {
         try {
