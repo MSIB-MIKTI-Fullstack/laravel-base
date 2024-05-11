@@ -1,5 +1,5 @@
 <x-customer-layout>
-<div class="page-wrapper relative  duration-300 pt-0 w-full">
+    <div class="page-wrapper relative  duration-300 pt-0 w-full">
         <div class="xl:w-full  min-h-[calc(100vh-56px)] relative pb-0">
             <div class="container my-4 bg-white">
                 <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
@@ -31,6 +31,7 @@
     $(document).ready(function() {
         initializeTable()
     })
+
     function initializeTable() {
         table = new DataTable('#data-table', {
             ajax: `{{ route('customer.transaction.datatable') }}`,
