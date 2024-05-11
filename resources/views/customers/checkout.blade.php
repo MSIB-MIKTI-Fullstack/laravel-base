@@ -184,7 +184,7 @@
                                         <div class="mb-2">
                                             <label for="Email_Address" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
                                                 Address</label>
-                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email">
+                                            <input id="zip_code" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email">
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -300,7 +300,7 @@
                 let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
                     0 : $('#service').find(':selected').val())
                 $('#shipping-charge').html(number_format(shipping_charge))
-                $('#total').html(number_format(total_price + shipping_charge)) 
+                $('#total').html(number_format(total_price + shipping_charge))
                 $('#table-cart').html(html)
                 getTotalCart()
             },
@@ -346,8 +346,10 @@
                 $('#city').html(``)
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
-                        `<option value="${item.city_id}">${item.city_name}</option>`)
+                        `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
+                    )
                 })
+                $('#zip_code').val($('#city').find(':selected').data('code'))
                 getCostOngkir()
             },
             error: function(data) {
@@ -359,6 +361,7 @@
         getCity()
     })
     $('#city').change(function() {
+        $('#zip_code').val($('#city').find(':selected').data('code'))
         getCostOngkir()
     })
 
