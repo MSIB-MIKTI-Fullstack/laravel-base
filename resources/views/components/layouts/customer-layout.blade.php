@@ -151,7 +151,7 @@
                             </div>
                             @if (Auth::user() != null)
                             <div class="dropdown relative">
-                            <x-customers.cart></x-customers.cart>
+                                <x-customers.cart></x-customers.cart>
                             </div>
                             <div class="me-2  dropdown relative">
                                 <button type="button" class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0" id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
@@ -212,18 +212,8 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-wishlist.html" class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Wishlist
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-stores.html" class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Stores
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-checkout.html" class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Checkout
+                                        <a href="{{ route('customer.transaction.index') }}" class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Transaction
                                         </a>
                                     </li>
                                 </ul>
@@ -357,8 +347,7 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
@@ -386,12 +375,14 @@
         $(document).ready(function() {
             notyf = new Notyf()
         })
+
         function number_format(number) {
             return Intl.NumberFormat("id-ID", {
                 style: "currency",
                 currency: "IDR"
             }).format(number)
         }
+
         function loader() {
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
         }
