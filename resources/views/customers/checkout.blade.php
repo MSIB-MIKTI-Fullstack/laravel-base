@@ -108,14 +108,14 @@
                                         <div class="mb-2">
                                             <label for="First_Name" class="font-medium text-sm text-slate-600 dark:text-slate-400">First
                                                 Name<small class="text-red-600 text-sm">*</small></label>
-                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="First name" type="text" name="first_name">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="First name" type="text" name="first_name" required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                         <div class="mb-2">
                                             <label for="Last_name" class="font-medium text-sm text-slate-600 dark:text-slate-400">Last
                                                 Name<small class="text-red-600 text-sm">*</small></label>
-                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Last name" type="text" name="last_name">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Last name" type="text" name="last_name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="State" class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small class="text-red-600 text-sm">*</small></label>
-                                            <select id="State" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="state">
+                                            <select id="State" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="state" required>
                                                 <option selected disabled>Select State</option>
                                             </select>
                                         </div>
@@ -140,7 +140,7 @@
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="City" class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small class="text-red-600 text-sm">*</small></label>
-                                            <select id="City" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="city" disabled>
+                                            <select id="City" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="city" disabled required>
                                                 <option selected disabled>Select City</option>
                                             </select>
                                         </div>
@@ -148,7 +148,7 @@
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Country" class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small class="text-red-600 text-sm">*</small></label>
-                                            <select id="Country" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="country">
+                                            <select id="Country" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="country" required>
                                                 <option class="dark:text-slate-700">Indonesia</option>
                                             </select>
                                         </div>
@@ -156,7 +156,7 @@
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Courier" class="font-medium text-sm text-slate-600 dark:text-slate-400">Courier<small class="text-red-600 text-sm">*</small></label>
-                                            <select id="courier" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="courier">
+                                            <select id="courier" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="courier" required>
                                                 <option class="dark:text-slate-700" value="jne">JNE</option>
                                                 <option class="dark:text-slate-700" value="pos">POS</option>
                                                 <option class="dark:text-slate-700" value="tiki">TIKI</option>
@@ -165,7 +165,7 @@
                                         <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                             <div class="mb-2">
                                                 <label for="Service" class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small class="text-red-600 text-sm">*</small></label>
-                                                <select id="service" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="service" disabled>
+                                                <select id="service" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="service" disabled required>
                                                     <option selected disabled>Select Service</option>>
                                                 </select>
                                             </div>
@@ -177,21 +177,21 @@
                                         <div class="mb-2">
                                             <label for="Zip_code" class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="------" type="text" name="zip_code">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="------" type="text" name="zip_code" required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                         <div class="mb-2">
                                             <label for="Email_Address" class="font-medium text-sm text-slate-600 dark:text-slate-400">Email
                                                 Address</label>
-                                            <input id="zip_code" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email_adress">
+                                            <input id="zip_code" class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Enter Email" type="text" name="email_adress" required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Mobile_No" class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
                                                 No<small class="text-red-600 text-sm">*</small></label>
-                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Mobile no" type="text" name="phone_number">
+                                            <input class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" placeholder="Mobile no" type="text" name="phone_number" required>
                                         </div>
                                     </div>
                                 </div>
@@ -379,6 +379,13 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code == "400") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
                 $('#service').html('')
                 res.rajaongkir.results[0].costs.forEach((item) => {
                     $('#service').append(
