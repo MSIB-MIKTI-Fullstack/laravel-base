@@ -165,7 +165,8 @@
                                         <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                             <div class="mb-2">
                                                 <label for="Service" class="font-medium text-sm text-slate-600 dark:text-slate-400">Service<small class="text-red-600 text-sm">*</small></label>
-                                                <select id="service" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="service">
+                                                <select id="service" class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700" name="service" disabled>
+                                                    <option selected disabled>Select Service</option>>
                                                 </select>
                                             </div>
                                         </div>
@@ -307,6 +308,7 @@
     }
 
     function getState() {
+        $('#state').html(`<option>Loading ...</option>`)
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
             type: 'GET',
@@ -314,20 +316,23 @@
             cache: false,
             processData: false,
             success: function(res) {
+                $('#state').html('')
                 res.rajaongkir.results.forEach((item) => {
                     $('#state').append(
                         `<option value="${item.province_id}">${item.province}</option>`)
                 })
+                getCity()
             },
             error: function(data) {
                 notyf.error(data.message)
             }
         })
     }
-    $('#state').change(function() {
-        $('#city').html('')
+
+    function getCity() {
+        $('#city').html('<option>Loading ...</option>')
         $('#city').attr('disabled', false)
-        let province = $(this).val()
+        let province = $('#state').val()
         $.ajax({
             url: `{{ route('customer.checkout.get-city') }}?province=${province}`,
             type: 'GET',
@@ -335,6 +340,7 @@
             cache: false,
             processData: false,
             success: function(res) {
+                $('#city').html(``)
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}">${item.city_name}</option>`)
@@ -345,6 +351,9 @@
                 notyf.error(data.message)
             }
         })
+    }
+    $('#state').change(function() {
+        getCity()
     })
     $('#city').change(function() {
         getCostOngkir()
@@ -354,7 +363,8 @@
         let destination = $('#city').val()
         let weight = 1000;
         let courier = $('#courier').val()
-        $('#service').html('')
+        $('#service').html('<option>Loading ...</option>')
+        $('#service').attr('disabled', false)
         $.ajax({
             url: `{{ route('customer.checkout.get-cost') }}?destination=${destination}&weight=${weight}&courier=${courier}`,
             type: 'GET',
@@ -362,6 +372,7 @@
             cache: false,
             processData: false,
             success: function(res) {
+                $('#service').html('')
                 res.rajaongkir.results[0].costs.forEach((item) => {
                     $('#service').append(
                         `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
