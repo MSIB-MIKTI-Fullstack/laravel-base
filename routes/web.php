@@ -5,6 +5,7 @@ use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\customer\CheckoutController;
 use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ProductController;
+use App\Http\Controllers\customer\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +56,11 @@ Route::prefix('/products')->group(function () {
             Route::get('/get-province', [CheckoutController::class, 'getProvince'])->name('get-province');
             Route::get('/get-city', [CheckoutController::class, 'getCity'])->name('get-city');
             Route::get('/get-cost', [CheckoutController::class, 'getCost'])->name('get-cost');
+        });
+
+        Route::group(['prefix' => '/transaction', 'as' => 'transaction.'], function () {
+            Route::get('/', [TransactionController::class, 'index'])->name('index');
+            Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
         });
 });
    
