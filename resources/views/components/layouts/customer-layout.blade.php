@@ -242,10 +242,10 @@
                                     </div>
                                 </div>
                             @else
-                                <a href="{{ route('login') }}"
+                                <a href="{{ route('register') }}"
                                     class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
                                     <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
-                                    Login</a>
+                                    Register</a>
                             @endif
                         </div>
                     </div>
@@ -274,27 +274,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('customer.products') }}"
-                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Products
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-wishlist.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Wishlist
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-stores.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Stores
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-checkout.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Checkout
+                                        <a href="{{ route('customer.transaction.index') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Transaction
                                         </a>
                                     </li>
                                 </ul>

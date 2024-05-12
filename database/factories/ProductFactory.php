@@ -28,7 +28,8 @@ class ProductFactory extends Factory
             'description' => fake()->text(255),
             'price' => fake()->numberBetween(10000, 1000000), //1000 disini adalah harga minimum dan 10000 adalah harga maksimum
             'slug' => Str::slug($name),
-            'product_category_id' => $product_category->id
+            'product_category_id' => $product_category->id,
+            'weight' => fake()->numberBetween(100, 1000),
             ];
     }
 }
