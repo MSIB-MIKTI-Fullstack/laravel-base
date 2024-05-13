@@ -211,7 +211,7 @@
     }
 
     function getCartData() {
-        $('table-cart').html(loader())
+        $('#table-cart').html(loader())
 
         $.ajax({
             url: `{{ route('customer.cart.get-cart') }}`,
@@ -275,7 +275,7 @@
                 });
                 $('#table-cart').html(html)
 
-                lucide.CreateIcons();
+                lucide.createIcons();
 
                 $('#btn-checkout').attr('disabled', false)
                 $('#btn-checkout').removeClass('bg-gray-600')

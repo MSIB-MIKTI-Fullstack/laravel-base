@@ -63,8 +63,9 @@
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-                                                    <td id="shipping-charge" class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $5.00
+                                                    <td id="shipping-charge"
+                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                        -
                                                     </td>
                                                 </tr>
                                                 <!-- 3 -->
@@ -173,7 +174,7 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="city"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="city" disabled>
+                                                name="city" disabled required>
                                                 <option selected disabled>Select City</option>
                                             </select>
                                         </div>
@@ -190,8 +191,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                    <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Courier"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Courier<small
@@ -217,13 +217,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
                                         <div class="mb-2">
                                             <label for="Zip_code"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                            <input id = "zip_code"
+                                            <input id="zip_code"
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
                                                 placeholder="------" type="text" name="zip_code" required>
                                         </div>
@@ -235,7 +236,8 @@
                                                 Address</label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Enter Email" type="text" name="email_address" required>
+                                                placeholder="Enter Email" type="text" name="email_address"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -276,7 +278,7 @@
     $(document).ready(function() {
         getCartData()
         getState()
-    }) 
+    })
 
     function getTotalCart() {
         $.ajax({
@@ -333,11 +335,9 @@
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
                                                             class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-
                                                             <p>${item.name}</p>
-
                                                             <small>${item.weight} (g)</small>
-                                                        </h5>
+                                                            </h5>
                                                     </td>
                                                     <td
                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -387,7 +387,7 @@
 
     function getState() {
         $('#state').html(`<option>Loading ...</option>`)
-        
+
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
             type: 'GET',
@@ -396,15 +396,15 @@
             processData: false,
             success: function(res) {
                 $('#state').html('')
-                
+
                 res.rajaongkir.results.forEach((item) => {
                     $('#state').append(
                         `<option value="${item.province_id}">${item.province}</option>`)
-        })
+                })
 
-        getCity()
-    },
-    error: function(data) {
+                getCity()
+            },
+            error: function(data) {
                 notyf.error(data.message)
             }
         })
@@ -413,7 +413,9 @@
     function getCity() {
         $('#city').html('<option>Loading ...</option>')
         $('#city').attr('disabled', false)
+
         let province = $('#state').val()
+
         $.ajax({
             url: `{{ route('customer.checkout.get-city') }}?province=${province}`,
             type: 'GET',
@@ -422,10 +424,10 @@
             processData: false,
             success: function(res) {
                 $('#city').html(``)
-
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
-                        `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`)
+                        `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
+                    )
                 })
 
                 $('#zip_code').val($('#city').find(':selected').data('code'))
@@ -444,13 +446,14 @@
 
     $('#city').change(function() {
         $('#zip_code').val($('#city').find(':selected').data('code'))
+
         getCostOngkir()
     })
 
     function getCostOngkir() {
         let destination = $('#city').val()
         let courier = $('#courier').val()
-        $('#service'),html('<option>Loading ...</option>')
+        $('#service').html('<option>Loading ...</option>')
         $('#service').attr('disabled', false)
 
         $.ajax({
@@ -471,7 +474,7 @@
 
                 res.rajaongkir.results[0].costs.forEach((item) => {
                     $('#service').append(
-                        `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${tem.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
+                        `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
                     )
                 })
 
