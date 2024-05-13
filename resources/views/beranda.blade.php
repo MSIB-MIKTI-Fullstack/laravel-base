@@ -10,7 +10,9 @@
 
 <body>
     <h1>Ini adalah halaman beranda</h1>
-    <h1>{{ $teks }}</h1>
+    @foreach ($users as $key => $item)
+        <p>{{ $key }} | {{ $item->email }}</p>
+    @endforeach
 </body>
 
 </html>
