@@ -246,23 +246,12 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-wishlist.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Wishlist
+                                        <a href="{{ route('customer.transaction.index') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Transaction
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="customers-stores.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Stores
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('customer.checkout.index') }}"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Checkout
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </nav>
                         </div>
@@ -428,7 +417,7 @@
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    {{-- <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script> --}}
 
     <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
@@ -465,6 +454,24 @@
         }
     </script>
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script>
+        function reinitializeScript() {
+            function appendScript() {
+                let head = document.getElementsByTagName("head")[0]
+                let script = document.createElement("script")
+                script.id = "frostui"
+                script.src = `{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}`
+                head.appendChild(script)
+            }
+            let id = document.getElementById("frostui")
+            if (id) {
+                id.remove()
+                appendScript()
+            } else {
+                appendScript()
+            }
+        }
+    </script>
     <!-- JAVASCRIPTS -->
 </body>
 

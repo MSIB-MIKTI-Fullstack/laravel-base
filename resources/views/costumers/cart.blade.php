@@ -255,7 +255,7 @@
                                     </td>
                                     <td
                                         class="p-3 text-sm font-semibold text-slate-700 whitespace-nowrap dark:text-gray-400">
-                                        Rp.  ${number_format(item.price)}
+                                        Rp.  ${number_format(item.price * item.total_qty)}
                                     </td>
                                     <td
                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">

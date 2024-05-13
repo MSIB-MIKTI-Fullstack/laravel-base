@@ -65,8 +65,7 @@
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Shipping Charge
                                                 </td>
-                                                <td id="shipping-charge" .html(number_format(shipping_charge))
-                                                    $('#total')
+                                                <td id="shipping-charge"
                                                     class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                     -
                                                 </td>
@@ -408,6 +407,13 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
                 $('#state').html('')
                 console.log(res.rajaongkir);
                 res.rajaongkir.results.forEach((item) => {
@@ -433,6 +439,13 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
                 console.log(res)
                 $('#city').html(``)
                 res.rajaongkir.results.forEach((item) => {
@@ -483,13 +496,7 @@
     function getCostOngkir() {
         let destination = $('#city').val()
         let courier = $('#courier').val()
-        if (res.rajaongkir.status.code == "400") {
-            notyf.error({
-                message: res.rajaongkir.status.description,
-                duration: 3000
-            })
-            return;
-        }
+
         $('#service').html('')
         $('#service').attr('disabled', false)
         $.ajax({
@@ -499,6 +506,13 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
                 res.rajaongkir.results[0].costs.forEach((item) => {
                     $('#service').append(
                         `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
