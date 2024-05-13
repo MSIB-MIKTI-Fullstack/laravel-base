@@ -304,7 +304,8 @@ class ProductSeeder extends Seeder
                 'image' => fake()->imageUrl(640, 640),
                 'price' => fake()->numberBetween(1000, 100000),
                 'slug' => Str::slug($item),
-                'product_category_id' => $product_category->id
+                'product_category_id' => $product_category->id,
+                'weight' => fake()->numberBetween(100, 1000),
             ]);
         }
     }
