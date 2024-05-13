@@ -15,15 +15,7 @@
                                                 <th>Total Checkout</th>
                                                 <th>Shipping Cost</th>
                                             </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>ID Transaction</th>
-                                                <th>Status</th>
-                                                <th>Total Checkout</th>
-                                                <th>Shipping Cost</th>
-                                            </tr>
-                                        </tfoot>
+                                        </thead>                                  
                                     </table>
                                 </div><!--end div-->
                             </div><!--end div-->
