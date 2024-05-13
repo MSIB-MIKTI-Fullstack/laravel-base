@@ -57,7 +57,7 @@
                                     <button type="submit"
                                         class="absolute right-0 bottom-0 top-0 inline-block focus:outline-none text-brand-300 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-500/60 dark:bg-transparent dark:text-brand-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-1 px-3 rounded-e rounded-s-0">Apply</button>
                                 </div>
-                                <p class="text-sm text-slate-400 text-left mb-4">If you have a promocode, You
+                                <p class="text-sm text-slate-400 text-left mb-4"> If you have a promocode, You
                                     can take discount !</p>
                             </div>
                             <div class="grid grid-cols-1 p-4 bg-slate-700/20 rounded-md">
@@ -267,7 +267,7 @@
                                                         <td
                                                             class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
                                                             <button type="button" class="text-red-500" onclick="deleteCart(this, ${item.id})">
-                                                                <i data-lucide="trash" class="top-icon w-5 h-5 text-red-500"></i>
+                                                                <i class="icofont-ui-delete text-lg text-red-1000 dark:text-red-1000"></i>
                                                             </button>
                                                         </td>
                                                     </tr>

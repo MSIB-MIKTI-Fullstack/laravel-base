@@ -274,6 +274,18 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ route('customer.products') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Products
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('customer.checkout.index') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.checkout.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Checkout
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('customer.transaction.index') }}"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Transaction
@@ -310,22 +322,23 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href="customers-home.html">
-                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
+                                <img src="{{ asset('assets/images/footerkecil.png') }}" alt=""
                                     class="h-8 inline-block me-3">
-                                <img src="{{ asset('design-system/assets/images/logo.png') }}" alt=""
+                                <img src="{{ asset('/assets/images/lgfooter.png') }}" alt=""
                                     class="h-8 inline-block">
                             </a>
                         </div>
-                        <p class="text-slate-500 text-lg">It is a long established fact that a reader will
-                            be distracted by the readable content of a page when looking at its layout. </p>
+                        <p class="text-slate-500 text-lg">As the Online Fashion Center in Asia, we create endless style
+                            possibilities by expanding our product range, from international products to coveted local
+                            products. We put you at the center. </p>
                     </div><!--end card-body-->
                 </div> <!--end card-->
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
-                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">CUSTOMER</h5>
                         <ul class="list-none footer-links">
                             <li class="mb-2">
-                                <a href="#"
+                                <a href="{{ route('customer.home') }}"
                                     class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
                             </li>
                             <li class="mb-2">
@@ -334,16 +347,17 @@
                                     details</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
+                                <a href="{{ route('customer.cart.index') }}"
                                     class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
+                                <a href="{{ route('customer.checkout.index') }}"
                                     class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
+                                <a href="{{ route('customer.transaction.index') }}"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Transaction
+                                    details</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#"
@@ -354,33 +368,23 @@
                 </div> <!--end card-->
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
-                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">
+                            ABOUT US</h5>
                         <ul class="list-none footer-links">
                             <li class="mb-2">
                                 <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Dashboard</a>
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">About
+                                    US</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Add
-                                    product</a>
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">
+                                    Terms & Conditions</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Orders</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Customers</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Order
-                                    details</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Policy
+                                    Privacy</a>
                             </li>
                         </ul>
                     </div><!--end card-body-->
