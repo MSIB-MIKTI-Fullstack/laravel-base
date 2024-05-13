@@ -28,11 +28,11 @@ class DatabaseSeeder extends Seeder
             CartSeeder::class
         ]);
 
-        \App\Models\User::factory(10)->create([
+        \App\Models\User::factory(1)->create([
             'name' => 'Rafa Septiani',
             'email' => 'rafasepti@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('qwerty123'), // password
+            'password' => Hash::make('qwerty1234'), // password
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
             'remember_token' => Str::random(10),
