@@ -55,7 +55,7 @@ Route::group(['as' => 'customer.'], function () {
             Route::post('/change-cart', [CartController::class, 'changeCart'])->name('change-cart');
             Route::get('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
             Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('delete-cart');
-        }); 
+        });
 
         Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
             Route::get('/', [CheckoutController::class, 'index'])->name('index');
@@ -68,6 +68,7 @@ Route::group(['as' => 'customer.'], function () {
         Route::group(['prefix' => '/transaction', 'as' => 'transaction.'], function () {
             Route::get('/', [TransactionController::class, 'index'])->name('index');
             Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
+            Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
         });
     });
 });
