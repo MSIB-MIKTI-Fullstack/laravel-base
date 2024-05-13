@@ -463,7 +463,7 @@
             cache: false,
             processData: false,
             success: function(res) {
-                if (res.rajaongkir.status.code == "400") {
+                if (res.rajaongkir.status.code == "200") {
                     notyf.error({
                         message: res.rajaongkir.status.description,
                         duration: 3000
