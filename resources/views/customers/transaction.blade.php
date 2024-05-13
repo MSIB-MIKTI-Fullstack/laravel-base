@@ -46,23 +46,21 @@
                     data: 'status',
                     name: 'status',
                     render: function(data, type, row, meta){
-                        if (data== "pending"){
                             if (data == "pending") {
-                            return `<span class="bg-gray-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Pending</span>`
-                        }
+                                return `<span class="bg-gray-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Pending</span>`
+                            }
 
-                        if (data == "process") {
-                            return `<span class="bg-yellow-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Process</span>`
-                        }
+                            if (data == "process") {
+                                return `<span class="bg-yellow-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Process</span>`
+                            }
 
-                        if (data == "reject") {
-                            return `<span class="bg-red-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Reject</span>`
-                        }
+                            if (data == "reject") {
+                                return `<span class="bg-red-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Reject</span>`
+                            }
 
-                        if (data == "complete") {
-                            return `<span class="bg-green-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
-                        }
-                        }
+                            if (data == "complete") {
+                                return `<span class="bg-green-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
+                            }        
                         return data;
                     }
                 },
