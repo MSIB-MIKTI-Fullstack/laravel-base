@@ -14,6 +14,7 @@
                                                 <th>Status</th>
                                                 <th>Total Checkout</th>
                                                 <th>Shipping Cost</th>
+                                                <th>Receipt</th>
                                             </tr>
                                         </thead>
                                     </table>
