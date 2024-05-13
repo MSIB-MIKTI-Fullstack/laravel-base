@@ -98,6 +98,9 @@
                 {
                     data: 'shipping_cost',
                     name: 'shipping_cost',
+                    render: function(data, type, row, meta) {
+                        return number_format(data);
+                    }
                 },
                 {
                     data: 'receipt',
