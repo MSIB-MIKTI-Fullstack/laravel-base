@@ -242,10 +242,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                    <a href="{{ route('customer.transaction.index') }}"
+                                        <a href="{{ route('customer.transaction.index') }}"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Transaction
-                                    </a>
+                                        </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -434,13 +434,13 @@
                 currency: "IDR"
             }).format(number)
         }
+
         function loader() {
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
         }
     </script>
 
-    <scriptsrc="https://cdn.datatables.net/2.0.7/js/dataTables.js">
-    </scriptsrc>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <!-- JAVASCRIPTS -->
 </body>
 
