@@ -50,6 +50,10 @@ public function uploadReceipt(Request $request)
     $path = $this->uploadFileService->uploadFile($request->file('receipt'));
 
     $transaction = Transaction::find($request->transaction_id);
+
+    if ($transaction->receipt != null) {
+        Storage::delete($transaction->receipt);
+    }
     $transaction->update([
         'status' => 'process',
         'receipt' => $path
