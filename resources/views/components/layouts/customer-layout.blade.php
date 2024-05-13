@@ -19,6 +19,7 @@
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
     @vite(['resources/js/app.js'])
 
 </head>
@@ -243,37 +244,25 @@
                                     <li>
                                         <a href="customers-wishlist.html"
                                             class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Wishlist
+                                            Transaction
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="customers-stores.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Stores
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-checkout.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Checkout
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-full hidden lg:flex px-4 lg:w-[300px] xl:w-72 items-center">
-                        <h5 class="text-xl font-semibold uppercase text-brand-500 flex items-center"><i
-                                class="icofont-sale-discount me-1 text-4xl"></i>up to <span
-                                class="text-xxl text-pink-500 font-bold">70%</span> off</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+                                    </ul>
+                                    </nav>
+                                    </div>
+                                    </div>
+                                    <div class="w-full max-w-full hidden lg:flex px-4 lg:w-[300px] xl:w-72 items-center">
+                                    <h5 class="text-xl font-semibold uppercase text-brand-500 flex items-center"><i
+                                    class="icofont-sale-discount me-1 text-4xl"></i>up to <span
+                                    class="text-xxl text-pink-500 font-bold">70%</span> off</h5>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </header>
 
-    <div class="ltr:flex flex-1 rtl:flex-row-reverse">
-        <div class="page-wrapper relative  duration-300 pt-0 w-full">
+                                    <div class="ltr:flex flex-1 rtl:flex-row-reverse">
+                                    <div class="page-wrapper relative  duration-300 pt-0 w-full">
             <div class="xl:w-full  min-h-[calc(100vh-0px)] relative pb-0">
                 {{ $slot }}
             </div><!--end main-->
@@ -450,6 +439,8 @@
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
         }
     </script>
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <!-- JAVASCRIPTS -->
 </body>
 
