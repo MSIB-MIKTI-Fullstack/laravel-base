@@ -39,4 +39,3 @@ Route::group(['as' => 'customer.'], function () {
     Route::middleware('auth')->group(function () {
         Route::get('/cart', [CartController::class, 'index'])->name('cart');
     });
-});
