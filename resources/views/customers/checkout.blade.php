@@ -351,4 +351,130 @@
             }
         })
     }
+
+    function getState() {
+        $('#state').html(`<option>Loading ...</option>`)
+
+        $.ajax({
+            url: `{{ route('customer.checkout.get-province') }}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
+
+                $('#state').html('')
+
+                res.rajaongkir.results.forEach((item) => {
+                    $('#state').append(
+                        `<option value="${item.province_id}">${item.province}</option>`)
+                })
+
+                getCity()
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    }
+
+    function getCity() {
+        $('#city').html('<option>Loading ...</option>')
+        $('#city').attr('disabled', false)
+
+        let province = $('#state').val()
+
+        $.ajax({
+            url: `{{ route('customer.checkout.get-city') }}?province=${province}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
+
+                $('#city').html(``)
+                res.rajaongkir.results.forEach((item) => {
+                    $('#city').append(
+                        `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
+                    )
+                })
+
+                $('#zip_code').val($('#city').find(':selected').data('code'))
+
+                getCostOngkir()
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    }
+
+    $('#state').change(function() {
+        getCity()
+    })
+
+    $('#city').change(function() {
+        $('#zip_code').val($('#city').find(':selected').data('code'))
+
+        getCostOngkir()
+    })
+
+    function getCostOngkir() {
+        let destination = $('#city').val()
+        let courier = $('#courier').val()
+        $('#service').html('<option>Loading ...</option>')
+        $('#service').attr('disabled', false)
+
+        $.ajax({
+            url: `{{ route('customer.checkout.get-cost') }}?destination=${destination}&weight=${weight}&courier=${courier}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
+
+                $('#service').html('')
+
+                res.rajaongkir.results[0].costs.forEach((item) => {
+                    $('#service').append(
+                        `<option value="${item.cost[0].value}">${number_format(item.cost[0].value)} (${item.service}) ${item.description} - Estimate: ${item.cost[0].etd}</option>`
+                    )
+                })
+
+                getCartData()
+            },
+            error: function(data) {
+                notyf.error(data.message)
+            }
+        })
+    }
+
+    $('#courier').change(function() {
+        getCostOngkir()
+    })
+
+    $('#service').change(function() {
+        getCartData()
+    })
 </script>

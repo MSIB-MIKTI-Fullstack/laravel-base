@@ -413,7 +413,7 @@
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    {{-- <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script> --}}
 
     <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
@@ -448,6 +448,29 @@
 
         function loader() {
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+        }
+    </script>
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script>
+        function reinitializeScript() {
+            function appendScript() {
+                let head = document.getElementsByTagName("head")[0]
+                let script = document.createElement("script")
+
+                script.id = "frostui"
+                script.src = `{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}`
+                head.appendChild(script)
+            }
+
+            let id = document.getElementById("frostui")
+
+            if (id) {
+                id.remove()
+                appendScript()
+            } else {
+                appendScript()
+            }
         }
     </script>
     <!-- JAVASCRIPTS -->

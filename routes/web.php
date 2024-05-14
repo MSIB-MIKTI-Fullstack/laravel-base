@@ -53,6 +53,15 @@ Route::group(['as' => 'customer.'], function () {
         Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
             Route::get('/', [CheckoutController::class, 'index'])->name('index');
             Route::post('/process', [CheckoutController::class, 'process'])->name('process');
+            Route::get('/get-province', [CheckoutController::class, 'getProvince'])->name('get-province');
+            Route::get('/get-city', [CheckoutController::class, 'getCity'])->name('get-city');
+            Route::get('/get-cost', [CheckoutController::class, 'getCost'])->name('get-cost');
+        });
+
+        Route::group(['prefix' => '/transaction', 'as' => 'transaction.'], function () {
+            Route::get('/', [TransactionController::class, 'index'])->name('index');
+            Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
+            Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
         });
     });
 });
