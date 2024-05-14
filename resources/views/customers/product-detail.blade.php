@@ -664,7 +664,11 @@
                 cache: false,
                 processData: false,
                 headers: {
+<<<<<<< HEAD
                     'X-CSRF-TOKEN': `{{ csrf_token() }}`6edd
+=======
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+>>>>>>> yoga
                 },
                 success: function(data) {
                     $('#btn-add-to-cart').html('Add to cart')
@@ -681,4 +685,8 @@
             })
         })
     })
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> yoga
