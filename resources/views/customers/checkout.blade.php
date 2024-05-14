@@ -395,6 +395,14 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+
+                }
                 $('#state').html('')
 
                 res.rajaongkir.results.forEach((item) => {
@@ -425,6 +433,14 @@
             success: function(res) {
                 $('#city').html(``)
                 res.rajaongkir.results.forEach((item) => {
+                    if (res.rajaongkir.status.code !="200") {
+                        notyf.error({
+                            message: res.rajaongkir.status.description,
+                            duration: 3000
+                        })
+                        return;
+                        
+                    }
                     $('#city').append(
                         `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
                     )
@@ -463,7 +479,7 @@
             cache: false,
             processData: false,
             success: function(res) {
-                if (res.rajaongkir.status.code == "400") {
+                if (res.rajaongkir.status.code != "200") {
                     notyf.error({
                         message: res.rajaongkir.status.description,
                         duration: 3000
