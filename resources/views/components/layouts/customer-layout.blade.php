@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     @vite(['resources/js/app.js'])
 
 </head>
@@ -241,21 +240,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-wishlist.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Wishlist
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-stores.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Stores
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-checkout.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Checkout
+                                        <a href="{{ route('customer.transaction.index') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Transaction
                                         </a>
                                     </li>
                                 </ul>
@@ -430,14 +417,6 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script>
-        let notyf;
-
-        $(document).ready(function() {
-            notyf = new Notyf()
-        })
     </script>
     <!-- JAVASCRIPTS -->
 </body>

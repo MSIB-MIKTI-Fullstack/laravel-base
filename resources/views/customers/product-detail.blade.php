@@ -664,7 +664,7 @@
                 cache: false,
                 processData: false,
                 headers: {
-                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`6edd
                 },
                 success: function(data) {
                     $('#btn-add-to-cart').html('Add to cart')
