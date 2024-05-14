@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
     @vite(['resources/js/app.js'])
 </head>
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
@@ -151,64 +153,52 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                    id="Notifications" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                    <span
-                                        class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                        2
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="me-2  dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 md:me-0"
-                                    id="user-profile" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full"
-                                        src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
-                                        alt="user photo" />
-                                    <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                        <span class="block font-medium text-slate-600">Maria
-                                            Gibson</span>
-                                    </span>
-                                </button>
-                                <div class="left-auto right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow bg-white w-40"
-                                    id="navUserdata">
-                                    <ul class="py-1" aria-labelledby="navUserdata">
-                                        <li>
-                                            <a href="customers-profile.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             ">
-                                                <span data-lucide="user"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="customers-invoice.html"
-                                                class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                             ">
-                                                <span data-lucide="file-spreadsheet"
-                                                    class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                                Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="auth-lock-screen.html"
-                                                class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                             ">
-                                                <span data-lucide="power"
-                                                    class="w-4 h-4 inline-block text-red-400 me-2"></span>
-                                                Sign out</a>
-                                        </li>
-                                    </ul>
+                            @if (Auth::user() != null)
+                                <div class="dropdown relative">
+                                    <x-customers.cart></x-customers.cart>
                                 </div>
-                            </div>
+                                <div class="me-2  dropdown relative">
+                                    <button type="button"
+                                        class="dropdown-toggle flex items-center rounded-full text-sm focus:bg-none focus:ring-0 md:me-0"
+                                        id="user-profile" aria-expanded="false" data-fc-autoclose="both"
+                                        data-fc-type="dropdown">
+                                        <img class="h-8 w-8 rounded-full"
+                                            src="{{ asset('design-system/assets/images/users/avatar-10.png') }}"
+                                            alt="user photo" />
+                                        <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
+                                            <span
+                                                class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
+                                        </span>
+                                    </button>
+                                    <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
+                                        id="navUserdata">
+                                        <ul class="py-1" aria-labelledby="navUserdata">
+                                            <li>
+                                                <a href="{{ route('dashboard') }}"
+                                                    class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50">
+                                                    <span data-lucide="user"
+                                                        class="w-4 h-4 inline-block text-slate-800 me-2"></span>
+                                                    Profile</a>
+                                            </li>
+                                            <li>
+                                                <form action="{{ route('logout') }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit"
+                                                        class="flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500 w-full">
+                                                        <span data-lucide="power"
+                                                            class="w-4 h-4 inline-block text-red-400 me-2"></span>
+                                                        Sign out</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="flex items-center py-2 px-3 text-sm hover:bg-gray-50">
+                                    <span data-lucide="user" class="w-4 h-4 inline-block me-2"></span>
+                                    Login</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -217,174 +207,37 @@
         <div>
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
-                    <div class="w-full max-w-full px-4 lg:w-60">
-                        <div class="relative py-4 group categories">
-                            <a href="javascript:void(0)"
-                                class="inline-flex  relative items-center justify-between whitespace-nowrap rounded bg-brand-50/70 px-5 py-2 text-base font-medium text-brand-500 hover:bg-opacity-90">
-                                <span class="pe-2">
-                                    <i data-lucide="menu" class="h-5 w-5"></i>
-                                </span>
-                                All categories
-                            </a>
-
-                            <div
-                                class="absolute left-0 top-[100%] z-10 w-[250px] rounded-lg border-[.5px] bg-white py-4   duration-400 group-[.categories]:group-hover:block  hidden">
-                                <span
-                                    class="absolute -top-[6px] left-6 -z-10 hidden h-3 w-3 rotate-45 rounded-sm border-[.5px] border-r-0 border-b-0 bg-white lg:block"></span>
-
-                                <div class="group submenu relative px-6">
-                                    <a href="javascript:void(0)"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand group-hover:text-brand">
-                                        Fashion
-                                        <span>
-                                            <i data-lucide="chevron-right" class="h-4"></i>
-                                        </span>
-                                    </a>
-
-                                    <div
-                                        class="left-full top-0 bg-white py-2 group-[.submenu]:group-hover:visible group-[.submenu]:group-hover:opacity-100 lg:invisible lg:absolute lg:w-[600px] lg:rounded lg:border-[.5px] lg:py-8 lg:px-8 lg:opacity-0 xl:w-[650px] block">
-                                        <div class="-mx-2 flex flex-wrap">
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <div>
-                                                    <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                        Man
-                                                    </h3>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Cargo Pants
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Jackets
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        T-Shirts
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Shirts
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Jeans
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <div>
-                                                    <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                        Woman
-                                                    </h3>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Dresses
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Tees
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Leggings
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Wedding Dresses
-                                                    </a>
-                                                    <a href="#"
-                                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                        Prom Dresses
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="w-full px-2 lg:w-1/3">
-                                                <h3 class="mb-3 text-base font-semibold text-black uppercase">
-                                                    Kids
-                                                </h3>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Body Wash
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Nightwear
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Shorts
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Sunglasses
-                                                </a>
-                                                <a href="#"
-                                                    class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                                    Summer Caps
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Phone & Smartwatch
-                                    </a>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="flex items-center justify-between rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Laptops
-                                    </a>
-                                </div>
-                                <div class="px-6">
-                                    <a href="#"
-                                        class="block rounded py-2 text-sm font-medium text-body-color hover:text-brand">
-                                        Jewelry
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="flex w-full items-center justify-between px-4">
+                        
                         <div class="w-full">
                             <button data-collapse-toggle="mobile-menu-2" type="button" id="toggle-menu"
-@@ -372,14 +242,14 @@ class=" block ms-auto h-10 w-10 leading-10 border rounded-full  ring-brand focus
+                                class=" block ms-auto h-10 w-10 leading-10 border rounded-full  ring-brand focus:ring-1 lg:hidden"
+                                aria-controls="mobile-menu-2" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <i data-lucide="menu" class="w-5 h-5 mx-auto stroke-slate-600 "></i>
+                                <i data-lucide="x" class="w-5 h-5 hidden mx-auto stroke-slate-600 "></i>
+                            </button>
+                            <nav id="mobile-menu-2"
                                 class="order-2 hidden w-full items-center justify-between md:order-1 md:ms-5 lg:flex md:w-auto">
                                 <ul class="blcok items-center lg:flex px-4 md:px-0">
                                     <li>
-                                        <a href="customers-home.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+
                                         <a href="{{ route('customer.home') }}"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.home') ? 'text-brand' : '' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-products.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+
                                         <a href="{{ route('customer.products') }}"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.products') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Products
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="customers-wishlist.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Wishlist
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-stores.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Stores
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="customers-checkout.html"
-                                            class="flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
-                                            Checkout
+                                        <a href="{{ route('customer.transaction.index') }}"
+                                            class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
+                                            Transaction
                                         </a>
                                     </li>
                                 </ul>
@@ -416,8 +269,10 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href="customers-home.html">
-                                <img src="assets/images/logo-sm.png" alt="" class="h-8 inline-block me-3">
-                                <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
+                                <img src="{{ asset('design-system/assets/images/logo-sm.png') }}" alt=""
+                                    class="h-8 inline-block me-3">
+                                <img src="{{ asset('design-system/assets/images/logo.png') }}" alt=""
+                                    class="h-8 inline-block">
                             </a>
                         </div>
                         <p class="text-slate-500 text-lg">It is a long established fact that a reader will
@@ -531,12 +386,18 @@
     </div>
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    {{-- <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script> --}}
+
     <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
+    
+    @@ -441,6 +441,27 @@ function loader() {
+  
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <script>
         NiceSelect.bind(document.querySelector(".nice-select"));
@@ -551,6 +412,43 @@
             },
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+        let notyf;
+        $(document).ready(function() {
+            notyf = new Notyf()
+        })
+        function number_format(number) {
+            return Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number)
+        }
+        function loader() {
+            return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
+        }
+    </script>
+
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script>
+        function reinitializeScript() {
+            function appendScript() {
+                let head = document.getElementsByTagName("head")[0]
+                let script = document.createElement("script")
+                script.id = "frostui"
+                script.src = `{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}`
+                head.appendChild(script)
+            }
+            let id = document.getElementById("frostui")
+            if (id) {
+                id.remove()
+                appendScript()
+            } else {
+                appendScript()
+            }
+        }
+    </script>
     <!-- JAVASCRIPTS -->
 </body>
+  
 </html>
