@@ -14,8 +14,7 @@
     <!-- Css -->
     <!-- Main Css -->
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
-    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
     @vite(['resources/js/app.js'])
 
 </head>
@@ -1071,6 +1070,8 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
@@ -1081,6 +1082,9 @@
     <script src="{{ asset('design-system/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+
+    @yield('script')
     <!-- JAVASCRIPTS -->
 </body>
 
