@@ -20,17 +20,12 @@
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC]">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
 
     <div
-<<<<<<< HEAD
         class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#5c3dc3] to-100% main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
-=======
-        class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#06090f] from-10% via-[#06090f] via-40% to-[#06090f] to-100% main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f]">
->>>>>>> origin/rafa
         <div
             class=" text-center border-b bg-[#06090f] border-r h-[64px] flex justify-center items-center brand-logo group-data-[sidebar=dark]:bg-[#06090f] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#06090f] group-data-[sidebar=brand]:border-slate-700/40">
             <a href="index.html" class="logo">
@@ -1044,82 +1039,7 @@
         </div>
     </div>
 
-<<<<<<< HEAD
     @include('layouts.admin.navbar')
-=======
-
-    <nav id="topbar"
-        class="topbar border-b   fixed inset-x-0  duration-300
-             block print:hidden z-50">
-        <div
-            class="mx-0 flex max-w-full flex-wrap items-center lg:mx-auto relative top-[50%] start-[50%] transform -translate-x-1/2 -translate-y-1/2">
-            <div class="ltr:mx-2  rtl:mx-2">
-                <button id="toggle-menu-hide" class="button-menu-mobile flex rounded-full md:me-0 relative">
-                    <i data-lucide="menu" class="top-icon w-5 h-5"></i>
-                </button>
-            </div>
-
-            <div class="order-1 ltr:ms-auto rtl:ms-0 rtl:me-auto flex items-center md:order-2">
-                <div class="ltr:me-2 ltr:md:me-4 rtl:me-0 rtl:ms-2 rtl:lg:me-0 rtl:md:ms-4">
-                    <button id="toggle-theme" class="flex rounded-full md:me-0 relative">
-                        <span data-lucide="moon" class="top-icon w-5 h-5 light "></span>
-                        <span data-lucide="sun" class="top-icon w-5 h-5 dark hidden"></span>
-                    </button>
-                </div>
-                <div class="me-2  dropdown relative">
-                    <button type="button"
-                        class="dropdown-toggle flex items-center rounded-full text-sm
-                    focus:bg-none focus:ring-0 md:me-0"
-                        id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
-                        <img class="h-8 w-8 rounded-full"
-                            src="{{ asset('design-system/assets/images/users/avatar-1.png') }}" alt="user photo" />
-                        <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                            <span class="block font-medium text-slate-600">Maria Gibson</span>
-                            <span class="-mt-0.5 block text-xs text-slate-500">Admin</span>
-                        </span>
-                    </button>
-
-                    <div class="left-auto right-0 z-50 my-1 hidden list-none
-                    divide-y divide-gray-100 rounded border border-slate-700/10
-                    text-base shadow bg-white w-40"
-                        id="navUserdata">
-
-                        <ul class="py-1" aria-labelledby="navUserdata">
-                            <li>
-                                <a href="#"
-                                    class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                         
-                         ">
-                                    <span data-lucide="user"
-                                        class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                    Profile</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                         
-                         ">
-                                    <span data-lucide="settings"
-                                        class="w-4 h-4 inline-block text-slate-800 me-2"></span>
-                                    Settings</a>
-                            </li>
-                            <li>
-                                <a href="auth-lockscreen.html"
-                                    class="flex items-center py-2 px-3 text-sm text-red-500 hover:bg-gray-50 hover:text-red-600
-                         
-                         ">
-                                    <span data-lucide="power"
-                                        class="w-4 h-4 inline-block text-red-500 me-2"></span>
-                                    Sign out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
->>>>>>> origin/rafa
 
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
         <div
@@ -1131,12 +1051,8 @@
                             <div class="">
                                 <div class="flex flex-wrap justify-between">
                                     <div class="items-center ">
-<<<<<<< HEAD
                                         <h1 class="font-medium text-3xl block">@yield('title_page')
                                         </h1>
-=======
-                                        <h1 class="font-medium text-3xl block">@yield('title_page')</h1>
->>>>>>> origin/rafa
                                         <ol class="list-reset flex text-sm">
                                             @yield('breadcrumb')
                                         </ol>
@@ -1148,10 +1064,7 @@
                     </div>
                 </div>
             </div><!--end container-->
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/rafa
             <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
                 @yield('content')
             </div><!--end container-->
