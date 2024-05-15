@@ -30,7 +30,7 @@ Route::get('/create', function () {
     return view('users.layout.create'); 
 });
 
-Route::get('/admin', function(){
+Route::get('/admin2', function(){
     return view('users.layout.index');
 });
 
