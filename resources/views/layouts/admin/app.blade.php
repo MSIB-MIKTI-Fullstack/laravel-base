@@ -1085,8 +1085,14 @@
 
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
-
     <script>
+        function number_format(number) {
+            return Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number)
+        }
+
         function reinitializeScript() {
             function appendScript() {
                 let head = document.getElementsByTagName("head")[0]
