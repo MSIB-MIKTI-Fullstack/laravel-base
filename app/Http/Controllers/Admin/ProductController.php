@@ -32,6 +32,7 @@ class ProductController extends Controller
                 ->rawColumns(['action'])
                 ->toJson();
         }
+        return view('admin.product.index');
     }
 
     /**
