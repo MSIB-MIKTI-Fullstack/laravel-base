@@ -16,7 +16,7 @@ class EnsureIsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->usertype !== 'admin') {
+        if (Auth::user()->usertype !== 'admin') {     // Check if the user is not an admin
             abort(403);
         }
 
