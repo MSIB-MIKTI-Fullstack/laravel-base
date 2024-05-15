@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/beranda', [HomeController::class, 'beranda']);
+Route::get('/', function () {
+    return 'Halo dunia!';
+});
