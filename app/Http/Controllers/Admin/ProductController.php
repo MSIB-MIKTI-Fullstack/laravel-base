@@ -80,6 +80,13 @@ class ProductController extends Controller
      */
     public function destroy(Request $request, string $id)
     {
-        dd($request->all());
+        try {
+            $data = Product::find($request->product_id);
+            $data->delete();
+            return redirect()->back()->with('success', 'Product deleted');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', $th->getMessage());
+        }
+        // dd($request->all());
     }
 }
