@@ -1,6 +1,6 @@
-<nav id="topbar"
-    class="topbar border-b   fixed inset-x-0  duration-300
-             block print:hidden z-50">
+<nav id="topbar" class="topbar border-b fixed inset-x-0 duration-300 
+
+            block print:hidden z-50">
     <div
         class="mx-0 flex max-w-full flex-wrap items-center lg:mx-auto relative top-[50%] start-[50%] transform -translate-x-1/2 -translate-y-1/2">
         <div class="ltr:mx-2  rtl:mx-2">
@@ -67,9 +67,8 @@
                                             class="text-sm font-medium text-gray-900 truncate
                                ">
                                             Karen Robinson</p>
-                                        <p
-                                            class="text-gray-500 mb-0 text-xs truncate
-                               ">
+                                            <p class="text-gray-500 mb-0 text-xs truncate
+                                            ">
                                             Hey ! i'm available here
                                         </p>
                                     </div>
@@ -83,7 +82,7 @@
                                         src="design-system/assets/images/users/avatar-3.png') }}" alt="logo" />
                                     <div class="flex-grow flex-1 ms-0.5 overflow-hidden">
                                         <p
-                                            class="text-sm font-medium text-gray-900 truncate
+                                            class="text-gray-500 mb-0 text-xs truncate
                                ">
                                             Your order is placed</p>
                                         <p
@@ -123,7 +122,7 @@
                                         src="design-system/assets/images/users/avatar-9.png') }}" alt="logo" />
                                     <div class="flex-grow flex-1 ms-0.5 overflow-hidden">
                                         <p
-                                            class="text-sm font-medium  text-gray-900 truncate
+                                            class="text-gray-500 mb-0 text-xs truncate
                                ">
                                             Meeting with designers</p>
                                         <p
@@ -162,7 +161,7 @@
                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                          
                          ">
-                                <span data-lucide="user"
+                                <span data-lucide="settings"
                                     class="w-4 h-4 inline-block text-slate-800 me-2"></span>
                                 Profile</a>
                         </li>
