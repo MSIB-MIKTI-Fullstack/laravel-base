@@ -4,15 +4,27 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Product::with('product_category')->get();
+
+            return DataTables::of($data)
+                ->addColumn('action', function ($row) {
+                    return '';
+                })
+                ->rawColumns(['action'])
+                ->toJson();
+        }
+        return view('admin.product.index');
     }
 
     /**
