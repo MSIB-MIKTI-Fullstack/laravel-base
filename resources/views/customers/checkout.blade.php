@@ -332,7 +332,7 @@
                                                         <h5
                                                             class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
                                                             <p>${item.name}</p>
-                                                            <small>${item.weight} (g)</small>
+                                                            <small>${weight} (g)</small>
                                                             </h5>
                                                     </td>
                                                     <td
@@ -472,7 +472,7 @@
                     })
                     return;
                 }
-                
+
                 $('#service').html('')
 
                 res.rajaongkir.results[0].costs.forEach((item) => {
