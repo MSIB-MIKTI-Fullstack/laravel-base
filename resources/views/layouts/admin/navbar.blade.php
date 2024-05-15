@@ -1,5 +1,4 @@
-<nav id="topbar"
-    class="topbar border-b   fixed inset-x-0  duration-300
+<nav id="topbar" class="topbar border-b fixed inset-x-0 duration-300
              block print:hidden z-50">
     <div
         class="mx-0 flex max-w-full flex-wrap items-center lg:mx-auto relative top-[50%] start-[50%] transform -translate-x-1/2 -translate-y-1/2">
