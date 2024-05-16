@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
     <script id="frostui" src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
     @vite(['resources/js/app.js'])
 
@@ -81,10 +82,7 @@
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-
-
     <script src="{{ asset('design-system/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script>
