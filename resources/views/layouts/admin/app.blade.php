@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
 
     <script id="frostui" src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+   
     @vite(['resources/js/app.js'])
 
 </head>
