@@ -832,6 +832,12 @@
                 appendScript()
             }
         }
+        function number_format(number) {
+            return Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number)
+        }
     </script>
     @yield('script')
     <!-- JAVASCRIPTS -->
