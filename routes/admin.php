@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController;
 
-Route::get('/', function () {
-   return view('users.layout.index');
+Route::group(['as' => 'admin.'], function () {
+   Route::resources([
+       'product' => ProductController::class,
+   ]);
 });
