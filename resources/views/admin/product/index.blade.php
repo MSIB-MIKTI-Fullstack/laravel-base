@@ -42,7 +42,7 @@
 
 <div class="modal animate-ModalSlide hidden" id="modalcenter">
     <div
-        class="relative w-auto pointer-events-none sm:max-w-lg sm:my-0 sm:mx-auto z-[99] flex items-center h-[calc(100%-3.5rem)]">
+        class="relative w-fit pointer-events-none sm:max-w-lg sm:my-0 sm:mx-auto z-[99] flex items-center h-[calc(100%-3.5rem)]">
         <form action="{{ route('admin.product.destroy', 'id') }}" method="POST" enctype="multipart/form-data">
             @method('DELETE')
             @csrf
