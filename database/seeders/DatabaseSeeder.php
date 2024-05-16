@@ -31,6 +31,20 @@ class DatabaseSeeder extends Seeder
             'two_factor_recovery_codes' => null,
             'remember_token' => Str::random(10),
             'profile_photo_path' => null,
+            'role' => 'user',
+            'current_team_id' => null,
+        ]);
+
+        \App\Models\User::create([
+            'name' => 'Administrator',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('qwerty123'), // password
+            'two_factor_secret' => null,
+            'two_factor_recovery_codes' => null,
+            'remember_token' => Str::random(10),
+            'profile_photo_path' => null,
+            'role' => 'admin',
             'current_team_id' => null,
         ]);
     }

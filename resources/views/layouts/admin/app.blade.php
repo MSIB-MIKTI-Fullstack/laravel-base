@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/libs/icofont/icofont.min.css') }}">
     <link href="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
     @vite(['resources/js/app.js'])
 
 </head>
 
-<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-    class="bg-[#EEF0FC]">
+<body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC]">
 
     <!-- leftbar-tab-menu -->
 
@@ -1072,16 +1072,49 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    <script id="frostui" src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
 
     <script src="{{ asset('design-system/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+
+    <script>
+        function reinitializeScript() {
+            function appendScript() {
+                let head = document.getElementsByTagName("head")[0]
+                let script = document.createElement("script")
+
+                script.id = "frostui"
+                script.src = `{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}`
+                head.appendChild(script)
+            }
+
+            let id = document.getElementById("frostui")
+
+            if (id) {
+                id.remove()
+                appendScript()
+            } else {
+                appendScript()
+            }
+        }
+
+        function number_format(number) {
+            return Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(number)
+        }
+    </script>
+    @yield('script')
     <!-- JAVASCRIPTS -->
 </body>
 
