@@ -1,5 +1,16 @@
 @extends('layouts.admin.app')
 @section('content')
+@if (\Session::has('success'))
+<div class="p-3 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+    {!! \Session::get('success') !!}
+</div>
+@endif
+@if (\Session::has('error'))
+<div class="p-3 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+    {!! \Session::get('error') !!}
+</div>
+@endif
+<a href="{{ route('admin.product.create') }}" class="px-2 py-1 bg-primary-500/10 border border-transparent collapse:bg-green-100 text-primary text-sm rounded hover:bg-blue-600 hover:text-white"><i class="ti ti-plus me-1"></i> New Product</a>
 <div class="xl:w-full  min-h-[calc(100vh-56px)] relative pb-0">
     <div class="container my-4 bg-white">
         <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
@@ -74,7 +85,10 @@
                 },
                 {
                     data: 'price',
-                    name: 'price'
+                    name: 'price',
+                    render: function(data, type, row, meta) {
+                        return number_format(data);
+                    }
                 },
                 {
                     data: 'product_category.name',
