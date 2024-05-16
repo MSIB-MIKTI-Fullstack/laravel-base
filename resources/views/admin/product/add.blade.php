@@ -1,4 +1,12 @@
 @extends('layouts.admin.app')
+@section('breadcrumb')
+    <li><a href="#" class="text-gray-500 dark:text-slate-400">Admin</a></li>
+    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+    <li class="text-gray-500 dark:text-slate-400"><a href="{{ route('admin.product.index') }}"
+            class="text-gray-500 dark:text-slate-400">Product</a></li>
+    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+    <li><span class="text-gray-500 dark:text-slate-400">Create Product</span></li>
+@endsection
 @section('content')
     @if (\Session::has('error'))
         <div class="p-3 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">

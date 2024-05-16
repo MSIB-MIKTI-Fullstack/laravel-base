@@ -1,4 +1,9 @@
 @extends('layouts.admin.app')
+@section('breadcrumb')
+    <li><a href="#" class="text-gray-500 dark:text-slate-400">Admin</a></li>
+    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+    <li class="text-gray-500 dark:text-slate-400">Product</li>
+@endsection
 @section('content')
     @if (\Session::has('success'))
         <div class="p-3 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
