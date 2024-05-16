@@ -183,7 +183,7 @@
 
                                     <ul class="py-1" aria-labelledby="navUserdata">
                                         <li>
-                                            <a href="customers-profile.html"
+                                            <a href="{{ route('profile.show') }}"
                                                 class="flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                              
                              ">
