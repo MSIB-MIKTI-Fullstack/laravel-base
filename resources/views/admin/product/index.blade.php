@@ -1,4 +1,9 @@
 @extends('layouts.admin.app')
+@section('breadcrumb')
+<li><a href="#" class="text-gray-500 dark:text-slate-400">Admin</a></li>
+<li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+<li class="text-gray-500 dark:text-slate-400">Product</li>
+@endsection
 @section('content')
 @if (\Session::has('success'))
 <div class="p-3 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
@@ -10,10 +15,10 @@
     {!! \Session::get('error') !!}
 </div>
 @endif
-<a href="{{ route('admin.product.create') }}" class="px-2 py-1 bg-primary-500/10 border border-transparent collapse:bg-green-100 text-primary text-sm rounded hover:bg-blue-600 hover:text-white"><i class="ti ti-plus me-1"></i> New Product</a>
 <div class="xl:w-full  min-h-[calc(100vh-56px)] relative pb-0">
-    <div class="container my-4 bg-white">
+    <div class="container my-4 p-4 bg-white">
         <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
+            <a href="{{ route('admin.product.create') }}" class="px-2 py-1 bg-primary-500/10 border border-transparent collapse:bg-green-100 text-primary text-sm rounded hover:bg-blue-600 hover:text-white"><i class="ti ti-plus me-1"></i> New Product</a>
             <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-12">
                 <div class="grid grid-cols-1">
                     <div class="sm:-mx-6 lg:-mx-8">
@@ -36,6 +41,7 @@
         </div> <!--end grid-->
     </div><!--end container-->
 </div>
+
 <div class="modal animate-ModalSlide hidden" id="modalcenter">
     <div class="relative w-auto pointer-events-none sm:max-w-lg sm:my-0 sm:mx-auto z-[99] flex items-center h-[calc(100%-3.5rem)]">
         <form action="{{ route('admin.product.destroy', 'id') }}" method="POST" enctype="multipart/form-data">
