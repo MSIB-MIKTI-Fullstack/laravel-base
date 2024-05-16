@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Robotech - Admin & Dashboard Template</title>
+    <title>Cahaya Indonesia | Online Shop Terpercaya</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta content="Tailwind Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="Mannatthemes" />
@@ -386,6 +386,10 @@
                                     class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Policy
                                     Privacy</a>
                             </li>
+                            <li class="mb-2">
+                                <a href="{{ route('admin.product.index') }}"
+                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Admin</a>
+                            </li>
                         </ul>
                     </div><!--end card-body-->
                 </div> <!--end card-->
@@ -395,7 +399,7 @@
                             Contact Us</h5>
                         <div class="mb-5">
                             <p class="text-slate-400 font-semibold">1884 George Avenue<br>
-                                Mobile, AL 36603
+                                Mobile, SM 50272
                             </p>
                         </div>
                         <div class="flex sm:justify-center xl:justify-start">
@@ -408,8 +412,12 @@
                                 <i class="icofont-twitter"></i>
                             </a>
                             <a href=""
+                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
+                                <i class="icofont-instagram"></i>
+                            </a>
+                            <a href=""
                                 class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
-                                <i class="icofont-google-plus"></i>
+                                <i class="icofont-email"></i>
                             </a>
                         </div>
                     </div><!--end card-body-->
@@ -421,7 +429,7 @@
                     var year = new Date();
                     document.write(year.getFullYear());
                 </script>
-                Robotech
+                CAHAYA SHOP. All Rights Reserved.
                 <span class="float-right hidden text-slate-400 md:inline-block">Crafted
                     with <i class="ti ti-heart text-red-500"></i> by
                     Mannatthemes</span>
@@ -474,7 +482,8 @@
         function loader() {
             return `<div class="loader"></div>`;
         }
-    </script> // function loader adalah function untuk membuat spinner loading
+        //function loader adalah function untuk membuat spinner loading
+    </script>
 
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
 
