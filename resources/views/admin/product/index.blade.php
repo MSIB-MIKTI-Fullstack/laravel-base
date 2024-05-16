@@ -97,7 +97,10 @@
                     },
                     {
                         data: 'price',
-                        name: 'price'
+                        name: 'price',
+                        render: function(data, type, row, meta) {
+                            return number_format(data);
+                        }
                     },
                     {
                         data: 'product_category.name',
