@@ -27,8 +27,7 @@ class ProductFactory extends Factory
             'image' => fake()->imageUrl(640, 640),
             'price' => fake()->numberBetween(10000, 100000),
             'slug' => Str::slug($name),
-            'product_category_id' => $product_category->id,
-            'weight' => fake()->numberBetween(100, 1000),
+            'product_category_id' => $product_category->id
         ];
     }
 }
