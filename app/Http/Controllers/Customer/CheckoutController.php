@@ -7,7 +7,6 @@ use App\Models\Cart;
 use App\Models\DetailTransaction;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -15,7 +14,7 @@ class CheckoutController extends Controller
     {
         return view('customers.checkout');
     }
-
+    
     public function process(Request $request)
     {
         $cart = Cart::getTotalCheckoutByUser()->first();
@@ -35,19 +34,19 @@ class CheckoutController extends Controller
                 'status' => "pending",
                 'total_checkout' => $cart->total_checkout,
                 'shipping_cost' => $request->service,
-                'shipping_detail' => "",
-                'user_id' => Auth::user()->id
+                'shipping_detail' => ""
             ]);
 
             $cart = Cart::getCartByUser()->get();
 
             foreach ($cart as $key => $item) {
-                  DetailTransaction::create([
-                     'transaction_id' => $transaction->id,
-                      'product_id' => $item->product_id
-                      ]);
-                      
-                      $item->delete();
+                DetailTransaction::create([
+                    'transaction_id' => $transaction->id,
+                    'product_id' => $item->product_id,
+                    'user_id' => $item->user_id,
+                ]);
+
+                $item->delete();
             }
 
             return redirect()->route('customer.products'); // sementara kesini dulu
