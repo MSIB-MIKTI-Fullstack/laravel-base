@@ -417,7 +417,7 @@
                             </a>
                             <a href=""
                                 class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
-                                <i class="icofont-email"></i>
+                                <i class="icofont-youtube"></i>
                             </a>
                         </div>
                     </div><!--end card-body-->

@@ -87,8 +87,6 @@ Route::group(['as' => 'customer.'], function () {
             Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
         });
 
-        
-    
     });
    
 });

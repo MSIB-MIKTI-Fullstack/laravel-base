@@ -8,6 +8,13 @@
                 <i data-lucide="menu" class="top-icon w-5 h-5"></i>
             </button>
         </div>
+        <div class="flex items-center md:w-[40%] lg:w-[30%] xl:w-[20%]">
+            <div class="relative ltr:mx-2 rtl:mx-2 self-center">
+                <a href="{{ route('customer.products') }}"
+                    class="px-2 py-1 bg-primary-500/10 border border-transparent collapse:bg-green-100 text-primary text-sm rounded hover:bg-blue-600 hover:text-white"><i
+                        class="ti ti-plus me-1"></i> Home Products</a>
+            </div>
+        </div>
 
         <div class="order-1 ltr:ms-auto rtl:ms-0 rtl:me-auto flex items-center md:order-2">
             <div class="me-2  dropdown relative">
@@ -19,7 +26,7 @@
                         src="{{ asset('design-system/assets/images/users/avatar-1.png') }}" alt="user photo" />
                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                         <span class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
-                        <span class="-mt-0.5 block text-xs text-slate-500">{{ Auth::user()->role }}</span>
+                        <span class="-mt-0.5 block text-xs text-slate-500">{{ Auth::user()->usertype }}</span>
                     </span>
                 </button>
 
