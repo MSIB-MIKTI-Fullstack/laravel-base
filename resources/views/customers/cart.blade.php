@@ -273,9 +273,12 @@
                                                         </td>
                                                     </tr>
                     `
-                });
+                    });
+
                     $('#table-cart').html(html)
+
                     lucide.createIcons();
+
                     $('#btn-checkout').attr('disabled', false)
                     $('#btn-checkout').removeClass('bg-gray-600')
                     $('#btn-checkout').addClass('bg-brand-500')
