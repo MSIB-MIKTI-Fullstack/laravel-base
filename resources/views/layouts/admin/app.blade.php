@@ -112,6 +112,10 @@
             } else {
                 appendScript()
             }
+            reinitializeSidenav()
+        }
+        function reinitializeSidenav() {
+            $('#sidenav-list').html($('#sidenav-list').html())
         }
         function number_format(number) {
             return Intl.NumberFormat("id-ID", {
