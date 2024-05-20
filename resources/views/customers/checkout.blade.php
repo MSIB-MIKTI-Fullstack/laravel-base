@@ -63,19 +63,20 @@
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Shipping Charge
                                                     </td>
-                                                    <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                        $5.00
+                                                    <td id="shipping-charge"
+                                                        class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                        -
                                                     </td>
-                                                </tr> 
+                                                </tr>
                                                 <!-- 3 -->
-                                                <tr class="">
+                                                {{-- <tr class="">
                                                     <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                         Promo Code
                                                     </td>
                                                     <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                         -$10.00
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <!-- 4 -->
                                                 <tr
                                                     class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
@@ -127,7 +128,7 @@
                                                 Name<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="First name" type="text" name="first_name">
+                                                placeholder="First name" type="text" name="first_name" required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
@@ -137,7 +138,7 @@
                                                 Name<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Last name" type="text" name="last_name">
+                                                placeholder="Last name" type="text" name="last_name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +150,7 @@
                                                 Address<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Address" type="text" name="address">
+                                                placeholder="Address" type="text" name="address" required>
                                         </div>
                                     </div>
                                 </div>
@@ -161,7 +162,7 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="state"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="state">
+                                                name="state" required>
                                                 <option selected disabled>Select State</option>
                                             </select>
                                         </div>
@@ -173,7 +174,7 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="city"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="city" disabled>
+                                                name="city" disabled required>
                                                 <option selected disabled>Select City</option>
                                             </select>
                                         </div>
@@ -185,7 +186,7 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="Country"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="country">
+                                                name="country" required>
                                                 <option class="dark:text-slate-700">Indonesia</option>
                                             </select>
                                         </div>
@@ -197,7 +198,7 @@
                                                     class="text-red-600 text-sm">*</small></label>
                                             <select id="courier"
                                                 class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                name="courier">
+                                                name="courier" required>
                                                 <option class="dark:text-slate-700" value="jne">JNE</option>
                                                 <option class="dark:text-slate-700" value="pos">POS</option>
                                                 <option class="dark:text-slate-700" value="tiki">TIKI</option>
@@ -210,7 +211,7 @@
                                                         class="text-red-600 text-sm">*</small></label>
                                                 <select id="service"
                                                     class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    name="service" disabled>
+                                                    name="service" disabled required>
                                                     <option selected disabled>Select Service</option>
                                                 </select>
                                             </div>
@@ -223,9 +224,9 @@
                                             <label for="Zip_code"
                                                 class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
                                                 code<small class="text-red-600 text-sm">*</small></label>
-                                                <input id="zip_code"
+                                            <input id="zip_code"
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="------" type="text" name="zip_code">
+                                                placeholder="------" type="text" name="zip_code" required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
@@ -235,7 +236,8 @@
                                                 Address</label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Enter Email" type="text" name="email_address">
+                                                placeholder="Enter Email" type="text" name="email_address"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
@@ -245,7 +247,7 @@
                                                 No<small class="text-red-600 text-sm">*</small></label>
                                             <input
                                                 class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                placeholder="Mobile no" type="text" name="phone_number">
+                                                placeholder="Mobile no" type="text" name="phone_number" required>
                                         </div>
                                     </div>
                                 </div>
@@ -322,13 +324,13 @@
                 res.data.forEach(item => {
                     total_qty += item.total_qty
                     total_price += item.total_qty * item.price
-                    weight += item.weight
+                    weight += item.weight * item.total_qty
 
                     html +=
                         `
                         <tr class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                     <td
-                                                    class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                        class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
                                                         <img src="${item.image}" alt=""
                                                             class="mr-2 h-8 inline-block">
                                                         <h5
@@ -369,6 +371,7 @@
 
                 let shipping_charge = parseInt($('#service').find(':selected').val() == "Select Service" ?
                     0 : $('#service').find(':selected').val())
+
                 $('#shipping-charge').html(number_format(shipping_charge))
                 $('#total').html(number_format(total_price + shipping_charge))
 
@@ -384,7 +387,7 @@
 
     function getState() {
         $('#state').html(`<option>Loading ...</option>`)
-        
+
         $.ajax({
             url: `{{ route('customer.checkout.get-province') }}`,
             type: 'GET',
@@ -392,6 +395,14 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
+
                 $('#state').html('')
 
                 res.rajaongkir.results.forEach((item) => {
@@ -406,7 +417,8 @@
             }
         })
     }
-    function getCity() 
+
+    function getCity() {
         $('#city').html('<option>Loading ...</option>')
         $('#city').attr('disabled', false)
 
@@ -419,8 +431,15 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
+
                 $('#city').html(``)
-                
                 res.rajaongkir.results.forEach((item) => {
                     $('#city').append(
                         `<option value="${item.city_id}" data-code="${item.postal_code}">${item.city_name}</option>`
@@ -435,8 +454,9 @@
                 notyf.error(data.message)
             }
         })
+    }
 
-        $('#state').change(function() {
+    $('#state').change(function() {
         getCity()
     })
 
@@ -459,6 +479,14 @@
             cache: false,
             processData: false,
             success: function(res) {
+                if (res.rajaongkir.status.code != "200") {
+                    notyf.error({
+                        message: res.rajaongkir.status.description,
+                        duration: 3000
+                    })
+                    return;
+                }
+
                 $('#service').html('')
 
                 res.rajaongkir.results[0].costs.forEach((item) => {

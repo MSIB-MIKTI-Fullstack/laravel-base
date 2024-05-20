@@ -15,7 +15,7 @@
                                                 <th>Total Checkout</th>
                                                 <th>Shipping Cost</th>
                                             </tr>
-                                        </thead>                                  
+                                        </thead>
                                     </table>
                                 </div><!--end div-->
                             </div><!--end div-->
@@ -28,9 +28,11 @@
 </x-customer-layout>
 <script>
     let table;
+
     $(document).ready(function() {
         initializeTable()
     })
+
     function initializeTable() {
         table = new DataTable('#data-table', {
             ajax: `{{ route('customer.transaction.datatable') }}`,
@@ -43,14 +45,39 @@
                 {
                     data: 'status',
                     name: 'status',
+                    render: function(data, type, row, meta) {
+                        if (data == "pending") {
+                            return `<span class="bg-gray-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Pending</span>`
+                        }
+
+                        if (data == "process") {
+                            return `<span class="bg-yellow-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Process</span>`
+                        }
+
+                        if (data == "reject") {
+                            return `<span class="bg-red-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Reject</span>`
+                        }
+
+                        if (data == "complete") {
+                            return `<span class="bg-green-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
+                        }
+
+                        return data;
+                    }
                 },
                 {
                     data: 'total_checkout',
                     name: 'total_checkout',
+                    render: function(data, type, row, meta) {
+                        return number_format(data);
+                    }
                 },
                 {
                     data: 'shipping_cost',
                     name: 'shipping_cost',
+                    render: function(data, type, row, meta) {
+                        return number_format(data);
+                    }
                 }
             ]
         });
