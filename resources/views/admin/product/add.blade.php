@@ -1,4 +1,12 @@
 @extends('layouts.admin.app')
+@section('breadcrumb')
+    <li><a href="#" class="text-gray-500 dark:text-slate-400">Admin</a></li>
+    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+    <li class="text-gray-500 dark:text-slate-400"><a href="{{ route('admin.product.index') }}"
+            class="text-gray-500 dark:text-slate-400">Product</a></li>
+    <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+    <li><span class="text-gray-500 dark:text-slate-400">Create Product</span></li>
+@endsection
 @section('content')
     @if (\Session::has('error'))
         <div class="p-3 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
@@ -9,6 +17,7 @@
         <form action="{{ route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
+            <label for="category" class="font-medium text-sm text-slate-600 dark:text-slate-400">Product Category</label>
                 <label for="category" class="font-medium text-sm text-slate-600 dark:text-slate-400">Product Category</label>
                 <select id="category"
                     class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700"
