@@ -12,8 +12,9 @@ Route::group(['as' => 'admin.'], function () {
         'product-categories' => ProductCategoryController::class,
         'users' => UserController::class,
     ]);
-});
-Route::group(['prefix' => '/transactions', 'as' => 'transactions.'], function () {
-    Route::get('/', [TransactionController::class, 'index'])->name('index');
-    Route::post('/process-transaction', [TransactionController::class, 'processTransaction'])->name('process-transaction');
+    Route::group(['prefix' => '/transactions', 'as' => 'transactions.'], function () {
+        Route::get('/', [TransactionController::class, 'index'])->name('index');
+        Route::post('/process-transaction', [TransactionController::class, 'processTransaction'])->name('process-transaction');
+    });
+
 });
