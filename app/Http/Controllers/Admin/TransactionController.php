@@ -16,7 +16,7 @@ class TransactionController extends Controller
         public ProcessTransactionInterface $processTransaction
     ) {
     }
-    
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
@@ -53,7 +53,7 @@ class TransactionController extends Controller
 
     public function processTransaction(Request $request)
     {
-        transactionProccessDTO = new TransactionProcessDTO(
+        $transactionProccessDTO = new TransactionProcessDTO(
             transaction_id: $request->transaction_id,
             receipt_number: $request->receipt_number,
             valid: $request->input('switch-valid')
