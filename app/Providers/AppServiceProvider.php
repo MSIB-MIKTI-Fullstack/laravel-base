@@ -15,10 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $nama_perusahaan = "MIKTI";
-
         View::share('nama_perusahaan', $nama_perusahaan);
     }
-
     /**
      * Bootstrap any application services.
      */
