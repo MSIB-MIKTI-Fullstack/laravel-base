@@ -1,5 +1,5 @@
 <x-customer-layout>
-div class="page-wrapper relative  duration-300 pt-0 w-full">
+    <div class="page-wrapper relative  duration-300 pt-0 w-full">
         <div class="xl:w-full  min-h-[calc(100vh-56px)] relative pb-0">
             <div class="container my-4 bg-white">
                 <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
@@ -13,17 +13,10 @@ div class="page-wrapper relative  duration-300 pt-0 w-full">
                                                 <th>ID Transaction</th>
                                                 <th>Status</th>
                                                 <th>Total Checkout</th>
+                                                <th>Shipping Cost</th>
                                                 <th>Receipt</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>ID Transaction</th>
-                                                <th>Status</th>
-                                                <th>Total Checkout</th>
-                                                <th>Shipping Cost</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div><!--end div-->
                             </div><!--end div-->
@@ -33,6 +26,10 @@ div class="page-wrapper relative  duration-300 pt-0 w-full">
             </div><!--end container-->
         </div>
     </div><!--end page-wrapper-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4925571f9738c660911d92041a00a23e03770f1d
     <div class="modal animate-ModalSlide hidden" id="modalcenter">
         <div
             class="relative w-auto pointer-events-none sm:max-w-lg sm:my-0 sm:mx-auto z-[99] flex items-center h-[calc(100%-3.5rem)]">
@@ -56,7 +53,11 @@ div class="page-wrapper relative  duration-300 pt-0 w-full">
                     </div>
                     <div
                         class="flex flex-wrap shrink-0 justify-end p-3  rounded-b border-t border-dashed dark:border-gray-700">
-                        <button type="button" 
+<<<<<<< HEAD
+                        <button
+=======
+                        <button type="button"
+>>>>>>> 4925571f9738c660911d92041a00a23e03770f1d
                             class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500  text-sm font-medium py-1 px-3 rounded mr-1 close"
                             data-fc-dismiss>Close</button>
                         <button type="submit"
@@ -73,9 +74,11 @@ div class="page-wrapper relative  duration-300 pt-0 w-full">
     function openModal(id) {
         $('#transaction_id').val(id)
     }
+
     $(document).ready(function() {
         initializeTable()
     })
+
     function initializeTable() {
         table = new DataTable('#data-table', {
             ajax: `{{ route('customer.transaction.datatable') }}`,
@@ -92,16 +95,23 @@ div class="page-wrapper relative  duration-300 pt-0 w-full">
                         if (data == "pending") {
                             return `<span class="bg-gray-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Pending</span>`
                         }
+
                         if (data == "process") {
-                            if (data == "delivery") {
+                            return `<span class="bg-yellow-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Process</span>`
+                        }
+
+                        if (data == "delivery") {
                             return `<span class="bg-orange-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
                         }
+
                         if (data == "reject") {
                             return `<span class="bg-red-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Reject</span>`
                         }
+
                         if (data == "complete") {
                             return `<span class="bg-green-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
                         }
+
                         return data;
                     }
                 },
