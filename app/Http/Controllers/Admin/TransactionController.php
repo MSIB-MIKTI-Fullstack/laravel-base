@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DTO\TransactionProcessDTO;
+use App\Domain\ValueObjects\TransactionId;
+use App\Domain\Entities\TransactionProcess;
 use App\Http\Controllers\Controller;
 use App\Interfaces\ProcessTransactionInterface;
 use App\Models\Transaction;
@@ -53,15 +54,19 @@ class TransactionController extends Controller
 
     public function processTransaction(Request $request)
     {
-        $transactionProccessDTO = new TransactionProcessDTO(
-            transaction_id: $request->transaction_id,
+        $transaction_id = new TransactionId(
+            transaction_id: $request->transaction_id
+        );
+
+        $transaction = new TransactionProcess(
+            transaction_id: $transaction_id,
             receipt_number: $request->receipt_number,
             valid: $request->input('switch-valid')
         );
 
         try {
             $this->processTransaction->processTransactionStatus(
-                transaction: $transactionProccessDTO
+                transaction: $transaction
             );
 
             return redirect()->route('admin.transactions.index')->with('success', "Transaction Process");
