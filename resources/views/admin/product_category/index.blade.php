@@ -19,8 +19,8 @@
     <div class="xl:w-full  min-h-[calc(100vh-56px)] relative pb-0">
         <div class="container my-4 p-4 bg-white">
             <a href="{{ route('admin.product-categories.create') }}"
-            class="px-2 py-1 bg-primary-500/10 border border-transparent collapse:bg-green-100 text-primary text-sm rounded hover:bg-blue-600 hover:text-white"><i
-                class="ti ti-plus me-1"></i>New Product Category</a>
+                class="px-2 py-1 bg-primary-500/10 border border-transparent collapse:bg-green-100 text-primary text-sm rounded hover:bg-blue-600 hover:text-white"><i
+                    class="ti ti-plus me-1"></i>New Product Category</a>
             <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-12">
                     <div class="grid grid-cols-1">
@@ -50,8 +50,8 @@
                 enctype="multipart/form-data">
                 @method('DELETE')
                 @csrf
-                <div
-                    class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded">
+                <div class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded"
+                    style="left: 50%">
                     <div
                         class="flex shrink-0 items-center justify-between py-2 px-4 rounded-t border-b border-solid dark:border-gray-700 bg-slate-800">
                         <h6 class="mb-0 leading-4 text-base font-semibold text-slate-300 mt-0" id="staticBackdropLabel1">
