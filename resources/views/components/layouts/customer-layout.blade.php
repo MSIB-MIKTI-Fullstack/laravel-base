@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('design-system/assets/css/tailwind.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="{{ asset('design-system/assets/libs/starability/starability-css/starability-all.css') }}">
     @vite(['resources/js/app.js'])
 
 </head>

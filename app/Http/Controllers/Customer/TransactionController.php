@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\DetailTransaction;
 use App\Models\Transaction;
 use App\Service\UploadFileService;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -96,6 +98,22 @@ class TransactionController extends Controller
             return redirect()->back()->with('success', "Transaction completed");
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());
+        }
+    }
+    public function getDetailProductTransaction(Request $request)
+    {
+        $products = DetailTransaction::select('products.id', 'products.name', 'products.image')->leftJoin('products', 'products.id', '=', 'detail_transactions.product_id')->where('transaction_id', $request->transaction_id)->get();
+
+        return response()->json(['data' => $products], 200);
+    }
+    public function reviewTransaction(Request $request)
+    {
+        $products = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
+
+        foreach ($products as $product) {
+            if ($request->input("rating-" . $product->id) == null) {
+                $request->request->add(['rating-' . $product->id => '5']);
+            }
         }
     }
 }
