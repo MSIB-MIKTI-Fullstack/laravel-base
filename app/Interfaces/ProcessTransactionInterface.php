@@ -2,9 +2,9 @@
 
 namespace App\Interfaces;
 
-use App\DTO\TransactionProcessDTO;
+use App\Domain\Entities\TransactionProcess;
 
 interface ProcessTransactionInterface
 {
-    public function processTransactionStatus(TransactionProcessDTO $transaction): void;
+    public function processTransactionStatus(TransactionProcess $transaction): void;
 }

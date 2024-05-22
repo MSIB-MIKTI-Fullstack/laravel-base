@@ -2,19 +2,19 @@
 
 namespace App\Repository;
 
-use App\DTO\TransactionProcessDTO;
+use App\Domain\Entities\TransactionProcess;
 use App\Interfaces\ProcessTransactionInterface;
 use App\Models\Transaction;
 
 class ProcessTransactionRepository implements ProcessTransactionInterface
 {
-    public function processTransactionStatus(TransactionProcessDTO $transaction): void
+    public function processTransactionStatus(TransactionProcess $transaction): void
     {
-        $database = Transaction::find($transaction->getTransactionId());
+        $database = Transaction::find($transaction->TransactionId()->Value());
 
         $database->update([
             'receipt_number' => $transaction->getReceiptNumber(),
             'status' => $transaction->getValid() ? 'delivery' : 'reject'
         ]);
     }
-}   
+}
