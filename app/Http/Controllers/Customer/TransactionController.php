@@ -59,7 +59,10 @@ class TransactionController extends Controller
                     </button>' . '</div>';
                 }
 
-                return '';
+                return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modal-review"
+                class="inline-block focus:outline-none text-slate-500 hover:bg-slate-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-slate-500  text-sm font-medium py-1 px-3 rounded" onclick="openModalReview(' . $row->id . ')">
+                Review
+            </button>' . '</div>';
             })
             ->rawColumns(['receipt'])
             ->toJson();
