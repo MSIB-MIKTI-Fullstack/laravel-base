@@ -60,7 +60,7 @@
     </div>
     <div class="modal animate-ModalSlide hidden" id="modal-review">
         <div class="relative w-auto pointer-events-none sm:max-w-lg sm:my-0 sm:mx-auto z-[99] flex items-center h-[calc(100%-3.5rem)]">
-            <form action="{{ route('customer.transaction.upload-receipt') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('customer.transaction.review-transaction') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded">
                     <div class="flex shrink-0 items-center justify-between py-2 px-4 rounded-t border-b border-solid dark:border-gray-700 bg-slate-800">
@@ -69,7 +69,7 @@
                         <button type="button" class="box-content w-4 h-4 p-1 bg-slate-700/60 rounded-full text-slate-300 leading-4 text-xl close" aria-label="Close" data-fc-dismiss>&times;</button>
                     </div>
                     <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
-                        <input type="hidden" name="transaction_id" id="transaction_id">
+                        <input type="hidden" name="transaction_id_review" id="transaction_id_review">
                         <div id="product-list-review">
                         </div>
                     </div>
@@ -90,6 +90,7 @@
     }
 
     function openModalReview(id) {
+        $('#transaction_id_review').val(id)
         $('#product-list-review').html(loader())
         $.ajax({
             url: `{{ route('customer.transaction.get-detail-product-transaction') }}?transaction_id=${id}`,
@@ -102,24 +103,24 @@
             },
             success: function(data) {
                 let html = ``;
-                console.log(data)
                 data.data.forEach(item => {
+                    console.log(item)
                     html += `
                     <div class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                <img src="{{ Storage::url('${item.image}') }}" alt=""
-                                    class="mr-2 h-12 inline-block">
+                    <img src="" alt=""                                    
+                    class="mr-2 h-12 inline-block">
                                 <div class="font-semibold text-slate-700 dark:text-gray-400 inline-block">
                                     <h4>${item.name}</h4>
                                     <div class="starability-basic min-h-[30px] block mb-2">
-                                        <input type="radio" id="rate5-${item.id}" name="rating-${item.id}" value="5" />
-                                        <label for="rate5-${item.id}" title="Amazing">5 stars</label>
-                                        <input type="radio" id="rate4-${item.id}" name="rating-${item.id}" value="4" />
-                                        <label for="rate4-${item.id}" title="Very good">4 stars</label>
-                                        <input type="radio" id="rate3-${item.id}" name="rating-${item.id}" value="3" />
-                                        <label for="rate3-${item.id}" title="Average">3 stars</label>
-                                        <input type="radio" id="rate2-${item.id}" name="rating-${item.id}" value="2" />
+                                    <input type="radio" id="rate5-${item.id}" name="rating-${item.id}" value="1" />                                       
+                                     <label for="rate5-${item.id}" title="Amazing">5 stars</label>
+                                     <input type="radio" id="rate4-${item.id}" name="rating-${item.id}" value="2" />                                        
+                                     <label for="rate4-${item.id}" title="Very good">4 stars</label>
+                                    <input type="radio" id="rate3-${item.id}" name="rating-${item.id}" value="3" />
+                                    <label for="rate3-${item.id}" title="Average">3 stars</label>
+                                        <input type="radio" id="rate2-${item.id}" name="rating-${item.id}" value="4" />                                        
                                         <label for="rate2-${item.id}" title="Not good">2 stars</label>
-                                        <input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="1" />
+                                        <input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="5"/>                                        
                                         <label for="rate1-${item.id}" title="Terrible">1 star</label>
                                     </div>
                                 </div>
