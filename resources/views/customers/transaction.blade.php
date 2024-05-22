@@ -141,7 +141,7 @@
                                         <label for="rate3-${item.id}" title="Average">3 stars</label>
                                         <input type="radio" id="rate2-${item.id}" name="rating-${item.id}" value="2" />
                                         <label for="rate2-${item.id}" title="Not good">2 stars</label>
-                                        <<input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="1" />
+                                        <input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="1" />
                                         <label for="rate1-${item.id}" title="Terrible">1 star</label>
                                     </div>
                                 </div>
