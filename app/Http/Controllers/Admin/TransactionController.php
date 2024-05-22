@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DTO\TransactionProcessDTO;
 use App\Http\Controllers\Controller;
+use App\Interfaces\ProcessTransactionInterface;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -10,6 +12,11 @@ use Yajra\DataTables\Facades\DataTables;
 
 class TransactionController extends Controller
 {
+    public function __construct(
+        public ProcessTransactionInterface $processTransaction
+    ) {
+    }
+    
     public function index(Request $request)
     {
         if ($request->ajax()) {
