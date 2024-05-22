@@ -59,6 +59,7 @@ Route::group(['as' => 'customer.'], function () {
             Route::get('/', [TransactionController::class, 'index'])->name('index');
             Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
             Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
+            Route::post('/complete-transaction', [TransactionController::class, 'completeTransaction'])->name('complete-transaction');
         });
     });
 });
