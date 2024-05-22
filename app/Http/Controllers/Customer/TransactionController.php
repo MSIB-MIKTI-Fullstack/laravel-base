@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\DetailTransaction;
 use App\Models\Transaction;
+use App\Models\User;
 use App\Service\UploadFileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -25,10 +27,10 @@ class TransactionController extends Controller
         $data = Transaction::getTransactionByUser()->get();
 
         return DataTables::of($data)
-            ->addColumn('receipt', function ($row) {  //membuat kolom baru dengan nama receipt
+            ->addColumn('receipt', function ($row) {
                 $icon = "";
 
-                if ($row->receipt_number != null && $row->status == "delivery") { //kondisi ketika status delivery
+                if ($row->receipt_number != null && $row->status == "delivery") {
                     return '
                     <div class="flex flex-col items-center gap-2">
                         <small> Receipt number: ' . $row->receipt_number . '</small>
@@ -44,7 +46,6 @@ class TransactionController extends Controller
                     ';
                 }
 
-                //kondisi ketika status pending atau process 
                 if ($row->status == "pending" || $row->status == "process") {
                     if ($row->receipt != null) {
                         $url = Storage::url($row->receipt);
@@ -60,7 +61,10 @@ class TransactionController extends Controller
                     </button>' . '</div>';
                 }
 
-                return '';
+                return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modal-review"
+                        class="inline-block focus:outline-none text-slate-500 hover:bg-yellow-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-yellow-500  text-sm font-medium py-1 px-3 rounded" onclick="openModalReview(' . $row->id . ')">
+                        Review
+                    </button>' . '</div>';
             })
             ->rawColumns(['receipt'])
             ->toJson();
@@ -84,11 +88,11 @@ class TransactionController extends Controller
         return redirect()->back();
     }
 
-    public function completeTransaction(Request $request) //method untuk menyelesaikan transaksi
+    public function completeTransaction(Request $request)
     {
         try {
-            $transaction = Transaction::find($request->transaction_id); //try catch untuk menangkap error jika terjadi error
-            $transaction->update([ 
+            $transaction = Transaction::find($request->transaction_id);
+            $transaction->update([
                 'status' => 'complete'
             ]);
 
@@ -96,5 +100,25 @@ class TransactionController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());
         }
+    }
+
+    public function getDetailProductTransaction(Request $request)
+    {
+        $products = DetailTransaction::select('products.id', 'products.name', 'products.image')->leftJoin('products', 'products.id', '=', 'detail_transactions.product_id')->where('transaction_id', $request->transaction_id)->get();
+
+        return response()->json(['data' => $products], 200);
+    }
+
+    public function reviewTransaction(Request $request)
+    {
+        $products = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
+
+        foreach ($products as $product) {
+            if ($request->input("rating-" . $product->id) == null) {
+                $request->request->add(['rating-' . $product->id => '5']);
+            }
+        }
+
+        dd($request->all());
     }
 }
