@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\DetailTransaction;
 use App\Models\Transaction;
+use App\Models\User;
 use App\Service\UploadFileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -96,5 +98,11 @@ public function uploadReceipt(Request $request)
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());
         }
+    }
+    public function getDetailProductTransaction(Request $request)
+    {
+        $products = DetailTransaction::select('products.id', 'products.name', 'products.image')->leftJoin('products', 'products.id', '=', 'detail_transactions.product_id')->where('transaction_id', $request->transaction_id)->get();
+
+        return response()->json(['data' => $products], 200);
     }
 }
