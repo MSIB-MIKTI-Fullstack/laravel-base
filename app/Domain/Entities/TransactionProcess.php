@@ -28,12 +28,12 @@ class TransactionProcess //class ini berfungsi untuk mengatur proses transaksi y
         return $this->receipt_number;
     }
 
-    public function setValid(bool $valid): void
+    public function setValid(bool $valid): void //method ini berfungsi untuk mengatur validasi transaksi
     {
         $this->valid = $valid;
     }
-
-    public function getValid(): bool
+ 
+    public function getValid(): bool  //method ini berfungsi untuk mendapatkan status validasi transaksi yang terjadi
     {
         return $this->valid;
     }
