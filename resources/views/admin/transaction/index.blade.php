@@ -50,7 +50,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div
-                    class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded">
+                    class="relative flex flex-col w-full pointer-events-auto bg-white dark:bg-slate-800 bg-clip-padding rounded" style="left: 50%">
                     <div
                         class="flex shrink-0 items-center justify-between py-2 px-4 rounded-t border-b border-solid dark:border-gray-700 bg-slate-800">
                         <h6 class="mb-0 leading-4 text-base font-semibold text-slate-300 mt-0" id="staticBackdropLabel1">
@@ -92,7 +92,7 @@
         $('#switch-valid').change(function() {
             if ($(this).is(':checked')) {
                 $('#receipt-number-input').html(`
-                <label for="receipt_number" class="font-medium text-sm text-slate-600 dark:text-slate-400">Receipt Name</label>
+                <label for="receipt_number" class="font-medium text-sm text-slate-600 dark:text-slate-400">Receipt Number</label>
                 <input type="text" id="receipt_number" name="receipt_number"
                     class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700"
                     required="">
@@ -143,7 +143,8 @@
                             }
 
                             if (data == "delivery") {
-                                return `<span class="bg-orange-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
+                                return `<span class="bg-orange-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Delivery
+                                    </span>`
                             }
 
                             if (data == "reject") {
