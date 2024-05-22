@@ -88,6 +88,7 @@
     function openModal(id) {
         $('#transaction_id').val(id)
     }
+
     function openModalReview(id) {
         $('#product-list-review').html(loader())
         $.ajax({
@@ -110,16 +111,16 @@
                                 <div class="font-semibold text-slate-700 dark:text-gray-400 inline-block">
                                     <h4>${item.name}</h4>
                                     <div class="starability-basic min-h-[30px] block mb-2">
-                                        <input type="radio" id="rate5" name="rating" value="5" />
-                                        <label for="rate5" title="Amazing">5 stars</label>
-                                        <input type="radio" id="rate4" name="rating" value="4" />
-                                        <label for="rate4" title="Very good">4 stars</label>
-                                        <input type="radio" id="rate3" name="rating" value="3" />
-                                        <label for="rate3" title="Average">3 stars</label>
-                                        <input type="radio" id="rate2" name="rating" value="2" />
-                                        <label for="rate2" title="Not good">2 stars</label>
-                                        <input type="radio" id="rate1" name="rating" value="1" />
-                                        <label for="rate1" title="Terrible">1 star</label>
+                                        <input type="radio" id="rate5-${item.id}" name="rating-${item.id}" value="5" />
+                                        <label for="rate5-${item.id}" title="Amazing">5 stars</label>
+                                        <input type="radio" id="rate4-${item.id}" name="rating-${item.id}" value="4" />
+                                        <label for="rate4-${item.id}" title="Very good">4 stars</label>
+                                        <input type="radio" id="rate3-${item.id}" name="rating-${item.id}" value="3" />
+                                        <label for="rate3-${item.id}" title="Average">3 stars</label>
+                                        <input type="radio" id="rate2-${item.id}" name="rating-${item.id}" value="2" />
+                                        <label for="rate2-${item.id}" title="Not good">2 stars</label>
+                                        <input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="1" />
+                                        <label for="rate1-${item.id}" title="Terrible">1 star</label>
                                     </div>
                                 </div>
                             </div>
