@@ -143,7 +143,7 @@
                             }
 
                             if (data == "delivery") {
-                                return `<span class="bg-orange-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
+                                return `<span class="bg-orange-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Delivery</span>`
                             }
 
                             if (data == "reject") {
