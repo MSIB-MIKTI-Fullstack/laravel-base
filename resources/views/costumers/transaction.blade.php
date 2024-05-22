@@ -77,7 +77,7 @@
     <div class="modal animate-ModalSlide hidden" id="modal-review">
         <div
             class="relative w-auto pointer-events-none sm:max-w-lg sm:my-0 sm:mx-auto z-[99] flex items-center h-[calc(100%-3.5rem)]">
-            <form action="{{ route('customer.transaction.upload-receipt') }}" method="POST"
+            <form action="{{ route('customer.transaction.review-transaction') }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 <div
@@ -92,7 +92,7 @@
                             aria-label="Close" data-fc-dismiss>&times;</button>
                     </div>
                     <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
-                        <input type="hidden" name="transaction_id" id="transaction_id">
+                        <input type="hidden" name="transaction_id_review" id="transaction_id_review">
                         <div id="product-list-review">
 
                         </div>
@@ -118,6 +118,7 @@
     }
 
     function openModalReview(id) {
+        $('#transaction_id_review').val(id)
         $('#product-list-review').html(loader())
         $.ajax({
             url: `{{ route('customer.transaction.get-detail-product-transaction') }}?transaction_id=${id}`,
@@ -134,24 +135,23 @@
                 data.data.forEach(item => {
                     html += `
                     <div class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                <img src="{{ Storage::url('${item.image}') }}" alt=""
+                                <img src="" alt=""
                                     class="mr-2 h-12 inline-block">
                                 <div class="font-semibold text-slate-700 dark:text-gray-400 inline-block">
                                     <h4>${item.name}</h4>
                                     <div class="starability-basic min-h-[30px] block mb-2">
-                                        <input type="radio" id="rate5" name="rating" value="5" />
-                                        <label for="rate5" title="Amazing">5 stars</label>
-                                        <input type="radio" id="rate4" name="rating" value="4" />
-                                        <label for="rate4" title="Very good">4 stars</label>
-                                        <input type="radio" id="rate3" name="rating" value="3" />
-                                        <label for="rate3" title="Average">3 stars</label>
-                                        <input type="radio" id="rate2" name="rating" value="2" />
-                                        <label for="rate2" title="Not good">2 stars</label>
-                                        <input type="radio" id="rate1" name="rating" value="1" />
-                                        <label for="rate1" title="Terrible">1 star</label>
+                                        <input type="radio" id="rate5-${item.id}" name="rating-${item.id}" value="1" />
+                                        <label for="rate5-${item.id}" title="Amazing">5 stars</label>
+                                        <input type="radio" id="rate4-${item.id}" name="rating-${item.id}" value="2" />
+                                        <label for="rate4-${item.id}" title="Very good">4 stars</label>
+                                        <input type="radio" id="rate3-${item.id}" name="rating-${item.id}" value="3" />
+                                        <label for="rate3-${item.id}" title="Average">3 stars</label>
+                                        <input type="radio" id="rate2-${item.id}" name="rating-${item.id}" value="4" />
+                                        <label for="rate2-${item.id}" title="Not good">2 stars</label>
+                                        <input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="5"/>
+                                        <label for="rate1-${item.id}" title="Terrible">1 star</label>
                                     </div>
                                 </div>
-                            </div>
                     `
                 });
                 $('#product-list-review').html(html)
