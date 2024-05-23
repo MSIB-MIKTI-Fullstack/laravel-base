@@ -59,7 +59,6 @@
                         <div class="flex-auto ">
                             <div class="mb-4 border-b border-gray-200 dark:border-slate-700" data-fc-type="tab">
                                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" aria-label="Tabs">
-
                                     <li class="me-2" role="presentation">
                                         <button
                                             class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
@@ -74,57 +73,58 @@
                                     <x-customers.rating :productId="$product->id" />
                                 </div>
                             </div>
-                        </div> <!--end card-->
-                    </div><!--end col-->
-                    @endforeach
-                </div><!--end grid-->
-                <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
-                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-4 self-center">
-                        <div class="flex-auto p-4">
-                            <h4 class="text-3xl text-slate-700 font-semibold mb-0">Related products</h4>
-                            <p class="text-slate-500 text-lg mb-3">All products with free delivery</p>
-                        </div><!--end card-body-->
-                    </div><!--end col-->
-                </div>
-                <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-                    @foreach ($related_products as $item)
-                        <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
-                            <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                <div class="flex-auto  text-center">
-                                    <div class="flex-auto text-center bg-gray-100">
-                                        <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
-                                            <img src="{{ $item->image }}" alt=""
-                                                class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                        </a>
-                                    </div>
-                                    <div class="flex-auto  text-center p-4">
-                                        <span
-                                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $item->product_category->name }}</span>
-                                        <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}"
-                                            class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">{{ $item->name }}
-                                        </a>
-                                        <div class="mb-4">
-                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                                            <span class="text-slate-800 font-semibold">4.8</span>
-                                        </div>
-                                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4">
-                                            Rp. {{ number_format($item->price) }}
-                                        </h4>
-                                        <button type="button"
-                                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                                            onclick="location.href='{{ route('customer.product-detail', ['slug' => $item->slug]) }}'">Buy
-                                            Now</button>
-                                    </div>
+                        </div>
+                    </div> <!--end card-->
+                </div><!--end col-->
+            </div><!--end grid-->
+            <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-4 self-center">
+                    <div class="flex-auto p-4">
+                        <h4 class="text-3xl text-slate-700 font-semibold mb-0">Related products</h4>
+                        <p class="text-slate-500 text-lg mb-3">All products with free delivery</p>
+                    </div><!--end card-body-->
+                </div><!--end col-->
+            </div>
+            <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
 
+                @foreach ($related_products as $item)
+                    <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
+                        <div
+                            class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                            <div class="flex-auto  text-center">
+                                <div class="flex-auto text-center bg-gray-100">
+                                    <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}">
+                                        <img src="{{ $item->image }}" alt=""
+                                            class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
+                                    </a>
+                                </div>
+                                <div class="flex-auto  text-center p-4">
+                                    <span
+                                        class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $item->product_category->name }}</span>
+                                    <a href="{{ route('customer.product-detail', ['slug' => $item->slug]) }}"
+                                        class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate">{{ $item->name }}
+                                    </a>
+                                    <div class="mb-4">
+                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                        <i class="icofont-star text-yellow-400 inline-block"></i>
+                                        <span class="text-slate-800 font-semibold">4.8</span>
+                                    </div>
+                                    <h4 class="text-3xl font-medium dark:text-slate-300 mb-4">
+                                        Rp. {{ number_format($item->price) }}
+                                    </h4>
+                                    <button type="button"
+                                        class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
+                                        onclick="location.href='{{ route('customer.product-detail', ['slug' => $item->slug]) }}'">Buy
+                                        Now</button>
                                 </div>
                             </div>
                         </div> <!--end card-->
-                </div><!--end col-->
+                    </div><!--end col-->
+                @endforeach
+
             </div><!--end grid-->
         </div><!--end container-->
     </div><!--end main-->
