@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Rating extends Model
 {
     use HasFactory;
 
     protected $guarded = ['created_at', 'updated_at'];
-    public function product_category()
+
+    public function product()
     {
         return $this->belongsTo(ProductCategory::class);
-    }
-    public function rating()
-    {
-        return $this->hasMany(ProductCategory::class);
     }
 }

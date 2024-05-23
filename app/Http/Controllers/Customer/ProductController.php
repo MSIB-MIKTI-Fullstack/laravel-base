@@ -18,6 +18,7 @@ class ProductController extends Controller
         //         $subQuery->where('name', $request->category_id);
         //     });
         // })
+        
         $products = Product::with(['product_category'])
         ->when($request->category_id != "", function($q) use ($request){
             $q->where('product_category_id', $request->category_id);
@@ -30,7 +31,8 @@ class ProductController extends Controller
     public function detail($slug)
     {
         $product = Product::with(['product_category'])->where('slug', $slug)->first();
-        return view('costumers.product-detail', compact('product'));
+        $related_products = Product::where('product_category_id', $product->product_category_id)->get();
+        return view('costumers.product-detail', compact('product','related_products'));
     }
     public function addToCart(Request $request)
     {
