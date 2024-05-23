@@ -94,7 +94,6 @@
                     <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
                         <input type="hidden" name="transaction_id_review" id="transaction_id_review">
                         <div id="product-list-review">
-
                         </div>
                     </div>
                     <div
@@ -131,8 +130,9 @@
             },
             success: function(data) {
                 let html = ``;
-                console.log(data)
+
                 data.data.forEach(item => {
+                    console.log(item)
                     html += `
                     <div class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
                                 <img src="" alt=""
@@ -142,18 +142,24 @@
                                     <div class="starability-basic min-h-[30px] block mb-2">
                                         <input type="radio" id="rate5-${item.id}" name="rating-${item.id}" value="1" />
                                         <label for="rate5-${item.id}" title="Amazing">5 stars</label>
+
                                         <input type="radio" id="rate4-${item.id}" name="rating-${item.id}" value="2" />
                                         <label for="rate4-${item.id}" title="Very good">4 stars</label>
+
                                         <input type="radio" id="rate3-${item.id}" name="rating-${item.id}" value="3" />
                                         <label for="rate3-${item.id}" title="Average">3 stars</label>
+
                                         <input type="radio" id="rate2-${item.id}" name="rating-${item.id}" value="4" />
                                         <label for="rate2-${item.id}" title="Not good">2 stars</label>
+
                                         <input type="radio" id="rate1-${item.id}" name="rating-${item.id}" value="5"/>
                                         <label for="rate1-${item.id}" title="Terrible">1 star</label>
                                     </div>
                                 </div>
+                            </div>
                     `
                 });
+
                 $('#product-list-review').html(html)
             },
             error: function(data) {
