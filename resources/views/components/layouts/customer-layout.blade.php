@@ -22,7 +22,9 @@
         href="{{ asset('design-system/assets/libs/starability/starability-css/starability-all.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+
     <script id="frostui" src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+
     @vite(['resources/js/app.js'])
 
 </head>
@@ -163,18 +165,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="dropdown relative">
-                                <button type="button"
-                                    class="dropdown-toggle flex rounded-full md:me-0 h-10 w-10 items-center justify-center  border-[.5px] dark:border-slate-700/40 bg-[#f4f7ff] text-dark"
-                                    id="Notifications" aria-expanded="false" data-fc-autoclose="both"
-                                    data-fc-type="dropdown">
-                                    <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
-                                    <span
-                                        class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                        2
-                                    </span>
-                                </button>
-                            </div>
+
                             @if (Auth::user() != null)
                                 <div class="dropdown relative">
                                     <x-customers.cart></x-customers.cart>
@@ -192,6 +183,7 @@
                                                 class="block font-medium text-slate-600">{{ Auth::user()->name }}</span>
                                         </span>
                                     </button>
+
                                     <div class="left-auto right-0 z-50 my-1 hidden list-none divide-y divide-gray-100 rounded border-slate-700 md:border-white text-base shadow bg-white w-40"
                                         id="navUserdata">
 
@@ -415,6 +407,7 @@
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
+
     <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/js/app.js') }}"></script>
@@ -434,6 +427,7 @@
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
         let notyf;
+
         $(document).ready(function() {
             notyf = new Notyf()
         })
@@ -449,17 +443,21 @@
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
         }
     </script>
+
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script>
         function reinitializeScript() {
             function appendScript() {
                 let head = document.getElementsByTagName("head")[0]
                 let script = document.createElement("script")
+
                 script.id = "frostui"
                 script.src = `{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}`
                 head.appendChild(script)
             }
+
             let id = document.getElementById("frostui")
+
             if (id) {
                 id.remove()
                 appendScript()
