@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\DetailTransaction;
+use App\Models\Rating;
 use App\Models\Transaction;
 use App\Service\UploadFileService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -60,10 +62,14 @@ class TransactionController extends Controller
                     </button>' . '</div>';
                 }
 
-                return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modal-review"
+                if ($row->status == 'complete') {
+                    return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modal-review"
                         class="inline-block focus:outline-none text-slate-500 hover:bg-slate-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-slate-500  text-sm font-medium py-1 px-3 rounded" onclick="openModalReview(' . $row->id . ')">
                         Review
                     </button>' . '</div>';
+                }
+
+                return '';
             })
             ->rawColumns(['receipt'])
             ->toJson();
@@ -110,14 +116,23 @@ class TransactionController extends Controller
 
     public function reviewTransaction(Request $request)
     {
-        $detail_transactions  = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
+        $detail_transactions = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
+
+        $transaction = Transaction::find($request->transaction_id_review);
+
+        $transaction->update([
+            'status' => 'review'
+        ]);
 
         foreach ($detail_transactions as $detail_transaction) {
-            if ($request->input("rating-" . $detail_transaction->product_id) == null) {
-                $request->request->add(['rating-' . $detail_transaction->product_id  => '5']);
-            }
+            Rating::create([
+                'transaction_id' => $request->transaction_id_review,
+                'user_id' => Auth::user()->id,
+                'product_id' => $detail_transaction->product_id,
+                'total' => $request->input("rating-" . $detail_transaction->product_id) != null ? $request->input("rating-" . $detail_transaction->product_id) : 5
+            ]);
         }
 
-        dd($request->all());
+        return redirect()->back()->with('success', "Transaction reviewed");
     }
 }
