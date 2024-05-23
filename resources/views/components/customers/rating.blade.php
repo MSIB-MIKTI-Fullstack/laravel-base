@@ -24,7 +24,8 @@
                     <div class="w-full">
                         <div class="w-full h-[5px] relative bg-gray-200 dark:bg-slate-600/30 rounded-full">
                             <div class="h-[5px] bg-yellow-400 rounded-full"
-                                style="width: {{ ($product->rating_5 / $ratingCounts) * 100 }}%"></div>
+                                style="width: {{ $ratingCounts == 0 ? 0 : ($product->rating_5 / $ratingCounts) * 100 }}%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,7 +39,8 @@
                     <div class="w-full">
                         <div class="w-full h-[5px] relative bg-gray-200 dark:bg-slate-600/30 rounded-full">
                             <div class="h-[5px] bg-yellow-400 rounded-full"
-                                style="width: {{ ($product->rating_4 / $ratingCounts) * 100 }}%"></div>
+                                style="width: {{ $ratingCounts == 0 ? 0 : ($product->rating_4 / $ratingCounts) * 100 }}%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -52,7 +54,8 @@
                     <div class="w-full">
                         <div class="w-full h-[5px] relative bg-gray-200 dark:bg-slate-600/30 rounded-full">
                             <div class="h-[5px] bg-yellow-400 rounded-full"
-                                style="width: {{ ($product->rating_3 / $ratingCounts) * 100 }}%"></div>
+                                style="width: {{ $ratingCounts == 0 ? 0 : ($product->rating_3 / $ratingCounts) * 100 }}%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,7 +69,8 @@
                     <div class="w-full">
                         <div class="w-full h-[5px] relative bg-gray-200 dark:bg-slate-600/30 rounded-full">
                             <div class="h-[5px] bg-yellow-400 rounded-full"
-                                style="width: {{ ($product->rating_2 / $ratingCounts) * 100 }}%"></div>
+                                style="width: {{ $ratingCounts == 0 ? 0 : ($product->rating_2 / $ratingCounts) * 100 }}%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +84,8 @@
                     <div class="w-full">
                         <div class="w-full h-[5px] relative bg-gray-200 dark:bg-slate-600/30 rounded-full">
                             <div class="h-[5px] bg-yellow-400 rounded-full"
-                                style="width: {{ ($product->rating_1 / $ratingCounts) * 100 }}%"></div>
+                                style="width: {{ $ratingCounts == 0 ? 0 : ($product->rating_1 / $ratingCounts) * 100 }}%">
+                            </div>
                         </div>
                     </div>
                 </div>
