@@ -110,11 +110,11 @@ class TransactionController extends Controller
 
     public function reviewTransaction(Request $request)
     {
-        $products = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
+        $detail_transactions  = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
 
-        foreach ($products as $product) {
-            if ($request->input("rating-" . $product->id) == null) {
-                $request->request->add(['rating-' . $product->id => '5']);
+        foreach ($detail_transactions as $detail_transaction) {
+            if ($request->input("rating-" . $detail_transaction->product_id) == null) {
+                $request->request->add(['rating-' . $detail_transaction->product_id  => '5']);
             }
         }
 
