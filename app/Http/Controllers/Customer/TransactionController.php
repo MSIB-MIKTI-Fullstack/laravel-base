@@ -26,11 +26,11 @@ class TransactionController extends Controller
         $data = Transaction::getTransactionByUser()->get();
 
         return DataTables::of($data)
-        ->addColumn('receipt', function ($row) {
-            $icon = "";
+            ->addColumn('receipt', function ($row) {
+                $icon = "";
 
-            if ($row->receipt_number != null && $row->status == "delivery") {
-                return '
+                if ($row->receipt_number != null && $row->status == "delivery") {
+                    return '
                 <div class="flex flex-col items-center gap-2">
                     <small> Receipt number: ' . $row->receipt_number . '</small>
                     <form action="' . route('customer.transaction.complete-transaction') . '" method="POST">
@@ -43,48 +43,48 @@ class TransactionController extends Controller
                     </form>
                 </div>
                 ';
-            }
-
-            if ($row->status == "pending" || $row->status == "process") {
-                if ($row->receipt != null) {
-                    $url = Storage::url($row->receipt);
-
-                    $icon = '<a href="' . $url . '" target="_blank">
-                    <i data-lucide="file" class="top-icon w-5 h-5 text-gray-500"></i>
-                    </a>';
                 }
 
-                return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modalcenter"
+                if ($row->status == "pending" || $row->status == "process") {
+                    if ($row->receipt != null) {
+                        $url = Storage::url($row->receipt);
+
+                        $icon = '<a href="' . $url . '" target="_blank">
+                    <i data-lucide="file" class="top-icon w-5 h-5 text-gray-500"></i>
+                    </a>';
+                    }
+
+                    return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modalcenter"
                     class="inline-block focus:outline-none text-slate-500 hover:bg-slate-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-slate-500  text-sm font-medium py-1 px-3 rounded" onclick="openModal(' . $row->id . ')">
                     Upload Receipt
                 </button>' . '</div>';
-            }
+                }
 
-            return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modal-review"
+                return '<div class="flex flex-col items-center gap-2">' . $icon . '<button type="button" data-fc-type="modal" data-fc-target="modal-review"
             class="inline-block focus:outline-none text-slate-500 hover:bg-slate-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-slate-500  text-sm font-medium py-1 px-3 rounded" onclick="openModalReview(' . $row->id . ')">
             Review
         </button>' . '</div>';
-        })
-        ->rawColumns(['receipt'])
-        ->toJson();
-}
-
-public function uploadReceipt(Request $request)
-{
-    $path = $this->uploadFileService->uploadFile($request->file('receipt'));
-
-    $transaction = Transaction::find($request->transaction_id);
-    if ($transaction->receipt != null) {
-        Storage::delete($transaction->receipt);
+            })
+            ->rawColumns(['receipt'])
+            ->toJson();
     }
-    $transaction->update([
-        'status' => 'process',
-        'receipt' => $path
-    ]);
 
-    return redirect()->back();    
-}
-public function completeTransaction(Request $request)
+    public function uploadReceipt(Request $request)
+    {
+        $path = $this->uploadFileService->uploadFile($request->file('receipt'));
+
+        $transaction = Transaction::find($request->transaction_id);
+        if ($transaction->receipt != null) {
+            Storage::delete($transaction->receipt);
+        }
+        $transaction->update([
+            'status' => 'process',
+            'receipt' => $path
+        ]);
+
+        return redirect()->back();
+    }
+    public function completeTransaction(Request $request)
     {
         try {
             $transaction = Transaction::find($request->transaction_id);
@@ -105,11 +105,11 @@ public function completeTransaction(Request $request)
     }
     public function reviewTransaction(Request $request)
     {
-        $products = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
+        $detail_transactions = DetailTransaction::where('transaction_id', $request->transaction_id_review)->get();
 
-        foreach ($products as $product) {
-            if ($request->input("rating-" . $product->id) == null) {
-                $request->request->add(['rating-' . $product->id => '5']);
+        foreach ($detail_transactions as $detail_transaction) {
+            if ($request->input("rating-" . $detail_transaction->product_id) == null) {
+                $request->request->add(['rating-' . $detail_transaction->product_id => '5']);
             }
         }
 
