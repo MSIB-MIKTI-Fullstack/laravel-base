@@ -22,6 +22,9 @@
         href="{{ asset('design-system/assets/libs/starability/starability-css/starability-all.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+
+    <script id="frostui" src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
+
     @vite(['resources/js/app.js'])
 
 </head>
@@ -244,7 +247,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                    <a href="{{ route('customer.transaction.index') }}"
+                                        <a href="{{ route('customer.transaction.index') }}"
                                             class="flex justify-between py-2 text-base font-medium {{ Route::is('customer.transaction.index') ? 'text-brand' : 'text-dark' }} hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6">
                                             Transaction
                                         </a>
@@ -401,11 +404,9 @@
     <!-- <div class="menu-overlay"></div> -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="{{ asset('design-system/assets/libs/lucide/umd/lucide.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script id="frostui" src="{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}"></script>
 
     <script src="{{ asset('design-system/assets/libs/nice-select2/js/nice-select2.js') }}"></script>
     <script src="{{ asset('design-system/assets/libs/swiper/swiper-bundle.min.js') }}"></script>
@@ -423,33 +424,40 @@
             },
         });
     </script>
-     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
         let notyf;
+
         $(document).ready(function() {
             notyf = new Notyf()
         })
+
         function number_format(number) {
             return Intl.NumberFormat("id-ID", {
                 style: "currency",
                 currency: "IDR"
             }).format(number)
         }
+
         function loader() {
             return `<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>`;
         }
     </script>
+
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script>
         function reinitializeScript() {
             function appendScript() {
                 let head = document.getElementsByTagName("head")[0]
                 let script = document.createElement("script")
+
                 script.id = "frostui"
                 script.src = `{{ asset('design-system/assets/libs/@frostui/tailwindcss/frostui.js') }}`
                 head.appendChild(script)
             }
+
             let id = document.getElementById("frostui")
+
             if (id) {
                 id.remove()
                 appendScript()

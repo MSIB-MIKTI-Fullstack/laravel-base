@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
             ProductCategorySeeder::class,
             ProductSeeder::class,
             CartSeeder::class,
-            RatingSeeder::class
-            app/Http/Controllers/Customer/TransactionController.php        ]);
+
+            ]);
 
         \App\Models\User::create([
             'name' => 'Yoga Meleniawan Pamungkas',
