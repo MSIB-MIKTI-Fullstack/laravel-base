@@ -76,7 +76,7 @@
                             class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-red-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-red-500  text-sm font-medium py-1 px-3 rounded mr-1 close"
                             data-fc-dismiss>Close</button>
                         <button type="submit"
-                        class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500 text-sm font-medium py-1 px-3 rounded">Process</button>
+                            class="inline-block focus:outline-none text-primary-500 hover:bg-primary-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-primary-500 dark:hover:text-white dark:border-gray-700 dark:hover:bg-primary-500  text-sm font-medium py-1 px-3 rounded">Process</button>
                     </div>
                 </div>
             </form>
@@ -88,6 +88,7 @@
         $(document).ready(function() {
             initializeTable()
         })
+
         $('#switch-valid').change(function() {
             if ($(this).is(':checked')) {
                 $('#receipt-number-input').html(`
@@ -100,9 +101,11 @@
                 $('#receipt-number-input').html(``)
             }
         })
+
         function openModal(id) {
             $('#transaction_id').val(id)
         }
+
         function initializeTable() {
             table = new DataTable('#data-table', {
                 ajax: `{{ route('admin.transactions.index') }}`,
@@ -134,21 +137,27 @@
                             if (data == "pending") {
                                 return `<span class="bg-gray-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Pending</span>`
                             }
+
                             if (data == "process") {
                                 return `<span class="bg-yellow-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Process</span>`
                             }
+
                             if (data == "delivery") {
                                 return `<span class="bg-orange-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Delivery</span>`
                             }
+
                             if (data == "reject") {
                                 return `<span class="bg-red-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Reject</span>`
                             }
+
                             if (data == "complete") {
                                 return `<span class="bg-green-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Complete</span>`
                             }
+
                             if (data == "review") {
                                 return `<span class="bg-blue-500 text-white text-[11px] font-medium mr-1 px-2.5 py-0.5 rounded-full ">Review</span>`
                             }
+
                             return data;
                         }
                     },

@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProductCategorySeeder::class,
             ProductSeeder::class,
-            CartSeeder::class
-        ]);
+            CartSeeder::class,
+            RatingSeeder::class
+            app/Http/Controllers/Customer/TransactionController.php        ]);
 
         \App\Models\User::create([
             'name' => 'Yoga Meleniawan Pamungkas',
@@ -49,3 +50,4 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+ 
