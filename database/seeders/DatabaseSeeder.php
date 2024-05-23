@@ -23,33 +23,34 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            ProductCategorySeeder::class,
-            ProductSeeder::class,
-            CartSeeder::class
+            // ProductCategorySeeder::class,
+            // ProductSeeder::class,
+            // CartSeeder::class
+            RatingSeeder::class
         ]);
 
-        \App\Models\User::create([
-            'name' => 'Rafa Septiani',
-            'email' => 'rafasepti@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('qwerty1234'), // password
-            'two_factor_secret' => null,
-            'two_factor_recovery_codes' => null,
-            'remember_token' => Str::random(10),
-            'profile_photo_path' => null,
-            'current_team_id' => null,
-        ]);
+        // \App\Models\User::create([
+        //     'name' => 'Rafa Septiani',
+        //     'email' => 'rafasepti@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('qwerty1234'), // password
+        //     'two_factor_secret' => null,
+        //     'two_factor_recovery_codes' => null,
+        //     'remember_token' => Str::random(10),
+        //     'profile_photo_path' => null,
+        //     'current_team_id' => null,
+        // ]);
 
-        \App\Models\User::create([
-            'name' => 'Admininstrator',
-            'email' => 'admin@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('qwerty1234'), // password
-            'two_factor_secret' => null,
-            'two_factor_recovery_codes' => null,
-            'remember_token' => Str::random(10),
-            'profile_photo_path' => null,
-            'current_team_id' => null,
-        ]);
+        // \App\Models\User::create([
+        //     'name' => 'Admininstrator',
+        //     'email' => 'admin@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('qwerty1234'), // password
+        //     'two_factor_secret' => null,
+        //     'two_factor_recovery_codes' => null,
+        //     'remember_token' => Str::random(10),
+        //     'profile_photo_path' => null,
+        //     'current_team_id' => null,
+        // ]);
     }
 }
