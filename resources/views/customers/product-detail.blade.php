@@ -18,19 +18,17 @@
                                 </div>
                                 <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 self-center">
                                     <span
-                                    class="bg-blue-100 text-blue-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{ $product->product_category->name }}</span>
+                                        class="bg-blue-100 text-blue-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{ $product->product_category->name }}</span>
                                     <div class="flex flex-col gap-4">
-                                    <div class="">
                                         <h5 class="dark:text-slate-200 font-medium text-[30px] leading-9 mt-4">
                                             {{ $product->name }}</h5>
-                                            <h6 class="text-[28px] text-white dark:text-white font-semibold mb-4">
+                                        <h6 class="text-[28px] text-white dark:text-white font-semibold mb-4">
                                             <span class="bg-green-500 px-4 rounded-full">
                                                 Rp. {{ number_format($product->price, 0) }}
                                             </span>
                                         </h6>
                                         <h6 class="text-sm font-medium text-slate-800 dark:text-slate-400">Description :
                                         </h6>
-                                        
                                         <p
                                             class="focus:outline-none text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">
                                             {{ $product->description }}
@@ -44,7 +42,7 @@
                                                 class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-brand-500  dark:hover:border-slate-700"
                                                 style="width:100px;" type="number" min="0" value="0"
                                                 id="example-number-input" name="qty">
-                                                <button id="btn-add-to-cart" type="submit"
+                                            <button id="btn-add-to-cart" type="submit"
                                                 class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
                                                     class="ti ti-shopping-cart"></i> Add to cart</button>
                                         </form>
@@ -72,7 +70,7 @@
                             <div id="myTabContent">
                                 <div class="active p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="reviews"
                                     role="tabpanel" aria-labelledby="reviews-tab">
-                                <x-customers.rating :productId="$product->id" />
+                                    <x-customers.rating :productId="$product->id" />
                                 </div>
                             </div>
                         </div>
@@ -88,7 +86,8 @@
                 </div><!--end col-->
             </div>
             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4">
-            @foreach ($related_products as $item)
+
+                @foreach ($related_products as $item)
                     <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-2 ">
                         <div
                             class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
@@ -121,6 +120,7 @@
                                         onclick="location.href='{{ route('customer.product-detail', ['slug' => $item->slug]) }}'">Buy
                                         Now</button>
                                 </div>
+                            </div>
                         </div> <!--end card-->
                     </div><!--end col-->
                 @endforeach
@@ -129,9 +129,9 @@
         </div><!--end container-->
     </div><!--end main-->
 </x-customer-layout>
-
 <script>
     $(document).ready(function() {
+
         $('#form-cart').submit(function(e) {
             e.preventDefault();
 
@@ -141,7 +141,7 @@
                 '<div class="border-t-transparent border-solid animate-spin  rounded-full border-primary-500 border-2 h-4 w-4 inline-block"></div>'
             )
             $('#btn-add-to-cart').attr('disabled', true)
-            
+
             $.ajax({
                 data: form,
                 url: `{{ route('customer.product-add-to-cart') }}`,
@@ -155,6 +155,7 @@
                 success: function(data) {
                     $('#btn-add-to-cart').html('Add to cart')
                     $('#btn-add-to-cart').attr('disabled', false)
+
                     $('#cart-total').html(data.cart_count)
                     notyf.success(data.message)
                 },
