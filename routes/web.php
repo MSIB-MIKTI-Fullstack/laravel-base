@@ -64,6 +64,7 @@ Route::prefix('/products')->group(function () {
             Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
             Route::post('/complete-transaction', [TransactionController::class, 'completeTransaction'])->name('compelte-transaction');
             Route::get('/get-detail-product-transaction', [TransactionController::class, 'getDetailProductTransaction'])->name('get-detail-product-transaction');
+            Route::post('/review-transaction', [TransactionController::class, 'reviewTransaction'])->name('review-transaction');
         });
 });
    
