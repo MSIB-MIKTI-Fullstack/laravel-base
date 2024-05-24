@@ -44,7 +44,11 @@ class Rating extends Component
 
         $ratingCounts = RatingModel::where('product_id', $this->productId)->count();
 
-        $avg_rating = (($product->rating_5 * 5) + ($product->rating_4 * 4) + ($product->rating_3 * 3) + ($product->rating_2 * 2) + ($product->rating_1 * 1)) / $ratingCounts;
+        $avg_rating = 0;
+
+        if ($ratingCounts > 0) {
+            $avg_rating = (($product->rating_5 * 5) + ($product->rating_4 * 4) + ($product->rating_3 * 3) + ($product->rating_2 * 2) + ($product->rating_1 * 1)) / $ratingCounts;
+        }
 
         return view('components.customers.rating', compact('product', 'ratingCounts', 'avg_rating'));
     }
