@@ -63,6 +63,7 @@ Route::prefix('/products')->group(function () {
             Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
             Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
             Route::post('/complete-transaction', [TransactionController::class, 'completeTransaction'])->name('compelte-transaction');
+            Route::get('/get-detail-product-transaction', [TransactionController::class, 'getDetailProductTransaction'])->name('get-detail-product-transaction');
         });
 });
    

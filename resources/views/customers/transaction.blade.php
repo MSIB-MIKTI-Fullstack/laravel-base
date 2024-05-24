@@ -91,7 +91,8 @@
                     </div>
                     <div class="relative flex-auto p-4 text-slate-600 dark:text-gray-300 leading-relaxed">
                         <input type="hidden" name="transaction_id" id="transaction_id">
-                        <input type="file" name="receipt" />
+                        <div id="product-list-review">
+                        </div>
                     </div>
                     <div
                         class="flex flex-wrap shrink-0 justify-end p-3  rounded-b border-t border-dashed dark:border-gray-700">
@@ -112,6 +113,51 @@
 
     function openModal(id) {
         $('#transaction_id').val(id)
+    }
+
+    function openModalReview(id) {
+        $('#product-list-review').html(loader())
+        $.ajax({
+            url: `{{ route('customer.transaction.get-detail-product-transaction') }}?transaction_id=${id}`,
+            type: 'GET',
+            contentType: false,
+            cache: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function(data) {
+                let html = ``;
+                console.log(data)
+                data.data.forEach(item => {
+                    html += `
+                    <div class="flex p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                <img src="{{ Storage::url('${item.image}') }}" alt=""
+                                    class="mr-2 h-12 inline-block">
+                                <div class="font-semibold text-slate-700 dark:text-gray-400 inline-block">
+                                    <h4>${item.name}</h4>
+                                    <div class="starability-basic min-h-[30px] block mb-2">
+                                        <input type="radio" id="rate5" name="rating" value="5" />
+                                        <label for="rate5" title="Amazing">5 stars</label>
+                                        <input type="radio" id="rate4" name="rating" value="4" />
+                                        <label for="rate4" title="Very good">4 stars</label>
+                                        <input type="radio" id="rate3" name="rating" value="3" />
+                                        <label for="rate3" title="Average">3 stars</label>
+                                        <input type="radio" id="rate2" name="rating" value="2" />
+                                        <label for="rate2" title="Not good">2 stars</label>
+                                        <input type="radio" id="rate1" name="rating" value="1" />
+                                        <label for="rate1" title="Terrible">1 star</label>
+                                    </div>
+                                </div>
+                            </div>
+                    `
+                });
+                $('#product-list-review').html(html)
+            },
+            error: function(data) {
+                // notyf.error(data.responseJSON.message)
+            }
+        })
     }
 
     $(document).ready(function() {
