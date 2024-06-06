@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\UsersController;
-use App\Http\Middleware\AksesBuatBukaDompet;
-use App\Http\Middleware\VerificationMiddleware;
-use App\Models\User;
+use App\Http\Controllers\Customer\CartController;
+use App\Http\Controllers\Customer\CheckoutController;
+use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ProductController;
+use App\Http\Controllers\Customer\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,67 +18,53 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
-// Route::prefix('/user')->group(function () {
-//     Route::get('/contoh', function () {
-//         //
-//         $angka = 12;
+Route::group(['as' => 'customer.'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
-//         echo $angka;
-//     });
+    Route::prefix('/products')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('products');
+        Route::get('/{slug}', [ProductController::class, 'detail'])->name('product-detail');
 
-//     Route::get('/teks', function () {
-//         //
-//         $angka = 12;
+        Route::middleware('auth')->group(function () {
+            Route::post('/add-to-cart', [ProductController::class, 'addToCart'])->name('product-add-to-cart');
+        });
+    });
 
-//         echo $angka;
-//     });
-// });
+    Route::middleware('auth')->group(function () {
 
+        Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
+            Route::get('/', [CartController::class, 'index'])->name('index');
+            Route::get('/total-cart', [CartController::class, 'getTotalCart'])->name('total-cart');
+            Route::post('/change-cart', [CartController::class, 'changeCart'])->name('change-cart');
+            Route::get('/get-cart', [CartController::class, 'getCart'])->name('get-cart');
+            Route::delete('/delete-cart', [CartController::class, 'deleteCart'])->name('delete-cart');
+        });
 
-// Route::get('/login', [AuthController::class, 'login']);
-// Route::post('/login/process', [AuthController::class, 'process']);
-// Route::put('/login/process', [AuthController::class, 'process']);
-// Route::patch('/login/process', [AuthController::class, 'process']);
-// Route::delete('/login/process', [AuthController::class, 'process']);
-// Route::options('/login/process', [AuthController::class, 'process']);
+        Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
+            Route::get('/', [CheckoutController::class, 'index'])->name('index');
+            Route::post('/process', [CheckoutController::class, 'process'])->name('process');
+            Route::get('/get-province', [CheckoutController::class, 'getProvince'])->name('get-province');
+            Route::get('/get-city', [CheckoutController::class, 'getCity'])->name('get-city');
+            Route::get('/get-cost', [CheckoutController::class, 'getCost'])->name('get-cost');
+        });
 
-
-// Route::middleware(['verif', 'verif_token'])->group(function () {
-//     Route::get('/beranda', [HomeController::class, 'beranda']);
-
-//     Route::get('/controller', [HomeController::class, 'coba']);
-// });
-
-// Route::get('/login', [LoginController::class, 'index']);
-// Route::post('/login/process', [LoginController::class, 'login'])->name('login');
-
-// Route::redirect('/controller', '/beranda', 301);
-// Route::permanentRedirect('/controller', '/beranda');
-
-// Route::view('/beranda', 'beranda');
-
-Route::resources([
-    'users' => UsersController::class
-]);
-
-Route::middleware([AksesBuatBukaDompet::class])->group(function () {
-    Route::get('/dompet', function () {
-        return response()->json(['message' => 'Uang 10.000'], 200)
-            ->withHeaders([
-                'Content-Type' => 'application/json',
-                'kunci-kamar' => 'required',
-                'kunci-lemari' => 'Automatic Generate',
-            ]);
+        Route::group(['prefix' => '/transaction', 'as' => 'transaction.'], function () {
+            Route::get('/', [TransactionController::class, 'index'])->name('index');
+            Route::get('/datatable', [TransactionController::class, 'datatable'])->name('datatable');
+            Route::post('/upload-receipt', [TransactionController::class, 'uploadReceipt'])->name('upload-receipt');
+            Route::post('/complete-transaction', [TransactionController::class, 'completeTransaction'])->name('complete-transaction');
+            Route::get('/get-detail-product-transaction', [TransactionController::class, 'getDetailProductTransaction'])->name('get-detail-product-transaction');
+            Route::post('/review-transaction', [TransactionController::class, 'reviewTransaction'])->name('review-transaction');
+        });
     });
 });
-
-
-Route::middleware('cache.headers:public;max_age=3600')->group(function () {
-    Route::get('/file/{filename}', [HomeController::class, 'readFile']);
-});
-
-Route::get('/beranda', [HomeController::class, 'beranda']);
